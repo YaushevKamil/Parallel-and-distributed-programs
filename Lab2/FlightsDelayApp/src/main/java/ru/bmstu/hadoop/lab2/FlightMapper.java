@@ -1,2 +1,8 @@
-public class FlightMapper {
+package ru.bmstu.hadoop.lab2;
+
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+
+public class FlightMapper extends Mapper<LongWritable, Text, FlightWrightableComparable, Text> {
 }
