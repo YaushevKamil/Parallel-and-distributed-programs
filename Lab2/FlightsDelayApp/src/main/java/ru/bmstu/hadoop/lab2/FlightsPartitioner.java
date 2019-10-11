@@ -9,4 +9,9 @@ public class FlightsPartitioner extends Partitioner<FlightWritableComparable, Te
         // !!! implement getter
         return key.airportId % numReduceTasks;
     }
+
+    @Override
+    public int getPartition(FlightWritableComparable flightWritableComparable, Text text, int i) {
+        return 0;
+    }
 }
