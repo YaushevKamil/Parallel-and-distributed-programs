@@ -63,10 +63,10 @@ public class FlightWrightableComparable implements WritableComparable {
     @Override
     public String toString() {
         return "{" +
-                    "airportId:" + airportId +
-                    ",airTime:" + airTime +
-                    ",delayTime:" + delayTime +
-                    ",isCancelled:" + isCancelled +
+                    "airportId:" + airportId + "," +
+                    "airTime:" + airTime + "," +
+                    "delayTime:" + delayTime + "," +
+                    "isCancelled:" + isCancelled +
                 "}";
     }
 }
