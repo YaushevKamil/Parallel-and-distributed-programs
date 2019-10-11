@@ -53,7 +53,7 @@ public class FlightWritableComparable implements WritableComparable {
     public int hashCode() {
         final int prime = 31;
         int result = airportId;
-        result = prime * result + counter;
+        result = prime * result + dataType;
         result = prime * result + (int) (timestamp ^ (timestamp >>> 32));
         return result;
     }
