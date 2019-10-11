@@ -10,7 +10,7 @@ public class FlightWrightableComparable implements WritableComparable {
     private static final int AIRPORT_ID = 14;
     private static final int DELAY_TIME = 18;
     private static final int CANCELLED  = 19;
-    private static final int AIR_TIME   = 18;
+    private static final int AIR_TIME   = 21;
     
     private int airportId;
     private float airTime;
