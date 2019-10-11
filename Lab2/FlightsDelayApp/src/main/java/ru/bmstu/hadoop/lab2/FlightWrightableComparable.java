@@ -43,6 +43,8 @@ public class FlightWrightableComparable implements WritableComparable {
         } else return 0;
     }
 
+    public boolean 
+
     @Override
     public int hashCode() {
         final int prime = 31;
