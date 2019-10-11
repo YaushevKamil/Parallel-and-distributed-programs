@@ -26,7 +26,7 @@ public class FlightWrightableComparable implements WritableComparable {
     @Override
     public void readFields(DataInput in) throws IOException {
         airportId = in.readInt();
-        airportId = in.readInt();
+        dataType = in.readInt();
     }
 
     private static int boolToInt(Boolean b) {
