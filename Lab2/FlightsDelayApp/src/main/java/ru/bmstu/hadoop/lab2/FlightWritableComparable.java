@@ -71,11 +71,10 @@ public class FlightWritableComparable implements WritableComparable {
 
     @Override
     public int hashCode() {
-        
-        /*final int prime = 31;
+        final int prime = 31;
         int result = airportId;
         result = prime * result + dataType;
-        return result;*/
+        return result;
     }
 
     @Override
