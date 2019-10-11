@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class FlightMapper extends Mapper<LongWritable, Text, FlightWrightableComparable, Text> {
-
+    private static final int TYPE_FLIGHT = 0;
     private static final int AIRPORT_ID = 14;
     private static final int DELAY_TIME = 18;
 
