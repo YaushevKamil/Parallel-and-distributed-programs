@@ -6,13 +6,13 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class FlightWrightableComparable implements WritableComparable {
+public class FlightWritableComparable implements WritableComparable {
     private int airportId;
     private int dataType;
     
-    public FlightWrightableComparable() {}
+    public FlightWritableComparable() {}
     
-    public FlightWrightableComparable(int airportId, int dataType) {
+    FlightWritableComparable(int airportId, int dataType) {
         this.airportId = airportId;
         this.dataType = dataType;
     }
@@ -35,7 +35,7 @@ public class FlightWrightableComparable implements WritableComparable {
 
     @Override
     public int compareTo(Object o) {
-        FlightWrightableComparable other = (FlightWrightableComparable)o;
+        FlightWritableComparable other = (FlightWritableComparable)o;
         if (this.airportId != other.airportId) {
             return Integer.compare(this.airportId, other.airportId);
         } else if (this.dataType != other.dataType) {
@@ -45,7 +45,7 @@ public class FlightWrightableComparable implements WritableComparable {
 
     @Override
     public boolean equals(Object o) {
-        FlightWrightableComparable other = (FlightWrightableComparable)o;
+        FlightWritableComparable other = (FlightWritableComparable)o;
         return (this == o) || (this.airportId == other.airportId) && (this.dataType == other.dataType);
     }
 
