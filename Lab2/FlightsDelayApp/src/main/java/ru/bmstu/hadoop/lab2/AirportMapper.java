@@ -19,7 +19,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, FlightWrightableCo
             int airportId = Integer.parseInt(data[AIRPORT_ID]);
             String airportName = data[AIRPORT_NAME];
 
-            context.write(new FlightWrightableComparable(airportId, 0), new Text(airportName));
+            context.write(new FlightWrightableComparable(airportId, TYPE_AIRPORT), new Text(airportName));
         }
     }
 }
