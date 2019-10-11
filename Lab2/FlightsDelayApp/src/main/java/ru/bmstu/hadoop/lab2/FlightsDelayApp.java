@@ -18,7 +18,7 @@ public class FlightsDelayApp {
         Job job = Job.getInstance();
         job.setJarByClass(FlightsDelayApp.class);
         job.setJobName("Flights Delay");
-        MultipleInputs.addInputPath(job, new Path(args[0]));
+        MultipleInputs.addInputPath(job, new Path(args[0]), );
 
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
