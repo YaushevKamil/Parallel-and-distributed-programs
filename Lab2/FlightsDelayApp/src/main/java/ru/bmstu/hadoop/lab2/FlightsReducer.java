@@ -23,7 +23,7 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
     @Override
     public void reduce(FlightWritableComparable key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
-        
+
         if (iter.hasNext()) {
             String airportName = "Airport: " + iter.next().toString();
 
@@ -58,6 +58,5 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
                 context.write(new Text(airportName), new Text(delayStat));
             }
         }
-
     }
 }
