@@ -21,7 +21,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, FlightWritableComp
 
         return number;
     }
-    
+
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if (key.get() > 0) {
