@@ -33,7 +33,7 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
 
                 while (iter.hasNext()) {
                     float curr = strToFloat(iter.next().toString());
-                    if (count == INT_ZERO || count ) {}
+                    if (count > ) {}
                 }
             }
         }
