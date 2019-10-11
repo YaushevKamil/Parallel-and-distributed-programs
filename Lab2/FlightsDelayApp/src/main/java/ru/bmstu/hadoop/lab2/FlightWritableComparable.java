@@ -60,9 +60,7 @@ public class FlightWritableComparable implements WritableComparable {
 
     public int compareToAirportId(Object o) {
         FlightWritableComparable other = (FlightWritableComparable)o;
-        if (this.airportId != other.airportId) {
-            return Integer.compare(this.airportId, other.airportId);
-        } else return 0;
+        return Integer.compare(this.airportId, other.airportId);
     }
 
     @Override
