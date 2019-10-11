@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class FlightWrightableComparable implements WritableComparable {
     private int airportId;
-    private int delayTime;
+    private int dataType;
     
     public FlightWrightableComparable() {}
     
