@@ -27,7 +27,7 @@ public class FlightsDelayApp {
 
         job.setReducerClass(?????Reducer.class);
 
-        job.
+        job.setMapOutputKeyClass();
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
 
