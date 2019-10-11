@@ -17,7 +17,7 @@ public class FlightWritableComparable implements WritableComparable {
         this.dataType = dataType;
     }
 
-    
+    public void 
 
     @Override
     public void write(DataOutput out) throws IOException {
