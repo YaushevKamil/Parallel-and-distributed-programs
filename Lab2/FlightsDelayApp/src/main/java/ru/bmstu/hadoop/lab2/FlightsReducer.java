@@ -13,7 +13,7 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
         if (iter.hasNext()) {
             String airportName = "Airport: " + iter.next().toString();
             if (iter.hasNext()) {
-                
+                int coount = 0;
             }
         }
 
