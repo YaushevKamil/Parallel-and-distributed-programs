@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class AirportMapper extends Mapper<LongWritable, Text, FlightWrightableComparable, Text> {
     private static final int AIRPORT_ID = 0;
-    private static final int DELAY_TIME = 1;
+    private static final int AIRPORT_NAME = 1;
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
