@@ -59,9 +59,7 @@ public class FlightWrightableComparable implements WritableComparable {
             return Float.compare(this.delayTime, other.delayTime);
         } else if (this.isCancelled ^ other.isCancelled) {
             return boolToInt(this.isCancelled) - boolToInt(other.isCancelled);
-        } else {
-            return 0;
-        }
+        } else return 0;
     }
 
     @Override
