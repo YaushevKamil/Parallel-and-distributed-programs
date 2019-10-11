@@ -45,6 +45,7 @@ public class FlightWrightableComparable implements WritableComparable {
 
     @Override
     public boolean equals(Object o) {
+        
         FlightWrightableComparable other = (FlightWrightableComparable)o;
         return (this.airportId == other.airportId) && (this.dataType == other.dataType);
     }
