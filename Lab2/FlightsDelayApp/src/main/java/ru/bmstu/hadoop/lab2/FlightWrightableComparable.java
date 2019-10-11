@@ -48,7 +48,7 @@ public class FlightWrightableComparable implements WritableComparable {
     public int compareTo(Object o) {
         FlightWrightableComparable other = (FlightWrightableComparable)o;
         if (this.isCancelled ^ other.isCancelled) {
-            return 
+            return ;
         }
         int thisValue = this.value;
         int thatValue = o.value;
