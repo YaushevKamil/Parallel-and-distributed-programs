@@ -6,6 +6,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class FlightsDelayApp {
@@ -18,7 +19,7 @@ public class FlightsDelayApp {
         Job job = Job.getInstance();
         job.setJarByClass(FlightsDelayApp.class);
         job.setJobName("Flights Delay");
-        MultipleInputs.addInputPath(job, new Path(args[0]), );
+        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat);
 
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
