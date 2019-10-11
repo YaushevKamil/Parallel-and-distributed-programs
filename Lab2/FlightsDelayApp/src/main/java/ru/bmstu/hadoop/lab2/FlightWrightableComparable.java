@@ -38,8 +38,10 @@ public class FlightWrightableComparable implements WritableComparable {
 
     @Override
     public void readFields(DataInput in) throws IOException {
-        counter = in.readInt();
-        timestamp = in.readLong();
+        airportId = in.readInt();
+        airTime = in.readFloat();
+        delayTime = in.readFloat();
+        isCancelled = in.readBoolean();
     }
 
     @Override
