@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class FlightMapper extends Mapper<LongWritable, Text, FlightWrightableComparable, Text> {
-    private static final int TYPE_FLIGHT = 0;
+    private static final int TYPE_FLIGHT = 1;
     private static final int AIRPORT_ID = 14;
     private static final int DELAY_TIME = 18;
 
@@ -18,7 +18,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWrightableCom
             float delayTime = !(data[DELAY_TIME].equals("")) ? Float.parseFloat(data[DELAY_TIME]) : 0.0f;
             if (delayTime > 0.0f) {
                 int airportId = Integer.parseInt(data[AIRPORT_ID]);
-                context.write(new FlightWrightableComparable(airportId, 1), new Text(data[DELAY_TIME]));
+                context.write(new FlightWrightableComparable(airportId, TYPE_FLIGHT), new Text(data[DELAY_TIME]));
             }
         }
     }
