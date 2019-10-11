@@ -54,7 +54,6 @@ public class FlightWritableComparable implements WritableComparable {
         final int prime = 31;
         int result = airportId;
         result = prime * result + dataType;
-        result = prime * result + (int) (timestamp ^ (timestamp >>> 32));
         return result;
     }
 
