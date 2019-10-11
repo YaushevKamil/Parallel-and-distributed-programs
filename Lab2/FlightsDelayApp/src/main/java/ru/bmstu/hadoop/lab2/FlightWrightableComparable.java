@@ -13,12 +13,7 @@ public class FlightWrightableComparable implements WritableComparable {
     public FlightWrightableComparable() {}
     
     public FlightWrightableComparable(int airportId, int dataType) {
-        String[] data = raw.split(",");
         
-        airportId = Integer.parseInt(data[AIRPORT_ID]);
-        airTime = !(data[AIR_TIME].equals("")) ? Float.parseFloat(data[AIR_TIME]) : 0.0f;
-        delayTime = !(data[DELAY_TIME].equals("")) ? Float.parseFloat(data[DELAY_TIME]) : 0.0f;
-        isCancelled = Integer.parseInt(data[CANCELLED]) == 1;
     }
     
     @Override
