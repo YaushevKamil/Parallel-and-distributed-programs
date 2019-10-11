@@ -43,7 +43,9 @@ public class FlightWrightableComparable implements WritableComparable {
         } else return 0;
     }
 
-    public boolean equals
+    public boolean equals(Object o) {
+
+    }
 
     @Override
     public int hashCode() {
