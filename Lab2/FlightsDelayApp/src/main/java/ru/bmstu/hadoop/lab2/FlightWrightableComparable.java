@@ -19,7 +19,7 @@ public class FlightWrightableComparable implements WritableComparable {
     
     public FlightWrightableComparable() {}
     
-    public FlightWrightableComparable(String raw) {
+    public FlightWrightableComparable(String raw, ) {
         String[] data = raw.split(",");
         
         airportId = Integer.parseInt(data[AIRPORT_ID]);
