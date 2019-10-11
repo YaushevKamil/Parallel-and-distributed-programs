@@ -20,9 +20,7 @@ public class FlightWrightableComparable implements WritableComparable {
     @Override
     public void write(DataOutput out) throws IOException {
         out.writeInt(airportId);
-        out.writeFloat(airTime);
-        out.writeFloat(delayTime);
-        out.writeBoolean(isCancelled);
+        out.writeInt(airportId);
     }
 
     @Override
