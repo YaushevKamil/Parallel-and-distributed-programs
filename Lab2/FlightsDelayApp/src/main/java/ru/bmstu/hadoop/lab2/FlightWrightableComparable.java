@@ -59,9 +59,9 @@ public class FlightWrightableComparable implements WritableComparable {
         result = prime * result + (int) (timestamp ^ (timestamp >>> 32));
         return result;
     }
-}
 
     @Override
     public String toString() {
-    
+        return ;
     }
+}
