@@ -12,6 +12,6 @@ public class FlightsComparator extends WritableComparator {
     public int compare(WritableComparable a, WritableComparable b) {
         FlightWritableComparable that = (FlightWritableComparable)a;
         FlightWritableComparable other = (FlightWritableComparable) b;
-        return that.compareTo(b); // ?????
+        return that.compareToAirportId(other);
     }
 }
