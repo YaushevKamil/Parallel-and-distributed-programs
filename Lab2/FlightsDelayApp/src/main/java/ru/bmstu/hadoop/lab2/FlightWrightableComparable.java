@@ -53,6 +53,8 @@ public class FlightWrightableComparable implements WritableComparable {
         FlightWrightableComparable other = (FlightWrightableComparable)o;
         if (this.isCancelled ^ other.isCancelled) {
             return boolToInt(this.isCancelled) - boolToInt(other.isCancelled);
+        } else if (this.isCancelled ^ other.isCancelled) {
+            return boolToInt(this.isCancelled) - boolToInt(other.isCancelled);
         } else if () {
 
         }
