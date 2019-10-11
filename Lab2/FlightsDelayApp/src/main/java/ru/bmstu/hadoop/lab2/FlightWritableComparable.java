@@ -49,7 +49,7 @@ public class FlightWritableComparable implements WritableComparable {
 
 
     @Override
-    public int compareTo(Object o) {ss
+    public int compareTo(Object o) {
         FlightWritableComparable other = (FlightWritableComparable)o;
         if (this.airportId != other.airportId) {
             return Integer.compare(this.airportId, other.airportId);
@@ -71,7 +71,7 @@ public class FlightWritableComparable implements WritableComparable {
             return true;
         }
         FlightWritableComparable other = (FlightWritableComparable)o;
-        
+
         /*return (this == o) ||
                ((o != null) && (this.getClass() == o.getClass()) &&
                 (this.airportId == other.airportId) && (this.dataType == other.dataType));*/
