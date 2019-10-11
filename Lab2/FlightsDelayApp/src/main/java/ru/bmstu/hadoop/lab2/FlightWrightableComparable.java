@@ -32,7 +32,7 @@ public class FlightWrightableComparable implements WritableComparable {
     public void write(DataOutput out) throws IOException {
         out.writeBoolean(isCancelled);
         out.writeInt(airportId);
-        out.writeLong(timestamp);
+        out.writeFloat(timestamp);
     }
 
     @Override
