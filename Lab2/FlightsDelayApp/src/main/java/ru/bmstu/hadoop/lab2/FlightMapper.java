@@ -16,6 +16,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWrightableCom
         if (key.get() > 0) {
             String[] data = value.toString().split(",");
             float delayTime = !(data[DELAY_TIME].equals("")) ? Float.parseFloat(data[DELAY_TIME]) : 0.0f;
+            if ()
         }
     }
 }
