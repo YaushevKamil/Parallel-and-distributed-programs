@@ -46,7 +46,8 @@ public class FlightWrightableComparable implements WritableComparable {
 
     @Override
     public int compareTo(Object o) {
-        FlightWrightableComparable other = (FlightWrightableComparable)
+        FlightWrightableComparable other = (FlightWrightableComparable)o;
+        
         int thisValue = this.value;
         int thatValue = o.value;
         return (thisValue < thatValue ? -1 : (thisValue==thatValue ? 0 : 1));
