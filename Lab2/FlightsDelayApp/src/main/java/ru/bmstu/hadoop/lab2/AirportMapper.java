@@ -13,13 +13,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, FlightWrightableCo
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if (key.get() > 0) {
-            String[] data = value.toString().split(",").stream()
-
-                    .map(String::toUpperCase)
-
-                    .sorted()
-
-                    .collect(Collectors.toList());;
+            String[] data = value.toString().split(",");
             String airportName = data[AIRPORT_NAME].replaceAll("\"", "");
             float delayTime = !(data[DELAY_TIME].equals("")) ? Float.parseFloat(data[DELAY_TIME]) : 0.0f;
             if (delayTime > 0.0f) {
