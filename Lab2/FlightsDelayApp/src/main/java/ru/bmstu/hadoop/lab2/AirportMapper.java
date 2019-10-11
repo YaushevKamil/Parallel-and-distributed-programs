@@ -15,7 +15,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, FlightWrightableCo
         if (key.get() > 0) {
             String[] data = value.toString().replaceAll("\"", "").split(",");
             String airportName = data[AIRPORT_NAME];
-            float delayTime = !(data[DELAY_TIME].equals("")) ? Float.parseFloat(data[DELAY_TIME]) : 0.0f;
+            
             if (delayTime > 0.0f) {
                 int airportId = Integer.parseInt(data[AIRPORT_ID]);
                 context.write(new FlightWrightableComparable(airportId, 0), new Text(data[DELAY_TIME]));
