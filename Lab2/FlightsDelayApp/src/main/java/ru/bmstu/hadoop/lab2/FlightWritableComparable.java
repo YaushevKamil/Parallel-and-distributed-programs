@@ -65,6 +65,7 @@ public class FlightWritableComparable implements WritableComparable {
 
     @Override
     public boolean equals(Object o) {
+        if ((o != null) && (this.getClass() == o.getClass())
         FlightWritableComparable other = (FlightWritableComparable)o;
         return (this == o) ||
                ((o != null) && (this.getClass() == o.getClass()) &&
