@@ -10,9 +10,9 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWrightableCom
 
     private static final int AIRPORT_ID = 14;
     private static final int DELAY_TIME = 18;
-    
+
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-
+        if ()
     }
 }
