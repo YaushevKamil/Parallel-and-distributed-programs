@@ -25,7 +25,7 @@ public class FlightsDelayApp {
 
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
-        job.setReducerClass(...Reducer.class);
+        job.setReducerClass(?????Reducer.class);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
