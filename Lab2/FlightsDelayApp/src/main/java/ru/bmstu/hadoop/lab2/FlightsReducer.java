@@ -49,6 +49,7 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
                                        "Average: " + Float.toString(sum) +
                                        "Max: " + Float.toString(max) +
                                     " }";
+                context.write(new Text(airportName), new Text(delayStat));
             }
         }
 
