@@ -42,6 +42,7 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
                         max = curr;
                     }
                     sum += curr;
+                    count++;
                 }
             }
         }
