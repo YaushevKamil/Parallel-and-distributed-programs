@@ -20,11 +20,20 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWrightableCom
         return number;
     }
 
+    private static float strToFloat(String numString) {
+        float number = 0.0f;
+        try {
+            number = Float.parseFloat(numString);
+        } catch (Exception ignored) {}
+
+        return number;
+    }
+
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if (key.get() > 0) {
             String[] data = value.toString().split(",");
-            float delayTime = !(data[DELAY_TIME].equals("")) ? Float.parseFloat(data[DELAY_TIME]) : 0.0f;
+            float delayTime = strToFloat(data[DELAY_TIME]);
             if (delayTime > 0.0f) {
                 int airportId = strToInt(data[AIRPORT_ID]); /*Integer.parseInt(data[AIRPORT_ID]);*/
                 context.write(new FlightWrightableComparable(airportId, TYPE_FLIGHT), new Text(data[DELAY_TIME]));
