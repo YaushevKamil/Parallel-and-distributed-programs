@@ -11,13 +11,13 @@ public class AirportMapper extends Mapper<LongWritable, Text, FlightWrightableCo
     private static final int AIRPORT_ID = 0;
     private static final int AIRPORT_NAME = 1;
 
-    private static int strToInt(String number) {
-        int res = 0;
+    private static int strToInt(String numString) {
+        int number = 0;
         try {
-            res = Integer.parseInt(number);
-        } catch (Exception e) {
-            
-        }
+            number = Integer.parseInt(numString);
+        } catch (Exception ignored) {}
+        
+        return number;
     }
 
     @Override
