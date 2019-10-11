@@ -45,7 +45,7 @@ public class FlightWrightableComparable implements WritableComparable {
     }
 
     int boolToInt(Boolean b) {
-        return b.compareTo(false);
+        return Boolean.compare(b, false);
     }
 
     @Override
