@@ -23,8 +23,10 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
     @Override
     public void reduce(FlightWritableComparable key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
+        
         if (iter.hasNext()) {
             String airportName = "Airport: " + iter.next().toString();
+
             if (iter.hasNext()) {
                 int count = INT_ZERO;
                 float min = FLOAT_ZERO;
@@ -46,11 +48,13 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
                     count++;
                 }
                 float average = sum / count;
+
                 String delayStat = "Delay time: { " +
                                        "Min: " + Float.toString(min) + ", " +
                                        "Average: " + Float.toString(average) + ", " +
                                        "Max: " + Float.toString(max) +
                                     " }";
+
                 context.write(new Text(airportName), new Text(delayStat));
             }
         }
