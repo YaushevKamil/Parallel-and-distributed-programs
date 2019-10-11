@@ -13,7 +13,8 @@ public class FlightWrightableComparable implements WritableComparable {
     public FlightWrightableComparable() {}
     
     public FlightWrightableComparable(int airportId, int dataType) {
-        
+        this.airportId = airportId;
+        this.dataType = dataType;
     }
     
     @Override
