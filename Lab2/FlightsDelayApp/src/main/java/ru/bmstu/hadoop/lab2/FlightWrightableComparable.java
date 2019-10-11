@@ -11,9 +11,7 @@ public class FlightWrightableComparable implements WritableComparable {
     private static final int DELAY_TIME = 18;
     
     private int airportId;
-    private float airTime;
     private float delayTime;
-    private boolean isCancelled;
     
     public FlightWrightableComparable() {}
     
