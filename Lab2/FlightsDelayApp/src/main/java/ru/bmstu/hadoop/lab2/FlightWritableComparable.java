@@ -46,10 +46,7 @@ public class FlightWritableComparable implements WritableComparable {
         airportId = in.readInt();
         dataType = in.readInt();
     }
-
-    private static int boolToInt(Boolean b) {
-        return Boolean.compare(b, false);
-    }
+    
 
     @Override
     public int compareTo(Object o) {
