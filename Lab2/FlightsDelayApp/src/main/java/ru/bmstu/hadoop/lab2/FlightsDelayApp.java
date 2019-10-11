@@ -26,7 +26,7 @@ public class FlightsDelayApp {
         job.setPartitionerClass(FlightsPartitioner.class);
         job.setGroupingComparatorClass(FlightsComparator.class);
 
-        job.setMapOutputKeyClass(FlightWrightableComparable.class);
+        job.setMapOutputKeyClass(FlightWritableComparable.class);
         job.setMapOutputValueClass(Text.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
