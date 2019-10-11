@@ -25,7 +25,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, FlightWrightableCo
         if (key.get() > 0) {
             String[] data = value.toString().replaceAll("\"", "").split(",");
 
-            int airportId = strToInt(data[AIRPORT_ID])/*Integer.parseInt(data[AIRPORT_ID])*/;
+            int airportId = strToInt(data[AIRPORT_ID]); /*Integer.parseInt(data[AIRPORT_ID]);*/
             String airportName = data[AIRPORT_NAME];
 
             context.write(new FlightWrightableComparable(airportId, TYPE_AIRPORT), new Text(airportName));
