@@ -66,6 +66,7 @@ public class FlightWrightableComparable implements WritableComparable {
                 "airportId:" + airportId +
                 ",airTime:" + airTime +
                 ",delayTime:" + delayTime +
-                ",isCancelled:" + isCancelled + ",";
+                ",isCancelled:" + isCancelled +
+                "}";
     }
 }
