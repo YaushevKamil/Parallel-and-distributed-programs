@@ -14,7 +14,9 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
             String airportName = "Airport: " + iter.next().toString();
             if (iter.hasNext()) {
                 int coount = 0;
-                float min
+                float min = 0.0f;
+                float min = 0.0f;
+                float min = 0.0f;
             }
         }
 
