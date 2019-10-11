@@ -18,6 +18,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWrightableCom
             float delayTime = !(data[DELAY_TIME].equals("")) ? Float.parseFloat(data[DELAY_TIME]) : 0.0f;
             if (delayTime > 0.0f) {
                 int airportId = Integer.parseInt(data[AIRPORT_ID]);
+                FlightWrightableComparable
             }
         }
     }
