@@ -26,7 +26,7 @@ public class FlightWritableComparable implements WritableComparable {
         this.dataType = dataType;
     }
 
-    public int getAirportId() {
+    int getAirportId() {
         return this.airportId;
     }
 
