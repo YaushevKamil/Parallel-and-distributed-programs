@@ -10,9 +10,10 @@ public class AirportMapper extends Mapper<LongWritable, Text, FlightWrightableCo
     private static final int TYPE_AIRPORT = 0;
     private static final int AIRPORT_ID = 0;
     private static final int AIRPORT_NAME = 1;
+    private static final int I_ZERO = 0;
 
     private static int strToInt(String numString) {
-        int number = 0;
+        int number = I_ZERO;
         try {
             number = Integer.parseInt(numString);
         } catch (Exception ignored) {}
