@@ -15,7 +15,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, FlightWrightableCo
         int res = 0;
         try {
             res = Integer.parseInt(number);
-        }
+        } catch () {}
     }
 
     @Override
