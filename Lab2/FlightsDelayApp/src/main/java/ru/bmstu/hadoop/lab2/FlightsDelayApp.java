@@ -11,7 +11,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class FlightsDelayApp {
     public static void main(String[] args) throws Exception {
-        if (args.length != 2) {
+        if (args.length != 3) {
             System.err.println("Usage: FlightsDelayApp <input path> <input path> <output path>");
             System.exit(-1);
         }
