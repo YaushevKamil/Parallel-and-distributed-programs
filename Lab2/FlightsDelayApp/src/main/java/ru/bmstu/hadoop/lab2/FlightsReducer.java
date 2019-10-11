@@ -45,8 +45,8 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
                 }
                 sum /= count;
                 String delayStat = "Delay time: { " +
-                                       "Min: " + Float.toString(min) +
-                                       "Average: " + Float.toString(sum) +
+                                       "Min: " + Float.toString(min) + ", " +
+                                       "Average: " + Float.toString(sum) + ", " +
                                        "Max: " + Float.toString(max) +
                                     " }";
                 context.write(new Text(airportName), new Text(delayStat));
