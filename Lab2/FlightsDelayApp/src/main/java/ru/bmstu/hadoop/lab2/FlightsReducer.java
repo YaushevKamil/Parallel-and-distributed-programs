@@ -43,7 +43,7 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
                     }
                     sum += curr;
 
-                    count++
+                    count++;
                 }
                 sum /= count;
                 String delayStat = "Delay time: { " +
