@@ -46,6 +46,7 @@ public class FlightWrightableComparable implements WritableComparable {
     @Override
     public boolean equals(Object o) {
         FlightWrightableComparable other = (FlightWrightableComparable)o;
+        if (this.) {}
     }
 
     @Override
