@@ -7,9 +7,25 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class FlightWrightableComparable implements WritableComparable {
-    private int counter;
-    private long timestamp;
-
+    private static final int AIRPORT_ID = 14;
+    private static final int DELAY_TIME = 18;
+    private static final int CANCELLED  = 19;
+    private static final int AIR_TIME   = 18;
+    
+    private int airportId;
+    private float airTime;
+    private float delayTime;
+    private boolean isCancelled;
+    
+    public FlightWrightableComparable() {}
+    
+    public FlightWrightableComparable(String raw) {
+        String[] data = raw.split(",");
+        
+        airportId = Integer.parseInt(data[AIRPORT_ID]);
+        airTime = !(raw.equals(NULL_STRING)) ? Float.parseFloat(column) : 0.0f;
+    }
+    
     @Override
     public void write(DataOutput out) throws IOException {
         out.writeInt(counter);
