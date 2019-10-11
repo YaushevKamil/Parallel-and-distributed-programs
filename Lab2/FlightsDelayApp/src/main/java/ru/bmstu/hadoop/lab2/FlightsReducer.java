@@ -10,6 +10,6 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
 
     public void reduce(FlightWritableComparable key, Iterable<Text> values, Context context) throws IOException {
         Iterator<Text> iter = values.iterator();
-        String airportName = "Airport: " + iter
+        String airportName = "Airport: " + iter.next()
     }
 }
