@@ -44,7 +44,11 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
                     sum += curr;
                 }
                 sum /= count;
-                String delayStat = "Delay time: {" + "Min: " + Float.toString(min) + "Average: " + Float.toString(sum) + "Max";
+                String delayStat = "Delay time: { " +
+                                       "Min: " + Float.toString(min) +
+                                       "Average: " + Float.toString(sum) +
+                                       "Max: " + Float.toString(max) +
+                                    " }";
             }
         }
 
