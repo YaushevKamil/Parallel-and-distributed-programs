@@ -11,6 +11,13 @@ public class AirportMapper extends Mapper<LongWritable, Text, FlightWrightableCo
     private static final int AIRPORT_ID = 0;
     private static final int AIRPORT_NAME = 1;
 
+    private static int strToInt(String number) {
+        int res = 0;
+        try {
+            res = Integer.parseInt(number);
+        }
+    }
+
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if (key.get() > 0) {
