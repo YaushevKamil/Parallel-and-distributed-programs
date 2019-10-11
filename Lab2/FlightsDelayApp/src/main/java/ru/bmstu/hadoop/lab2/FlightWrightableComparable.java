@@ -55,8 +55,8 @@ public class FlightWrightableComparable implements WritableComparable {
             return Integer.compare(this.airportId, other.airportId);
         } else if (this.airTime != other.airTime) {
             return Float.compare(this.airTime, other.airTime);
-        } else if (this.airTime != other.airTime) {
-            return Float.compare(this.airTime, other.airTime);
+        } else if (this.delayTime != other.delayTime) {
+            return Float.compare(this.delayTime, other.delayTime);
         } else if (this.isCancelled ^ other.isCancelled) {
             return boolToInt(this.isCancelled) - boolToInt(other.isCancelled);
         } else if () {
