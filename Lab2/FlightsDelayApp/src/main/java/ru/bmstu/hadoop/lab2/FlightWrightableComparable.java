@@ -23,7 +23,9 @@ public class FlightWrightableComparable implements WritableComparable {
         String[] data = raw.split(",");
         
         airportId = Integer.parseInt(data[AIRPORT_ID]);
-        airTime = !(raw.equals(NULL_STRING)) ? Float.parseFloat(column) : 0.0f;
+        airTime = !(data[AIR_TIME].equals("")) ? Float.parseFloat(data[AIR_TIME]) : 0.0f;
+        delayTime = !(data[DELAY_TIME].equals("")) ? Float.parseFloat(data[DELAY_TIME]) : 0.0f;;
+        isCancelled;
     }
     
     @Override
