@@ -60,3 +60,8 @@ public class FlightWrightableComparable implements WritableComparable {
         return result;
     }
 }
+
+    @Override
+    public String toString() {
+    
+    }
