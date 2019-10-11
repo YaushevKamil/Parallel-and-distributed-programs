@@ -17,6 +17,10 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
                 float min = 0.0f;
                 float max = 0.0f;
                 float sum = 0.0f;
+
+                while (iter.hasNext()) {
+
+                }
             }
         }
 
