@@ -33,6 +33,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWrightableCom
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if (key.get() > 0) {
             String[] data = value.toString().split(",");
+            
             float delayTime = strToFloat(data[DELAY_TIME]);
             if (delayTime > 0.0f) {
                 int airportId = strToInt(data[AIRPORT_ID]); /*Integer.parseInt(data[AIRPORT_ID]);*/
