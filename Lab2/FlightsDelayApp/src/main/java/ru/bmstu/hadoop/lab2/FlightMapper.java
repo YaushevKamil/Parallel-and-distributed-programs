@@ -11,6 +11,15 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWrightableCom
     private static final int AIRPORT_ID = 14;
     private static final int DELAY_TIME = 18;
 
+    private static int strToInt(String numString) {
+        int number = 0;
+        try {
+            number = Integer.parseInt(numString);
+        } catch (Exception ignored) {}
+
+        return number;
+    }
+
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if (key.get() > 0) {
