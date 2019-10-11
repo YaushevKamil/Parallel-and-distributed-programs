@@ -14,8 +14,10 @@ public class AirportMapper extends Mapper<LongWritable, Text, FlightWrightableCo
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if (key.get() > 0) {
             String[] data = value.toString().replaceAll("\"", "").split(",");
+
             int airportId = Integer.parseInt(data[AIRPORT_ID]);
             String airportName = data[AIRPORT_NAME];
+            
             context.write(new FlightWrightableComparable(airportId, 0), new Text(airportName));
         }
     }
