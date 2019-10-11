@@ -33,9 +33,9 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
 
                 for (; iter.hasNext(); count++) {
                     float curr = strToFloat(iter.next().toString());
-                    if (count == 0) {
-                        min = curr;
-                    }
+
+                    if (count == 0) min = curr;
+
                     if (curr < min) {
                         min = curr;
                     } else if (curr > max) {
@@ -43,6 +43,7 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
                     }
                     sum += curr;
                 }
+                
             }
         }
 
