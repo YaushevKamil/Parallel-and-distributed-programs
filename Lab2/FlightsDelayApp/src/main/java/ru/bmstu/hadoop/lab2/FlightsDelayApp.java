@@ -20,6 +20,7 @@ public class FlightsDelayApp {
         job.setJarByClass(FlightsDelayApp.class);
         job.setJobName("Flights Delay");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMapper.class);
+        MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AirportMapper.class);
 
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
