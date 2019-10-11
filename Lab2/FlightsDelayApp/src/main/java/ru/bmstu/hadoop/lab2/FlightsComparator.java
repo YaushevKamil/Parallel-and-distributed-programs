@@ -10,6 +10,6 @@ public class FlightsComparator extends WritableComparator {
 
     @Override
     public int compare(WritableComparable a, WritableComparable b) {
-        
+        FlightWritableComparable 
     }
 }
