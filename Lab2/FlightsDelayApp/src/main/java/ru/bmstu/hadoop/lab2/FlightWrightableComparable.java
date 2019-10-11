@@ -44,6 +44,10 @@ public class FlightWrightableComparable implements WritableComparable {
         isCancelled = in.readBoolean();
     }
 
+    int boolToInt(Boolean b) {
+        return b.compareTo(false);
+    }
+
     @Override
     public int compareTo(Object o) {
         FlightWrightableComparable other = (FlightWrightableComparable)o;
