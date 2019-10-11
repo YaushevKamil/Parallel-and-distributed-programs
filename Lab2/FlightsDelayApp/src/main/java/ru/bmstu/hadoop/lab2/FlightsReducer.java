@@ -45,7 +45,7 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
 
                     count++;
                 }
-                sum /= count;
+                float average = sum / count;
                 String delayStat = "Delay time: { " +
                                        "Min: " + Float.toString(min) + ", " +
                                        "Average: " + Float.toString(sum) + ", " +
