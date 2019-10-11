@@ -23,7 +23,7 @@ public class FlightsDelayApp {
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
         job.setReducerClass(?????Reducer.class);
-        job.setPartitionerClass(????.class);
+        job.setPartitionerClass(FlightsPartitioner.class);
         job.setGroupingComparatorClass(????.class);
 
         job.setMapOutputKeyClass(FlightWrightableComparable.class);

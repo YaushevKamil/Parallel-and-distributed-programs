@@ -6,7 +6,6 @@ import org.apache.hadoop.mapreduce.Partitioner;
 public class FlightsPartitioner extends Partitioner<FlightWritableComparable, Text> {
     @Override
     public int getPartition(FlightWritableComparable key, Text text, int numReduceTasks) {
-        // !!! implement getter
         return key.getAirportId() % numReduceTasks;
     }
 }
