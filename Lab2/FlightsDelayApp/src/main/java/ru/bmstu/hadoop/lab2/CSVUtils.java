@@ -1,7 +1,7 @@
 package ru.bmstu.hadoop.lab2;
 
 class CSVUtils {
-    static final int   INT_ZERO = 0;
+    static final int INT_ZERO = 0;
     static final float FLOAT_ZERO = 0.0f;
 
     static final int TYPE_AIRPORT = 0;
