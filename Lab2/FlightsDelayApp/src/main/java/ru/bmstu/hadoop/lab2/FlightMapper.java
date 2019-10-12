@@ -10,9 +10,9 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if (key.get() > 0) {
-            String[] data = CSVUtils.parseFlightData(value.toString());
+            CSVUtils.parseFlightData(value.toString());
             String delayTime = CSVUtils.getDelayTime();
-            if (CSVUtils.strToFloat(delayTime) > 0.0f) {
+            if (CSVUtils.strToFloat(delayTime) > CSVUtils.FLOAT_ZERO) {
                 String airportId = CSVUtils.getOriginAirportId();
                 context.write(new FlightWritableComparable(CSVUtils.strToInt(airportId), CSVUtils.TYPE_FLIGHT),
                               new Text(delayTime));
