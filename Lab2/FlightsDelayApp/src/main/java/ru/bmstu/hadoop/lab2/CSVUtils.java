@@ -45,7 +45,7 @@ class CSVUtils {
     }
 
     static void parseFlightData(String raw) {
-        flightData = raw.toString().split(",");
+        flightData = raw.split(",");
     }
 
     static String getOriginAirportId() {
