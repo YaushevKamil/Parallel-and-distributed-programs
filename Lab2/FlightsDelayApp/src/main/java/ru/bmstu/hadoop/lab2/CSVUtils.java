@@ -7,11 +7,11 @@ class CSVUtils {
     static final int TYPE_AIRPORT = 0;
     static final int TYPE_FLIGHT = 1;
 
-    static final int ORIGIN_AIRPORT_ID_COLUMN = 14;
-    static final int DELAY_TIME_COLUMN = 18;
+    private static final int ORIGIN_AIRPORT_ID_COLUMN = 14;
+    private static final int DELAY_TIME_COLUMN = 18;
 
-    static final int AIRPORT_ID_COLUMN = 0;
-    static final int AIRPORT_NAME_COLUMN = 1;
+    private static final int AIRPORT_ID_COLUMN = 0;
+    private static final int AIRPORT_NAME_COLUMN = 1;
 
      static String[] airportData; // ????
      static String[] flightData;  // ????
