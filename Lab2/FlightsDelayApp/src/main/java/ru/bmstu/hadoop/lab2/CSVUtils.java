@@ -13,8 +13,8 @@ class CSVUtils {
     static final int AIRPORT_ID_COLUMN = 0;
     static final int AIRPORT_NAME_COLUMN = 1;
 
-    // static String[] airportData; // ????
-    // static String[] flightData;  // ????
+     static String[] airportData; // ????
+     static String[] flightData;  // ????
 
     static int strToInt(String numString) {
         int number = INT_ZERO;
