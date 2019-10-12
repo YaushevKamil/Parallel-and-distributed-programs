@@ -53,7 +53,7 @@ class CSVUtils {
         return airportData.length > 0 ? airportData[AIRPORT_ID_COLUMN] : "";
     }
 
-    static String getDelayTime() {
-        return flightData.length > 0 ? flightData[DELAY_TIME_COLUMN] : "";
+    static String getAirportName() {
+        return airportData.length > 0 ? airportData[AIRPORT_NAME_COLUMN] : "";
     }
 }
