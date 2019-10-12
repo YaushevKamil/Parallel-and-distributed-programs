@@ -33,11 +33,15 @@ class CSVUtils {
     }
 
     static String getAirportId() {
-        return airportData.length > 0 ? airportData[AIRPORT_ID_COLUMN] : "";
+        return airportData.length > 0 ?
+                    airportData[AIRPORT_ID_COLUMN] :
+                    "";
     }
 
     static String getAirportName() {
-        return airportData.length > 0 ? airportData[AIRPORT_NAME_COLUMN] : "";
+        return airportData.length > 0 ?
+                    airportData[AIRPORT_NAME_COLUMN] :
+                    "";
     }
 
     static void parseFlightData(String raw) {
@@ -45,10 +49,14 @@ class CSVUtils {
     }
 
     static String getOriginAirportId() {
-        return flightData.length > 0 ? flightData[ORIGIN_AIRPORT_ID_COLUMN] : "";
+        return flightData.length > 0 ?
+                    flightData[ORIGIN_AIRPORT_ID_COLUMN] :
+                    "";
     }
 
     static String getDelayTime() {
-        return flightData.length > 0 ? flightData[DELAY_TIME_COLUMN] : "";
+        return flightData.length > 0 ?
+                    flightData[DELAY_TIME_COLUMN] :
+                    "";
     }
 }
