@@ -79,19 +79,16 @@ public class FlightWritableComparable implements WritableComparable {
         return (this.airportId == other.airportId) && (this.dataType == other.dataType);
     }
 
-    /*@Override
+    @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = airportId;
-        result = prime * result + dataType;
-        return result;
-    }*/
+        return this.toString().hashCode();
+    }
 
-    /*@Override
+    @Override
     public String toString() {
         return "{" +
                 "airportId:" + airportId + "," +
                 "dataType:" + dataType +
                 "}";
-    }*/
+    }
 }
