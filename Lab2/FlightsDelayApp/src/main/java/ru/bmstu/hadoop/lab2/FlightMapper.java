@@ -1,1 +1,22 @@
-package ru.bmstu.hadoop.lab2;import org.apache.hadoop.io.LongWritable;import org.apache.hadoop.io.Text;import org.apache.hadoop.mapreduce.Mapper;import java.io.IOException;public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableComparable, Text> {    private static final int TYPE_FLIGHT = 1;    private static final int AIRPORT_ID = 14;    private static final int DELAY_TIME = 18;    private static final int INT_ZERO = 0;    private static final float FLOAT_ZERO = 0.0f;    private static int strToInt(String numString) {        int number = INT_ZERO;        try {            number = Integer.parseInt(numString);        } catch (Exception ignored) {}        return number;    }    private static float strToFloat(String numString) {        float number = FLOAT_ZERO;        try {            number = Float.parseFloat(numString);        } catch (Exception ignored) {}        return number;    }    @Override    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {        if (key.get() > 0) {            String[] data = value.toString().split(",");                        String delayTime = data[DELAY_TIME];            if (strToFloat(delayTime) > 0.0f) {                String airportId = data[AIRPORT_ID];                context.write(new FlightWritableComparable(strToInt(airportId), TYPE_FLIGHT), new Text(delayTime));            }        }    }}
+package ru.bmstu.hadoop.lab2;
+
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+
+import java.io.IOException;
+
+public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableComparable, Text> {
+    @Override
+    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+        if (key.get() > 0) {
+            String[] data = CSVUtils.parseFlightData(value.toString());
+            String delayTime = data[CSVUtils.DELAY_TIME_COLUMN];
+            if (CSVUtils.strToFloat(delayTime) > 0.0f) {
+                String airportId = data[CSVUtils.ORIGIN_AIRPORT_ID_COLUMN];
+                context.write(new FlightWritableComparable(CSVUtils.strToInt(airportId), CSVUtils.TYPE_FLIGHT),
+                              new Text(delayTime));
+            }
+        }
+    }
+}
