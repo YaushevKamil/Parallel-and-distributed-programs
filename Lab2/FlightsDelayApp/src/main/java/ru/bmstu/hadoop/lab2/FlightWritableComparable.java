@@ -10,29 +10,27 @@ public class FlightWritableComparable implements WritableComparable {
     private int airportId;
     private int dataType;
 
-    FlightWritableComparable() {}
-
     FlightWritableComparable(int airportId, int dataType) {
         this.airportId = airportId;
         this.dataType = dataType;
     }
 
 
-    public void setAirportId(int airportId) {
-        this.airportId = airportId;
-    }
+//    public void setAirportId(int airportId) {
+//        this.airportId = airportId;
+//    }
 
-    public void setDataType(int dataType) {
-        this.dataType = dataType;
-    }
+//    public void setDataType(int dataType) {
+//        this.dataType = dataType;
+//    }
 
     int getAirportId() {
         return this.airportId;
     }
 
-    public int getDataType() {
-        return this.dataType;
-    }
+//    public int getDataType() {
+//        return this.dataType;
+//    }
 
 
     @Override
@@ -46,7 +44,7 @@ public class FlightWritableComparable implements WritableComparable {
         airportId = in.readInt();
         dataType = in.readInt();
     }
-    
+
     @Override
     public int compareTo(Object o) {
         FlightWritableComparable other = (FlightWritableComparable)o;
