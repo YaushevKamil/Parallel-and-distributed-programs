@@ -17,15 +17,15 @@ class CSVUtils {
      private static String[] flightData;
 
     static int strToInt(String numString) {
-        return numString.length() > 0 ? Integer.parseInt(numString) : INT_ZERO;
+        return numString.length() > 0 ?
+                    Integer.parseInt(numString) :
+                    INT_ZERO;
     }
 
     static float strToFloat(String numString) {
-        float number = FLOAT_ZERO;
-        if (numString.length() > 0) {
-            number = Float.parseFloat(numString);
-        }
-        return number;
+        return numString.length() > 0 ?
+                    Float.parseFloat(numString):
+                    FLOAT_ZERO;
     }
 
     static void parseAirportData(String raw) {
