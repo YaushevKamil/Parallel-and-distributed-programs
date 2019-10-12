@@ -33,12 +33,20 @@ class CSVUtils {
     }
 
     static String[] parseAirportData(String raw) {
-//        airportData = raw.replaceAll("\"", "").split(",");
-        return raw.replaceAll("\"", "").split(",");
+        airportData = raw.replaceAll("\"", "").split(",");
+//        return raw.replaceAll("\"", "").split(",");
+    }
+
+    static String getAirportId() {
+        return flightData[ORIGIN_AIRPORT_ID_COLUMN];
+    }
+
+    static String getDelayTime() {
+        return flightData[DELAY_TIME_COLUMN];
     }
 
     static String[] parseFlightData(String raw) {
-//        flightData = raw.toString().split(",");
-        return raw.toString().split(",");
+        flightData = raw.toString().split(",");
+//        return raw.toString().split(",");
     }
 }
