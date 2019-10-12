@@ -13,15 +13,11 @@ class CSVUtils {
     private static final int AIRPORT_ID_COLUMN = 0;
     private static final int AIRPORT_NAME_COLUMN = 1;
 
-     static String[] airportData; // ????
-     static String[] flightData;  // ????
+     private static String[] airportData;
+     private static String[] flightData;
 
     static int strToInt(String numString) {
-        int number = INT_ZERO;
-        if (numString.length() > 0) {
-            number = Integer.parseInt(numString);
-        }
-        return number;
+        return numString.length() > 0 ? Integer.parseInt(numString) : INT_ZERO;
     }
 
     static float strToFloat(String numString) {
