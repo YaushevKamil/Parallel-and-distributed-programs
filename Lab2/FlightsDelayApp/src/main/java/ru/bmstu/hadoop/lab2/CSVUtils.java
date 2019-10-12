@@ -37,7 +37,7 @@ class CSVUtils {
 //        return raw.replaceAll("\"", "").split(",");
     }
 
-    static String getAirportId() {
+    static String getOriginAirportId() {
         return flightData[ORIGIN_AIRPORT_ID_COLUMN];
     }
 
