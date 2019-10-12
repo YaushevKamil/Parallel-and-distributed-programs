@@ -69,10 +69,6 @@ public class FlightWritableComparable implements WritableComparable {
         }
         FlightWritableComparable other = (FlightWritableComparable)o;
 
-        /*return (this == o) ||
-               ((o != null) && (this.getClass() == o.getClass()) &&
-                (this.airportId == other.airportId) && (this.dataType == other.dataType));*/
-
         return (this.airportId == other.airportId) && (this.dataType == other.dataType);
     }
 
