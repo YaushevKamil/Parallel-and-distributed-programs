@@ -37,11 +37,11 @@ class CSVUtils {
     }
 
     static String getOriginAirportId() {
-        return flightData[ORIGIN_AIRPORT_ID_COLUMN];
+        return flightData.length > 0 ? flightData[ORIGIN_AIRPORT_ID_COLUMN] : "";
     }
 
     static String getDelayTime() {
-        return flightData[DELAY_TIME_COLUMN];
+        return flightData.length > 0 ? flightData[DELAY_TIME_COLUMN] : "";
     }
 
     static String[] parseFlightData(String raw) {
