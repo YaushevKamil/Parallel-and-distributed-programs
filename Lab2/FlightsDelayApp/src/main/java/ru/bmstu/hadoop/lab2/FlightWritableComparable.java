@@ -46,8 +46,7 @@ public class FlightWritableComparable implements WritableComparable {
         airportId = in.readInt();
         dataType = in.readInt();
     }
-
-
+    
     @Override
     public int compareTo(Object o) {
         FlightWritableComparable other = (FlightWritableComparable)o;
