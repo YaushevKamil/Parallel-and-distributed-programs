@@ -85,7 +85,7 @@ public class FlightWritableComparable implements WritableComparable {
     public String toString() {
         return "{" +
                 "airportId:" + airportId + "," +
-                "dataType:" + dataType +
+                "dataType:"  + dataType  +
                 "}";
     }
 }
