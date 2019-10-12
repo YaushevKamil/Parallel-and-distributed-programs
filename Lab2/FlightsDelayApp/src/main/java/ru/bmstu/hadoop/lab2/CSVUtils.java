@@ -32,9 +32,8 @@ class CSVUtils {
         return number;
     }
 
-    static String[] parseAirportData(String raw) {
+    static void parseAirportData(String raw) {
         airportData = raw.replaceAll("\"", "").split(",");
-//        return raw.replaceAll("\"", "").split(",");
     }
 
     static String getOriginAirportId() {
