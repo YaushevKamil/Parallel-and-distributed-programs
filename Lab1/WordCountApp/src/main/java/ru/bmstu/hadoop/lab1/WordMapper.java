@@ -11,7 +11,6 @@ public class WordMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String[] words = value.toString().toLowerCase().split("[\\p{Punct}\\p{Space}—]");
-
         for (String word : words) {
             context.write(new Text(word), new IntWritable(1));
         }
