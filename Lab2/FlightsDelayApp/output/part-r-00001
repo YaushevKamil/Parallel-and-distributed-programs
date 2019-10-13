@@ -1,0 +1,160 @@
+Airport: Allentown/Bethlehem/Easton	Delay time: { Min: 11.0, Average: 15.4, Max: 23.0 }
+Airport: Aberdeen	Delay time: { Min: 4.0, Average: 13.0, Max: 22.0 }
+Airport: Waco	Delay time: { Min: 4.0, Average: 26.222221, Max: 74.0 }
+Airport: Arcata/Eureka	Delay time: { Min: 11.0, Average: 64.666664, Max: 96.0 }
+Airport: Alexandria	Delay time: { Min: 1.0, Average: 15.625, Max: 55.0 }
+Airport: Albany	Delay time: { Min: 1.0, Average: 32.92857, Max: 241.0 }
+Airport: Amarillo	Delay time: { Min: 1.0, Average: 32.31818, Max: 95.0 }
+Airport: Anchorage	Delay time: { Min: 1.0, Average: 39.580647, Max: 375.0 }
+Airport: Atlanta	Delay time: { Min: 1.0, Average: 33.39887, Max: 653.0 }
+Airport: Austin	Delay time: { Min: 1.0, Average: 29.623377, Max: 340.0 }
+Airport: Asheville	Delay time: { Min: 1.0, Average: 40.333332, Max: 152.0 }
+Airport: Kalamazoo	Delay time: { Min: 1.0, Average: 54.625, Max: 122.0 }
+Airport: Hartford	Delay time: { Min: 1.0, Average: 32.933334, Max: 293.0 }
+Airport: Bethel	Delay time: { Min: 9.0, Average: 9.0, Max: 9.0 }
+Airport: Bakersfield	Delay time: { Min: 3.0, Average: 43.923077, Max: 141.0 }
+Airport: Birmingham	Delay time: { Min: 1.0, Average: 30.818182, Max: 154.0 }
+Airport: Bismarck/Mandan	Delay time: { Min: 2.0, Average: 44.4, Max: 272.0 }
+Airport: Bemidji	Delay time: { Min: 2.0, Average: 3.0, Max: 4.0 }
+Airport: Bloomington/Normal	Delay time: { Min: 3.0, Average: 51.833332, Max: 241.0 }
+Airport: Nashville	Delay time: { Min: 1.0, Average: 31.838926, Max: 391.0 }
+Airport: Boise	Delay time: { Min: 1.0, Average: 27.87931, Max: 122.0 }
+Airport: Boston	Delay time: { Min: 1.0, Average: 34.471264, Max: 292.0 }
+Airport: Brunswick	Delay time: { Min: 1.0, Average: 94.0, Max: 187.0 }
+Airport: Brainerd	Delay time: { Min: 6.0, Average: 6.0, Max: 6.0 }
+Airport: Brownsville	Delay time: { Min: 6.0, Average: 22.5, Max: 51.0 }
+Airport: Butte	Delay time: { Min: 9.0, Average: 10.5, Max: 12.0 }
+Airport: Baton Rouge	Delay time: { Min: 1.0, Average: 41.64, Max: 200.0 }
+Airport: Burlington	Delay time: { Min: 2.0, Average: 55.555557, Max: 144.0 }
+Airport: Baltimore	Delay time: { Min: 1.0, Average: 30.637037, Max: 475.0 }
+Airport: Bozeman	Delay time: { Min: 1.0, Average: 53.727272, Max: 214.0 }
+Airport: Cedar Rapids/Iowa City	Delay time: { Min: 3.0, Average: 44.88889, Max: 206.0 }
+Airport: Sault Ste. Marie	Delay time: { Min: 3.0, Average: 45.666668, Max: 123.0 }
+Airport: Carlsbad	Delay time: { Min: 1.0, Average: 12.0, Max: 24.0 }
+Airport: College Station/Bryan	Delay time: { Min: 1.0, Average: 16.363636, Max: 40.0 }
+Airport: Charlotte	Delay time: { Min: 1.0, Average: 25.70914, Max: 263.0 }
+Airport: Champaign/Urbana	Delay time: { Min: 1.0, Average: 41.0, Max: 129.0 }
+Airport: Cody	Delay time: { Min: 1.0, Average: 9.333333, Max: 25.0 }
+Airport: Colorado Springs	Delay time: { Min: 3.0, Average: 45.05263, Max: 224.0 }
+Airport: Columbia	Delay time: { Min: 3.0, Average: 117.5, Max: 380.0 }
+Airport: Cincinnati	Delay time: { Min: 1.0, Average: 32.06173, Max: 179.0 }
+Airport: Mosinee	Delay time: { Min: 2.0, Average: 50.166668, Max: 150.0 }
+Airport: Dallas	Delay time: { Min: 1.0, Average: 27.5291, Max: 278.0 }
+Airport: Dayton	Delay time: { Min: 2.0, Average: 29.448277, Max: 218.0 }
+Airport: Dickinson	Delay time: { Min: 5.0, Average: 55.25, Max: 175.0 }
+Airport: Duluth	Delay time: { Min: 2.0, Average: 69.0, Max: 177.0 }
+Airport: Durango	Delay time: { Min: 4.0, Average: 34.285713, Max: 122.0 }
+Airport: Des Moines	Delay time: { Min: 1.0, Average: 34.45238, Max: 167.0 }
+Airport: Detroit	Delay time: { Min: 1.0, Average: 34.87156, Max: 514.0 }
+Airport: Devils Lake	Delay time: { Min: 13.0, Average: 63.5, Max: 114.0 }
+Airport: Eau Claire	Delay time: { Min: 3.0, Average: 110.75, Max: 264.0 }
+Airport: Panama City	Delay time: { Min: 2.0, Average: 12.25, Max: 31.0 }
+Airport: Eagle	Delay time: { Min: 1.0, Average: 42.666668, Max: 124.0 }
+Airport: Elko	Delay time: { Min: 10.0, Average: 26.666666, Max: 59.0 }
+Airport: Elmira/Corning	Delay time: { Min: 1.0, Average: 31.777779, Max: 64.0 }
+Airport: Erie	Delay time: { Min: 3.0, Average: 23.2, Max: 70.0 }
+Airport: Escanaba	Delay time: { Min: 35.0, Average: 140.0, Max: 245.0 }
+Airport: Eugene	Delay time: { Min: 3.0, Average: 24.736841, Max: 94.0 }
+Airport: Fargo	Delay time: { Min: 1.0, Average: 28.481482, Max: 127.0 }
+Airport: Fayetteville	Delay time: { Min: 4.0, Average: 16.0, Max: 41.0 }
+Airport: Flagstaff	Delay time: { Min: 3.0, Average: 47.0, Max: 112.0 }
+Airport: Fort Lauderdale	Delay time: { Min: 1.0, Average: 32.903225, Max: 269.0 }
+Airport: Flint	Delay time: { Min: 1.0, Average: 46.142857, Max: 171.0 }
+Airport: Sioux Falls	Delay time: { Min: 1.0, Average: 42.28125, Max: 165.0 }
+Airport: Fort Wayne	Delay time: { Min: 7.0, Average: 38.454544, Max: 129.0 }
+Airport: Gillette	Delay time: { Min: 8.0, Average: 30.2, Max: 56.0 }
+Airport: Garden City	Delay time: { Min: 22.0, Average: 22.0, Max: 22.0 }
+Airport: Longview	Delay time: { Min: 12.0, Average: 48.666668, Max: 92.0 }
+Airport: Grand Junction	Delay time: { Min: 1.0, Average: 12.75, Max: 39.0 }
+Airport: Gainesville	Delay time: { Min: 2.0, Average: 16.3, Max: 86.0 }
+Airport: Gulfport/Biloxi	Delay time: { Min: 2.0, Average: 33.416668, Max: 113.0 }
+Airport: Green Bay	Delay time: { Min: 1.0, Average: 25.695652, Max: 113.0 }
+Airport: Greensboro/High Point	Delay time: { Min: 1.0, Average: 35.29032, Max: 307.0 }
+Airport: Great Falls	Delay time: { Min: 1.0, Average: 25.5, Max: 89.0 }
+Airport: Columbus	Delay time: { Min: 11.0, Average: 26.5, Max: 42.0 }
+Airport: Hibbing	Delay time: { Min: 1.0, Average: 22.25, Max: 51.0 }
+Airport: Honolulu	Delay time: { Min: 1.0, Average: 25.0, Max: 1013.0 }
+Airport: Hobbs	Delay time: { Min: 2.0, Average: 26.666666, Max: 73.0 }
+Airport: Houston	Delay time: { Min: 1.0, Average: 25.875, Max: 171.0 }
+Airport: White Plains	Delay time: { Min: 1.0, Average: 40.892857, Max: 233.0 }
+Airport: Huntsville	Delay time: { Min: 1.0, Average: 46.45, Max: 159.0 }
+Airport: Hays	Delay time: { Min: 13.0, Average: 14.0, Max: 15.0 }
+Airport: Niagara Falls	Delay time: { Min: 26.0, Average: 32.0, Max: 38.0 }
+Airport: Wilmington	Delay time: { Min: 95.0, Average: 95.0, Max: 95.0 }
+Airport: Iron Mountain/Kingsfd	Delay time: { Min: 69.0, Average: 91.5, Max: 114.0 }
+Airport: Indianapolis	Delay time: { Min: 1.0, Average: 30.113401, Max: 262.0 }
+Airport: International Falls	Delay time: { Min: 33.0, Average: 33.0, Max: 33.0 }
+Airport: Williston	Delay time: { Min: 2.0, Average: 30.0, Max: 89.0 }
+Airport: Islip	Delay time: { Min: 1.0, Average: 42.07143, Max: 240.0 }
+Airport: Jackson	Delay time: { Min: 1.0, Average: 39.347828, Max: 320.0 }
+Airport: Jacksonville	Delay time: { Min: 1.0, Average: 31.73585, Max: 142.0 }
+Airport: Joplin	Delay time: { Min: 12.0, Average: 30.333334, Max: 47.0 }
+Airport: Jamestown	Delay time: { Min: 5.0, Average: 55.0, Max: 104.0 }
+Airport: Juneau	Delay time: { Min: 1.0, Average: 12.6, Max: 51.0 }
+Airport: Ketchikan	Delay time: { Min: 4.0, Average: 18.1, Max: 43.0 }
+Airport: Las Vegas	Delay time: { Min: 1.0, Average: 29.983425, Max: 251.0 }
+Airport: Lawton/Fort Sill	Delay time: { Min: 10.0, Average: 28.2, Max: 45.0 }
+Airport: Lake Charles	Delay time: { Min: 7.0, Average: 18.0, Max: 43.0 }
+Airport: Lexington	Delay time: { Min: 1.0, Average: 28.791666, Max: 136.0 }
+Airport: Lafayette	Delay time: { Min: 1.0, Average: 25.142857, Max: 92.0 }
+Airport: New York	Delay time: { Min: 1.0, Average: 39.109787, Max: 331.0 }
+Airport: Lincoln	Delay time: { Min: 1.0, Average: 37.0, Max: 123.0 }
+Airport: Laredo	Delay time: { Min: 2.0, Average: 33.7, Max: 172.0 }
+Airport: Meridian	Delay time: { Min: 11.0, Average: 89.666664, Max: 246.0 }
+Airport: Montgomery	Delay time: { Min: 3.0, Average: 27.666666, Max: 60.0 }
+Airport: Miami	Delay time: { Min: 1.0, Average: 30.81362, Max: 237.0 }
+Airport: Moline	Delay time: { Min: 1.0, Average: 46.75, Max: 205.0 }
+Airport: Monroe	Delay time: { Min: 7.0, Average: 54.363636, Max: 161.0 }
+Airport: Minot	Delay time: { Min: 2.0, Average: 21.428572, Max: 61.0 }
+Airport: Marquette	Delay time: { Min: 175.0, Average: 175.0, Max: 175.0 }
+Airport: Madison	Delay time: { Min: 2.0, Average: 47.1875, Max: 251.0 }
+Airport: Minneapolis	Delay time: { Min: 1.0, Average: 29.308176, Max: 371.0 }
+Airport: New Orleans	Delay time: { Min: 1.0, Average: 27.72072, Max: 199.0 }
+Airport: Myrtle Beach	Delay time: { Min: 6.0, Average: 36.11111, Max: 104.0 }
+Airport: Jacksonville/Camp Lejeune	Delay time: { Min: 2.0, Average: 12.2, Max: 33.0 }
+Airport: Oklahoma City	Delay time: { Min: 1.0, Average: 34.491524, Max: 150.0 }
+Airport: Omaha	Delay time: { Min: 1.0, Average: 27.482143, Max: 140.0 }
+Airport: Nome	Delay time: { Min: 8.0, Average: 11.0, Max: 14.0 }
+Airport: Ontario	Delay time: { Min: 1.0, Average: 22.783333, Max: 97.0 }
+Airport: Norfolk	Delay time: { Min: 1.0, Average: 29.5, Max: 166.0 }
+Airport: Plattsburgh	Delay time: { Min: 9.0, Average: 18.0, Max: 32.0 }
+Airport: West Palm Beach/Palm Beach	Delay time: { Min: 1.0, Average: 31.366667, Max: 141.0 }
+Airport: Portland	Delay time: { Min: 1.0, Average: 27.457144, Max: 185.0 }
+Airport: Phoenix	Delay time: { Min: 1.0, Average: 30.24569, Max: 498.0 }
+Airport: Hattiesburg/Laurel	Delay time: { Min: 14.0, Average: 14.0, Max: 14.0 }
+Airport: Pocatello	Delay time: { Min: 2.0, Average: 3.3333333, Max: 5.0 }
+Airport: Pensacola	Delay time: { Min: 1.0, Average: 25.571428, Max: 176.0 }
+Airport: Providence	Delay time: { Min: 1.0, Average: 24.60465, Max: 95.0 }
+Airport: Portland	Delay time: { Min: 1.0, Average: 25.777779, Max: 97.0 }
+Airport: Rapid City	Delay time: { Min: 2.0, Average: 36.142857, Max: 108.0 }
+Airport: Redding	Delay time: { Min: 3.0, Average: 47.5, Max: 134.0 }
+Airport: Bend/Redmond	Delay time: { Min: 2.0, Average: 35.6, Max: 131.0 }
+Airport: Rock Springs	Delay time: { Min: 4.0, Average: 51.333332, Max: 138.0 }
+Airport: Rochester	Delay time: { Min: 1.0, Average: 38.1, Max: 179.0 }
+Airport: Fort Myers	Delay time: { Min: 1.0, Average: 38.02041, Max: 484.0 }
+Airport: San Diego	Delay time: { Min: 1.0, Average: 21.138393, Max: 267.0 }
+Airport: San Antonio	Delay time: { Min: 1.0, Average: 33.533897, Max: 391.0 }
+Airport: Savannah	Delay time: { Min: 3.0, Average: 32.285713, Max: 201.0 }
+Airport: Santa Barbara	Delay time: { Min: 1.0, Average: 33.11111, Max: 152.0 }
+Airport: Deadhorse	Delay time: { Min: 3.0, Average: 8.666667, Max: 12.0 }
+Airport: State College	Delay time: { Min: 3.0, Average: 17.25, Max: 33.0 }
+Airport: Seattle	Delay time: { Min: 1.0, Average: 32.295383, Max: 531.0 }
+Airport: San Francisco	Delay time: { Min: 1.0, Average: 44.224823, Max: 556.0 }
+Airport: Springfield	Delay time: { Min: 3.0, Average: 54.590908, Max: 223.0 }
+Airport: San Jose	Delay time: { Min: 1.0, Average: 27.421875, Max: 206.0 }
+Airport: San Juan	Delay time: { Min: 1.0, Average: 32.086956, Max: 209.0 }
+Airport: Salt Lake City	Delay time: { Min: 1.0, Average: 27.509804, Max: 475.0 }
+Airport: Sacramento	Delay time: { Min: 1.0, Average: 26.52459, Max: 135.0 }
+Airport: Santa Maria	Delay time: { Min: 22.0, Average: 22.0, Max: 22.0 }
+Airport: Christiansted	Delay time: { Min: 4.0, Average: 8.0, Max: 12.0 }
+Airport: Sun Valley/Hailey/Ketchum	Delay time: { Min: 13.0, Average: 24.5, Max: 33.0 }
+Airport: Tallahassee	Delay time: { Min: 1.0, Average: 17.0, Max: 55.0 }
+Airport: Toledo	Delay time: { Min: 4.0, Average: 22.6, Max: 40.0 }
+Airport: Bristol/Johnson City/Kingsport	Delay time: { Min: 1.0, Average: 36.25, Max: 78.0 }
+Airport: Twin Falls	Delay time: { Min: 1.0, Average: 12.0, Max: 32.0 }
+Airport: Texarkana	Delay time: { Min: 12.0, Average: 12.0, Max: 12.0 }
+Airport: Tyler	Delay time: { Min: 4.0, Average: 50.2, Max: 149.0 }
+Airport: Valdosta	Delay time: { Min: 20.0, Average: 35.0, Max: 50.0 }
+Airport: Wrangell	Delay time: { Min: 31.0, Average: 31.0, Max: 31.0 }
+Airport: Fayetteville	Delay time: { Min: 1.0, Average: 32.88889, Max: 119.0 }
+Airport: Yakutat	Delay time: { Min: 3.0, Average: 21.333334, Max: 41.0 }
