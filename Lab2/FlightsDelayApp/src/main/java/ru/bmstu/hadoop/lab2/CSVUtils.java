@@ -32,10 +32,8 @@ class CSVUtils {
         airportData = raw.replaceAll("\"", "").split(",");
     }
 
-    static String getAirportId() {
-        return airportData.length > 0 ?
-                    airportData[AIRPORT_ID_COLUMN] :
-                    "";
+    static int getAirportId() {
+        return strToInt(airportData[AIRPORT_ID_COLUMN]);
     }
 
     static String getAirportName() {
@@ -48,13 +46,15 @@ class CSVUtils {
         flightData = raw.split(",");
     }
 
-    static String getOriginAirportId() {
-        return flightData.length > 0 ?
-                    flightData[ORIGIN_AIRPORT_ID_COLUMN] :
-                    "";
+    static int getOriginAirportId() {
+        return strToInt(flightData[ORIGIN_AIRPORT_ID_COLUMN]);
     }
 
-    static String getDelayTime() {
+    static float getFloatDelayTime() {
+        return strToFloat(flightData[DELAY_TIME_COLUMN]);
+    }
+
+    static String getStringDelayTime() {
         return flightData.length > 0 ?
                     flightData[DELAY_TIME_COLUMN] :
                     "";

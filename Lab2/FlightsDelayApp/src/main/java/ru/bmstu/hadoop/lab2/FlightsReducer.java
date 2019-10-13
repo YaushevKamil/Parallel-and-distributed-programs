@@ -20,15 +20,12 @@ public class FlightsReducer extends Reducer<FlightWritableComparable, Text, Text
                 while (iter.hasNext()) {
                     float curr = CSVUtils.strToFloat(iter.next().toString());
                     if (count == 0) min = curr;
-                    if (curr < min) {
-                        min = curr;
-                    } else if (curr > max) {
-                        max = curr;
-                    }
+                    if (curr < min) min = curr;
+                    else if (curr > max) max = curr;
                     sum += curr;
                     count++;
                 }
-                float average = sum / count;
+                String average = String.format("%.2f", sum / count);
                 String delayStat = "Delay time: { " +
                                        "Min: "     + min     + ", " +
                                        "Average: " + average + ", " +

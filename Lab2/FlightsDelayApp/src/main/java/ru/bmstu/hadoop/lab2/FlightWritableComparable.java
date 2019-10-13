@@ -10,6 +10,8 @@ public class FlightWritableComparable implements WritableComparable {
     private int airportId;
     private int dataType;
 
+    FlightWritableComparable() {}
+
     FlightWritableComparable(int airportId, int dataType) {
         this.airportId = airportId;
         this.dataType = dataType;
@@ -62,13 +64,11 @@ public class FlightWritableComparable implements WritableComparable {
 
     @Override
     public boolean equals(Object o) {
-        if ((o == null) || (this.getClass() != o.getClass())) {
+        if (this == o) return true;
+        if (!(o instanceof FlightWritableComparable)) {
             return false;
-        } else if (this == o) {
-            return true;
         }
         FlightWritableComparable other = (FlightWritableComparable)o;
-
         return (this.airportId == other.airportId) && (this.dataType == other.dataType);
     }
 
