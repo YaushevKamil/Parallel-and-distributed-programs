@@ -14,7 +14,6 @@ public class WordReducer extends Reducer<Text, IntWritable, Text, LongWritable> 
         for (IntWritable value : values) {
             wordCount += value.get();
         }
-        
         context.write(key, new LongWritable(wordCount));
     }
 }
