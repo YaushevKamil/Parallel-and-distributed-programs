@@ -61,14 +61,9 @@ class CSVUtils {
         return strToInt(flightData[DEST_AIRPORT_ID_COLUMN]);
     }
 
-    static float getFloatDelayTime() {
+    static float getFloatDelayTime(String raw) {
+        String[] flightData = raw.split(",");
         return strToFloat(flightData[DELAY_TIME_COLUMN]);
-    }
-
-    static String getStringDelayTime() {
-        return flightData.length > 0 ?
-                flightData[DELAY_TIME_COLUMN] :
-                "";
     }
 
     static boolean getCancelled() {
