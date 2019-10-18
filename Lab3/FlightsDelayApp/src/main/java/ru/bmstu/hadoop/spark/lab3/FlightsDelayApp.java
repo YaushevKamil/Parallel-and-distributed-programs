@@ -17,7 +17,7 @@ public class FlightsDelayApp {
             .filter(s -> !s.contains("YEAR"))
             .mapToPair(s -> {
                 int originAirportID = CSVUtils.getOriginAirportId();
-                int destAirportID
+                int destAirportID = CSVUtils.getDestAirportId();    
                 return new Tuple2<>(new Tuple2<>(originAirportID,destAirportID),
                         new FlightSerializable(originAirportID,destAirportID,delayTime,isCancelled));
             });
