@@ -27,7 +27,7 @@ public class FlightsDelayApp {
                         new FlightSerializable(originAirportID, destAirportID, delayTime, isCancelled));
             });
 
-    JavaPairRDD<>
+    JavaPairRDD<Integer, String> 
 
     final Broadcast<Map<String, AirportData>> airportsBroadcasted = sc.broadcast(stringAirportDataMap);
 
