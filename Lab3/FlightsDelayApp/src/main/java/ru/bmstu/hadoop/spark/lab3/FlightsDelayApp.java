@@ -30,7 +30,9 @@ public class FlightsDelayApp {
     JavaPairRDD<Integer, String> airportsData = airportsTable
             .filter(s -> !s.contains(AIRPORTS_FIRST_COLUMN))
             .mapToPair(s -> {
-                return new Tuple2<>()
+                return new Tuple2<>(
+                        
+                )
             });
 
     final Broadcast<Map<String, AirportData>> airportsBroadcasted = sc.broadcast(stringAirportDataMap);
