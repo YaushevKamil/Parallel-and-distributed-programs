@@ -5,6 +5,9 @@ class CSVUtils {
     static final String AIRPORTS_CSV = "L_AIRPORT_ID.csv";
     static final String OUTPUT_FILE  = "output";
 
+    static final String FLIGHTS_FIRST_COLUMN  = "YEAR";
+    static final String AIRPORTS_FIRST_COLUMN = "Code";
+
     static final int  INT_ZERO   = 0;
     static final float FLOAT_ZERO = 0.0f;
 
@@ -19,8 +22,7 @@ class CSVUtils {
     private static final int AIRPORT_ID_COLUMN   = 0;
     private static final int AIRPORT_NAME_COLUMN = 1;
 
-    static final String FLIGHTS_FIRST_COLUMN  = "YEAR";
-    static final String AIRPORTS_FIRST_COLUMN = "Code";
+
 
     private static String[] airportData;
     private static String[] flightData;
