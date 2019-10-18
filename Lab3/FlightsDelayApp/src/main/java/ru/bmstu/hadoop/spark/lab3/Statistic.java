@@ -17,35 +17,35 @@ public class Statistic implements Serializable {
         this.maxDelay = maxDelay;
     }
 
-    public int getFlightsCount() {
+    int getFlightsCount() {
         return flightsCount;
     }
 
-    public int getDelayedFlightsCount() {
+    int getDelayedFlightsCount() {
         return delayedFlightsCount;
     }
 
-    public int getCancelledFlightsCount() {
+    int getCancelledFlightsCount() {
         return cancelledFlightsCount;
     }
 
-    public float getMaxDelay() {
+    float getMaxDelay() {
         return maxDelay;
     }
 
-    public void setFlightsCount(int flightsCount) {
+    void setFlightsCount(int flightsCount) {
         this.flightsCount = flightsCount;
     }
 
-    public void setDelayedFlightsCount(int delayedFlightsCount) {
+    void setDelayedFlightsCount(int delayedFlightsCount) {
         this.delayedFlightsCount = delayedFlightsCount;
     }
 
-    public void setCancelledFlightsCount(int cancelledFlightsCount) {
+    void setCancelledFlightsCount(int cancelledFlightsCount) {
         this.cancelledFlightsCount = cancelledFlightsCount;
     }
 
-    public void setMaxDelay(float maxDelay) {
+    void setMaxDelay(float maxDelay) {
         this.maxDelay = maxDelay;
     }
 }
