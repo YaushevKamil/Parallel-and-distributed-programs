@@ -22,8 +22,6 @@ class CSVUtils {
     private static final int AIRPORT_ID_COLUMN   = 0;
     private static final int AIRPORT_NAME_COLUMN = 1;
 
-
-
     private static String[] airportData;
     private static String[] flightData;
 
@@ -53,11 +51,8 @@ class CSVUtils {
                 "";
     }
 
-    static void parseFlightData(String raw) {
+    static int getOriginAirportId(String raw) {
         flightData = raw.split(",");
-    }
-
-    static int getOriginAirportId() {
         return strToInt(flightData[ORIGIN_AIRPORT_ID_COLUMN]);
     }
 
