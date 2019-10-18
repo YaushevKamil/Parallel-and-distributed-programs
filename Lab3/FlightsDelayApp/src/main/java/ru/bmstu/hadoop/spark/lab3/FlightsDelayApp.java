@@ -54,5 +54,5 @@ public class FlightsDelayApp {
                     Statistic::add).mapToPair(map -> new Tuple2<>(map._1(), Statistic.resString(map._2()))
             );
 
-    JavaRDD<String> result = getap
+    JavaRDD<String> result = flightDataStat.
 }
