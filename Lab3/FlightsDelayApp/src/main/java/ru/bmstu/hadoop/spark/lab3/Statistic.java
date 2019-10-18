@@ -50,7 +50,7 @@ public class Statistic implements Serializable {
     }
 
     static Statistic addValue(Statistic stat, boolean isDelayed, boolean isCancelled, float delayTime) {
-        return new
+        return new Statistic();
     }
 
     @Override
