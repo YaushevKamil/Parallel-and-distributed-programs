@@ -53,7 +53,7 @@ public class Statistic implements Serializable {
         return new Statistic(stat.getFlightsCount() + 1,
                              isDelayed ? stat.getDelayedFlightsCount() + 1 : stat.getDelayedFlightsCount(),
                              isCancelled ? stat.getCancelledFlightsCount() + 1 : stat.getDelayedFlightsCount(),
-                             delayTime > stat.getMaxDelay() : );
+                             delayTime > stat.getMaxDelay() ? delayTime : stat.getMaxDelay());
     }
 
     @Override
