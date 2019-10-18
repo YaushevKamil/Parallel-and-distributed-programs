@@ -1,7 +1,9 @@
 package ru.bmstu.hadoop.spark.lab3;
 
 class CSVUtils {
-    public static final String FLIGHTS_CSV = "664600583_T_ONTIME_sample.csv";
+    static final String FLIGHTS_CSV = "664600583_T_ONTIME_sample.csv";
+    static final String AIRPORTS_CSV = "L_AIRPORT_ID.csv";
+
     static final int  INT_ZERO   = 0;
     static final float FLOAT_ZERO = 0.0f;
 
