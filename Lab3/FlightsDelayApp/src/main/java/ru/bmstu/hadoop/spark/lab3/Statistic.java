@@ -50,8 +50,9 @@ public class Statistic implements Serializable {
     }
 
     static Statistic addValue(Statistic stat, boolean isDelayed, boolean isCancelled, float delayTime) {
-        return new Statistic(++stat.getFlightsCount(),
-                             isDelayed ? );
+        return new Statistic(stat.getFlightsCount() + 1,
+                             isDelayed ? stat.getDelayedFlightsCount() + 1 : stat.getDelayedFlightsCount(),
+                             isCancelled ? stat.getCancelledFlightsCount());
     }
 
     @Override
