@@ -17,5 +17,5 @@ public class FlightsDelayApp {
             .mapToPair(s -> {
 
             });
-    JavaRDD<String> result
+    JavaRDD<String> result = 
 }
