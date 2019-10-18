@@ -41,7 +41,7 @@ class CSVUtils {
         airportData = raw.replaceAll("\"", "").split(",");
     }
 
-    static int getAirportId() {
+    static int getAirportId(String raw) {
         String[] airportData = raw.replaceAll("\"", "").split(",");
         return strToInt(airportData[AIRPORT_ID_COLUMN]);
     }
