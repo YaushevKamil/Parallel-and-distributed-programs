@@ -15,7 +15,7 @@ public class FlightsDelayApp {
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab5");
         JavaSparkContext sc = new JavaSparkContext(conf);
-        
+
         JavaRDD<String> airportsTable = sc.textFile(AIRPORTS_CSV);
         JavaRDD<String> flightsTable  = sc.textFile(FLIGHTS_CSV);
 
@@ -53,16 +53,12 @@ public class FlightsDelayApp {
                 .mapToPair(s -> new Tuple2<>(s._1(), Statistic.outputString(s._2())));
 
         JavaRDD<String> result = flightDataStat
-                .map(k -> {
-                    Map<Integer, String> airportID = airportsBroadcast.value();
-                    Tuple2<Integer, Integer> key = k._1();
-                    String value = k._2();
-                    String originAirportID = airportID.get(key._1());
-                    String destAirportID = airportID.get(key._2());
-                    return "{ " +
-                            originAirportID + " -> " + destAirportID + "\t" + value +
-                            "} ";
-                });
+                .map(k -> "{" +
+                                airportsBroadcast.value().get(k._1()._1()) + " -> " +
+                                airportsBroadcast.value().get(k._1()._2()) + "\t"   +
+                                k._2() +
+                           "}"
+                        );
         result.saveAsTextFile(OUTPUT_FILE);
-    }
-}
+    }airportsBroadcast.value().get(k._1()._1())
+}airportsBroadcast.value().get(k._1()._2())
