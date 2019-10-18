@@ -49,7 +49,7 @@ public class Statistic implements Serializable {
                               statA.getMaxDelay()               + statB.getMaxDelay());
     }
 
-    static float getPercent(int value, int maxValue) {
+    private static float getPercent(int value, int maxValue) {
         return (float)value / (float)maxValue * HUNDRED_PERCENT;
     }
 
