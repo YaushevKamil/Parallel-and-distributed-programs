@@ -19,6 +19,7 @@ public class FlightsDelayApp {
                 int originAirportID = CSVUtils.getOriginAirportId();
                 int destAirportID = CSVUtils.getDestAirportId();
                 float delayTime = CSVUtils.getFloatDelayTime();
+                float isCancelled = 
                 return new Tuple2<>(new Tuple2<>(originAirportID,destAirportID),
                         new FlightSerializable(originAirportID,destAirportID,delayTime,isCancelled));
             });
