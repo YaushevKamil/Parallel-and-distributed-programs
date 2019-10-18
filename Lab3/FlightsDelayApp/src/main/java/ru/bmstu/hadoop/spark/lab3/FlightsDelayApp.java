@@ -61,6 +61,6 @@ public class FlightsDelayApp {
                 String value = k._2();
                 String originAirportID = airportID.get(key._1());
                 String destAirportID = airportID.get(key._2());
-                return originAirportID + " -> " + destAirportID + 
+                return originAirportID + " -> " + destAirportID + "\t + value";
             });
 }
