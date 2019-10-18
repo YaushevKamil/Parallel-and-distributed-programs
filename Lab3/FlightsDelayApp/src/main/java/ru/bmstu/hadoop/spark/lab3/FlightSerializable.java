@@ -52,7 +52,7 @@ public class FlightSerializable implements Serializable {
     @Override
     public String toString() {
         return "FlightSerializable" + "{"
-                    "originAirportID:" + originAirportID +
-                    "destAirportID"    + destAirportID   +
+                    "originAirportID:" + originAirportID + ","
+                    "destAirportID"    + destAirportID   + ","
     }
 }
