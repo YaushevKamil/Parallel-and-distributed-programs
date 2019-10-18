@@ -14,11 +14,11 @@ public class Statistic implements Serializable {
 
     public Statistic() {}
 
-    Statistic(int flightsCount, int delayTime, int cancelledFlightsCount, float maxDelay) {
+    Statistic(int flightsCount, int delayTime, boolean isCancelled, float maxDelay) {
         this.flightsCount = flightsCount;
         this.delayedFlightsCount = delayTime > FLOAT_ZERO ? 1 : 0;
-        this.cancelledFlightsCount = cancelledFlightsCount;
-        this.maxDelay = maxDelay;
+        this.cancelledFlightsCount = isCancelled ? 1 : 0;
+        this.maxDelay = delayTime;
     }
 
     int getFlightsCount() {
