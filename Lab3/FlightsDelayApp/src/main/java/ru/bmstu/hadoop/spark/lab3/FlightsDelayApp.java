@@ -49,7 +49,8 @@ public class FlightsDelayApp {
                                        p.getDelayTime()),
                     (count, p) -> Statistic.addValue(
                             count,
-                            p -> get),
+                            p -> 
+                            p -> getCancelled(),),
                     Statistic::add).mapToPair(m -> new Tuple2<>())
             );
 
