@@ -51,10 +51,11 @@ public class FlightSerializable implements Serializable {
 
     @Override
     public String toString() {
-        return "FlightSerializable" + "{"
-                    "originAirportID:" + originAirportID + ","
-                    "destAirportID:"   + destAirportID   + ","
-                    "delayTime:"       + delayTime       + ","
-                    "isCancelled:"     + isCancelled
+        return "FlightSerializable" + "{" +
+                    "originAirportID:" + originAirportID + "," +
+                    "destAirportID:"   + destAirportID   + "," +
+                    "delayTime:"       + delayTime       + "," +
+                    "isCancelled:"     + isCancelled     +
+               "}";
     }
 }
