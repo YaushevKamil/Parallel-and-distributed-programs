@@ -60,6 +60,7 @@ public class FlightsDelayApp {
                 Tuple2<Integer, Integer> key = k._1();
                 String value = k._2();
                 String originAirportID = airportID.get(key._1());
-                String destAirportID = airportID.get()
+                String destAirportID = airportID.get(key._2());
+                
             });
 }
