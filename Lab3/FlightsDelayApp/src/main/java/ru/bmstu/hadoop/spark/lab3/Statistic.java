@@ -63,7 +63,9 @@ public class Statistic implements Serializable {
                               statA.getMaxDelay()               + statB.getMaxDelay());
     }
 
-    static String 
+    static String resString() {
+        
+    }
 
     @Override
     public String toString() {
