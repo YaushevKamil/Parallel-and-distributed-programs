@@ -56,6 +56,6 @@ public class FlightsDelayApp {
 
     JavaRDD<String> result = flightDataStat
             .map(k -> {
-                Tuple2<Integer, Integer> key = k._a1()
+                Tuple2<Integer, Integer> key = k._1();
             });
 }
