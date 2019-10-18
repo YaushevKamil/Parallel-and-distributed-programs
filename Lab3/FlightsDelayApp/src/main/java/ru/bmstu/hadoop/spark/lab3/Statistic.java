@@ -56,6 +56,8 @@ public class Statistic implements Serializable {
                              delayTime > stat.getMaxDelay() ? delayTime : stat.getMaxDelay());
     }
 
+    static 
+
     @Override
     public String toString() {
         return "Statistics" + "{" +
