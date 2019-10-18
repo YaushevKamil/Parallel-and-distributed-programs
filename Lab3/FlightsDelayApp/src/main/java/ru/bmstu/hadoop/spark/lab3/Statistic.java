@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Statistic implements Serializable {
     private static final float HUNDRED_PERCENT = 100.0f;
-    
+
     private int flightsCount;
     private int delayedFlightsCount;
     private int cancelledFlightsCount;
