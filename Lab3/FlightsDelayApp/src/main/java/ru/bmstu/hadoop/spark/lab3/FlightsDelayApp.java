@@ -31,7 +31,8 @@ public class FlightsDelayApp {
             .filter(s -> !s.contains(AIRPORTS_FIRST_COLUMN))
             .mapToPair(s -> {
                 parseAirportData(s);
-                
+                int airportID = getAirportId();
+                String airportName = getAirportName();
                 return new Tuple2<>(
 
                         return
