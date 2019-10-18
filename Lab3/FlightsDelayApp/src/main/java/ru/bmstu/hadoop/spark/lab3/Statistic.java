@@ -49,7 +49,7 @@ public class Statistic implements Serializable {
         this.maxDelay = maxDelay;
     }
 
-    static Statistic
+    static Statistic add
 
     @Override
     public String toString() {
