@@ -10,6 +10,7 @@ public class Statistic implements Serializable {
     private int cancelledFlightsCount;
     private float maxDelay;
 
+    @org.jetbrains.annotations.Contract(pure = true)
     public Statistic() {}
 
     Statistic(int flightsCount, int delayedFlightsCount, int cancelledFlightsCount, float maxDelay) {
