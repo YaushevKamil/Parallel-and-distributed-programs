@@ -36,7 +36,7 @@ public class FlightsDelayApp {
                 return new Tuple2<>(airportID, airportName);
             });
 
-    final Broadcast<Map<String, AirportData>> airportsBroadcasted = sc.broadcast(stringAirportDataMap);
+    final Broadcast<Map<String, String>> airportsBroadcasted = sc.broadcast(stringAirportDataMap);
 
     JavaRDD<String> result = getap
 }
