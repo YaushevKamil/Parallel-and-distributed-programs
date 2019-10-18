@@ -2,7 +2,7 @@ package ru.bmstu.hadoop.spark.lab3;
 
 import java.io.Serializable;
 
-import static ru.bmstu.hadoop.spark.lab3.CSVUtils.FLOAT_ZERO;
+import static ru.bmstu.hadoop.spark.lab3.CSVUtils.*;
 
 public class Statistic implements Serializable {
     private static final float HUNDRED_PERCENT = 100.0f;
@@ -16,7 +16,7 @@ public class Statistic implements Serializable {
 
     Statistic(int flightsCount, int delayTime, int cancelledFlightsCount, float maxDelay) {
         this.flightsCount = flightsCount;
-        this.delayedFlightsCount = p.getDelayTime() > FLOAT_ZERO ? 1 : 0;
+        this.delayedFlightsCount = delayTime > FLOAT_ZERO ? 1 : 0;
         this.cancelledFlightsCount = cancelledFlightsCount;
         this.maxDelay = maxDelay;
     }
