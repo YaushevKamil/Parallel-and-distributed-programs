@@ -6,6 +6,8 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import scala.Tuple2;
 
+import static ru.bmstu.hadoop.spark.lab3.CSVUtils.FLIGHTS_FIRST_COLUMN;
+
 public class FlightsDelayApp {
     SparkConf conf = new SparkConf().setAppName("lab5");
     JavaSparkContext sc = new JavaSparkContext(conf);
@@ -14,7 +16,7 @@ public class FlightsDelayApp {
     JavaRDD<String> airportsTable = sc.textFile("L_AIRPORT_ID.csv");
 
     JavaPairRDD<Tuple2<Integer, String>, FlightSerializable> flightData = flightsTable
-            .filter(s -> !s.contains(CSVUtils.FLIGHTS_FIRST_COLUMN))
+            .filter(s -> !s.contains(FLIGHTS_FIRST_COLUMN))
             .mapToPair(s -> {
                 CSVUtils.parseFlightData(s);
                 int originAirportID = CSVUtils.getOriginAirportId();

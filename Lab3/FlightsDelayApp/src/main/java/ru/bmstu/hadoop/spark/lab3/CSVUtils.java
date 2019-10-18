@@ -11,7 +11,7 @@ class CSVUtils {
     private static final int DEST_AIRPORT_ID_COLUMN   = 14;
     private static final int DELAY_TIME_COLUMN        = 18;
     private static final int IS_CANCELLED_COLUMN      = 19;
-    
+
     private static final int AIRPORT_ID_COLUMN   = 0;
     private static final int AIRPORT_NAME_COLUMN = 1;
 
@@ -70,8 +70,7 @@ class CSVUtils {
                 flightData[DELAY_TIME_COLUMN] :
                 "";
     }
-
-
+    
     static boolean getCancelled() {
         return strToInt(flightData[IS_CANCELLED_COLUMN]) != 0;
     }
