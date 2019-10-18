@@ -57,8 +57,7 @@ public class FlightsDelayApp {
                                 airportsBroadcast.value().get(k._1()._1()) + " -> " +
                                 airportsBroadcast.value().get(k._1()._2()) + "\t"   +
                                 k._2() +
-                           "}"
-                        );
+                           "}");
         result.saveAsTextFile(OUTPUT_FILE);
     }airportsBroadcast.value().get(k._1()._1())
 }airportsBroadcast.value().get(k._1()._2())
