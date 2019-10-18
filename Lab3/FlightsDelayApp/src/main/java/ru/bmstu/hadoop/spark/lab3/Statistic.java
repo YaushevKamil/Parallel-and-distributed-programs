@@ -60,7 +60,7 @@ public class Statistic implements Serializable {
         return new Statistic(statA.getFlightsCount() + statB.getFlightsCount(),
                 statA.getDelayedFlightsCount() + statB.getDelayedFlightsCount(),
                 statA.getCancelledFlightsCount() + statB.getCancelledFlightsCount(),
-                );
+                statA.getMaxDelay()+);
     }
 
     @Override
