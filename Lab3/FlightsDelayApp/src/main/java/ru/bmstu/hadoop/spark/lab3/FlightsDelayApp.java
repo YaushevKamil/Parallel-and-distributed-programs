@@ -56,6 +56,6 @@ public class FlightsDelayApp {
 
     JavaRDD<String> result = flightDataStat
             .map(k -> {
-                
+                Tuple2
             });
 }
