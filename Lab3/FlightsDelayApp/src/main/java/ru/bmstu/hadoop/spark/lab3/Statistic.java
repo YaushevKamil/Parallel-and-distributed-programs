@@ -1,4 +1,7 @@
 package ru.bmstu.hadoop.spark.lab3;
 
-public class Statistic {
+import java.io.Serializable;
+
+public class Statistic implements Serializable {
+    
 }
