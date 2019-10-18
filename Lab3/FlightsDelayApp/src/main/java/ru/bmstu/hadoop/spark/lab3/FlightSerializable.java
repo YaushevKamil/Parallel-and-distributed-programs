@@ -17,5 +17,7 @@ public class FlightSerializable implements Serializable {
         this.isCancelled = isCancelled;
     }
 
-    
+    int getOriginAirportID() {
+        return originAirportID;
+    }
 }
