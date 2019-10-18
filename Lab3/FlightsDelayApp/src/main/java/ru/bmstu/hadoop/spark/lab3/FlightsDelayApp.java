@@ -44,9 +44,9 @@ public class FlightsDelayApp {
     JavaPairRDD<Tuple2<Integer, Integer>, String> flightDataStat = flightData
             .combineByKey(
                     p -> new Statistic(1,
-                            p.getDelayTime() > FLOAT_ZERO ? 1 : 0,
-                            p.getCancelled() ? 1 : 0,
-                            p.getDelayTime()),
+                                       p.getDelayTime() > FLOAT_ZERO ? 1 : 0,
+                                       p.getCancelled() ? 1 : 0,
+                                       p.getDelayTime()),
                     (count, p) -> Statistic.addValue(
                             count,
                             p -> getDelayTime(),
