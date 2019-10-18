@@ -12,7 +12,7 @@ public class Statistic implements Serializable {
 
     public Statistic() {}
 
-    Statistic(int flightsCount, int delayedFlightsCount, int cancelledFlightsCount, float maxDelay) {
+    Statistic(int flightsCount, boolean isDelayed, boolean isCancelled, float maxDelay) {
         this.flightsCount = flightsCount;
         this.delayedFlightsCount = delayedFlightsCount;
         this.cancelledFlightsCount = cancelledFlightsCount;
