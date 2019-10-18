@@ -12,58 +12,60 @@ import java.util.Map;
 import static ru.bmstu.hadoop.spark.lab3.CSVUtils.*;
 
 public class FlightsDelayApp {
-    SparkConf conf = new SparkConf().setAppName("lab5");
-    JavaSparkContext sc = new JavaSparkContext(conf);
+    public static void main(String[] args) {
+        SparkConf conf = new SparkConf().setAppName("lab5");
+        JavaSparkContext sc = new JavaSparkContext(conf);
 
-    JavaRDD<String> flightsTable = sc.textFile("664600583_T_ONTIME_sample.csv");
-    JavaRDD<String> airportsTable = sc.textFile("L_AIRPORT_ID.csv");
+        JavaRDD<String> flightsTable = sc.textFile("664600583_T_ONTIME_sample.csv");
+        JavaRDD<String> airportsTable = sc.textFile("L_AIRPORT_ID.csv");
 
-    JavaPairRDD<Integer, String> airportsData = airportsTable
-            .filter(s -> !s.contains(AIRPORTS_FIRST_COLUMN))
-            .mapToPair(s -> {
-                parseAirportData(s);
-                int airportID = getAirportId();
-                String airportName = getAirportName();
-                return new Tuple2<>(airportID, airportName);
-            });
+        JavaPairRDD<Integer, String> airportsData = airportsTable
+                .filter(s -> !s.contains(AIRPORTS_FIRST_COLUMN))
+                .mapToPair(s -> {
+                    parseAirportData(s);
+                    int airportID = getAirportId();
+                    String airportName = getAirportName();
+                    return new Tuple2<>(airportID, airportName);
+                });
 
-    final Broadcast<Map<Integer, String>> airportsBroadcasted = sc.broadcast(airportsData.collectAsMap());
+        final Broadcast<Map<Integer, String>> airportsBroadcasted = sc.broadcast(airportsData.collectAsMap());
 
-    JavaPairRDD<Tuple2<Integer, Integer>, FlightSerializable> flightData = flightsTable
-            .filter(s -> !s.contains(FLIGHTS_FIRST_COLUMN))
-            .mapToPair(s -> {
-                parseFlightData(s);
-                int originAirportID = getOriginAirportId();
-                int destAirportID   = getDestAirportId();
-                float delayTime     = getFloatDelayTime();
-                boolean isCancelled = getCancelled();
-                return new Tuple2<>(new Tuple2<>(originAirportID, destAirportID),
-                        new FlightSerializable(originAirportID, destAirportID, delayTime, isCancelled));
-            });
+        JavaPairRDD<Tuple2<Integer, Integer>, FlightSerializable> flightData = flightsTable
+                .filter(s -> !s.contains(FLIGHTS_FIRST_COLUMN))
+                .mapToPair(s -> {
+                    parseFlightData(s);
+                    int originAirportID = getOriginAirportId();
+                    int destAirportID = getDestAirportId();
+                    float delayTime = getFloatDelayTime();
+                    boolean isCancelled = getCancelled();
+                    return new Tuple2<>(new Tuple2<>(originAirportID, destAirportID),
+                            new FlightSerializable(originAirportID, destAirportID, delayTime, isCancelled));
+                });
 
-    JavaPairRDD<Tuple2<Integer, Integer>, String> flightDataStat = flightData
-            .combineByKey(
-                    p -> new Statistic(1,
-                                       p.getDelayTime() > FLOAT_ZERO ? 1 : 0,
-                                       p.getCancelled() ? 1 : 0,
-                                       p.getDelayTime()),
-                    (count, p) -> Statistic.addValue(count,
-                                                     p -> p.getDelayTime() > FLOAT_ZERO,
-                                                     p -> p.getCancelled(),
-                                                     p -> p.getDelayTime()),
-                    Statistic::add).mapToPair(map -> new Tuple2<>(map._1(), Statistic.resString(map._2()))
-            );
+        JavaPairRDD<Tuple2<Integer, Integer>, String> flightDataStat = flightData
+                .combineByKey(
+                        p -> new Statistic(1,
+                                p.getDelayTime() > FLOAT_ZERO ? 1 : 0,
+                                p.getCancelled() ? 1 : 0,
+                                p.getDelayTime()),
+                        (count, p) -> Statistic.addValue(count,
+                                p -> p.getDelayTime() > FLOAT_ZERO,
+                                p -> p.getCancelled(),
+                                p -> p.getDelayTime()),
+                        Statistic::add).mapToPair(map -> new Tuple2<>(map._1(), Statistic.resString(map._2()))
+                );
 
-    JavaRDD<String> result = flightDataStat
-            .map(k -> {
-                Map<Integer, String> airportID = airportsBroadcasted.value();
-                Tuple2<Integer, Integer> key = k._1();
-                String value = k._2();
-                String originAirportID = airportID.get(key._1());
-                String destAirportID = airportID.get(key._2());
-                return "{ " +
-                           originAirportID + " -> " + destAirportID + "\t" + value +
-                       "} ";
-            });
-    result.saveAS
+        JavaRDD<String> result = flightDataStat
+                .map(k -> {
+                    Map<Integer, String> airportID = airportsBroadcasted.value();
+                    Tuple2<Integer, Integer> key = k._1();
+                    String value = k._2();
+                    String originAirportID = airportID.get(key._1());
+                    String destAirportID = airportID.get(key._2());
+                    return "{ " +
+                            originAirportID + " -> " + destAirportID + "\t" + value +
+                            "} ";
+                });
+        result.saveAS
+    }
 }
