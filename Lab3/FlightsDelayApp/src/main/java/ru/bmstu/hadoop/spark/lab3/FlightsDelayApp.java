@@ -58,5 +58,7 @@ public class FlightsDelayApp {
             .map(k -> {
                 Tuple2<Integer, Integer> key = k._1();
                 String value = k._2();
+
+                
             });
 }
