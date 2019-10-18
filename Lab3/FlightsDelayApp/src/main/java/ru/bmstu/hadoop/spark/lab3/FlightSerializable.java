@@ -50,5 +50,7 @@ public class FlightSerializable implements Serializable {
     }
 
     @Override
-    String 
+    public String toString() {
+        
+    }
 }
