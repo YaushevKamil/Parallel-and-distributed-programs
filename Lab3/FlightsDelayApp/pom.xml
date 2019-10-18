@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.bmstu.hadoop.lab3</groupId>
+    <groupId>ru.bmstu.hadoop.spark.lab3</groupId>
     <artifactId>FlightsDelayApp</artifactId>
     <version>1.0</version>
     
