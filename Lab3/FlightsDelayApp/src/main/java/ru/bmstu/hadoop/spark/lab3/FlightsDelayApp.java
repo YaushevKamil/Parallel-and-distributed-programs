@@ -12,5 +12,6 @@ public class FlightsDelayApp {
     JavaRDD<String> flightsTable = sc.textFile("664600583_T_ONTIME_sample.csv");
     JavaRDD<String> airportsTable = sc.textFile("L_AIRPORT_ID.csv");
 
-    JavaPairRDD<Integer, String> flightData = flightsTable.filter()
+    JavaPairRDD<Integer, String> flightData = flightsTable
+            .filter()
 }
