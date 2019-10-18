@@ -67,7 +67,7 @@ public class Statistic implements Serializable {
         float delayPercent = (float)stat.getDelayedFlightsCount() / (float)stat.getFlightsCount() * 100.f;
         float cancelledPercent = (float)stat.getCancelledFlightsCount() / (float)stat.getFlightsCount() * 100.f;
         return "{" +
-                "";
+                "Max delay time: ";
     }
 
     @Override
