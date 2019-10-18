@@ -19,9 +19,6 @@ class CSVUtils {
     private static final int AIRPORT_ID_COLUMN   = 0;
     private static final int AIRPORT_NAME_COLUMN = 1;
 
-    private static String[] airportData;
-    private static String[] flightData;
-
     private static int strToInt(String numString) {
         return numString.length() > 0 ?
                 Integer.parseInt(numString) :
