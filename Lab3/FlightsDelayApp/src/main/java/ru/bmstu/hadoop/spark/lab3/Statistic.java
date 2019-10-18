@@ -10,5 +10,5 @@ public class Statistic implements Serializable {
 
     public Statistic() {}
 
-    Statistic() {}
+    Statistic(int ) {}
 }
