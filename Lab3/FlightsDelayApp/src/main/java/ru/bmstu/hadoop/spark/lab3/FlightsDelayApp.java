@@ -16,6 +16,7 @@ public class FlightsDelayApp {
     JavaPairRDD<Tuple2<Integer, String>, FlightSerializable> flightData = flightsTable
             .filter(s -> !s.contains("YEAR"))
             .mapToPair(s -> {
+                int originAirportID = CSVUtils.getOriginAirportId();
                 
                 return new Tuple2<>(new Tuple2<>(originAirportID,destAirportID),
                         new FlightSerializable(originAirportID,destAirportID,delayTime,isCancelled));
