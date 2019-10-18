@@ -49,7 +49,7 @@ public class FlightsDelayApp {
                                 p.getCancelled() ? 1 : 0,
                                 p.getDelayTime()),
                         (count, p) -> Statistic.addValue(count,
-                                p -> 
+                                p -> p.
                                 p -> p.getDelayTime() > FLOAT_ZERO,
                                 p -> p.getCancelled(),
                                 p -> p.getDelayTime()),
