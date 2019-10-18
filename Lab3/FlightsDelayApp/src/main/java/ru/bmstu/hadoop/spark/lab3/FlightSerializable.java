@@ -16,4 +16,6 @@ public class FlightSerializable implements Serializable {
         this.delayTime = delayTime;
         this.isCancelled = isCancelled;
     }
+
+    
 }
