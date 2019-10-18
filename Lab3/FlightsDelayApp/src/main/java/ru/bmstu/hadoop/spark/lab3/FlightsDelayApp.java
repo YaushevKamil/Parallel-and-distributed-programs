@@ -55,5 +55,7 @@ public class FlightsDelayApp {
             );
 
     JavaRDD<String> result = flightDataStat
-            .map();
+            .map(k -> {
+                
+            });
 }
