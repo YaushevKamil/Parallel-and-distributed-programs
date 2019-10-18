@@ -16,7 +16,7 @@ public class FlightsDelayApp {
         SparkConf conf = new SparkConf().setAppName("lab5");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        JavaRDD<String> flightsTable = sc.textFile(FLIGHTS_CSV);
+        JavaRDD<String> flightsTable  = sc.textFile(FLIGHTS_CSV);
         JavaRDD<String> airportsTable = sc.textFile(AIRPORTS_CSV);
 
         JavaPairRDD<Integer, String> airportsData = airportsTable
