@@ -3,6 +3,7 @@ package ru.bmstu.hadoop.spark.lab3;
 import java.io.Serializable;
 
 public class Statistic implements Serializable {
+    private static final float HUNDRED_PERCENT = 100.0f;
     private int flightsCount;
     private int delayedFlightsCount;
     private int cancelledFlightsCount;
@@ -64,7 +65,7 @@ public class Statistic implements Serializable {
     }
 
     static float getPercent(int value, int maxValue) {
-        
+        return (float)value / (float)maxValue * HUNDRED_PERCENT;
     }
 
     static String resString(Statistic stat) {
