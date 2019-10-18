@@ -18,7 +18,7 @@ public class FlightsDelayApp {
             .mapToPair(s -> {
                 int originAirportID = CSVUtils.getOriginAirportId();
                 int destAirportID = CSVUtils.getDestAirportId();
-                float delayTime = 
+                float delayTime = CSVUtils.getFloatDelayTime();
                 return new Tuple2<>(new Tuple2<>(originAirportID,destAirportID),
                         new FlightSerializable(originAirportID,destAirportID,delayTime,isCancelled));
             });
