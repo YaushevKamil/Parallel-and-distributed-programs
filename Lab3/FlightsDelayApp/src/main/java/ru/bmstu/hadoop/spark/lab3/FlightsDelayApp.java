@@ -43,7 +43,7 @@ public class FlightsDelayApp {
 
     JavaPairRDD<Tuple2<Integer, Integer>, String> flightDataStat = flightData
             .combineByKey(
-                    p -> 
+                    p -> new Statistic()
             );
 
     JavaRDD<String> result = getap
