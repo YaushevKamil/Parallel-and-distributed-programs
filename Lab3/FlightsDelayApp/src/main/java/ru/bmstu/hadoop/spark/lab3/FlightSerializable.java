@@ -25,5 +25,11 @@ public class FlightSerializable implements Serializable {
         return destAirportID;
     }
 
-    
+    float getDelayTime() {
+        return delayTime;
+    }
+
+    boolean getCancelled() {
+        return isCancelled;
+    }
 }
