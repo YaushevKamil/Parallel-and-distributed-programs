@@ -65,4 +65,5 @@ public class FlightsDelayApp {
                            originAirportID + " -> " + destAirportID + "\t" + value +
                        "} ";
             });
+    
 }
