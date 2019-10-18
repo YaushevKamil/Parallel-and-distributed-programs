@@ -10,5 +10,5 @@ public class Statistic implements Serializable {
 
     public Statistic() {}
 
-    Statistic(int ) {}
+    Statistic(int flightsCount, int delayedFlightsCount, int cancelledFlightsCount, float maxDelay) {}
 }
