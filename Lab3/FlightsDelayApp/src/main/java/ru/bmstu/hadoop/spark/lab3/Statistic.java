@@ -6,5 +6,5 @@ public class Statistic implements Serializable {
     private int flightsCount;
     private int delayedFlightsCount;
     private int cancelledFlightsCount;
-    
+    private Float
 }
