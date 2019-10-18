@@ -44,4 +44,8 @@ public class FlightSerializable implements Serializable {
     void setDelayTime(float delayTime) {
         this.delayTime = delayTime;
     }
+
+    void setCancelled(boolean isCancelled) {
+        this.isCancelled = isCancelled;
+    }
 }
