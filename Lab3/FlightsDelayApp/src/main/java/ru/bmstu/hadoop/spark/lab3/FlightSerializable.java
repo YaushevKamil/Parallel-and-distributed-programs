@@ -48,4 +48,7 @@ public class FlightSerializable implements Serializable {
     void setCancelled(boolean isCancelled) {
         this.isCancelled = isCancelled;
     }
+
+    @Override
+    
 }
