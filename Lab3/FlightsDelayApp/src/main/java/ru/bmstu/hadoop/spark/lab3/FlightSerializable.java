@@ -10,7 +10,7 @@ public class FlightSerializable implements Serializable {
 
     public FlightSerializable() {}
 
-    public FlightSerializable(int originAirportID, int destAirportID, float delayTime, boolean isCancelled) {
+    FlightSerializable(int originAirportID, int destAirportID, float delayTime, boolean isCancelled) {
         this.originAirportID = originAirportID;
         this.destAirportID = destAirportID;
         this.delayTime = delayTime;
