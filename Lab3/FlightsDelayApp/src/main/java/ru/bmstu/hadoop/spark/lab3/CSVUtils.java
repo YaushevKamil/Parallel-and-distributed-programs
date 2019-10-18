@@ -16,7 +16,7 @@ class CSVUtils {
     private static final int AIRPORT_NAME_COLUMN = 1;
 
     static final String FLIGHTS_FIRST_COLUMN = "YEAR";
-    static final String AIRPORTS_FIRST_COLUMN = "CODE";
+    static final String AIRPORTS_FIRST_COLUMN = "Code";
 
 
 
