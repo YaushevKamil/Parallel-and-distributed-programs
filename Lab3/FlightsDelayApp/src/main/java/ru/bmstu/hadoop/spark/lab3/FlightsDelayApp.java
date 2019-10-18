@@ -13,5 +13,5 @@ public class FlightsDelayApp {
     JavaRDD<String> airportsTable = sc.textFile("L_AIRPORT_ID.csv");
 
     JavaPairRDD<Integer, String> flightData = flightsTable
-            .filter()
+            .filter(s -> s.contains())
 }
