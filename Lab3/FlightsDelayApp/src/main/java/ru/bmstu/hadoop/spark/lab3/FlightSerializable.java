@@ -32,4 +32,16 @@ public class FlightSerializable implements Serializable {
     boolean getCancelled() {
         return isCancelled;
     }
+
+    void setOriginAirportID(int originAirportID) {
+        this.originAirportID = originAirportID;
+    }
+
+    void setDestAirportID(int destAirportID) {
+        this.destAirportID = destAirportID;
+    }
+
+    void setDelayTime(float delayTime) {
+        this.delayTime = delayTime;
+    }
 }
