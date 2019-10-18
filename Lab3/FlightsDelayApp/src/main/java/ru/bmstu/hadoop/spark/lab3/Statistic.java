@@ -51,6 +51,7 @@ public class Statistic implements Serializable {
 
     @Override
     public String toString() {
-        
+        return "Statistics" + "{"
+                ;
     }
 }
