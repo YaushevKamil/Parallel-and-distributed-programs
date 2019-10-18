@@ -19,19 +19,19 @@ public class Statistic implements Serializable {
         this.maxDelay = maxDelay;
     }
 
-    int getFlightsCount() {
+    private int getFlightsCount() {
         return flightsCount;
     }
 
-    int getDelayedFlightsCount() {
+    private int getDelayedFlightsCount() {
         return delayedFlightsCount;
     }
 
-    int getCancelledFlightsCount() {
+    private int getCancelledFlightsCount() {
         return cancelledFlightsCount;
     }
 
-    float getMaxDelay() {
+    private float getMaxDelay() {
         return maxDelay;
     }
 
