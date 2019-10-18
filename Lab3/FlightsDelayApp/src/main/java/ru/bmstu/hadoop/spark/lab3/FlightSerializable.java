@@ -20,4 +20,10 @@ public class FlightSerializable implements Serializable {
     int getOriginAirportID() {
         return originAirportID;
     }
+
+    int getDestAirportID() {
+        return destAirportID;
+    }
+
+    
 }
