@@ -59,7 +59,7 @@ public class Statistic implements Serializable {
     static String add(Statistic statA, Statistic statB) {
         return new Statistic(statA.getFlightsCount() + statB.getFlightsCount(),
                 statA.getDelayedFlightsCount() + statB.getDelayedFlightsCount(),
-                statA.);
+                statA.getCancelledFlightsCount() + statB.getCancelledFlightsCount());
     }
 
     @Override
