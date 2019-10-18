@@ -4,6 +4,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import scala.Tuple2;
 
 public class FlightsDelayApp {
     SparkConf conf = new SparkConf().setAppName("lab5");
@@ -12,7 +13,7 @@ public class FlightsDelayApp {
     JavaRDD<String> flightsTable = sc.textFile("664600583_T_ONTIME_sample.csv");
     JavaRDD<String> airportsTable = sc.textFile("L_AIRPORT_ID.csv");
 
-    JavaPairRDD<Integer, String> flightData = flightsTable
+    JavaPairRDD<Tuple2<Integer, String>, FlightSerializable> flightData = flightsTable
             .filter(s -> !s.contains("YEAR"))
             .mapToPair(s -> {
 
