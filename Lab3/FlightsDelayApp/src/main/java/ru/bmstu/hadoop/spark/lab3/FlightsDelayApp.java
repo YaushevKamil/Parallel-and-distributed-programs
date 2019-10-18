@@ -32,8 +32,7 @@ public class FlightsDelayApp {
             .mapToPair(s -> {
                 return new Tuple2<>(
                         parseAirportData(s);
-                        
-
+                        return 
                 )
             });
 
