@@ -33,10 +33,7 @@ public class FlightsDelayApp {
                 parseAirportData(s);
                 int airportID = getAirportId();
                 String airportName = getAirportName();
-                return new Tuple2<>(
-
-                        return
-                )
+                return new Tuple2<>()
             });
 
     final Broadcast<Map<String, AirportData>> airportsBroadcasted = sc.broadcast(stringAirportDataMap);
