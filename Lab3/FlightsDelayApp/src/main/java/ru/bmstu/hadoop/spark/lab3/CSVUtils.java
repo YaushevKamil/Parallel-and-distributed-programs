@@ -52,7 +52,7 @@ class CSVUtils {
     }
 
     static int getOriginAirportId(String raw) {
-        flightData = raw.split(",");
+        String[] flightData = raw.split(",");
         return strToInt(flightData[ORIGIN_AIRPORT_ID_COLUMN]);
     }
 
