@@ -15,9 +15,9 @@ public class FlightsDelayApp {
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab5");
         JavaSparkContext sc = new JavaSparkContext(conf);
-
-        JavaRDD<String> flightsTable  = sc.textFile(FLIGHTS_CSV);
+        
         JavaRDD<String> airportsTable = sc.textFile(AIRPORTS_CSV);
+        JavaRDD<String> flightsTable  = sc.textFile(FLIGHTS_CSV);
 
         JavaPairRDD<Integer, String> airportsData = airportsTable
                 .filter(s -> !s.contains(AIRPORTS_FIRST_COLUMN))
