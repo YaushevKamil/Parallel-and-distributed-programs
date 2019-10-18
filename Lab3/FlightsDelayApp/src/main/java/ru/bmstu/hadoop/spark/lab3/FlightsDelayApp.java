@@ -45,7 +45,8 @@ public class FlightsDelayApp {
             .combineByKey(
                     p -> new Statistic(1,
                                        p.getDelayTime() > FLOAT_ZERO ? 1 : 0,
-                                       p.getCancelled()),
+                                       p.getCancelled() ? 1 : 0,
+                                       p),
                     (count, p) -> Statistic.addValue(),
                     Statistic::add).mapToPair(m -> new Tuple2<>())
             );
