@@ -52,7 +52,7 @@ public class FlightsDelayApp {
                             p -> getDelayTime(),
                             p -> getCancelled(),
                             p -> getDelayTime()),
-                    Statistic::add).mapToPair(map -> new Tuple2<>(map._1(), Statistic.out(map._2()))
+                    Statistic::add).mapToPair(map -> new Tuple2<>(map._1(), Statistic.resString(map._2()))
             );
 
     JavaRDD<String> result = getap
