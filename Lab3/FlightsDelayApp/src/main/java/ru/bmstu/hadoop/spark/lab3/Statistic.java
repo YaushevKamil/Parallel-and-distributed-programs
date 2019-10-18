@@ -48,4 +48,7 @@ public class Statistic implements Serializable {
     void setMaxDelay(float maxDelay) {
         this.maxDelay = maxDelay;
     }
+
+    @Override
+    public 
 }
