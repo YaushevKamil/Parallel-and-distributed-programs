@@ -50,5 +50,7 @@ public class Statistic implements Serializable {
     }
 
     @Override
-    public 
+    public String toString() {
+        
+    }
 }
