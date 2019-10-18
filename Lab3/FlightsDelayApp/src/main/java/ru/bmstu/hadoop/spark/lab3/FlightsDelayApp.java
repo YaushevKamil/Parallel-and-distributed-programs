@@ -21,22 +21,15 @@ public class FlightsDelayApp {
 
         JavaPairRDD<Integer, String> airportsData = airportsTable
                 .filter(s -> !s.contains(AIRPORTS_FIRST_COLUMN))
-                .mapToPair(s -> {
-                    parseAirportData(s);
-                    int airportID = getAirportId();
-                    String airportName = getAirportName();
-                    return new Tuple2<>(airportID, airportName);
-                });
+                .mapToPair(s -> new Tuple2<>(getAirportId(s), getAirportName(s)));
 
-        final Broadcast<Map<Integer, String>> airportsBroadcasted = sc.broadcast(airportsData.collectAsMap());
+        final Broadcast<Map<Integer, String>> airportsBroadcast = sc.broadcast(airportsData.collectAsMap());
 
         JavaPairRDD<Tuple2<Integer, Integer>, FlightSerializable> flightData = flightsTable
                 .filter(s -> !s.contains(FLIGHTS_FIRST_COLUMN))
-                .mapToPair(s -> {
-                    parseFlightData(s);
-                    return new Tuple2<>(new Tuple2<>(getOriginAirportId(), getDestAirportId()),
-                            new FlightSerializable(getOriginAirportId(), getDestAirportId(), getFloatDelayTime(), getCancelled()));
-                });
+                .mapToPair(s ->
+                        new Tuple2<>(new Tuple2<>(getOriginAirportId(s), getDestAirportId(s)),
+                            new FlightSerializable(getOriginAirportId(s), getDestAirportId(s), getFloatDelayTime(s), getCancelled())));
 
         JavaPairRDD<Tuple2<Integer, Integer>, String> flightDataStat = flightData
                 .combineByKey(
@@ -55,7 +48,7 @@ public class FlightsDelayApp {
 
         JavaRDD<String> result = flightDataStat
                 .map(k -> {
-                    Map<Integer, String> airportID = airportsBroadcasted.value();
+                    Map<Integer, String> airportID = airportsBroadcast.value();
                     Tuple2<Integer, Integer> key = k._1();
                     String value = k._2();
                     String originAirportID = airportID.get(key._1());
