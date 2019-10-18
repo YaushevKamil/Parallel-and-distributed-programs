@@ -53,7 +53,7 @@ class CSVUtils {
         return strToInt(flightData[ORIGIN_AIRPORT_ID_COLUMN]);
     }
 
-    public static int getDestAirportId() {
+    static int getDestAirportId() {
         return strToInt(flightData[DEST_AIRPORT_ID_COLUMN]);
     }
 
@@ -68,7 +68,7 @@ class CSVUtils {
     }
 
 
-    public static boolean getCancelled() {
+    static boolean getCancelled() {
         return strToInt(flightData[IS_CANCELLED_COLUMN]) != 0;
     }
 }
