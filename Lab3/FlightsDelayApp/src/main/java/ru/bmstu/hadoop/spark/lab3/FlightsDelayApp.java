@@ -59,7 +59,7 @@ public class FlightsDelayApp {
                 Map<Integer, String> airportID = airportsBroadcasted.value();
                 Tuple2<Integer, Integer> key = k._1();
                 String value = k._2();
-                String originAirportID = airportID.
+                String originAirportID = airportID.get(key.);
 
             });
 }
