@@ -17,19 +17,19 @@ public class FlightSerializable implements Serializable {
         this.isCancelled = isCancelled;
     }
 
-    int getOriginAirportID() {
+    public int getOriginAirportID() {
         return originAirportID;
     }
 
-    int getDestAirportID() {
+    public int getDestAirportID() {
         return destAirportID;
     }
 
-    float getDelayTime() {
+    public float getDelayTime() {
         return delayTime;
     }
 
-    boolean getCancelled() {
+    public  boolean getCancelled() {
         return isCancelled;
     }
 
