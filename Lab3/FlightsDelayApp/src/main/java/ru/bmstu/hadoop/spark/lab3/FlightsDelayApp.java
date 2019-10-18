@@ -58,7 +58,17 @@ public class FlightsDelayApp {
                                 airportsBroadcast.value().get(k._1()._2()) + "\t"   +
                                 k._2() +
                            "}");
-
+        /*{
+                    Map<Integer, String> airportID = airportsBroadcast.value();
+                    Tuple2<Integer, Integer> key = k._1();
+                    String value = k._2();
+                    String originAirportID = airportID.get(key._1());
+                    String destAirportID = airportID.get(key._2());
+                    return "{ " +
+                            originAirportID + " -> " + destAirportID + "\t" + value +
+                            "} ";
+                }*/
+        
         result.saveAsTextFile(OUTPUT_FILE);
     }
 }
