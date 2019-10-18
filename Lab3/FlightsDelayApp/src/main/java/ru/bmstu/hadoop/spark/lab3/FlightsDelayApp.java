@@ -28,8 +28,13 @@ public class FlightsDelayApp {
         JavaPairRDD<Tuple2<Integer, Integer>, FlightSerializable> flightData = flightsTable
                 .filter(s -> !s.contains(FLIGHTS_FIRST_COLUMN))
                 .mapToPair(s ->
-                        new Tuple2<>(new Tuple2<>(getOriginAirportId(s), getDestAirportId(s)),
-                            new FlightSerializable(getOriginAirportId(s), getDestAirportId(s), getFloatDelayTime(s), getCancelled())));
+                        new Tuple2<>(new Tuple2<>(
+                                getOriginAirportId(s),
+                                getDestAirportId(s)),
+                            new FlightSerializable(getOriginAirportId(s),
+                                        getDestAirportId(s),
+                                    getFloatDelayTime(s),
+                                    getCancelled())));
 
         JavaPairRDD<Tuple2<Integer, Integer>, String> flightDataStat = flightData
                 .combineByKey(
