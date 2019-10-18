@@ -8,5 +8,7 @@ public class Statistic implements Serializable {
     private int cancelledFlightsCount;
     private float maxDelay;
 
-    public 
+    public Statistic() {}
+
+    Statistic() {}
 }
