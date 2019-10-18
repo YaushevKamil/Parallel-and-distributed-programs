@@ -35,22 +35,6 @@ public class Statistic implements Serializable {
         return maxDelay;
     }
 
-    void setFlightsCount(int flightsCount) {
-        this.flightsCount = flightsCount;
-    }
-
-    void setDelayedFlightsCount(int delayedFlightsCount) {
-        this.delayedFlightsCount = delayedFlightsCount;
-    }
-
-    void setCancelledFlightsCount(int cancelledFlightsCount) {
-        this.cancelledFlightsCount = cancelledFlightsCount;
-    }
-
-    void setMaxDelay(float maxDelay) {
-        this.maxDelay = maxDelay;
-    }
-
     static Statistic addValue(Statistic stat, boolean isDelayed, boolean isCancelled, float delayTime) {
         return new Statistic(stat.getFlightsCount() + 1,
                              isDelayed ? stat.getDelayedFlightsCount() + 1 : stat.getDelayedFlightsCount(),
