@@ -49,8 +49,8 @@ public class Statistic implements Serializable {
         this.maxDelay = maxDelay;
     }
 
-    static void addValue(Statistic stat, boolean isDelayed, boolean isCancelled, float delayTime) {
-
+    static StatisticCount addValue(Statistic stat, boolean isDelayed, boolean isCancelled, float delayTime) {
+        return new 
     }
 
     @Override
