@@ -8,10 +8,12 @@ class CSVUtils {
     static final int TYPE_FLIGHT  = 1;
 
     private static final int ORIGIN_AIRPORT_ID_COLUMN = 14;
+    private static final int DEST_AIRPORT_ID_COLUMN = ;
     private static final int DELAY_TIME_COLUMN        = 18;
 
     private static final int AIRPORT_ID_COLUMN   = 0;
     private static final int AIRPORT_NAME_COLUMN = 1;
+
 
     private static String[] airportData;
     private static String[] flightData;
@@ -50,6 +52,10 @@ class CSVUtils {
         return strToInt(flightData[ORIGIN_AIRPORT_ID_COLUMN]);
     }
 
+    public static int getDestAirportId() {
+        return strToInt(flightData[DEST_AIRPORT_ID_COLUMN]);
+    }
+
     static float getFloatDelayTime() {
         return strToFloat(flightData[DELAY_TIME_COLUMN]);
     }
@@ -59,4 +65,6 @@ class CSVUtils {
                 flightData[DELAY_TIME_COLUMN] :
                 "";
     }
+
+
 }
