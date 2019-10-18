@@ -11,11 +11,13 @@ class CSVUtils {
     private static final int DEST_AIRPORT_ID_COLUMN   = 14;
     private static final int DELAY_TIME_COLUMN        = 18;
     private static final int IS_CANCELLED_COLUMN      = 19;
+    static final String FLIGHTS_FIRST_COLUMN = "YEAR";
 
     private static final int AIRPORT_ID_COLUMN   = 0;
     private static final int AIRPORT_NAME_COLUMN = 1;
+    static final String AIRPORTS_FIRST_COLUMN = "CODE";
 
-    private static final String FLIGHTS_FIRST_COLUMN = "YEAR";
+
 
     private static String[] airportData;
     private static String[] flightData;

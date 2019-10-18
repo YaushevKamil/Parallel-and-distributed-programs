@@ -14,7 +14,7 @@ public class FlightsDelayApp {
     JavaRDD<String> airportsTable = sc.textFile("L_AIRPORT_ID.csv");
 
     JavaPairRDD<Tuple2<Integer, String>, FlightSerializable> flightData = flightsTable
-            .filter(s -> !s.contains("YEAR"))
+            .filter(s -> !s.contains(CSVUtils.FLIGHTS_FIRST_COLUMN))
             .mapToPair(s -> {
                 CSVUtils.parseFlightData(s);
                 int originAirportID = CSVUtils.getOriginAirportId();
