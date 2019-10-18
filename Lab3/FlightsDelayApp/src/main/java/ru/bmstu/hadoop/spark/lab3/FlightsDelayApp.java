@@ -16,7 +16,7 @@ public class FlightsDelayApp {
     JavaPairRDD<Tuple2<Integer, String>, FlightSerializable> flightData = flightsTable
             .filter(s -> !s.contains("YEAR"))
             .mapToPair(s -> {
-
+                
             });
 
     final Broadcast<Map<String, AirportData>> airportsBroadcasted = sc.broadcast(stringAirportDataMap);
