@@ -6,7 +6,7 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import scala.Tuple2;
 
-import static ru.bmstu.hadoop.spark.lab3.CSVUtils.FLIGHTS_FIRST_COLUMN;
+import static ru.bmstu.hadoop.spark.lab3.CSVUtils.*;
 
 public class FlightsDelayApp {
     SparkConf conf = new SparkConf().setAppName("lab5");
@@ -18,16 +18,16 @@ public class FlightsDelayApp {
     JavaPairRDD<Tuple2<Integer, String>, FlightSerializable> flightData = flightsTable
             .filter(s -> !s.contains(FLIGHTS_FIRST_COLUMN))
             .mapToPair(s -> {
-                CSVUtils.parseFlightData(s);
-                int originAirportID = CSVUtils.getOriginAirportId();
-                int destAirportID   = CSVUtils.getDestAirportId();
-                float delayTime     = CSVUtils.getFloatDelayTime();
-                boolean isCancelled   = CSVUtils.getCancelled();
+                parseFlightData(s);
+                int originAirportID = getOriginAirportId();
+                int destAirportID   = getDestAirportId();
+                float delayTime     = getFloatDelayTime();
+                boolean isCancelled = getCancelled();
                 return new Tuple2<>(new Tuple2<>(originAirportID, destAirportID),
                         new FlightSerializable(originAirportID, destAirportID, delayTime, isCancelled));
             });
 
     final Broadcast<Map<String, AirportData>> airportsBroadcasted = sc.broadcast(stringAirportDataMap);
 
-    JavaRDD<String> result = CSVUtils.getap
+    JavaRDD<String> result = getap
 }

@@ -70,7 +70,7 @@ class CSVUtils {
                 flightData[DELAY_TIME_COLUMN] :
                 "";
     }
-    
+
     static boolean getCancelled() {
         return strToInt(flightData[IS_CANCELLED_COLUMN]) != 0;
     }
