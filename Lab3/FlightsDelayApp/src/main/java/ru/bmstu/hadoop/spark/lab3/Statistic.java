@@ -64,7 +64,7 @@ public class Statistic implements Serializable {
     }
 
     static String resString() {
-        
+        float delay
     }
 
     @Override
