@@ -14,5 +14,7 @@ public class FlightsDelayApp {
 
     JavaPairRDD<Integer, String> flightData = flightsTable
             .filter(s -> !s.contains("YEAR"))
-            .mapToPair()
+            .mapToPair(s -> {
+                
+            })
 }
