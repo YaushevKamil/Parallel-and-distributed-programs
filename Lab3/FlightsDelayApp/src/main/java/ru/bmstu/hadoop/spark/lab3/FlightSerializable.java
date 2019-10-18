@@ -53,6 +53,8 @@ public class FlightSerializable implements Serializable {
     public String toString() {
         return "FlightSerializable" + "{"
                     "originAirportID:" + originAirportID + ","
-                    "destAirportID"    + destAirportID   + ","
+                    "destAirportID:"   + destAirportID   + ","
+                    "delayTime:"       + delayTime       + ","
+                            
     }
 }
