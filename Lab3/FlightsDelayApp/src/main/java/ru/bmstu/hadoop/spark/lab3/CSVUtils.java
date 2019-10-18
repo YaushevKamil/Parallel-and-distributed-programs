@@ -67,7 +67,7 @@ class CSVUtils {
     }
 
 
-    public static float getCancelled() {
-
+    public static boolean getCancelled() {
+        
     }
 }
