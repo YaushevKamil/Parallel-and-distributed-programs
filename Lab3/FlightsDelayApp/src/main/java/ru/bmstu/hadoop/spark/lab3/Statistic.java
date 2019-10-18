@@ -3,7 +3,7 @@ package ru.bmstu.hadoop.spark.lab3;
 import java.io.Serializable;
 
 public class Statistic implements Serializable {
-    private static final float HUNDRED_PERCENT = 100.0f;
+    private static final float FLOAT_HUNDRED_PERCENT = 100.0f;
 
     private int flightsCount;
     private int delayedFlightsCount;
@@ -51,16 +51,16 @@ public class Statistic implements Serializable {
     }
 
     private static float getPercent(int value, int maxValue) {
-        return (float)value / (float)maxValue * HUNDRED_PERCENT;
+        return (float)value / (float)maxValue * FLOAT_HUNDRED_PERCENT;
     }
 
     static String outputString(Statistic stat) {
         float delayPercent     = getPercent(stat.getDelayedFlightsCount(),   stat.getFlightsCount());
         float cancelledPercent = getPercent(stat.getCancelledFlightsCount(), stat.getFlightsCount());
         return "{ " +
-                   "Max delay time: "           + stat.getMaxDelay() + ", " +
-                   "Delayed flights percent: "  + delayPercent       + ", " +
-                   "Cancelled flights percent:" + cancelledPercent   +
+                   "max_delay: " + String.format("%.2f", stat.getMaxDelay()) + "m, "  +
+                   "delayed: "   + String.format("%.2f", delayPercent)       + "%, " +
+                   "cancelled:"  + String.format("%.2f", cancelledPercent)   + "%"   +
                " }";
     }
 

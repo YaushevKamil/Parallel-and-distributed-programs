@@ -60,6 +60,6 @@ class CSVUtils {
 
     static boolean getCancelled(String raw) {
         String[] flightData = raw.split(",");
-        return strToInt(flightData[IS_CANCELLED_COLUMN]) != 0;
+        return strToFloat(flightData[IS_CANCELLED_COLUMN]) != FLOAT_ZERO;
     }
 }
