@@ -51,6 +51,6 @@ public class FlightSerializable implements Serializable {
 
     @Override
     public String toString() {
-        return "FlightsSer"
+        return "FlightSeria"
     }
 }
