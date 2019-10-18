@@ -17,6 +17,8 @@ public class FlightsDelayApp {
             .filter(s -> !s.contains("YEAR"))
             .mapToPair(s -> {
                 
+                return new Tuple2<>(new Tuple2<>(originAirportID,destAirportID),
+                        new FlightSerializable(originAirportID,destAirportID,delayTime,isCancelled));
             });
 
     final Broadcast<Map<String, AirportData>> airportsBroadcasted = sc.broadcast(stringAirportDataMap);
