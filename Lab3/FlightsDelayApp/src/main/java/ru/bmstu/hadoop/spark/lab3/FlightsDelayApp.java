@@ -41,7 +41,7 @@ public class FlightsDelayApp {
                         new FlightSerializable(originAirportID, destAirportID, delayTime, isCancelled));
             });
 
-    JavaPairRDD<Tuple2<Integer, Integer>, String>
+    JavaPairRDD<Tuple2<Integer, Integer>, String> flightData
 
     JavaRDD<String> result = getap
 }
