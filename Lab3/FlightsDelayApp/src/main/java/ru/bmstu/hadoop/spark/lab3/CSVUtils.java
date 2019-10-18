@@ -64,7 +64,8 @@ class CSVUtils {
         return strToFloat(flightData[DELAY_TIME_COLUMN]);
     }
 
-    static boolean getCancelled() {
+    static boolean getCancelled(String raw) {
+        String[] flightData = raw.split(",");
         return strToInt(flightData[IS_CANCELLED_COLUMN]) != 0;
     }
 }

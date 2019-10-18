@@ -35,7 +35,7 @@ public class FlightsDelayApp {
                                     getOriginAirportId(s),
                                     getDestAirportId(s),
                                     getFloatDelayTime(s),
-                                    getCancelled())));
+                                    getCancelled(s))));
 
         JavaPairRDD<Tuple2<Integer, Integer>, String> flightDataStat = flightData
                 .combineByKey(
