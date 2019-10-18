@@ -8,5 +8,6 @@ public class FlightsDelayApp {
     SparkConf conf = new SparkConf().setAppName("lab5");
     JavaSparkContext sc = new JavaSparkContext(conf);
 
-    JavaRDD<String> flightstable = sc.textFile()
+    JavaRDD<String> flightstable = sc.textFile("664600583_T_ONTIME_sample.csv");
+    
 }
