@@ -55,6 +55,6 @@ public class FlightSerializable implements Serializable {
                     "originAirportID:" + originAirportID + ","
                     "destAirportID:"   + destAirportID   + ","
                     "delayTime:"       + delayTime       + ","
-                            
+                    "isCancelled:"     + isCancelled
     }
 }
