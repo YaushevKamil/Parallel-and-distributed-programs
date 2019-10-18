@@ -64,7 +64,7 @@ public class Statistic implements Serializable {
     }
 
     static String resString(Statistic stat) {
-        float delayPercent = stat.setFlightsCount() / stat.;
+        float delayPercent = stat.setDelayedFlightsCount() / stat.getFlightsCount() * 100.f;
     }
 
     @Override
