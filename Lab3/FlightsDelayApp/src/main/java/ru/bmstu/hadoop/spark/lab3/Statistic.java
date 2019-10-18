@@ -14,7 +14,7 @@ public class Statistic implements Serializable {
 
     public Statistic() {}
 
-    Statistic(int flightsCount, int delayTime, boolean isCancelled, float maxDelay) {
+    Statistic(int flightsCount, float delayTime, boolean isCancelled) {
         this.flightsCount = flightsCount;
         this.delayedFlightsCount = delayTime > FLOAT_ZERO ? 1 : 0;
         this.cancelledFlightsCount = isCancelled ? 1 : 0;
