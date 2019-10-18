@@ -17,5 +17,8 @@ public class FlightsDelayApp {
             .mapToPair(s -> {
 
             });
+
+    final Broadcast<Map<String, AirportData>> airportsBroadcasted = sc.broadcast(stringAirportDataMap);
+
     JavaRDD<String> result = CSVUtils.getap
 }
