@@ -57,7 +57,7 @@ public class Statistic implements Serializable {
     }
 
     static String add(Statistic statA, Statistic statB) {
-        
+        return new Statistic();
     }
 
     @Override
