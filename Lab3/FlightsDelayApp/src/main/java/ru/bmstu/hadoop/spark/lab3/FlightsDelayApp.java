@@ -31,8 +31,9 @@ public class FlightsDelayApp {
                         new Tuple2<>(new Tuple2<>(
                                 getOriginAirportId(s),
                                 getDestAirportId(s)),
-                            new FlightSerializable(getOriginAirportId(s),
-                                        getDestAirportId(s),
+                            new FlightSerializable(
+                                    getOriginAirportId(s),
+                                    getDestAirportId(s),
                                     getFloatDelayTime(s),
                                     getCancelled())));
 
