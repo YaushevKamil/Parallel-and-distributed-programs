@@ -18,6 +18,17 @@ public class FlightsDelayApp {
     JavaRDD<String> flightsTable = sc.textFile("664600583_T_ONTIME_sample.csv");
     JavaRDD<String> airportsTable = sc.textFile("L_AIRPORT_ID.csv");
 
+    JavaPairRDD<Integer, String> airportsData = airportsTable
+            .filter(s -> !s.contains(AIRPORTS_FIRST_COLUMN))
+            .mapToPair(s -> {
+                parseAirportData(s);
+                int airportID = getAirportId();
+                String airportName = getAirportName();
+                return new Tuple2<>(airportID, airportName);
+            });
+
+    final Broadcast<Map<Integer, String>> airportsBroadcasted = sc.broadcast(airportsData.collectAsMap());
+
     JavaPairRDD<Tuple2<Integer, Integer>, FlightSerializable> flightData = flightsTable
             .filter(s -> !s.contains(FLIGHTS_FIRST_COLUMN))
             .mapToPair(s -> {
@@ -30,16 +41,7 @@ public class FlightsDelayApp {
                         new FlightSerializable(originAirportID, destAirportID, delayTime, isCancelled));
             });
 
-    JavaPairRDD<Integer, String> airportsData = airportsTable
-            .filter(s -> !s.contains(AIRPORTS_FIRST_COLUMN))
-            .mapToPair(s -> {
-                parseAirportData(s);
-                int airportID = getAirportId();
-                String airportName = getAirportName();
-                return new Tuple2<>(airportID, airportName);
-            });
-
-    final Broadcast<Map<Integer, String>> airportsBroadcasted = sc.broadcast(airportsData.collectAsMap());
+    JavaPairRDD
 
     JavaRDD<String> result = getap
 }
