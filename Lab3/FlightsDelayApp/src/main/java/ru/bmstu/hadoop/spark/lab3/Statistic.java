@@ -49,6 +49,8 @@ public class Statistic implements Serializable {
         this.maxDelay = maxDelay;
     }
 
+    static
+
     @Override
     public String toString() {
         return "Statistics" + "{" +
