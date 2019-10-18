@@ -34,12 +34,8 @@ public class FlightsDelayApp {
                 .filter(s -> !s.contains(FLIGHTS_FIRST_COLUMN))
                 .mapToPair(s -> {
                     parseFlightData(s);
-                    int originAirportID = getOriginAirportId();
-                    int destAirportID = getDestAirportId();
-                    float delayTime = getFloatDelayTime();
-                    boolean isCancelled = getCancelled();
-                    return new Tuple2<>(new Tuple2<>(originAirportID, destAirportID),
-                            new FlightSerializable(originAirportID, destAirportID, delayTime, isCancelled));
+                    return new Tuple2<>(new Tuple2<>(getOriginAirportId(), getDestAirportId()),
+                            new FlightSerializable(getOriginAirportId(), getDestAirportId(), getFloatDelayTime(), getCancelled()));
                 });
 
         JavaPairRDD<Tuple2<Integer, Integer>, String> flightDataStat = flightData
