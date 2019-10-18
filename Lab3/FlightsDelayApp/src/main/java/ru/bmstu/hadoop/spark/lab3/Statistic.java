@@ -49,7 +49,7 @@ public class Statistic implements Serializable {
         this.maxDelay = maxDelay;
     }
 
-    static void addValue(Statistic) {
+    static void addValue(Statistic ) {
 
     }
 
