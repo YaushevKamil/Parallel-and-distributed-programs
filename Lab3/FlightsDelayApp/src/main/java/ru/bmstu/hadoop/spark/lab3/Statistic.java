@@ -52,10 +52,10 @@ public class Statistic implements Serializable {
     @Override
     public String toString() {
         return "Statistics" + "{" +
-                   "flightsCount:"          + flightsCount +
-                   "delayedFlightsCount:"   + delayedFlightsCount +
-                   "cancelledFlightsCount:" + cancelledFlightsCount +
-                   "maxDelay:"              + maxDelay +
+                   "flightsCount:"          + flightsCount          + "," +
+                   "delayedFlightsCount:"   + delayedFlightsCount   + "," +
+                   "cancelledFlightsCount:" + cancelledFlightsCount + "," +
+                   "maxDelay:"              + maxDelay              +
                "}";
     }
 }
