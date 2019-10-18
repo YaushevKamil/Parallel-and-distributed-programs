@@ -66,6 +66,6 @@ public class FlightsDelayApp {
                             originAirportID + " -> " + destAirportID + "\t" + value +
                             "} ";
                 });
-        result.saveAsTextFile("output");
+        result.saveAsTextFile(OUTPUT_FILE);
     }
 }
