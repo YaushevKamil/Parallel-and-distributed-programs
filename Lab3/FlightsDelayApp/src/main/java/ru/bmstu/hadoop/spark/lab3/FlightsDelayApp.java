@@ -45,7 +45,7 @@ public class FlightsDelayApp {
             .combineByKey(
                     p -> new Statistic(),
                     (count, p) -> Statistic.addValue(),
-                    Statistic::add
+                    Statistic::add)
             );
 
     JavaRDD<String> result = getap
