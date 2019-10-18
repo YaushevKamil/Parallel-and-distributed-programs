@@ -56,7 +56,8 @@ class CSVUtils {
         return strToInt(flightData[ORIGIN_AIRPORT_ID_COLUMN]);
     }
 
-    static int getDestAirportId() {
+    static int getDestAirportId(String raw) {
+        String[] flightData = raw.split(",");
         return strToInt(flightData[DEST_AIRPORT_ID_COLUMN]);
     }
 
