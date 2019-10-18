@@ -17,7 +17,7 @@ public class FlightSerializable implements Serializable {
         this.isCancelled = isCancelled;
     }
 
-    public int getOriginAirportID() {
+    int getOriginAirportID() {
         return originAirportID;
     }
 
@@ -25,11 +25,11 @@ public class FlightSerializable implements Serializable {
         return destAirportID;
     }
 
-    public float getDelayTime() {
+    float getDelayTime() {
         return delayTime;
     }
 
-    public  boolean getCancelled() {
+    boolean getCancelled() {
         return isCancelled;
     }
 
