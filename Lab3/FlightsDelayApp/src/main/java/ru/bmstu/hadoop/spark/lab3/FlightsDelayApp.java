@@ -28,6 +28,7 @@ public class FlightsDelayApp {
             });
 
     JavaPairRDD<Integer, String> airportsData = airportsTable
+            .filter()
 
     final Broadcast<Map<String, AirportData>> airportsBroadcasted = sc.broadcast(stringAirportDataMap);
 
