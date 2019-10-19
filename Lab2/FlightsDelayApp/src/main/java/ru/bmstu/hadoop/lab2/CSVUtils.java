@@ -16,7 +16,7 @@ class CSVUtils {
      private static String[] airportData;
      private static String[] flightData;
 
-    static int strToInt(String numString) {
+    private static int strToInt(String numString) {
         return numString.length() > 0 ?
                     Integer.parseInt(numString) :
                     INT_ZERO;
