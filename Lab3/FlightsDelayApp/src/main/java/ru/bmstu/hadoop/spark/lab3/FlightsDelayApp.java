@@ -20,8 +20,9 @@ public class FlightsDelayApp {
         JavaRDD<String> flightsTable  = sc.textFile(FLIGHTS_CSV);
 
         JavaPairRDD<Integer, String> airportsData = airportsTable
-                .filter(s -> !s.contains(AIRPORTS_FIRST_COLUMN))
                 .mapToPair(s -> new Tuple2<>(getAirportId(s), getAirportName(s)));
+
+        /* .filter(s -> !s.contains(AIRPORTS_FIRST_COLUMN)) */
 
         final Broadcast<Map<Integer, String>> airportsBroadcast = sc.broadcast(airportsData.collectAsMap());
 
