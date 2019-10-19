@@ -58,9 +58,9 @@ public class Statistic implements Serializable {
         float delayPercent     = getPercent(stat.getDelayedFlightsCount(),   stat.getFlightsCount());
         float cancelledPercent = getPercent(stat.getCancelledFlightsCount(), stat.getFlightsCount());
         return "{ " +
-                   "max_delay: " + String.format("%.2f", stat.getMaxDelay()) + "m, "  +
+                   "max_delay: " + String.format("%.2f", stat.getMaxDelay()) + "m, " +
                    "delayed: "   + String.format("%.2f", delayPercent)       + "%, " +
-                   "cancelled:"  + String.format("%.2f", cancelledPercent)   + "%"   +
+                   "cancelled: " + String.format("%.2f", cancelledPercent)   + "%"   +
                " }";
     }
 

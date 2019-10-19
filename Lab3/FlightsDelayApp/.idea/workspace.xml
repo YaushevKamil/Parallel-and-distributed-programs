@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4879bf96-049e-4318-8739-9a38d7f1cdc1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/hadoop/spark/lab3/CSVUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/hadoop/spark/lab3/CSVUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/hadoop/spark/lab3/FlightsDelayApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/hadoop/spark/lab3/FlightsDelayApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/part-00000" beforeDir="false" afterPath="$PROJECT_DIR$/output/part-00000" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/part-00001" beforeDir="false" afterPath="$PROJECT_DIR$/output/part-00001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/hadoop/spark/lab3/Statistic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/hadoop/spark/lab3/Statistic.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,7 +28,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Lab2/FlightsDelayApp/pom.xml" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
