@@ -26,7 +26,6 @@ public class FlightsDelayApp {
         final Broadcast<Map<Integer, String>> airportsBroadcast = sc.broadcast(airportsData.collectAsMap());
 
         JavaPairRDD<Tuple2<Integer, Integer>, FlightSerializable> flightData = flightsTable
-                .filter(s -> !s.contains(FLIGHTS_FIRST_COLUMN))
                 .mapToPair(s ->
                         new Tuple2<>(new Tuple2<>(
                                 getOriginAirportId(s),
@@ -36,6 +35,8 @@ public class FlightsDelayApp {
                                     getDestAirportId(s),
                                     getFloatDelayTime(s),
                                     getCancelled(s))));
+
+        /* .filter(s -> !s.contains(FLIGHTS_FIRST_COLUMN)) */
 
         JavaPairRDD<Tuple2<Integer, Integer>, String> flightDataStat = flightData
                 .combineByKey(
