@@ -55,12 +55,7 @@ public class FlightsDelayApp {
                 .mapToPair(s -> new Tuple2<>(s._1(), Statistic.outputString(s._2())));
 
         JavaRDD<String> result = flightDataStat
-                .map(k -> "{ " +
-                                airportsBroadcast.value().get(k._1()._1()) + " -> " +
-                                airportsBroadcast.value().get(k._1()._2()) + ":\t"  +
-                                k._2() +
-                           " }");
-        /*{
+                .map(k -> {
                     Map<Integer, String> airportID = airportsBroadcast.value();
                     Tuple2<Integer, Integer> key = k._1();
                     String value = k._2();
@@ -69,8 +64,12 @@ public class FlightsDelayApp {
                     return "{ " +
                             originAirportID + " -> " + destAirportID + "\t" + value +
                             "} ";
-                }*/
-
+                });
+        /* "{ " +
+                airportsBroadcast.value().get(k._1()._1()) + " -> " +
+                airportsBroadcast.value().get(k._1()._2()) + ":\t"  +
+                k._2() +
+                " }" */
         result.saveAsTextFile(OUTPUT_FILE);
     }
 }

@@ -8,8 +8,9 @@ class CSVUtils {
     static final String FLIGHTS_FIRST_COLUMN  = "YEAR";
     static final String AIRPORTS_FIRST_COLUMN = "Code";
 
-    static final int  INT_ZERO   = 0;
+    static final int  INT_ZERO = 0;
     static final float FLOAT_ZERO = 0.0f;
+    static final float FLOAT_HUNDRED_PERCENT = 100.0f;
 
     private static final int ORIGIN_AIRPORT_ID_COLUMN = 11;
     private static final int DEST_AIRPORT_ID_COLUMN   = 14;

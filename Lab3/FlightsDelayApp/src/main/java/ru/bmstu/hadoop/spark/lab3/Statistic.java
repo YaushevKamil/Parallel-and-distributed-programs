@@ -2,9 +2,9 @@ package ru.bmstu.hadoop.spark.lab3;
 
 import java.io.Serializable;
 
-public class Statistic implements Serializable {
-    private static final float FLOAT_HUNDRED_PERCENT = 100.0f;
+import static ru.bmstu.hadoop.spark.lab3.CSVUtils.*;
 
+public class Statistic implements Serializable {
     private int flightsCount;
     private int delayedFlightsCount;
     private int cancelledFlightsCount;
