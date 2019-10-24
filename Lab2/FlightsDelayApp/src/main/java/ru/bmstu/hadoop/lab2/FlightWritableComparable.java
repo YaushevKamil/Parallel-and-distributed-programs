@@ -20,7 +20,7 @@ public class FlightWritableComparable implements WritableComparable {
     int getAirportId() {
         return this.airportId;
     }
-    
+
     @Override
     public void write(DataOutput out) throws IOException {
         out.writeInt(airportId);
@@ -66,8 +66,8 @@ public class FlightWritableComparable implements WritableComparable {
     @Override
     public String toString() {
         return "{" +
-                "airportId:" + airportId + "," +
-                "dataType:"  + dataType  +
-                "}";
+                   "airportId:" + airportId + "," +
+                   "dataType:"  + dataType  +
+               "}";
     }
 }
