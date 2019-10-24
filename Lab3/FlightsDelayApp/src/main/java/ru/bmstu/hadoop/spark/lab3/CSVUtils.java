@@ -54,7 +54,7 @@ class CSVUtils {
         return strToInt(data[DEST_AIRPORT_ID_COLUMN]);
     }
 
-    float getFloatDelayTime() {
+    float getDelayTime() {
         return strToFloat(data[DELAY_TIME_COLUMN]);
     }
 

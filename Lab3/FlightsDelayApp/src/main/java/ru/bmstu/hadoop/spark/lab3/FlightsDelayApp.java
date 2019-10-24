@@ -17,7 +17,7 @@ public class FlightsDelayApp {
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         JavaRDD<String> airportsTable = sc.textFile(AIRPORTS_CSV);
-        JavaRDD<String> flightsTable  = sc.textFile(FLIGHTS_CSV);
+        JavaRDD<String> flightsTable = sc.textFile(FLIGHTS_CSV);
 
         JavaPairRDD<Integer, String> airportsData = airportsTable
                 .mapToPair(str -> {
@@ -35,7 +35,7 @@ public class FlightsDelayApp {
                     CSVUtils csvData = new CSVUtils(str);
                     int originAirportId = csvData.getOriginAirportId();
                     int destAirportId = csvData.getDestAirportId();
-                    float delayTime = csvData.getFloatDelayTime();
+                    float delayTime = csvData.getDelayTime();
                     boolean cancelled = csvData.getCancelled();
                     return new Tuple2<>(new Tuple2<>(
                                     originAirportId,
