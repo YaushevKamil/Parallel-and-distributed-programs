@@ -16,9 +16,9 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
         }
         CSVUtils data = new CSVUtils(value.toString());
         float floatDelayTime = data.getFloatDelayTime();
-        String stringDelayTime = parsedData.getStringDelayTime();
+        String stringDelayTime = data.getStringDelayTime();
         if (floatDelayTime > FLOAT_ZERO) {
-            int airportId = parsedData.getOriginAirportId();
+            int airportId = data.getOriginAirportId();
             context.write(new FlightWritableComparable(airportId, TYPE_FLIGHT),
                     new Text(stringDelayTime));
         }
