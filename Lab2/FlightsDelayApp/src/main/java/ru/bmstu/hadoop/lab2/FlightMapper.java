@@ -19,8 +19,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
         String stringDelayTime = data.getStringDelayTime();
         if (floatDelayTime > FLOAT_ZERO) {
             int airportId = data.getOriginAirportId();
-            context.write(new FlightWritableComparable(airportId, TYPE_FLIGHT),
-                    new Text(stringDelayTime));
+            context.write(new FlightWritableComparable(airportId, TYPE_FLIGHT), new Text(stringDelayTime));
         }
     }
 }
