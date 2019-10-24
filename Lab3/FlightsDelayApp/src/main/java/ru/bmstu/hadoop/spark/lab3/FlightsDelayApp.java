@@ -26,7 +26,6 @@ public class FlightsDelayApp {
                     String airportName = csvData.getAirportName();
                     return new Tuple2<>(airportId, airportName);
                 });
-
         /* .filter(s -> !s.contains(AIRPORTS_FIRST_COLUMN)) */
 
         final Broadcast<Map<Integer, String>> airportsBroadcast = sc.broadcast(airportsData.collectAsMap());
@@ -36,16 +35,17 @@ public class FlightsDelayApp {
                     CSVUtils csvData = new CSVUtils(str);
                     int originAirportId = csvData.getOriginAirportId();
                     int destAirportId = csvData.getDestAirportId();
-                }
-                        new Tuple2<>(new Tuple2<>(
-                                getOriginAirportId(s),
-                                getDestAirportId(s)),
-                            new FlightSerializable(
-                                    getOriginAirportId(s),
-                                    getDestAirportId(s),
-                                    getFloatDelayTime(s),
-                                    getCancelled(s))));
-
+                    float delayTime = csvData.getFloatDelayTime();
+                    boolean cancelled = csvData.getCancelled();
+                    return new Tuple2<>(new Tuple2<>(
+                                    originAirportId,
+                                    destAirportId),
+                                    new FlightSerializable(
+                                            originAirportId,
+                                            destAirportId,
+                                            delayTime,
+                                            cancelled));
+                });
         /* .filter(s -> !s.contains(FLIGHTS_FIRST_COLUMN)) */
 
         JavaPairRDD<Tuple2<Integer, Integer>, String> flightDataStat = flightData
@@ -74,11 +74,7 @@ public class FlightsDelayApp {
                             originAirportID + " -> " + destAirportID + "\t" + value +
                             "} ";
                 });
-        /* "{ " +
-                airportsBroadcast.value().get(k._1()._1()) + " -> " +
-                airportsBroadcast.value().get(k._1()._2()) + ":\t"  +
-                k._2() +
-                " }" */
+
         result.saveAsTextFile(OUTPUT_FILE);
     }
 }
