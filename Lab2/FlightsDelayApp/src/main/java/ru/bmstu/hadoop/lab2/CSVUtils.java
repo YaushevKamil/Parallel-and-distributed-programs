@@ -40,7 +40,7 @@ class CSVUtils {
     }
 
     String getAirportName() {
-        return str(data[AIRPORT_NAME_COLUMN]);
+        return getString(data[AIRPORT_NAME_COLUMN]);
     }
 
     static void parseFlightData(String raw) {
