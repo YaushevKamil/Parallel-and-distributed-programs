@@ -47,9 +47,7 @@ class CSVUtils {
         return strToFloat(data[DELAY_TIME_COLUMN]);
     }
 
-    static String getStringDelayTime() {
-        return flightData.length > 0 ?
-                    flightData[DELAY_TIME_COLUMN] :
-                    "";
+    String getStringDelayTime() {
+        return data[DELAY_TIME_COLUMN];
     }
 }
