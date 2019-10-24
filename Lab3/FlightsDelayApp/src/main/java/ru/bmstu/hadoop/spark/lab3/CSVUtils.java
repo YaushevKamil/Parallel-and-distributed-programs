@@ -9,6 +9,8 @@ class CSVUtils {
     static final String AIRPORTS_FIRST_COLUMN = "Code";
 
     static final int  INT_ZERO = 0;
+    static final int  INT_COUNT_ZERO = 0;
+    static final int  INT_COUNT_ONE = 1;
     static final float FLOAT_ZERO = 0.0f;
     static final float FLOAT_HUNDRED_PERCENT = 100.0f;
 

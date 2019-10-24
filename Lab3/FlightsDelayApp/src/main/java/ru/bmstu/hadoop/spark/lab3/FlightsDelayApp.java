@@ -52,8 +52,8 @@ public class FlightsDelayApp {
                 .combineByKey(
                         p -> new Statistic(
                                 1,
-                                p.getDelayTime() > FLOAT_ZERO ? 1 : 0,
-                                p.getCancelled() ? 1 : 0,
+                                p.getDelayTime() > FLOAT_ZERO ? INT_COUNT_ONE : INT_COUNT_ZERO,
+                                p.getCancelled() ? INT_COUNT_ONE : INT_COUNT_ZERO,
                                 p.getDelayTime()),
                         (count, p) -> Statistic.addValue(
                                 count,
