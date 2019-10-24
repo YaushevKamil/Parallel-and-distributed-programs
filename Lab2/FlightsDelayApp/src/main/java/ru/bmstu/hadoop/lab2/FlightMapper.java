@@ -15,7 +15,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
             return;
         }
         CSVUtils csvData = new CSVUtils(value.toString());
-        float floatDelayTime = csvData.getFloatDelayTime();
+        float floatDelayTime   = csvData.getFloatDelayTime();
         String stringDelayTime = csvData.getStringDelayTime();
         if (floatDelayTime > FLOAT_ZERO) {
             int airportId = csvData.getOriginAirportId();
