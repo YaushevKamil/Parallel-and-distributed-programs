@@ -16,12 +16,11 @@ public class FlightWritableComparable implements WritableComparable {
         this.airportId = airportId;
         this.dataType = dataType;
     }
-    
+
     int getAirportId() {
         return this.airportId;
     }
-
-
+    
     @Override
     public void write(DataOutput out) throws IOException {
         out.writeInt(airportId);
