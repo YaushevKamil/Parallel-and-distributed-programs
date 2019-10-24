@@ -32,35 +32,33 @@ class CSVUtils {
                 FLOAT_ZERO;
     }
 
-    static int getAirportId(String raw) {
-        String[] airportData = raw.replaceAll("\"", "").split(",");
-        return strToInt(airportData[AIRPORT_ID_COLUMN]);
+    private String[] data;
+
+    CSVUtils(String raw) {
+        data = raw.replaceAll("\"", "").split(",");
     }
 
-    static String getAirportName(String raw) {
-        String[] airportData = raw.replaceAll("\"", "").split(",");
-        return airportData.length > 0 ?
-                airportData[AIRPORT_NAME_COLUMN] :
-                "";
+    int getAirportId() {
+        return strToInt(data[AIRPORT_ID_COLUMN]);
     }
 
-    static int getOriginAirportId(String raw) {
-        String[] flightData = raw.split(",");
-        return strToInt(flightData[ORIGIN_AIRPORT_ID_COLUMN]);
+    String getAirportName() {
+        return data[AIRPORT_NAME_COLUMN];
     }
 
-    static int getDestAirportId(String raw) {
-        String[] flightData = raw.split(",");
-        return strToInt(flightData[DEST_AIRPORT_ID_COLUMN]);
+    int getOriginAirportId(String raw) {
+        return strToInt(data[ORIGIN_AIRPORT_ID_COLUMN]);
     }
 
-    static float getFloatDelayTime(String raw) {
-        String[] flightData = raw.split(",");
-        return strToFloat(flightData[DELAY_TIME_COLUMN]);
+    int getDestAirportId(String raw) {
+        return strToInt(data[DEST_AIRPORT_ID_COLUMN]);
     }
 
-    static boolean getCancelled(String raw) {
-        String[] flightData = raw.split(",");
-        return strToFloat(flightData[IS_CANCELLED_COLUMN]) != FLOAT_ZERO;
+    float getFloatDelayTime(String raw) {
+        return strToFloat(data[DELAY_TIME_COLUMN]);
+    }
+
+    boolean getCancelled(String raw) {
+        return strToFloat(data[IS_CANCELLED_COLUMN]) != FLOAT_ZERO;
     }
 }
