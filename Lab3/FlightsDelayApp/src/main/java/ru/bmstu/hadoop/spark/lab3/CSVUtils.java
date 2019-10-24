@@ -46,19 +46,19 @@ class CSVUtils {
         return data[AIRPORT_NAME_COLUMN];
     }
 
-    int getOriginAirportId(String raw) {
+    int getOriginAirportId() {
         return strToInt(data[ORIGIN_AIRPORT_ID_COLUMN]);
     }
 
-    int getDestAirportId(String raw) {
+    int getDestAirportId() {
         return strToInt(data[DEST_AIRPORT_ID_COLUMN]);
     }
 
-    float getFloatDelayTime(String raw) {
+    float getFloatDelayTime() {
         return strToFloat(data[DELAY_TIME_COLUMN]);
     }
 
-    boolean getCancelled(String raw) {
+    boolean getCancelled() {
         return strToFloat(data[IS_CANCELLED_COLUMN]) != FLOAT_ZERO;
     }
 }
