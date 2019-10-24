@@ -24,15 +24,19 @@ public class FlightsDelayApp {
                     CSVUtils csvData = new CSVUtils(str);
                     int airportId = csvData.getAirportId();
                     String airportName = csvData.getAirportName();
-                    return new Tuple2<>(getAirportId(s), getAirportName(s)));
-                }
+                    return new Tuple2<>(airportId, airportName);
+                });
 
         /* .filter(s -> !s.contains(AIRPORTS_FIRST_COLUMN)) */
 
         final Broadcast<Map<Integer, String>> airportsBroadcast = sc.broadcast(airportsData.collectAsMap());
 
         JavaPairRDD<Tuple2<Integer, Integer>, FlightSerializable> flightData = flightsTable
-                .mapToPair(s ->
+                .mapToPair(str -> {
+                    CSVUtils csvData = new CSVUtils(str);
+                    int originAirportId = csvData.getOriginAirportId();
+                    int destAirportId = csvData.getDestAirportId();
+                }
                         new Tuple2<>(new Tuple2<>(
                                 getOriginAirportId(s),
                                 getDestAirportId(s)),
