@@ -43,8 +43,8 @@ class CSVUtils {
         return strToInt(data[ORIGIN_AIRPORT_ID_COLUMN]);
     }
 
-    static float getFloatDelayTime() {
-        return strToFloat(flightData[DELAY_TIME_COLUMN]);
+    float getFloatDelayTime() {
+        return strToFloat(data[DELAY_TIME_COLUMN]);
     }
 
     static String getStringDelayTime() {
