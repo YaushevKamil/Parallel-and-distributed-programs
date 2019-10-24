@@ -15,10 +15,10 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
             return;
         }
         CSVUtils csvData = new CSVUtils(value.toString());
+        int airportId = csvData.getOriginAirportId();
         float floatDelayTime = csvData.getFloatDelayTime();
         String stringDelayTime = csvData.getStringDelayTime();
         if (floatDelayTime > FLOAT_ZERO) {
-            int airportId = csvData.getOriginAirportId();
             context.write(new FlightWritableComparable(airportId, TYPE_FLIGHT), new Text(stringDelayTime));
         }
     }
