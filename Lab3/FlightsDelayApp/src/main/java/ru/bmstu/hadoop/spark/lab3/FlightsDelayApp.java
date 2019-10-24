@@ -22,7 +22,8 @@ public class FlightsDelayApp {
         JavaPairRDD<Integer, String> airportsData = airportsTable
                 .mapToPair(str -> {
                     CSVUtils csvData = new CSVUtils(str);
-                    int airportId
+                    int airportId = csvData.getAirportId();
+                    String airportName = csvData.getAirportName();
                     return new Tuple2<>(getAirportId(s), getAirportName(s)));
                 }
 
