@@ -44,7 +44,7 @@ class CSVUtils {
     }
 
     float getFloatDelayTime() {
-        return strToFloat(data[DELAY_TIME_COLUMN]);
+        return strToFloat(getStringDelayTime());
     }
 
     String getStringDelayTime() {
