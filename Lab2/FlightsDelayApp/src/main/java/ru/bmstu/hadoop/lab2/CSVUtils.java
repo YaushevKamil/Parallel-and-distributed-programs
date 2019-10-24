@@ -13,24 +13,24 @@ class CSVUtils {
     private static final int AIRPORT_ID_COLUMN = 0;
     private static final int AIRPORT_NAME_COLUMN = 1;
 
+    private static int strToInt(String numString) {
+        return numString.length() > 0 ?
+                Integer.parseInt(numString) :
+                INT_ZERO;
+    }
+
+    static float strToFloat(String numString) {
+        return numString.length() > 0 ?
+                Float.parseFloat(numString):
+                FLOAT_ZERO;
+    }
+
     private String[] data;
 
     CSVUtils(String raw) {
         data = raw.replaceAll("\"", "").split(",");
     }
-
-    private static int strToInt(String numString) {
-        return numString.length() > 0 ?
-                    Integer.parseInt(numString) :
-                    INT_ZERO;
-    }
-
-    static float strToFloat(String numString) {
-        return numString.length() > 0 ?
-                    Float.parseFloat(numString):
-                    FLOAT_ZERO;
-    }
-
+    
     int getAirportId() {
         return strToInt(data[AIRPORT_ID_COLUMN]);
     }
