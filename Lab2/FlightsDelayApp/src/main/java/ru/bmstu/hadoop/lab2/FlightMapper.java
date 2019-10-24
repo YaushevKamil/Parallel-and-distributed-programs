@@ -14,11 +14,11 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
         if (key.get() == 0) {
             return;
         }
-        CSVUtils data = new CSVUtils(value.toString());
-        float floatDelayTime = data.getFloatDelayTime();
-        String stringDelayTime = data.getStringDelayTime();
+        CSVUtils csvData = new CSVUtils(value.toString());
+        float floatDelayTime = csvData.getFloatDelayTime();
+        String stringDelayTime = csvData.getStringDelayTime();
         if (floatDelayTime > FLOAT_ZERO) {
-            int airportId = data.getOriginAirportId();
+            int airportId = csvData.getOriginAirportId();
             context.write(new FlightWritableComparable(airportId, TYPE_FLIGHT), new Text(stringDelayTime));
         }
     }
