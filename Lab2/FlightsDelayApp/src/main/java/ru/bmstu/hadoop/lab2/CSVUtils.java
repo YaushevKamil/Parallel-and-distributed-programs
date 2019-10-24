@@ -31,14 +31,16 @@ class CSVUtils {
                     FLOAT_ZERO;
     }
 
+    static String getString(String str) {
+        return str.length() > 0 ? str : "";
+    }
+
     int getAirportId() {
         return strToInt(data[AIRPORT_ID_COLUMN]);
     }
 
     String getAirportName() {
-        return airportData.length > 0 ?
-                    airportData[AIRPORT_NAME_COLUMN] :
-                    "";
+        return str(data[AIRPORT_NAME_COLUMN]);
     }
 
     static void parseFlightData(String raw) {
