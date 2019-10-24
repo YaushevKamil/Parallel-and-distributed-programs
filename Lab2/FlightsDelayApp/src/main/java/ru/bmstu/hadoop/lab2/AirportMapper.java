@@ -16,7 +16,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, FlightWritableComp
         }
         CSVUtils csvData = new CSVUtils(value.toString());
         int airportId = csvData.getAirportId();
-        String airportName = getAirportName();
+        String airportName = csvData.getAirportName();
         context.write(new FlightWritableComparable(airportId, TYPE_AIRPORT), new Text(airportName));
 
     }
