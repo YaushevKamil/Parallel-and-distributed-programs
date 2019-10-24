@@ -30,9 +30,11 @@ class CSVUtils {
     CSVUtils(String raw) {
         data = raw.replaceAll("\"", "").split(",");
     }
-    
+
     int getAirportId() {
-        return strToInt(data[AIRPORT_ID_COLUMN]);
+        return data.length > AIRPORT_ID_COLUMN ?
+                strToInt(data[AIRPORT_ID_COLUMN]) :
+                INT_ZERO;
     }
 
     String getAirportName() {
