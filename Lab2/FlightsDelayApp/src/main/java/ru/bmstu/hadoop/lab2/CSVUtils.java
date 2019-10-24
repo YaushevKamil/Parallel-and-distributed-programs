@@ -31,25 +31,16 @@ class CSVUtils {
                     FLOAT_ZERO;
     }
 
-    static String getString(String str) {
-        String tmp = new String(str);
-        return str.length() > 0 ? str : "";
-    }
-
     int getAirportId() {
         return strToInt(data[AIRPORT_ID_COLUMN]);
     }
 
     String getAirportName() {
-        return getString(data[AIRPORT_NAME_COLUMN]);
+        return data[AIRPORT_NAME_COLUMN];
     }
 
-    static void parseFlightData(String raw) {
-        flightData = raw.split(",");
-    }
-
-    static int getOriginAirportId() {
-        return strToInt(flightData[ORIGIN_AIRPORT_ID_COLUMN]);
+    int getOriginAirportId() {
+        return strToInt(data[ORIGIN_AIRPORT_ID_COLUMN]);
     }
 
     static float getFloatDelayTime() {
