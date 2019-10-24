@@ -13,7 +13,7 @@ class CSVUtils {
     private static final int AIRPORT_ID_COLUMN   = 0;
     private static final int AIRPORT_NAME_COLUMN = 1;
 
-    private static String[] data;
+    private String[] data;
 
     CSVUtils() {
 
