@@ -3,6 +3,7 @@ package ru.bmstu.hadoop.lab2;
 class CSVUtils {
     static final int INT_ZERO = 0;
     static final float FLOAT_ZERO = 0.0f;
+    static final String EMPTY_STRING = "";
 
     static final int TYPE_AIRPORT = 0;
     static final int TYPE_FLIGHT = 1;
@@ -38,7 +39,9 @@ class CSVUtils {
     }
 
     String getAirportName() {
-        return data[AIRPORT_NAME_COLUMN];
+        return data.length > AIRPORT_NAME_COLUMN ?
+                data[AIRPORT_NAME_COLUMN] :
+                EMPTY_STRING;
     }
 
     int getOriginAirportId() {
