@@ -16,23 +16,10 @@ public class FlightWritableComparable implements WritableComparable {
         this.airportId = airportId;
         this.dataType = dataType;
     }
-
-
-//    public void setAirportId(int airportId) {
-//        this.airportId = airportId;
-//    }
-
-//    public void setDataType(int dataType) {
-//        this.dataType = dataType;
-//    }
-
+    
     int getAirportId() {
         return this.airportId;
     }
-
-//    public int getDataType() {
-//        return this.dataType;
-//    }
 
 
     @Override
