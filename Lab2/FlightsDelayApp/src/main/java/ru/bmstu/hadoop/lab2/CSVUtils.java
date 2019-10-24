@@ -15,8 +15,8 @@ class CSVUtils {
 
     private String[] data;
 
-    CSVUtils() {
-
+    CSVUtils(String raw) {
+        data = raw.replaceAll("\"", "").split(",");
     }
 
     private static int strToInt(String numString) {
@@ -31,15 +31,11 @@ class CSVUtils {
                     FLOAT_ZERO;
     }
 
-    static void parseAirportData(String raw) {
-        airportData = raw.replaceAll("\"", "").split(",");
+    int getAirportId() {
+        return strToInt(data[AIRPORT_ID_COLUMN]);
     }
 
-    static int getAirportId() {
-        return strToInt(airportData[AIRPORT_ID_COLUMN]);
-    }
-
-    static String getAirportName() {
+    String getAirportName() {
         return airportData.length > 0 ?
                     airportData[AIRPORT_NAME_COLUMN] :
                     "";
