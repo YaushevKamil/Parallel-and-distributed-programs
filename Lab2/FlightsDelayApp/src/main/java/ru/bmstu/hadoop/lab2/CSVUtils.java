@@ -32,6 +32,7 @@ class CSVUtils {
     }
 
     static String getString(String str) {
+        String tmp = new String(str);
         return str.length() > 0 ? str : "";
     }
 
