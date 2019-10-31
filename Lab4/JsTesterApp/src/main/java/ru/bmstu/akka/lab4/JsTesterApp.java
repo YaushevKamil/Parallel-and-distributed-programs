@@ -1,8 +1,6 @@
 package ru.bmstu.akka.lab4;
 
-import akka.actor.ActorRef;
-import akka.actor.ActorSystem;
-import akka.actor.Props;
+import akka.actor.*;
 import akka.http.javadsl.Http;
 import akka.routing.RoundRobinPool;
 import akka.stream.ActorMaterializer;
@@ -12,7 +10,15 @@ public class JsTesterApp {
     public static ActorRef routeActor;
 
     private static final int MAX_RETRIES = 10;
-    
+    private static SupervisorStrategy strategy =
+            new OneForOneStrategy(MAX_RETRIES,
+                    Duration.create("1 minute"),
+                    DeciderBuilder.
+                            match(ArithmeticException.class, e -> resume()).
+                            match(NullPointerException.class, e -> restart()).
+                            match(IllegalArgumentException.class, e -> stop()).
+                            matchAny(o -> escalate()).build());
+
 
     public static void main(String[] args) {
         ActorSystem system = ActorSystem.create("lab4");
