@@ -3,6 +3,7 @@ package ru.bmstu.akka.lab4;
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
+import ru.bmstu.akka.lab4.messages.StoreMessage;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -36,7 +37,7 @@ public class PerformActor extends AbstractActor {
                     } catch (NoSuchMethodException e) {
                         description = "Error: NoSuchMethodException" + e.getMessage();
                     }
-                    storeActor.tell(new StoreActor(m.getPackageId(), description), ActorRef.noSender());
+                    storeActor.tell(new StoreMessage(m.getPackageId(), description), ActorRef.noSender());
                 })
                 .build();
     }
