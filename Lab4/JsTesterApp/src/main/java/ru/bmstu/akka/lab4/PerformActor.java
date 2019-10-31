@@ -16,7 +16,7 @@ public class PerformActor extends AbstractActor {
                     engine.eval(m.getScript());
                     Invocable invocable = (Invocable) engine;
                     String result = invocable.invokeFunction(m.getFunctionName(), m.getParams().toArray()).toString();
-                    String 
+                    String output = 
                 })
                 .build();
     }
