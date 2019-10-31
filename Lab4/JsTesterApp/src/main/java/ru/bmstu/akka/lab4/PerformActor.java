@@ -27,7 +27,7 @@ public class PerformActor extends AbstractActor {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
                     String description;
                     try {
-                        
+                        String result = 
                     }
 
                     String result =
