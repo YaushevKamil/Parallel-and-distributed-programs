@@ -1,6 +1,7 @@
 package ru.bmstu.akka.lab4;
 
 public class ResponseMessage {
-    private String 
+    private String packageId;
+    
 
 }
