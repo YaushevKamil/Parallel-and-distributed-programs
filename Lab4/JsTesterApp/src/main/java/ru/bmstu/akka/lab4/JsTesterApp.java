@@ -11,6 +11,9 @@ public class JsTesterApp {
     public static ActorRef storeActor;
     public static ActorRef routeActor;
 
+    private static final int MAX_RETRIES = 10;
+    
+
     public static void main(String[] args) {
         ActorSystem system = ActorSystem.create("lab4");
         storeActor = system.actorOf(Props.create(StoreActor.class));
