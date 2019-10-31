@@ -54,7 +54,7 @@ public class JsTesterApp extends AllDirectives {
         return route(
                 path("test", () ->
                         post(() -> entity(Jackson.unmarshaller(Tests.class), msg -> {
-                            System.out.println("post()");
+//                            System.out.println("post()");
                             String packageId = msg.getPackageId();
                             String functionName = msg.getFunctionName();
                             String script = msg.getJsScript();
