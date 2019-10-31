@@ -16,7 +16,7 @@ import static ru.bmstu.akka.lab4.JsTesterApp.storeActor;
 public class PerformActor extends AbstractActor {
     private static String performScript(String functionName,
                                         String script,
-                                        List<String> params)
+                                        List<Object> params)
             throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(script);
