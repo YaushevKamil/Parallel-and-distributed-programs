@@ -30,7 +30,7 @@ public class PerformActor extends AbstractActor {
                     } catch (ScriptException e) {
                         description = "Error: ScriptException\n" + e.getMessage();
                     } catch (NoSuchMethodException e) {
-
+                        description = "Error: NoSuchMethodException" + e.getMessage();
                     }
 
                     String result =
