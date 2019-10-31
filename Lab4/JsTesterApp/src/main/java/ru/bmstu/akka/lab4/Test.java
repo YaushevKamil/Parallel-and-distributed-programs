@@ -13,5 +13,5 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 public class Test {
     @JsonProperty("testName")
-    private String 
+    private String testName;
 }
