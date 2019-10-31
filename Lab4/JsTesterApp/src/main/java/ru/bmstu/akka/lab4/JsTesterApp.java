@@ -63,6 +63,8 @@ public class JsTesterApp extends AllDirectives {
                         ConnectHttp.toHost("localhost", 8080),
                         materializer
                 );
+        System.in.read();
+
         System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
 
     }
