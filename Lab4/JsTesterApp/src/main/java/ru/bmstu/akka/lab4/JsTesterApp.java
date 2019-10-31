@@ -77,8 +77,8 @@ public class JsTesterApp extends AllDirectives {
                 path("put", () ->
                         get(() -> parameter("packageId", (packageId) -> {
                             System.out.println("get()");
-                            Future<Object> result = Pattern.ask(storeActor, new GetMessage(packageId), TIMEOUT_MS);
-                            return completeOKWithFuture("value saved to store ! key=" + key + " value=" + value);
+                            Future<Object> output = Pattern.ask(storeActor, new GetMessage(packageId), TIMEOUT_MS);
+                            return completeOKWithFuture(output);
                                         })))
         );
     }
