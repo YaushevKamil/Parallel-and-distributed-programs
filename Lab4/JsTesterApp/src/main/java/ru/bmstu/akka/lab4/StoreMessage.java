@@ -1,11 +1,11 @@
 package ru.bmstu.akka.lab4;
 
-public class StoreMessage {
+public class StoreMessage extends Message {
     private String packageId;
     private String result;
 
     public StoreMessage(String packageId, String result) {
-        this.packageId = packageId;
+        super(packageId);
         this.result = result;
     }
 

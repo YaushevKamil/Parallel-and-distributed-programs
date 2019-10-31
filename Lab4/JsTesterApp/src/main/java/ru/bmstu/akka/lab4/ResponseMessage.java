@@ -10,10 +10,6 @@ public class ResponseMessage extends Message {
         this.results = results;
     }
 
-    public String getPackageId() {
-        return packageId;
-    }
-
     public ArrayList<String> getResults() {
         return results;
     }
