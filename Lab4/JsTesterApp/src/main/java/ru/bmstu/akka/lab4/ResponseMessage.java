@@ -6,6 +6,9 @@ public class ResponseMessage {
     private String packageId;
     private ArrayList<String> results;
 
-    public ResponseMessage(String packageId, ArrayList<String> ) {}
+    public ResponseMessage(String packageId, ArrayList<String> results) {
+        this.packageId = packageId;
+        this.results = results;
+    }
 
 }
