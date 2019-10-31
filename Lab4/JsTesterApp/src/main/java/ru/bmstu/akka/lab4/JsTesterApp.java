@@ -61,7 +61,7 @@ public class JsTesterApp extends AllDirectives {
                             List<Test> tests = msg.getTests();
                             String expectedResult;
                             for (Test test : tests) {
-                                routeActor.tell
+                                routeActor.tell(new JsFunction(packageId))
                             }
                                     new JsFunction()
                             testPackageActor.tell(msg, ActorRef.noSender());
