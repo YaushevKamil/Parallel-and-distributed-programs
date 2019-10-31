@@ -25,5 +25,6 @@ public class Client {
                 Http.get(system)
                 .singleRequest(HttpRequest.POST("http://localhost:8080/tests")
                         .withEntity(MediaTypes.APPLICATION_JSON.toContentType(), json), materializer);
+        System.out.println(postFuture.toCompletableFuture().get());
     }
 }
