@@ -23,7 +23,7 @@ public class Test {
     private String expectedResult;
 
     @JsonProperty("params")
-    private List<String> params;
+    private List<String> params = null;
 
     @JsonIgnore
     private Map<String, String> additionalProperties;
