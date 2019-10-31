@@ -12,7 +12,7 @@ public class PerformActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(JsFunction.class, m -> {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-                    engine.eval()
+                    engine.eval(script)
                 })
                 .build();
     }
