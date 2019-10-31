@@ -62,7 +62,7 @@ public class Test {
     }
 
     @JsonAnySetter
-    public void setUnexpectedProperties(String key, String value) {
+    public void setUnexpectedProperties(String key, Object value) {
         unexpectedProperties.put(key, value);
     }
 }
