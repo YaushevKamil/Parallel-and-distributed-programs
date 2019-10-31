@@ -61,6 +61,8 @@ public class Test {
     }
 
     @JsonAnySetter
-    public void setAdditionalProperties(String key, )
+    public void setAdditionalProperties(String key, String value) {
+        
+    }
 
 }
