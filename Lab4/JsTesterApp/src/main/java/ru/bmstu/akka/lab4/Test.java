@@ -19,6 +19,6 @@ public class Test {
     @JsonProperty("testName") private String testName;
     @JsonProperty("expectedResult") private String expectedResult;
     @JsonProperty("params") private List<String> params;
-    @JsonIgnore private Map<String, String> 
+    @JsonIgnore private Map<String, String> extraData;
 
 }
