@@ -24,7 +24,7 @@ public class Test {
     private List<String> params = null;
 
     @JsonIgnore
-    private Map<String, String> additionalProperties = new HashMap<>();
+    private Map<String, String> unexpectedProperties = new HashMap<>();
 
     @JsonProperty("testName")
     public String getTestName() {
@@ -43,7 +43,7 @@ public class Test {
 
     @JsonAnyGetter
     public Map<String, String> getAdditionalProperties() {
-        return additionalProperties;
+        return unexpectedProperties;
     }
 
     @JsonProperty("testName")
@@ -63,7 +63,7 @@ public class Test {
 
     @JsonAnySetter
     public void setAdditionalProperties(String key, String value) {
-        additionalProperties.put(key, value);
+        unexpectedProperties.put(key, value);
     }
 
 }
