@@ -5,7 +5,7 @@ import akka.actor.ActorSystem;
 
 public class JsTesterApp {
     public static ActorRef storeActor;
-    public static ActorRef routActor;
+    public static ActorRef routeActor;
 
     public static void main(String[] args) {
         ActorSystem system = ActorSystem.create("lab4");
