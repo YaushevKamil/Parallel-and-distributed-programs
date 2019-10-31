@@ -49,4 +49,24 @@ public class Tests {
     public List<Test> getTests() {
         return tests;
     }
+
+    @JsonProperty("packageId")
+    public void setPackageId(String packageId) {
+        this.packageId = packageId;
+    }
+
+    @JsonProperty("jsScript")
+    public void setJsScript(String jsScript) {
+        this.jsScript = jsScript;
+    }
+
+    @JsonProperty("functionName")
+    public String setFunctionName() {
+        return functionName;
+    }
+
+    @JsonProperty("tests")
+    public List<Test> setTests() {
+        return tests;
+    }
 }
