@@ -20,6 +20,6 @@ public class Client {
         json = new Scanner(new File("tests.json")).useDelimiter("\\Z").next();
 
         final CompletionStage<HttpResponse> postFuture =
-                Http.get
+                Http.get(system)
     }
 }
