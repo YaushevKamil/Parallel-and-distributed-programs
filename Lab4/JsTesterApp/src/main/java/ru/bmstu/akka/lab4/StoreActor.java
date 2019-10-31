@@ -2,7 +2,7 @@ package ru.bmstu.akka.lab4;
 
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
-import ru.bmstu.akka.lab4.messages.StoreMessage;
+import ru.bmstu.akka.lab4.messages.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
