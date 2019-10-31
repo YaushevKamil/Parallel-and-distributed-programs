@@ -15,11 +15,11 @@ import java.util.Map;
 })
 
 public class Tests {
-    @JsonProperty("testName")
-    private String testName;
+    @JsonProperty("packageId")
+    private String packageId;
 
-    @JsonProperty("expectedResult")
-    private String expectedResult;
+    @JsonProperty("jsScript")
+    private String jsScript;
 
     @JsonProperty("params")
     private List<String> params = null;
