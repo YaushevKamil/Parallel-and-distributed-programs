@@ -7,6 +7,7 @@ import akka.stream.Materializer;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.concurrent.CompletionStage;
 
 public class Client {
     public static void main(String[] args) throws FileNotFoundException {
@@ -16,6 +17,6 @@ public class Client {
         String json = "";
         json = new Scanner(new File("tests.json")).useDelimiter("\\Z").next();
 
-        final Comple
+        final CompletionStage
     }
 }
