@@ -22,6 +22,6 @@ public class Client {
 
         final CompletionStage<HttpResponse> postFuture =
                 Http.get(system)
-                .singleRequest(HttpRequest.POST("http://localhost:8080/tests").withEntity(MediaTypes.APPLICATION_JSON.toContentType(), json), )
+                .singleRequest(HttpRequest.POST("http://localhost:8080/tests").withEntity(MediaTypes.APPLICATION_JSON.toContentType(), json), materializer)
     }
 }
