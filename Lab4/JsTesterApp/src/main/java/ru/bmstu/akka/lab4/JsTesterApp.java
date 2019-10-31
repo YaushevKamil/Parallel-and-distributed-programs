@@ -17,6 +17,6 @@ public class JsTesterApp {
                 .withSupervisorStrategy(strategy)
                 .props(Props.create(), "router"));
         final Http http = Http.get(system);
-        final 
+        final Actor
     }
 }
