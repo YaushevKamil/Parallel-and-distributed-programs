@@ -13,7 +13,7 @@ public class PerformActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(JsFunction.class, m -> {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-                    engine.eval(script);
+                    engine.eval(m.getScript());
                     Invocable invocable = (Invocable) engine;
                     return invocable.invokeFunction()
                 })
