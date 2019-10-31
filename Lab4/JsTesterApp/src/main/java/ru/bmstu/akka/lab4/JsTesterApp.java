@@ -68,7 +68,7 @@ public class JsTesterApp extends AllDirectives {
                                                                test.getExpectedResult()),
                                         ActorRef.noSender());
                             }
-                        })))),
+                        }))),
                 path("put", () ->
                         get(() ->
                                 parameter("key", (key) ->
