@@ -42,7 +42,7 @@ public class Test {
     }
 
     @JsonAnyGetter
-    public Map<String, String> getUnexpectedProperties() {
+    public Map<String, Object> getUnexpectedProperties() {
         return unexpectedProperties;
     }
 
