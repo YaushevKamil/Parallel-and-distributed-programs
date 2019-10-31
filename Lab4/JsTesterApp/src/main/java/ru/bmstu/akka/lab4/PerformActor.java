@@ -11,7 +11,7 @@ public class PerformActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(JsFunction.class, m -> {
-                    ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashor");
+                    ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
                 })
                 .build();
     }
