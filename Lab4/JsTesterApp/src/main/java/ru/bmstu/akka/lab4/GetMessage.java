@@ -7,7 +7,7 @@ public class GetMessage {
         this.packageId = packageId;
     }
 
-    String getPackageId() {
-        return packageId
+    public String getPackageId() {
+        return packageId;
     }
 }
