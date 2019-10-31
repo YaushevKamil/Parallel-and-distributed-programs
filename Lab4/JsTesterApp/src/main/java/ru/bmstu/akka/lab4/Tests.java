@@ -45,8 +45,8 @@ public class Tests {
         return functionName;
     }
 
-    @JsonProperty("functionName")
-    public String getFunctionName() {
-        return functionName;
+    @JsonProperty("tests")
+    public List<Test> getTests() {
+        return tests;
     }
 }
