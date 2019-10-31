@@ -44,17 +44,17 @@ public class Test {
     }
 
     @JsonProperty("testName")
-    public setTestName(String testName) {
+    public void setTestName(String testName) {
         this.testName = testName;
     }
 
     @JsonProperty("expectedResult")
-    public setExpectedResult(String expectedResult) {
+    public void setExpectedResult(String expectedResult) {
         this.expectedResult = expectedResult;
     }
 
     @JsonProperty("params")
-    public List<String> setParams(List<String> params) {
-        return params;
+    public void setParams(List<String> params) {
+        this.params = params;
     }
 }
