@@ -6,7 +6,8 @@ import com.fasterxml.jackson.annotation.*;
 @JsonPropertyOrder({
         "packageId",
         "jsScript",
-        "params"
+        "functionName",
+        
 })
 
 public class Tests {
