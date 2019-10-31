@@ -58,7 +58,7 @@ public class JsTesterApp extends AllDirectives {
                             String packageId = msg.getPackageId();
                             String functionName = msg.getFunctionName();
                             String script = msg.getJsScript();
-                            List<String> params;
+                            List<String> params = msg.get;
                             String expectedResult;
                             msg.getFunctionName()
                                     new JsFunction()
