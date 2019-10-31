@@ -30,10 +30,6 @@ public class Tests {
     @JsonIgnore
     private Map<String, String> unexpectedProperties = new HashMap<>();
 
-    public int getSize() {
-        return tests.size();
-    }
-
     @JsonProperty("packageId")
     public String getPackageId() {
         return packageId;
