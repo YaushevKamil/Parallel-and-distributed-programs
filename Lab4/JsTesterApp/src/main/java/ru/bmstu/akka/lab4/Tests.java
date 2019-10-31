@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "testName",
+        "packageId",
         "expectedResult",
         "params"
 })
