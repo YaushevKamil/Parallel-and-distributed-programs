@@ -14,7 +14,7 @@ public class PerformActor extends AbstractActor {
                                         String script,
                                         String... args)
             throws ScriptException, NoSuchMethodException {
-        engine.eval(m.getScript());
+        engine.eval(script);
         Invocable invocable = (Invocable) engine;
         invocable.invokeFunction(m.getFunctionName(), m.getParams().toArray()).toString();
     }
