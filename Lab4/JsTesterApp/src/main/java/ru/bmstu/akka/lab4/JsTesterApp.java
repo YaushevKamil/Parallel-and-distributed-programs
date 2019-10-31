@@ -3,6 +3,7 @@ package ru.bmstu.akka.lab4;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
+import akka.http.javadsl.Http;
 import akka.routing.RoundRobinPool;
 
 public class JsTesterApp {
@@ -15,6 +16,6 @@ public class JsTesterApp {
         routeActor = system.actorOf(new RoundRobinPool(5)
                 .withSupervisorStrategy(strategy)
                 .props(Props.create(), "router"));
-        final Http http = 
+        final Http http = Http.get()
     }
 }
