@@ -21,6 +21,7 @@ import scala.concurrent.Future;
 import scala.concurrent.duration.Duration;
 
 import javax.annotation.processing.Completion;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CompletionStage;
 import java.util.regex.Pattern;
@@ -43,7 +44,7 @@ public class JsTesterApp extends AllDirectives {
                             matchAny(o -> escalate()).build());
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create("lab4");
         storeActor = system.actorOf(Props.create(StoreActor.class));
         routeActor = system.actorOf(new RoundRobinPool(5)
