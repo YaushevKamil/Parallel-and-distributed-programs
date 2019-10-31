@@ -2,6 +2,7 @@ package ru.bmstu.akka.lab4;
 
 import akka.NotUsed;
 import akka.actor.*;
+import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.IncomingConnection;
 import akka.http.javadsl.ServerBinding;
@@ -56,7 +57,7 @@ public class JsTesterApp extends AllDirectives {
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
                 tester.createRoute(system).flow(system, materializer);
 
-        final CompletionStage<ServerBinding> binding = http.bindAndHandle(routeFlow, Connect)
+        final CompletionStage<ServerBinding> binding = http.bindAndHandle(routeFlow, ConnectHttp)
 
     }
 
