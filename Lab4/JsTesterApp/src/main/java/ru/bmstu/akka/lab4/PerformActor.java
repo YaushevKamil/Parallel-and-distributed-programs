@@ -26,9 +26,9 @@ public class PerformActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(JsFunction.class, m -> {
+                    String packageId = m.getPackageId();
                     String description;
                     try {
-                        String packageId = m.getPackageId();
                         String expectedResult = m.getExpectedResult();
                         String actualResult = PerformActor.performScript(m.getFunctionName(), m.getScript(), m.getParams());
                         description = actualResult.equals(expectedResult) ? "Right: " : "Wrong: ";
