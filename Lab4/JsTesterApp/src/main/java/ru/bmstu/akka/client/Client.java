@@ -4,12 +4,14 @@ import akka.actor.ActorSystem;
 import akka.stream.ActorMaterializer;
 import akka.stream.Materializer;
 
+import java.util.Scanner;
+
 public class Client {
     public static void main(String[] args) {
         final ActorSystem system = ActorSystem.create();
         final Materializer materializer = ActorMaterializer.create(system);
 
         String json = "";
-        json = 
+        json = new Scanner()
     }
 }
