@@ -38,7 +38,7 @@ public class PerformActor extends AbstractActor {
                     } catch (NoSuchMethodException e) {
                         description = "Error: NoSuchMethodException" + e.getMessage();
                     }
-                    storeActor.tell(new StoreMessage(, description), ActorRef.noSender());
+                    storeActor.tell(new StoreMessage(packageId, description), ActorRef.noSender());
                 })
                 .build();
     }
