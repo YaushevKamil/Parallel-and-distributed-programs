@@ -21,4 +21,6 @@ public class Test {
     @JsonProperty("params") private List<String> params;
     @JsonIgnore private Map<String, String> additionalProperties;
 
+    public 
+
 }
