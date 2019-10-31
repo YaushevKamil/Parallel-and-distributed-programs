@@ -20,7 +20,8 @@ public class StoreActor extends AbstractActor {
                         store.get(packageId).add(result);
                     } else {
                         ArrayList<String> resValues = new ArrayList<>();
-                        resValues.add()
+                        resValues.add(result);
+                        
                     }
                     store.put(m.getKey(), m.getValue());
 
