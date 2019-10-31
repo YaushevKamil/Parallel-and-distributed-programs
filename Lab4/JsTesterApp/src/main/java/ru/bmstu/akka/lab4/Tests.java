@@ -21,8 +21,8 @@ public class Tests {
     @JsonProperty("jsScript")
     private String jsScript;
 
-    @JsonProperty("params")
-    private List<String> params = null;
+    @JsonProperty("functionName")
+    private String functionName;
 
     @JsonIgnore
     private Map<String, String> unexpectedProperties = new HashMap<>();
