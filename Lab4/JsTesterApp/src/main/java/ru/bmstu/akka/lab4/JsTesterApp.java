@@ -10,6 +10,7 @@ import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
 import akka.japi.pf.DeciderBuilder;
+import akka.pattern.Patterns;
 import akka.routing.RoundRobinPool;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
@@ -77,7 +78,7 @@ public class JsTesterApp extends AllDirectives {
                 path("put", () ->
                         get(() -> parameter("packageId", (packageId) -> {
 //                            System.out.println("get()");
-                            Future<Object> output = Pattern.ask(storeActor, new GetMessage(packageId), TIMEOUT_MS);
+                            Future<Object> output = Patterns.ask(storeActor, new GetMessage(packageId), TIMEOUT_MS);
                             return completeOKWithFuture(output, Jackson.marshaller());
                                         })))
         );
