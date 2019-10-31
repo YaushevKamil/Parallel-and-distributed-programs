@@ -26,9 +26,9 @@ public class PerformActor extends AbstractActor {
                 .match(JsFunction.class, m -> {
                     String description;
                     try {
-                        String expected = m.getExpectedResult();
+                        String expectedResult = m.getExpectedResult();
                         String result = PerformActor.performScript(m.getFunctionName(), m.getScript(), m.getParams());
-                        result.equals(m.getExpectedResult());
+                        result.equals(expectedResult);
                         description = "Expected: "
                     } catch (ScriptException e) {
                         description = "Error: ScriptException\n" + e.getMessage();
