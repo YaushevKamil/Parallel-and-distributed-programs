@@ -57,7 +57,7 @@ public class Test {
     }
 
     @JsonProperty("params")
-    public void setParams(List<String> params) {
+    public void setParams(List<Object> params) {
         this.params = params;
     }
 
