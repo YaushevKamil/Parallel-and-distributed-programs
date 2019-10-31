@@ -61,6 +61,6 @@ public class Test {
     }
 
     @JsonAnySetter
-    
+    public void set
 
 }
