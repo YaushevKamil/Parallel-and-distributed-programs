@@ -8,4 +8,12 @@ public class Message {
         this.packageId = packageId;
         this.result = result;
     }
+
+    public String getPackageId() {
+        return packageId;
+    }
+
+    public String getResult() {
+        return result;
+    }
 }
