@@ -10,7 +10,7 @@ public class JsFunction {
     private String expectedResult;
 
     public JsFunction(String packageId,
-                      String functionName, String script, List<Object> params,
+                      String functionName, String script, List<String> params,
                       String expectedResult) {
         this.packageId = packageId;
         this.functionName = functionName;
@@ -31,7 +31,7 @@ public class JsFunction {
         return script;
     }
 
-    public List<Object> getParams() {
+    public List<String> getParams() {
         return params;
     }
 
