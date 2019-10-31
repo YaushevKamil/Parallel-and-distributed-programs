@@ -28,8 +28,8 @@ public class PerformActor extends AbstractActor {
                     try {
                         String expectedResult = m.getExpectedResult();
                         String actualResult = PerformActor.performScript(m.getFunctionName(), m.getScript(), m.getParams());
-                        result.equals(expectedResult);
-                        description = "Expected: " + expectedResult + ", actual: " + actualResult;
+                        description = actualResult.equals(expectedResult) ? "OK"
+                    "Expected: " + expectedResult + ", actual: " + actualResult;
                     } catch (ScriptException e) {
                         description = "Error: ScriptException\n" + e.getMessage();
                     } catch (NoSuchMethodException e) {
