@@ -29,4 +29,14 @@ public class Tests {
 
     @JsonIgnore
     private Map<String, String> unexpectedProperties = new HashMap<>();
+
+    @JsonProperty("packageId")
+    public String getPackageId() {
+        return packageId;
+    }
+
+    @JsonProperty("jsScript")
+    public String getJsScript() {
+        return jsScript;
+    }
 }
