@@ -9,6 +9,11 @@ public class StoreMessage {
         this.result = result;
     }
 
-    public 
+    public String getPackageId() {
+        return packageId;
+    }
 
+    public String getResult() {
+        return result;
+    }
 }
