@@ -8,6 +8,8 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
 public class PerformActor extends AbstractActor {
+    
+
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
@@ -16,7 +18,7 @@ public class PerformActor extends AbstractActor {
                     engine.eval(m.getScript());
                     Invocable invocable = (Invocable) engine;
                     String result = invocable.invokeFunction(m.getFunctionName(), m.getParams().toArray()).toString();
-                    String output = 
+                    String output =
                 })
                 .build();
     }
