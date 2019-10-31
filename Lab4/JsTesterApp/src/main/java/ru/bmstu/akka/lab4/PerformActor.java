@@ -27,6 +27,8 @@ public class PerformActor extends AbstractActor {
                     String description;
                     try {
                         String result = PerformActor.performScript(m.getFunctionName(), m.getScript(), m.getParams());
+                    } catch (ScriptException e) {
+
                     } 
 
                     String result =
