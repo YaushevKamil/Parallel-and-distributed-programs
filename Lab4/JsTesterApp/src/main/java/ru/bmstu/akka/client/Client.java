@@ -4,6 +4,7 @@ import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
+import akka.http.javadsl.model.MediaTypes;
 import akka.stream.ActorMaterializer;
 import akka.stream.Materializer;
 
@@ -22,6 +23,7 @@ public class Client {
 
         final CompletionStage<HttpResponse> postFuture =
                 Http.get(system)
-                .singleRequest(HttpRequest.POST("http://localhost:8080/tests").withEntity(MediaTypes.APPLICATION_JSON.toContentType(), json), materializer)
+                .singleRequest(HttpRequest.POST("http://localhost:8080/tests")
+                        .withEntity(MediaTypes.APPLICATION_JSON.toContentType(), json), materializer);
     }
 }
