@@ -26,8 +26,8 @@ public class PerformActor extends AbstractActor {
                 .match(JsFunction.class, m -> {
                     String description;
                     try {
-                        String result = PerformActor.performScript(engine, m.getFunctionName());
-                    }
+                        String result = PerformActor.performScript(m.getFunctionName(), m.getScript(), m.getParams());
+                    } 
 
                     String result =
                     String output =
