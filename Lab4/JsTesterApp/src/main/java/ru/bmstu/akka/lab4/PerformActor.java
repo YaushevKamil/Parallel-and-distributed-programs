@@ -28,7 +28,7 @@ public class PerformActor extends AbstractActor {
                     try {
                         String result = PerformActor.performScript(m.getFunctionName(), m.getScript(), m.getParams());
                     } catch (ScriptException e) {
-                        description = "Error: ScriptException\n" + e.get;
+                        description = "Error: ScriptException\n" + e.getMessage();
                     } catch (NoSuchMethodException e) {
 
                     }
