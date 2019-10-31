@@ -9,11 +9,12 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 public class PerformActor extends AbstractActor {
-    private static String performScript(String functionName,
+    private static String performScript(Invocable invocable,
+                                        String functionName,
                                         String script,
                                         String... args)
             throws ScriptException, NoSuchMethodException {
-        
+
     }
 
     @Override
