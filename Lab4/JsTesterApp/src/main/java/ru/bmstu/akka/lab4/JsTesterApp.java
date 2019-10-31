@@ -3,6 +3,7 @@ package ru.bmstu.akka.lab4;
 import akka.NotUsed;
 import akka.actor.*;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.IncomingConnection;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.AllDirectives;
@@ -43,5 +44,8 @@ public class JsTesterApp extends AllDirectives {
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
                 tester.createRoute(system).flow(system, materializer);
 
+    }
+
+    private IncomingConnection createRoute(ActorSystem system) {
     }
 }
