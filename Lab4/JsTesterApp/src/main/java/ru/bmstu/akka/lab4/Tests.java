@@ -28,7 +28,7 @@ public class Tests {
     private List<Test> tests = null;
 
     @JsonIgnore
-    private Map<String, String> unexpectedProperties = new HashMap<>();
+    private Map<String, Object> unexpectedProperties = new HashMap<>();
 
     @JsonProperty("packageId")
     public String getPackageId() {
@@ -51,7 +51,7 @@ public class Tests {
     }
 
     @JsonAnyGetter
-    public Map<String, String> getUnexpectedProperties() {
+    public Map<String, Object> getUnexpectedProperties() {
         return unexpectedProperties;
     }
 
@@ -76,7 +76,7 @@ public class Tests {
     }
 
     @JsonAnySetter
-    public void setUnexpectedProperties(String key, String value) {
+    public void setUnexpectedProperties(String key, Object value) {
         unexpectedProperties.put(key, value);
     }
 }
