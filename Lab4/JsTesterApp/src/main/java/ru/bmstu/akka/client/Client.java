@@ -27,7 +27,7 @@ public class Client {
                 .singleRequest(HttpRequest.POST("http://localhost:8080/tests")
                         .withEntity(MediaTypes.APPLICATION_JSON.toContentType(), json), materializer);
         System.out.println(postFuture.toCompletableFuture().get());
-        System.out.println(responseFuture.toCompletableFuture().get());
+        
         final CompletionStage<HttpResponse> responseFuture =
                 Http.get(system)
                         .singleRequest(HttpRequest.GET("http://localhost:8080/response?packageId=11"), materializer);
