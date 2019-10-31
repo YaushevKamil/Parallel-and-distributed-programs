@@ -60,7 +60,7 @@ public class JsTesterApp extends AllDirectives {
                             String script = msg.getJsScript();
                             List<Test> tests = msg.getTests();
                             String expectedResult;
-                            msg.getFunctionName()
+                            for ()
                                     new JsFunction()
                             testPackageActor.tell(msg, ActorRef.noSender());
                             return complete("Test started!");
