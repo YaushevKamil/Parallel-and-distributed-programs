@@ -2,7 +2,7 @@ package ru.bmstu.akka.lab4;
 
 import java.util.ArrayList;
 
-public class ResponseMessage {
+public class ResponseMessage extends Message {
     private ArrayList<String> results;
 
     public ResponseMessage(String packageId, ArrayList<String> results) {
