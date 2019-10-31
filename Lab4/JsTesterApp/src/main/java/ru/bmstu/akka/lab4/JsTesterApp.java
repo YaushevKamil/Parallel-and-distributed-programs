@@ -5,6 +5,7 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.Http;
 import akka.routing.RoundRobinPool;
+import akka.stream.ActorMaterializer;
 
 public class JsTesterApp {
     public static ActorRef storeActor;
@@ -17,6 +18,6 @@ public class JsTesterApp {
                 .withSupervisorStrategy(strategy)
                 .props(Props.create(), "router"));
         final Http http = Http.get(system);
-        final Actor
+        final ActorMaterializer
     }
 }
