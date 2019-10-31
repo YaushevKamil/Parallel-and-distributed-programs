@@ -13,6 +13,7 @@ import akka.japi.pf.DeciderBuilder;
 import akka.routing.RoundRobinPool;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import scala.concurrent.Future;
 import scala.concurrent.duration.Duration;
 
 import java.util.List;
@@ -73,7 +74,7 @@ public class JsTesterApp extends AllDirectives {
                 path("put", () ->
                         get(() -> parameter("packageId", (packageId) -> {
                             System.out.println("get()");
-                            
+                            Future<Object>
                             .tell(new StoreActor.StoreMessage(key, value), ActorRef.noSender());
                                             return complete("value saved to store ! key=" + key + " value=" + value);
                                         })))
