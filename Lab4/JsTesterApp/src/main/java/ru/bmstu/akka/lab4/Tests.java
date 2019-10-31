@@ -61,8 +61,8 @@ public class Tests {
     }
 
     @JsonProperty("functionName")
-    public String setFunctionName() {
-        return functionName;
+    public void setFunctionName(String functionName) {
+        this.functionName = functionName;
     }
 
     @JsonProperty("tests")
