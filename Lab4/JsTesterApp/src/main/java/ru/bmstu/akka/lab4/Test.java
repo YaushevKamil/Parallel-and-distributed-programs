@@ -22,7 +22,7 @@ public class Test {
     @JsonIgnore private Map<String, String> additionalProperties;
 
     public String getTestName() {
-        
+        return testName;
     }
 
 }
