@@ -22,6 +22,6 @@ public class Client {
 
         final CompletionStage<HttpResponse> postFuture =
                 Http.get(system)
-                .singleRequest(HttpRequest.POST("http:"))
+                .singleRequest(HttpRequest.POST("http://localhost"))
     }
 }
