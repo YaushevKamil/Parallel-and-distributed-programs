@@ -4,6 +4,7 @@ import akka.actor.ActorSystem;
 import akka.stream.ActorMaterializer;
 import akka.stream.Materializer;
 
+import java.io.File;
 import java.util.Scanner;
 
 public class Client {
@@ -12,6 +13,6 @@ public class Client {
         final Materializer materializer = ActorMaterializer.create(system);
 
         String json = "";
-        json = new Scanner()
+        json = new Scanner(new File())
     }
 }
