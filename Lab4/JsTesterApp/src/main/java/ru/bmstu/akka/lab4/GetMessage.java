@@ -1,13 +1,13 @@
 package ru.bmstu.akka.lab4;
 
-public class GetMessage {
+public class GetMessage extends Message {
     private String packageId;
 
     public GetMessage(String packageId) {
-        this.packageId = packageId;
+        super(packageId);
     }
-
-    public String getPackageId() {
-        return packageId;
-    }
+//
+//    public String getPackageId() {
+//        return packageId;
+//    }
 }

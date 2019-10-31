@@ -3,7 +3,7 @@ package ru.bmstu.akka.lab4;
 public class Message {
     private String packageId;
 
-    public Message(String packageId, String result) {
+    public Message(String packageId) {
         this.packageId = packageId;
     }
 
