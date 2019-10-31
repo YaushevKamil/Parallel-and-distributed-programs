@@ -27,7 +27,7 @@ public class PerformActor extends AbstractActor {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
                     String description;
                     try {
-                        String result = Actor
+                        String result = PerformActor.performScript()
                     }
 
                     String result =
