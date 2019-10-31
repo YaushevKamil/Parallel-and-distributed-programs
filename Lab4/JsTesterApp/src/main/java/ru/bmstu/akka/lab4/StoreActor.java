@@ -25,7 +25,7 @@ public class StoreActor extends AbstractActor {
                     }
                 })
                 .match(GetMessage.class, req -> {
-                    sender().tell(new REsponseMessage)
+                    sender().tell(new ResponseMessage)
                 });
     }
 }
