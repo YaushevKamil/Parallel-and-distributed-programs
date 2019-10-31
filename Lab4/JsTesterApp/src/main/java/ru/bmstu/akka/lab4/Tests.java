@@ -25,7 +25,7 @@ public class Tests {
     private String functionName;
 
     @JsonProperty("tests")
-    private String tests;
+    private List<Test> tests = null;
 
     @JsonIgnore
     private Map<String, String> unexpectedProperties = new HashMap<>();
