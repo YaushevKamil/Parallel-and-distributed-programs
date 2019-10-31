@@ -41,7 +41,7 @@ public class JsTesterApp extends AllDirectives {
         JsTesterApp tester = new JsTesterApp();
 
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
-                tester.createRoute(system).flow(system, materializer);
+                tester.createRoute().flow(system, materializer);
 
     }
 }
