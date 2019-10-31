@@ -11,6 +11,6 @@ public class JsTesterApp {
     public static void main(String[] args) {
         ActorSystem system = ActorSystem.create("lab4");
         storeActor = system.actorOf(Props.create(StoreActor.class));
-        routeActor = system.actorOf()
+        routeActor = system.actorOf(new RoudR)
     }
 }
