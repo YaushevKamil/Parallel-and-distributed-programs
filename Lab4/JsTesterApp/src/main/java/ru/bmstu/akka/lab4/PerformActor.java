@@ -8,7 +8,8 @@ public class PerformActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(JsFunction.class, m -> {
-                    
-                });
+
+                })
+                .build();
     }
 }
