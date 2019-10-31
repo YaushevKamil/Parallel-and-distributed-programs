@@ -3,6 +3,7 @@ package ru.bmstu.akka.lab4;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
+import akka.routing.RoundRobinPool;
 
 public class JsTesterApp {
     public static ActorRef storeActor;
@@ -11,6 +12,6 @@ public class JsTesterApp {
     public static void main(String[] args) {
         ActorSystem system = ActorSystem.create("lab4");
         storeActor = system.actorOf(Props.create(StoreActor.class));
-        routeActor = system.actorOf(new RoudR)
+        routeActor = system.actorOf(new RoundRobinPool()dR)
     }
 }
