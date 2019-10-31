@@ -21,10 +21,10 @@ public class Test {
     private String expectedResult;
 
     @JsonProperty("params")
-    private List<String> params = null;
+    private List<Object> params = null;
 
     @JsonIgnore
-    private Map<String, String> unexpectedProperties = new HashMap<>();
+    private Map<String, Object> unexpectedProperties = new HashMap<>();
 
     @JsonProperty("testName")
     public String getTestName() {
@@ -37,7 +37,7 @@ public class Test {
     }
 
     @JsonProperty("params")
-    public List<String> getParams() {
+    public List<Object> getParams() {
         return params;
     }
 
