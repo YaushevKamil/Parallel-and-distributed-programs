@@ -9,6 +9,7 @@ import akka.http.javadsl.server.AllDirectives;
 import akka.japi.pf.DeciderBuilder;
 import akka.routing.RoundRobinPool;
 import akka.stream.ActorMaterializer;
+import akka.stream.javadsl.Flow;
 import scala.concurrent.duration.Duration;
 
 import static akka.actor.SupervisorStrategy.*;
@@ -40,7 +41,7 @@ public class JsTesterApp extends AllDirectives {
         JsTesterApp tester = new JsTesterApp();
 
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
-                instance.createRoute(system).flow(system, materializer);
+                tester.createRoute(system).flow(system, materializer);
 
     }
 }
