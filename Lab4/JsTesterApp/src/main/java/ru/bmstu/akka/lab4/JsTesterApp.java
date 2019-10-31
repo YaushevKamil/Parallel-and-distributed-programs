@@ -16,6 +16,6 @@ public class JsTesterApp {
         routeActor = system.actorOf(new RoundRobinPool(5)
                 .withSupervisorStrategy(strategy)
                 .props(Props.create(), "router"));
-        final Http http = Http.get()
+        final Http http = Http.get(system);
     }
 }
