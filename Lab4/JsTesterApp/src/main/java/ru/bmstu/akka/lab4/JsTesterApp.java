@@ -7,6 +7,7 @@ import akka.http.javadsl.IncomingConnection;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.AllDirectives;
+import akka.http.javadsl.server.Route;
 import akka.japi.pf.DeciderBuilder;
 import akka.routing.RoundRobinPool;
 import akka.stream.ActorMaterializer;
@@ -46,6 +47,7 @@ public class JsTesterApp extends AllDirectives {
 
     }
 
-    private IncomingConnection createRoute(ActorSystem system) {
+    private Route createRoute(ActorSystem system) {
+        
     }
 }
