@@ -26,7 +26,9 @@ public class PerformActor extends AbstractActor {
                 .match(JsFunction.class, m -> {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
                     String description;
-                    
+                    try {
+                        
+                    }
 
                     String result =
                     String output =
