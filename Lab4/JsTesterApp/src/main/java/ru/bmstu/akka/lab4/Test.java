@@ -65,5 +65,4 @@ public class Test {
     public void setUnexpectedProperties(String key, String value) {
         unexpectedProperties.put(key, value);
     }
-
 }
