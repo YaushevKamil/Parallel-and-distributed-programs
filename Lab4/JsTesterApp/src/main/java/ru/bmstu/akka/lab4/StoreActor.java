@@ -19,9 +19,9 @@ public class StoreActor extends AbstractActor {
                     if (store.containsKey(packageId)) {
                         store.get(packageId).add(result);
                     } else {
-                        ArrayList<String> resValues = new ArrayList<>();
-                        resValues.add(result);
-                        store.put(packageId, resValues);
+                        ArrayList<String> results = new ArrayList<>();
+                        results.add(result);
+                        store.put(packageId, results);
                     }
                 })
                 .match(GetMessage.class, req -> {
