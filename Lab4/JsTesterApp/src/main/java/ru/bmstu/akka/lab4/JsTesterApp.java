@@ -35,5 +35,9 @@ public class JsTesterApp extends AllDirectives {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
 
         JsTesterApp tester = new JsTesterApp();
+
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
+                instance.createRoute(system).flow(system, materializer);
+
     }
 }
