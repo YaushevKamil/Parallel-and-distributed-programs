@@ -7,6 +7,6 @@ public class PerformActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(JsFunction);
+                .match(JsFunction.class, );
     }
 }
