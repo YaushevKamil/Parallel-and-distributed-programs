@@ -15,6 +15,8 @@ import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import scala.concurrent.duration.Duration;
 
+import java.util.List;
+
 import static akka.actor.SupervisorStrategy.*;
 
 public class JsTesterApp extends AllDirectives {
@@ -53,6 +55,10 @@ public class JsTesterApp extends AllDirectives {
                 path("test", () ->
                         post(() -> entity(Jackson.unmarshaller(Tests.class), msg -> {
                             System.out.println("post()");
+                            String packageId;
+                            String functionName;
+                            String script;
+                            List<String> params;
                             msg.getFunctionName()
                                     new JsFunction()
                             testPackageActor.tell(msg, ActorRef.noSender());
