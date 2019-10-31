@@ -1,4 +1,4 @@
 package ru.bmstu.akka.lab4;
 
-public class StoreActor extends  {
+public class StoreActor extends Abstract {
 }
