@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 import static akka.actor.SupervisorStrategy.*;
 
 public class JsTesterApp extends AllDirectives {
+    private static final int TIMEOUT_MS = 5000;
     public static ActorRef storeActor;
     public static ActorRef routeActor;
 
