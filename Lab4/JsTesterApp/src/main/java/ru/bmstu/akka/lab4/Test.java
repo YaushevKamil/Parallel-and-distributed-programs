@@ -2,6 +2,7 @@ package ru.bmstu.akka.lab4;
 
 import com.fasterxml.jackson.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +24,7 @@ public class Test {
     private List<String> params = null;
 
     @JsonIgnore
-    private Map<String, String> additionalProperties;
+    private Map<String, String> additionalProperties = new HashMap<>();
 
     @JsonProperty("testName")
     public String getTestName() {
