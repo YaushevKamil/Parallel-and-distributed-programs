@@ -57,7 +57,7 @@ public class JsTesterApp extends AllDirectives {
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
                 tester.createRoute(system).flow(system, materializer);
 
-        final CompletionStage<ServerBinding> binding = http.bindAndHandle(routeFlow, ConnectHttp)
+        final CompletionStage<ServerBinding> binding = http.bindAndHandle(routeFlow, ConnectHttp.toHost(()))
 
     }
 
