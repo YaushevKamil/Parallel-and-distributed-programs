@@ -7,16 +7,17 @@ import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
+import java.util.List;
 
 public class PerformActor extends AbstractActor {
     private static String performScript(ScriptEngine engine,
                                         String functionName,
                                         String script,
-                                        String... args)
+                                        List<String> params)
             throws ScriptException, NoSuchMethodException {
         engine.eval(script);
         Invocable invocable = (Invocable) engine;
-        invocable.invokeFunction(m.getFunctionName(), m.getParams().toArray()).toString();
+        invocable.invokeFunction(functionName, params().toArray()).toString();
     }
 
     @Override
