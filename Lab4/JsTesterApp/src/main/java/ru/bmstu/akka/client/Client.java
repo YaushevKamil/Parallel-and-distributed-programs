@@ -2,6 +2,7 @@ package ru.bmstu.akka.client;
 
 import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.Materializer;
@@ -21,6 +22,6 @@ public class Client {
 
         final CompletionStage<HttpResponse> postFuture =
                 Http.get(system)
-                .singleRequest(HttpRequest)
+                .singleRequest(HttpRequest.POST())
     }
 }
