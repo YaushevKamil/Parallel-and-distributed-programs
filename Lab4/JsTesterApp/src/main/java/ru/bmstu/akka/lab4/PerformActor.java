@@ -28,6 +28,7 @@ public class PerformActor extends AbstractActor {
                 .match(JsFunction.class, m -> {
                     String description;
                     try {
+                        String packageId = m.getPackageId();
                         String expectedResult = m.getExpectedResult();
                         String actualResult = PerformActor.performScript(m.getFunctionName(), m.getScript(), m.getParams());
                         description = actualResult.equals(expectedResult) ? "Right: " : "Wrong: ";
@@ -37,7 +38,7 @@ public class PerformActor extends AbstractActor {
                     } catch (NoSuchMethodException e) {
                         description = "Error: NoSuchMethodException" + e.getMessage();
                     }
-                    storeActor.tell(new StoreMessage(m.getPackageId(), description), ActorRef.noSender());
+                    storeActor.tell(new StoreMessage(, description), ActorRef.noSender());
                 })
                 .build();
     }
