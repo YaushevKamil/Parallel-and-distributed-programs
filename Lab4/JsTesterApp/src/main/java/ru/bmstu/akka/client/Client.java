@@ -21,6 +21,6 @@ public class Client {
 
         final CompletionStage<HttpResponse> postFuture =
                 Http.get(system)
-                .singleRequest(Http)
+                .singleRequest(HttpRequest)
     }
 }
