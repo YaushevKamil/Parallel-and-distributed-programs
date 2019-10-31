@@ -1,8 +1,12 @@
 package ru.bmstu.hadoop.lab2;
 
 class CSVUtils {
+    static final String EMPTY_STRING = "";
     static final int INT_ZERO = 0;
     static final float FLOAT_ZERO = 0.0f;
+
+    private static final String REPLACEMENT_STRING = "\"";
+    private static final String DELIMITER_STRING = ",";
 
     static final int TYPE_AIRPORT = 0;
     static final int TYPE_FLIGHT = 1;
@@ -28,7 +32,9 @@ class CSVUtils {
     private String[] data;
 
     CSVUtils(String raw) {
-        data = raw.replaceAll("\"", "").split(",");
+        data = raw
+                .replaceAll(REPLACEMENT_STRING, EMPTY_STRING)
+                .split(DELIMITER_STRING);
     }
 
     int getAirportId() {
