@@ -5,14 +5,16 @@ import akka.stream.ActorMaterializer;
 import akka.stream.Materializer;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Client {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         final ActorSystem system = ActorSystem.create();
         final Materializer materializer = ActorMaterializer.create(system);
 
         String json = "";
         json = new Scanner(new File("tests.json")).useDelimiter("\\Z").next();
+
     }
 }
