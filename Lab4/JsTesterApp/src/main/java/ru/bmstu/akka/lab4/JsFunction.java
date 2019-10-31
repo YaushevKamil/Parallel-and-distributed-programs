@@ -16,6 +16,6 @@ public class JsFunction {
         this.functionName = functionName;
         this.script = script;
         this.params = params;
-        
+        this.expectedResult = expectedResult;
     }
 }
