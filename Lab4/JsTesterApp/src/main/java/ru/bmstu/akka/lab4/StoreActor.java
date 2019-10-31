@@ -5,9 +5,10 @@ import akka.japi.pf.ReceiveBuilder;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class StoreActor extends AbstractActor {
-    private Map<String, ArrayList<Test>> store = new HashMap<>();
+    private Map<String, ArrayList<String>> store = new HashMap<>();
 
     @Override
     public Receive createReceive() {
