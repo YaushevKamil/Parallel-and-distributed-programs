@@ -1,6 +1,7 @@
 package ru.bmstu.akka.client;
 
 import akka.actor.ActorSystem;
+import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.Materializer;
 
@@ -17,6 +18,6 @@ public class Client {
         String json = "";
         json = new Scanner(new File("tests.json")).useDelimiter("\\Z").next();
 
-        final CompletionStage
+        final CompletionStage<HttpResponse>
     }
 }
