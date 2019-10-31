@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.*;
         "packageId",
         "jsScript",
         "functionName",
-        
+        "tests"
 })
 
 public class Tests {
