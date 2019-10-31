@@ -1,6 +1,7 @@
 package ru.bmstu.akka.client;
 
 import akka.actor.ActorSystem;
+import akka.stream.ActorMaterializer;
 import akka.stream.Materializer;
 
 public class Client {
@@ -8,6 +9,6 @@ public class Client {
         final ActorSystem system = ActorSystem.create();
         final Materializer materializer = ActorMaterializer.create(system);
 
-        
+
     }
 }
