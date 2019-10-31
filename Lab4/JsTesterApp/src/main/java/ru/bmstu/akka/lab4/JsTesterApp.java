@@ -1,7 +1,10 @@
 package ru.bmstu.akka.lab4;
 
+import akka.NotUsed;
 import akka.actor.*;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.model.HttpRequest;
+import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.AllDirectives;
 import akka.japi.pf.DeciderBuilder;
 import akka.routing.RoundRobinPool;
