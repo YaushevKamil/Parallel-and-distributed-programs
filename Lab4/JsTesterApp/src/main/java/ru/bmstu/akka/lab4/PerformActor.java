@@ -25,8 +25,8 @@ public class PerformActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(JsFunction.class, m -> {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-                    String descr;
-                    
+                    String description;
+
                     String result =
                     String output =
                 })
