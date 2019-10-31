@@ -69,4 +69,9 @@ public class Tests {
     public void setTests(List<Test> tests) {
         this.tests = tests;
     }
+
+    @JsonAnySetter
+    public void setUnexpectedProperties(String key, String value) {
+        unexpectedProperties.put(key, value);
+    }
 }
