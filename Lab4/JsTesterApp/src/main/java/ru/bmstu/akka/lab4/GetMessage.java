@@ -6,8 +6,4 @@ public class GetMessage extends Message {
     public GetMessage(String packageId) {
         super(packageId);
     }
-//
-//    public String getPackageId() {
-//        return packageId;
-//    }
 }
