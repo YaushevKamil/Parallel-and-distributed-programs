@@ -12,6 +12,10 @@ public class JsFunction {
     public JsFunction(String packageId,
                       String functionName, String script, List<Object> params,
                       String expectedResult) {
+        this.packageId = packageId;
+        this.functionName = functionName;
+        this.script = script;
+        this.params = params;
         
     }
 }
