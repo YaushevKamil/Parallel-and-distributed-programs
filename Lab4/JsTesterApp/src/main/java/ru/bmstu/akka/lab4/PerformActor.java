@@ -10,11 +10,11 @@ import javax.script.ScriptException;
 import java.util.List;
 
 public class PerformActor extends AbstractActor {
-    private static String performScript(ScriptEngine engine,
-                                        String functionName,
+    private static String performScript(String functionName,
                                         String script,
                                         List<String> params)
             throws ScriptException, NoSuchMethodException {
+        ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(script);
         Invocable invocable = (Invocable) engine;
         return invocable.invokeFunction(functionName, params.toArray()).toString();
@@ -24,10 +24,10 @@ public class PerformActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(JsFunction.class, m -> {
-                    ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+
                     String description;
                     try {
-                        String result = PerformActor.performScript()
+                        String result = PerformActor.performScript(engine, m.getFunctionName());
                     }
 
                     String result =
