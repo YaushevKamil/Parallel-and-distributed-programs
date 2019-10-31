@@ -4,6 +4,7 @@ import akka.NotUsed;
 import akka.actor.*;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.IncomingConnection;
+import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
@@ -55,7 +56,7 @@ public class JsTesterApp extends AllDirectives {
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
                 tester.createRoute(system).flow(system, materializer);
 
-        final CompletionStage
+        final CompletionStage<ServerBinding>
 
     }
 
