@@ -74,7 +74,7 @@ public class JsTesterApp extends AllDirectives {
                 path("put", () ->
                         get(() -> parameter("packageId", (packageId) -> {
                             System.out.println("get()");
-                            Future<Object> 
+                            Future<Object> result = ;
                             .tell(new StoreActor.StoreMessage(key, value), ActorRef.noSender());
                                             return complete("value saved to store ! key=" + key + " value=" + value);
                                         })))
