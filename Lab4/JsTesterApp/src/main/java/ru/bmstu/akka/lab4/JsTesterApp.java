@@ -69,8 +69,6 @@ public class JsTesterApp extends AllDirectives {
         binding
                 .thenCompose(ServerBinding::unbind)
                 .thenAccept(unbound -> system.terminate());
-
-
     }
 
     private Route createRoute(ActorSystem system) {
