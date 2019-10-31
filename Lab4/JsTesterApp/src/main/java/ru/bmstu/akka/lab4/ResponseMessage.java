@@ -11,4 +11,11 @@ public class ResponseMessage {
         this.results = results;
     }
 
+    public String getPackageId() {
+        return packageId;
+    }
+
+    public ArrayList<String> getResults() {
+        return results;
+    }
 }
