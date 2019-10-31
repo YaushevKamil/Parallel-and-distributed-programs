@@ -18,6 +18,7 @@ public class Client {
         String json = "";
         json = new Scanner(new File("tests.json")).useDelimiter("\\Z").next();
 
-        final CompletionStage<HttpResponse> postFuture = 
+        final CompletionStage<HttpResponse> postFuture =
+                
     }
 }
