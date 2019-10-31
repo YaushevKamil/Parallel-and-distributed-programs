@@ -23,6 +23,7 @@ public class StoreActor extends AbstractActor {
                         resValues.add(result);
                         store.put(packageId, resValues);
                     }
-                });
+                })
+                .match();
     }
 }
