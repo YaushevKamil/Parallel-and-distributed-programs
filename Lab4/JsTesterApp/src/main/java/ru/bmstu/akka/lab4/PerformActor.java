@@ -1,4 +1,10 @@
 package ru.bmstu.akka.lab4;
 
-public class PerformActor {
+import akka.actor.AbstractActor;
+
+public class PerformActor extends AbstractActor {
+    @Override
+    public Receive createReceive() {
+        return null;
+    }
 }
