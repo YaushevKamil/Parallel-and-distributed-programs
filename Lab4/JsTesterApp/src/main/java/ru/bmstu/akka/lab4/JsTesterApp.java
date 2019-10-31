@@ -10,6 +10,6 @@ public class JsTesterApp {
 
     public static void main(String[] args) {
         ActorSystem system = ActorSystem.create("lab4");
-        storeActor = system.actorOf(Props)
+        storeActor = system.actorOf(Props.create())
     }
 }
