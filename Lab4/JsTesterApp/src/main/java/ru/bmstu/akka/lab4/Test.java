@@ -1,9 +1,6 @@
 package ru.bmstu.akka.lab4;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -42,6 +39,9 @@ public class Test {
     public List<String> getParams() {
         return params;
     }
+
+    @JsonAnyGetter
+
 
     @JsonProperty("testName")
     public void setTestName(String testName) {
