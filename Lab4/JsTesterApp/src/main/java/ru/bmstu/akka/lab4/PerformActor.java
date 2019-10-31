@@ -15,8 +15,8 @@ public class PerformActor extends AbstractActor {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
                     engine.eval(m.getScript());
                     Invocable invocable = (Invocable) engine;
-                    String result = 
-                    return invocable.invokeFunction()
+                    String result = invocable.invokeFunction(m.getFunctionName(), )
+                    return
                 })
                 .build();
     }
