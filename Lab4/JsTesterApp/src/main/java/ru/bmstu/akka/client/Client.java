@@ -13,6 +13,6 @@ public class Client {
         final Materializer materializer = ActorMaterializer.create(system);
 
         String json = "";
-        json = new Scanner(new File("tests.json"))
+        json = new Scanner(new File("tests.json")).useDelimiter()
     }
 }
