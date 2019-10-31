@@ -41,7 +41,9 @@ public class Test {
     }
 
     @JsonAnyGetter
-    public Map<String, String> getAdditionalProperties()
+    public Map<String, String> getAdditionalProperties() {
+        return additionalProperties;
+    }
 
     @JsonProperty("testName")
     public void setTestName(String testName) {
