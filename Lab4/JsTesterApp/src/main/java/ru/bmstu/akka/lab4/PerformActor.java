@@ -6,6 +6,7 @@ import akka.japi.pf.ReceiveBuilder;
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 
 public class PerformActor extends AbstractActor {
     private static String performScript(String functionName, String script, String... args) throws ScriptException, NoSuchMethodException {
