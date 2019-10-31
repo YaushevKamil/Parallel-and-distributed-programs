@@ -24,6 +24,9 @@ public class Tests {
     @JsonProperty("functionName")
     private String functionName;
 
+    @JsonProperty("tests")
+    private String tests;
+
     @JsonIgnore
     private Map<String, String> unexpectedProperties = new HashMap<>();
 }
