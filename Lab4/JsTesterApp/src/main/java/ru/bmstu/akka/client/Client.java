@@ -1,4 +1,4 @@
-package ru.bmstu.akka.lab4;
+package ru.bmstu.akka.client;
 
 public class Client {
 }
