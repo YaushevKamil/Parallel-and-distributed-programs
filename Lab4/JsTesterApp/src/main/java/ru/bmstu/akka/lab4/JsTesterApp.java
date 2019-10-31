@@ -44,7 +44,7 @@ public class JsTesterApp extends AllDirectives {
         storeActor = system.actorOf(Props.create(StoreActor.class));
         routeActor = system.actorOf(new RoundRobinPool(5)
                 .withSupervisorStrategy(strategy)
-                .props(Props.create(PerformActor), "router"));
+                .props(Props.create(PerformActor.class), "router"));
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
 
