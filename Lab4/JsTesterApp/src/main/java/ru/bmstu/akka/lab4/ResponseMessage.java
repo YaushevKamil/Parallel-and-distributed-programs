@@ -6,4 +6,6 @@ public class ResponseMessage {
     private String packageId;
     private ArrayList<String> resValues;
 
+    public ResponseMessage(String packageId, ) {}
+
 }
