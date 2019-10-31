@@ -15,6 +15,6 @@ public class Client {
 
         String json = "";
         json = new Scanner(new File("tests.json")).useDelimiter("\\Z").next();
-
+        
     }
 }
