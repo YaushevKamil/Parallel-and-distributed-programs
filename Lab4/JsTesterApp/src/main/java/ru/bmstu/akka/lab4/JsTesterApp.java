@@ -51,7 +51,7 @@ public class JsTesterApp extends AllDirectives {
     private Route createRoute(ActorSystem system) {
         return route(
                 path("test", () ->
-                        post(() -> entity(Jackson.unmarshaller(TestPackageMsg.class), msg -> {
+                        post(() -> entity(Jackson.unmarshaller(Tests.class), msg -> {
                                             testPackageActor.tell(msg, ActorRef.noSender());
                                             return complete("Test started!");
                                         })))),
