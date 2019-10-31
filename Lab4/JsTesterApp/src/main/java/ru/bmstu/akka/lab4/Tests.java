@@ -44,4 +44,9 @@ public class Tests {
     public String getFunctionName() {
         return functionName;
     }
+
+    @JsonProperty("functionName")
+    public String getFunctionName() {
+        return functionName;
+    }
 }
