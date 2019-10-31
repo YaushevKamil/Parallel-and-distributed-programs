@@ -54,7 +54,7 @@ public class JsTesterApp extends AllDirectives {
                         post(() -> entity(Jackson.unmarshaller(Tests.class), msg -> {
                             System.out.println("post()");
                             msg.getFunctionName()
-                                    
+                                    new JsFunction()
                             testPackageActor.tell(msg, ActorRef.noSender());
                             return complete("Test started!");
                         })))),
