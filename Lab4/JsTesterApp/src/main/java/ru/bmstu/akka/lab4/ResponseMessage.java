@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class ResponseMessage {
     private String packageId;
-    private ArrayList<String> resValues;
+    private ArrayList<String> results;
 
-    public ResponseMessage(String packageId, ) {}
+    public ResponseMessage(String packageId, ArrayList<String> ) {}
 
 }
