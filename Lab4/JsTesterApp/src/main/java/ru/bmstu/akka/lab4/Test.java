@@ -12,5 +12,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 })
 
 public class Test {
-    @JsonProperty 
+    @JsonProperty("testName")
+    
 }
