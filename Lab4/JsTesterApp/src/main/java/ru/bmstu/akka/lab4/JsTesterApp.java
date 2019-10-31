@@ -4,7 +4,6 @@ import akka.NotUsed;
 import akka.actor.*;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
-import akka.http.javadsl.IncomingConnection;
 import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.HttpRequest;
@@ -20,11 +19,9 @@ import ru.bmstu.akka.lab4.messages.GetMessage;
 import scala.concurrent.Future;
 import scala.concurrent.duration.Duration;
 
-import javax.annotation.processing.Completion;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CompletionStage;
-import java.util.regex.Pattern;
 
 import static akka.actor.SupervisorStrategy.*;
 
