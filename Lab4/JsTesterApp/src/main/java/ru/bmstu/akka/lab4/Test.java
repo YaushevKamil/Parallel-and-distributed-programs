@@ -42,4 +42,19 @@ public class Test {
     public List<String> getParams() {
         return params;
     }
+
+    @JsonProperty("testName")
+    public  setTestName(String testName) {
+        return testName;
+    }
+
+    @JsonProperty("expectedResult")
+    public String setExpectedResult() {
+        return expectedResult;
+    }
+
+    @JsonProperty("params")
+    public List<String> setParams() {
+        return params;
+    }
 }
