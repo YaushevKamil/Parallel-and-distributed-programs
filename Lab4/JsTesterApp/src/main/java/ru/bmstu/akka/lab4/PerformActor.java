@@ -8,7 +8,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
 public class PerformActor extends AbstractActor {
-    private static String perform(String script, )
+    private static String perform(String functionName, String script, )
 
     @Override
     public Receive createReceive() {
