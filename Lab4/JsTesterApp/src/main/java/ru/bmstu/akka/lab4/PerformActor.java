@@ -8,7 +8,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
 public class PerformActor extends AbstractActor {
-    private static String performScript(String functionName, String script, String... args)  {
+    private static String performScript(String functionName, String script, String... args) throws ScriptException, NoSuchMethodException {
 
     }
 
