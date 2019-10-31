@@ -14,7 +14,7 @@ public class PerformActor extends AbstractActor {
                 .match(JsFunction.class, m -> {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
                     engine.eval(script);
-                    Invocable invocable = (Invocable)
+                    Invocable invocable = (Invocable) engine;
                 })
                 .build();
     }
