@@ -62,7 +62,7 @@ public class Test {
 
     @JsonAnySetter
     public void setAdditionalProperties(String key, String value) {
-        
+        additionalProperties.put(key, value);
     }
 
 }
