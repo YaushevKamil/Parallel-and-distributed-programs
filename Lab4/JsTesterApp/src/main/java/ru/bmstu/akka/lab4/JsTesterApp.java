@@ -6,6 +6,6 @@ import akka.actor.ActorSystem;
 public class JsTesterApp {
     public static void main(String[] args) {
         ActorSystem system = ActorSystem.create("lab4");
-
+        
     }
 }
