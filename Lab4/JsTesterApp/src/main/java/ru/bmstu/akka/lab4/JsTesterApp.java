@@ -4,6 +4,7 @@ import akka.NotUsed;
 import akka.actor.*;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.IncomingConnection;
+import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.AllDirectives;
@@ -50,7 +51,7 @@ public class JsTesterApp extends AllDirectives {
     private Route createRoute(ActorSystem system) {
         return route(
                 path("test", () ->
-                                post(() ->                          entity(Jackson.unmarshaller(TestPackageMsg.class), msg -> {
+                        post(() -> entity(Jackson.unmarshaller(TestPackageMsg.class), msg -> {
                                             testPackageActor.tell(msg, ActorRef.noSender());
                                             return complete("Test started!");
                                         })))),
