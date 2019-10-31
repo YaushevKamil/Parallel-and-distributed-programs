@@ -31,5 +31,6 @@ public class Client {
         final CompletionStage<HttpResponse> responseFuture =
                 Http.get(system)
                         .singleRequest(HttpRequest.GET("http://localhost:8080/response?packageId=11"), materializer);
+        System.out.println(responseFuture.toCompletableFuture().get());
     }
 }
