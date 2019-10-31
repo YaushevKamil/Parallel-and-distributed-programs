@@ -42,7 +42,7 @@ public class Test {
     }
 
     @JsonAnyGetter
-    public Map<String, String> getAdditionalProperties() {
+    public Map<String, String> getUnexpectedProperties() {
         return unexpectedProperties;
     }
 
@@ -62,7 +62,7 @@ public class Test {
     }
 
     @JsonAnySetter
-    public void setAdditionalProperties(String key, String value) {
+    public void setUnexpectedProperties(String key, String value) {
         unexpectedProperties.put(key, value);
     }
 
