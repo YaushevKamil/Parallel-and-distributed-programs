@@ -19,5 +19,23 @@ public class JsFunction {
         this.expectedResult = expectedResult;
     }
 
-    
+    public String getPackageId() {
+        return packageId;
+    }
+
+    public String getFunctionName() {
+        return functionName;
+    }
+
+    public String getScript() {
+        return script;
+    }
+
+    public List<Object> getParams() {
+        return params;
+    }
+
+    public String getExpectedResult() {
+        return expectedResult;
+    }
 }
