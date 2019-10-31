@@ -9,6 +9,6 @@ public class StoreMessage {
         this.result = result;
     }
 
-    
+    public 
 
 }
