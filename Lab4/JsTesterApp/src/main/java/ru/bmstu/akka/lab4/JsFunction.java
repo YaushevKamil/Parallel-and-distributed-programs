@@ -6,7 +6,7 @@ public class JsFunction {
     private String packageId;
     private String functionName;
     private String script;
-    private List<Object> params;
+    private List<String> params;
     private String expectedResult;
 
     public JsFunction(String packageId,
