@@ -9,11 +9,13 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 public class PerformActor extends AbstractActor {
-    private static String performScript(Invocable invocable,
+    private static String performScript(ScriptEngine engine,
                                         String functionName,
                                         String script,
                                         String... args)
             throws ScriptException, NoSuchMethodException {
+        engine.eval(m.getScript());
+        Invocable invocable = (Invocable) engine;
         invocable.invokeFunction(m.getFunctionName(), m.getParams().toArray()).toString();
     }
 
@@ -22,8 +24,7 @@ public class PerformActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(JsFunction.class, m -> {
                     ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-                    engine.eval(m.getScript());
-                    Invocable invocable = (Invocable) engine;
+
                     String result =
                     String output =
                 })
