@@ -4,6 +4,6 @@ public class StoreMessage {
     private String packageId;
     private String result;
 
-    public StoreMessage(String )
+    public StoreMessage(String packageId, )
 
 }
