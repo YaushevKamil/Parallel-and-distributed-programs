@@ -18,6 +18,7 @@ import ru.bmstu.akka.lab4.messages.GetMessage;
 import scala.concurrent.Future;
 import scala.concurrent.duration.Duration;
 
+import javax.annotation.processing.Completion;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -53,7 +54,7 @@ public class JsTesterApp extends AllDirectives {
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
                 tester.createRoute(system).flow(system, materializer);
 
-        final 
+        final Completion
 
     }
 
