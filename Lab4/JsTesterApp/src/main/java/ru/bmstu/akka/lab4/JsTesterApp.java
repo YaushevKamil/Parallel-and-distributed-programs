@@ -61,7 +61,8 @@ public class JsTesterApp extends AllDirectives {
                 http.bindAndHandle(
                         routeFlow,
                         ConnectHttp.toHost("localhost", 8080),
-                        materializer);
+                        materializer
+                );
         System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
 
     }
