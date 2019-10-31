@@ -19,5 +19,7 @@ public class JsTesterApp {
                 .props(Props.create(), "router"));
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
+
+        JsTesterApp = new 
     }
 }
