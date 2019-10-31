@@ -17,7 +17,7 @@ public class StoreActor extends AbstractActor {
                     String packageId = m.getPackageId();
                     String result = m.getResult();
                     if (store.containsKey(packageId)) {
-                        store.get(packageId)
+                        store.get(packageId).add()
                     }
                     store.put(m.getKey(), m.getValue());
 
