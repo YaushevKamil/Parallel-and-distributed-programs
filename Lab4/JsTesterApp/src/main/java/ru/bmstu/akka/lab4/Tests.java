@@ -66,7 +66,7 @@ public class Tests {
     }
 
     @JsonProperty("tests")
-    public List<Test> setTests() {
-        return tests;
+    public void setTests(List<Test> tests) {
+        this.tests = tests;
     }
 }
