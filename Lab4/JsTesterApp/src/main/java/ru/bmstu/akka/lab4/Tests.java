@@ -50,6 +50,11 @@ public class Tests {
         return tests;
     }
 
+    @JsonAnyGetter
+    public Map<String, String> getUnexpectedProperties() {
+        return unexpectedProperties;
+    }
+
     @JsonProperty("packageId")
     public void setPackageId(String packageId) {
         this.packageId = packageId;
