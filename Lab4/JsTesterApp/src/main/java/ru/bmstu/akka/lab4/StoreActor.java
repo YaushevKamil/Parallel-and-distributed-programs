@@ -21,7 +21,7 @@ public class StoreActor extends AbstractActor {
                     } else {
                         ArrayList<String> resValues = new ArrayList<>();
                         resValues.add(result);
-                        
+                        store.put(packageId, resValues);
                     }
                     store.put(m.getKey(), m.getValue());
 
