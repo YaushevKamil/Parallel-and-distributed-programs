@@ -79,4 +79,16 @@ public class Tests {
     public void setUnexpectedProperties(String key, Object value) {
         unexpectedProperties.put(key, value);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder testsString = new StringBuilder();
+        for (Test test : tests) {
+            testsString.append("\n\t").append(test.toString()).append("\n");
+        }
+        return "{ PackageId: " + packageId +
+                ", name: " + functionName +
+                "\nScript:\n" + jsScript +
+                "tests: " + testsString + " }";
+    }
 }

@@ -5,7 +5,6 @@
 /home/captain/Documents/git/Parallel-and-distributed-programs/Lab4/JsTesterApp/src/main/java/ru/bmstu/akka/lab4/messages/Message.java
 /home/captain/Documents/git/Parallel-and-distributed-programs/Lab4/JsTesterApp/src/main/java/ru/bmstu/akka/lab4/messages/StoreMessage.java
 /home/captain/Documents/git/Parallel-and-distributed-programs/Lab4/JsTesterApp/src/main/java/ru/bmstu/akka/lab4/JsTesterApp.java
-/home/captain/Documents/git/Parallel-and-distributed-programs/Lab4/JsTesterApp/src/main/java/ru/bmstu/akka/client/Client.java
 /home/captain/Documents/git/Parallel-and-distributed-programs/Lab4/JsTesterApp/src/main/java/ru/bmstu/akka/lab4/JsFunction.java
 /home/captain/Documents/git/Parallel-and-distributed-programs/Lab4/JsTesterApp/src/main/java/ru/bmstu/akka/lab4/StoreActor.java
 /home/captain/Documents/git/Parallel-and-distributed-programs/Lab4/JsTesterApp/src/main/java/ru/bmstu/akka/lab4/Tests.java

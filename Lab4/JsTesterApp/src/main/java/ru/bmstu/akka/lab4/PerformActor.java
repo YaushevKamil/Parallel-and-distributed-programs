@@ -26,13 +26,18 @@ public class PerformActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return ReceiveBuilder.create()
+        return ReceiveBuilder
+                .create()
                 .match(JsFunction.class, m -> {
                     String packageId = m.getPackageId();
-                    String description;
+                    String expectedResult = m.getExpectedResult();
+                    String description = "";
                     try {
-                        String expectedResult = m.getExpectedResult();
-                        String actualResult = PerformActor.performScript(m.getFunctionName(), m.getScript(), m.getParams());
+                        String actualResult = PerformActor.performScript(
+                                m.getFunctionName(),
+                                m.getScript(),
+                                m.getParams()
+                            );
                         description = actualResult.equals(expectedResult) ? "Right: " : "Wrong: ";
                         description += "expected: " + expectedResult + ", actual: " + actualResult;
                     } catch (ScriptException e) {

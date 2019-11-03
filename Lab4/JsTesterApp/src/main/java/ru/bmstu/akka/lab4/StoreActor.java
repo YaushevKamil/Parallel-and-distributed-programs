@@ -15,7 +15,8 @@ public class StoreActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return ReceiveBuilder.create()
+        return ReceiveBuilder
+                .create()
                 .match(StoreMessage.class, m -> {
                     String packageId = m.getPackageId();
                     String result = m.getResult();
@@ -27,8 +28,8 @@ public class StoreActor extends AbstractActor {
                         store.put(packageId, results);
                     }
                 })
-                .match(GetMessage.class, req -> {
-                    String packageId = req.getPackageId();
+                .match(GetMessage.class, m -> {
+                    String packageId = m.getPackageId();
                     sender().tell(new ResponseMessage(packageId, store.get(packageId)), getSelf());
                 })
                 .build();
