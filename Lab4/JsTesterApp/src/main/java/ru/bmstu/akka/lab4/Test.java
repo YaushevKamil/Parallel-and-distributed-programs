@@ -65,15 +65,4 @@ public class Test {
     public void setUnexpectedProperties(String key, Object value) {
         unexpectedProperties.put(key, value);
     }
-
-    @Override
-    public String toString() {
-        StringBuilder paramsString = new StringBuilder();
-        for (Object obj : params) {
-            paramsString.append(" ").append(obj.toString()).append(" ");
-        }
-        return "Name: " + testName +
-               ", params: (" + paramsString +
-               "), expected: " + expectedResult;
-    }
 }
