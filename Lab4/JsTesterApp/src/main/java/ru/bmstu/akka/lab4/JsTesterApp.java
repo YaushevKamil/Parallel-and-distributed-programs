@@ -30,7 +30,8 @@ public class JsTesterApp extends AllDirectives {
     static ActorRef storeActor;
     private static ActorRef routeActor;
 
-    private static final String HOST = "http://localhost:8080";
+    private static final String HOST = "http://localhost";
+    private static final int PORT = 8080;
     private static final int TIMEOUT_MS = 5000;
     private static final int MAX_RETRIES = 10;
 
@@ -61,10 +62,10 @@ public class JsTesterApp extends AllDirectives {
         final CompletionStage<ServerBinding> binding = http
                 .bindAndHandle(
                         routeFlow,
-                        ConnectHttp.toHost("localhost", 8080),
+                        ConnectHttp.toHost(HOST, PORT),
                         materializer
                 );
-        System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
+        System.out.println("Server online at " + HOST + ':' + PORT + "/\nPress RETURN to stop...");
         System.in.read();
         binding
                 .thenCompose(ServerBinding::unbind)
