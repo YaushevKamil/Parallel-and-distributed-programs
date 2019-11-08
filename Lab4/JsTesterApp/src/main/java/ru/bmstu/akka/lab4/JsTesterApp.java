@@ -69,7 +69,7 @@ public class JsTesterApp extends AllDirectives {
                 .thenAccept(unbound -> system.terminate());
     }
 
-    private Route createRoute(ActorRef storeActor) {
+    private Route createRoute(ActorRef storeActor, ActorRef routerActor) {
         return route(
                 path("test", () ->
                         post(() -> entity(Jackson.unmarshaller(Tests.class), m -> {
