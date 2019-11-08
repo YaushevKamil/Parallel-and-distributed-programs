@@ -14,6 +14,7 @@ import java.util.List;
 import static ru.bmstu.akka.lab4.JsTesterApp.storeActor;
 
 public class PerformActor extends AbstractActor {
+    public int x = 0;
     private static String performScript(String functionName,
                                         String script,
                                         List<Object> params)
