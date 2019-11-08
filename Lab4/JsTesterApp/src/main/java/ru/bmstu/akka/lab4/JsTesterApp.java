@@ -53,7 +53,7 @@ public class JsTesterApp extends AllDirectives {
         JsTesterApp tester = new JsTesterApp();
 
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = tester
-                .createRoute(storeActor)
+                .createRoute(storeActor, routeActor)
                 .flow(system, materializer);
 
         final CompletionStage<ServerBinding> binding = http
@@ -69,7 +69,7 @@ public class JsTesterApp extends AllDirectives {
                 .thenAccept(unbound -> system.terminate());
     }
 
-    private Route createRoute(ActorRef storeActor, ActorRef routerActor) {
+    private Route createRoute(ActorRef storeActor, ActorRef routeActor) {
         return route(
                 path("test", () ->
                         post(() -> entity(Jackson.unmarshaller(Tests.class), m -> {
