@@ -11,10 +11,15 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import java.util.List;
 
-import static ru.bmstu.akka.lab4.JsTesterApp.storeActor;
+//import static ru.bmstu.akka.lab4.JsTesterApp.storeActor;
 
 public class PerformActor extends AbstractActor {
-    private static ActorRef
+    private ActorRef storeActor;
+
+    public PerformActor(ActorRef storeActor) {
+        this.storeActor = storeActor;
+    }
+
     private static String performScript(String functionName,
                                         String script,
                                         List<Object> params)

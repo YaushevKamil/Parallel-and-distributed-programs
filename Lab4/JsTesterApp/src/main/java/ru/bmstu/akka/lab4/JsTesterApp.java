@@ -27,9 +27,6 @@ import static akka.actor.SupervisorStrategy.*;
 import ru.bmstu.akka.lab4.messages.GetMessage;
 
 public class JsTesterApp extends AllDirectives {
-    static ActorRef storeActor;
-    private static ActorRef routeActor;
-
     private static final String HOST = "http://localhost";
     private static final int PORT = 8080;
     private static final int TIMEOUT_MS = 5000;
@@ -37,8 +34,8 @@ public class JsTesterApp extends AllDirectives {
 
     public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create("lab4");
-        storeActor = system.actorOf(Props.create(StoreActor.class));
-        routeActor = system.actorOf(new RoundRobinPool(5)
+        ActorRef storeActor = system.actorOf(Props.create(StoreActor.class));
+        ActorRef routeActor = system.actorOf(new RoundRobinPool(5)
 //                .withSupervisorStrategy(
 //                        new OneForOneStrategy(
 //                                MAX_RETRIES,
@@ -56,7 +53,7 @@ public class JsTesterApp extends AllDirectives {
         JsTesterApp tester = new JsTesterApp();
 
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = tester
-                .createRoute()
+                .createRoute(storeActor)
                 .flow(system, materializer);
 
         final CompletionStage<ServerBinding> binding = http
@@ -72,7 +69,7 @@ public class JsTesterApp extends AllDirectives {
                 .thenAccept(unbound -> system.terminate());
     }
 
-    private Route createRoute() {
+    private Route createRoute(ActorRef storeActor) {
         return route(
                 path("test", () ->
                         post(() -> entity(Jackson.unmarshaller(Tests.class), m -> {
