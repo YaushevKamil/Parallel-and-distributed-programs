@@ -11,8 +11,6 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import java.util.List;
 
-//import static ru.bmstu.akka.lab4.JsTesterApp.storeActor;
-
 public class PerformActor extends AbstractActor {
     private ActorRef storeActor;
 
@@ -37,7 +35,7 @@ public class PerformActor extends AbstractActor {
                 .match(JsFunction.class, m -> {
                     String packageId = m.getPackageId();
                     String expectedResult = m.getExpectedResult();
-                    String description = "";
+                    String description;
                     try {
                         String actualResult = PerformActor.performScript(
                                 m.getFunctionName(),
