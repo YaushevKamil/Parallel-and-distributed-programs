@@ -50,7 +50,7 @@ public class JsTesterApp extends AllDirectives {
 //                                        .matchAny(o -> escalate()).build()
 //                        )
 //                )
-                .props(Props.create(PerformActor.class)), "router");
+                .props(Props.create(PerformActor.class, storeActor)), "router");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         JsTesterApp tester = new JsTesterApp();
