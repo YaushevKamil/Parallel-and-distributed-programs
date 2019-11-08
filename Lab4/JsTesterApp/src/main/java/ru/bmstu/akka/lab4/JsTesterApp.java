@@ -39,17 +39,17 @@ public class JsTesterApp extends AllDirectives {
         ActorSystem system = ActorSystem.create("lab4");
         storeActor = system.actorOf(Props.create(StoreActor.class));
         routeActor = system.actorOf(new RoundRobinPool(5)
-                .withSupervisorStrategy(
-                        new OneForOneStrategy(
-                                MAX_RETRIES,
-                                Duration.create("1 minute"),
-                                DeciderBuilder
-                                        .match(ArithmeticException.class, e -> resume())
-                                        .match(NullPointerException.class, e -> restart())
-                                        .match(IllegalArgumentException.class, e -> stop())
-                                        .matchAny(o -> escalate()).build()
-                        )
-                )
+//                .withSupervisorStrategy(
+//                        new OneForOneStrategy(
+//                                MAX_RETRIES,
+//                                Duration.create("1 minute"),
+//                                DeciderBuilder
+//                                        .match(ArithmeticException.class, e -> resume())
+//                                        .match(NullPointerException.class, e -> restart())
+//                                        .match(IllegalArgumentException.class, e -> stop())
+//                                        .matchAny(o -> escalate()).build()
+//                        )
+//                )
                 .props(Props.create(PerformActor.class)), "router");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
