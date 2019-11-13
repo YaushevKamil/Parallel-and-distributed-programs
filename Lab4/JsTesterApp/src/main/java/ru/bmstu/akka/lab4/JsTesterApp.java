@@ -56,8 +56,8 @@ public class JsTesterApp extends AllDirectives {
     private Route createRoute(ActorRef storeActor, ActorRef routeActor) {
         return route(
                 path("test", () ->
-                        // Delegate this actions to RouteActor
                         post(() -> entity(Jackson.unmarshaller(Tests.class), m -> {
+                            // Delegate this actions to RouteActor
                             System.out.println("post()");
                             String packageId = m.getPackageId();
                             String functionName = m.getFunctionName();
@@ -75,6 +75,7 @@ public class JsTesterApp extends AllDirectives {
                                     ActorRef.noSender()
                                 );
                             }
+                            //
                             return complete("\nTESTED\n");
                         }))),
                 path("response", () ->
