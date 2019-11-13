@@ -11,5 +11,7 @@ public class LoadTestingApp {
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         LoadTestingApp tester = new LoadTestingApp();
+
+
     }
 }
