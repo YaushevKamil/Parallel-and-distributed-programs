@@ -16,7 +16,7 @@ import java.util.concurrent.CompletionStage;
 public class LoadTestingApp {
     private static final String HOST = "http://localhost";
     private static final int PORT = 8080;
-    
+
     public static void main(String[] args) throws IOException {
         System.out.println("Start!");
         ActorSystem system = ActorSystem.create("routes");
@@ -30,7 +30,7 @@ public class LoadTestingApp {
 
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
-                ConnectHttp.toHost("localhost", 8080),
+                ConnectHttp.toHost(HOST, PORT),
                 materializer
         );
 
