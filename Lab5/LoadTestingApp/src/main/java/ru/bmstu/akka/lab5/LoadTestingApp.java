@@ -25,8 +25,7 @@ public class LoadTestingApp {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         LoadTestingApp tester = new LoadTestingApp();
 
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = tester
-                .createFlow(http, system, materializer)
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = createFlow(http, system, materializer)
                 .flow(system, materializer);
 
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
@@ -42,6 +41,7 @@ public class LoadTestingApp {
                 .thenAccept(unbound -> system.terminate());
     }
 
-    private Flow<HttpRequest, HttpResponse, NotUsed> createFlow(Http http, ActorSystem system, ActorMaterializer materializer) {
+    private static Flow<HttpRequest, HttpResponse, NotUsed> createFlow(Http http, ActorSystem system, ActorMaterializer materializer) {
+        return null;
     }
 }
