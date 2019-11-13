@@ -44,7 +44,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.JsTesterApp">
-    <configuration name="JsTesterApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="JsTesterApp" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="ru.bmstu.akka.lab4.JsTesterApp" />
@@ -65,7 +65,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JsTesterApp" />
         <item itemvalue="JAR Application.JsTesterApp-1.0.jar" />
       </list>
     </recent_temporary>
