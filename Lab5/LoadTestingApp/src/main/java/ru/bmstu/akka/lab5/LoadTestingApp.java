@@ -7,7 +7,7 @@ import akka.stream.ActorMaterializer;
 public class LoadTestingApp {
     public static void main(String[] args)  {
         System.out.println("Start!");
-        ActorSystem system = ActorSystem.create("lab5");
+        ActorSystem system = ActorSystem.create("routes");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
     }
