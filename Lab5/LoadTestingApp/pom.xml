@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     
     <groupId>ru.bmstu.akka.lab5</groupId>
-    <artifactId>akka-labs</artifactId>
+    <artifactId>LoadTestingApp</artifactId>
     <packaging>jar</packaging>
     <version>0.1.0-SNAPSHOT</version>
     <properties>
