@@ -17,7 +17,7 @@ public class LoadTestingApp {
         LoadTestingApp tester = new LoadTestingApp();
 
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = tester
-                .createRoute(http, system, ActorMaterializer)
+                .createRoute(http, system, materializer)
                 .flow(system, materializer);
     }
 }
