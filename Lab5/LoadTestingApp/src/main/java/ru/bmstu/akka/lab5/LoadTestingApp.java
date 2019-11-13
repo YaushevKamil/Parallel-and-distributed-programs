@@ -1,7 +1,10 @@
 package ru.bmstu.akka.lab5;
 
+import akka.NotUsed;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.model.HttpRequest;
+import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 
 public class LoadTestingApp {
@@ -12,6 +15,7 @@ public class LoadTestingApp {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         LoadTestingApp tester = new LoadTestingApp();
 
-
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = <вызов
+        метода которому передаем Http, ActorSystem и ActorMaterializer>;
     }
 }
