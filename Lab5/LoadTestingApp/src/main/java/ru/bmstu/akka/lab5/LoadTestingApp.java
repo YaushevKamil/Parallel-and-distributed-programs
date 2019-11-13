@@ -15,7 +15,8 @@ public class LoadTestingApp {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         LoadTestingApp tester = new LoadTestingApp();
 
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = tester.createRoute<вызов
-        метода которому передаем Http, ActorSystem и ActorMaterializer>;
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = tester
+                .createRoute(Http, ActorSystem, ActorMaterializer)
+                .flow(system, materializer);
     }
 }
