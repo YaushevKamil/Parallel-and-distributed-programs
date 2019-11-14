@@ -68,7 +68,7 @@ public class LoadTestingApp {
                     return new Pair<String, Integer>(url, count);
                 })
                 .mapAsync(4, r -> {
-                    Sink<Pair<Try<HttpResponse>, Long>, CompletionStage<Long> > fold = Sink
+                    Sink<Pair<Try<HttpResponse>, Long>, CompletionStage<Long>> fold = Sink
                             .fold(0L, (agg, next) -> agg + System.currentTimeMillis() - next.second());
                     Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
                             .<Pair<String, Integer>>create()
