@@ -16,6 +16,7 @@ import akka.stream.javadsl.Flow;
 import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Sink;
 import akka.stream.javadsl.Source;
+import org.omg.CORBA.TIMEOUT;
 import scala.concurrent.Future;
 import scala.util.Try;
 
@@ -29,6 +30,7 @@ import java.util.concurrent.CompletionStage;
 public class LoadTestingApp {
     private static final String HOST = "http://localhost";
     private static final int PORT = 8080;
+    private static final int TIMEOUT_MS = 5000;
 
     private static final String URL_KEY = "testUrl";
     private static final String COUNT_KEY = "count";
@@ -70,8 +72,11 @@ public class LoadTestingApp {
                     return new Pair<String, Integer>(url, count);
                 })
                 .mapAsync(4, r -> {
-                    Future<Object> output = Patterns.ask();
-                    output.then
+                    Future<Object> output = Patterns.ask(
+                            cacheActor,
+                            new Message(),
+                            TIMEOUT_MS
+                    ).thenCompose();
                     Sink<Pair<Try<HttpResponse>, Long>, CompletionStage<Long>> fold = Sink
                             .fold(0L, (agg, next) -> agg + System.currentTimeMillis() - next.second());
                     Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
