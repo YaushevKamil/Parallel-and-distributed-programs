@@ -114,7 +114,7 @@ public class LoadTestingApp {
                                                 public Long call() {
                                                     return currTime - startTime;
                                                 }
-                                            }, system.dispatcher())
+                                            }, system.dispatcher());
                                             //Futures.successful(currTime - startTime);
                                         });
                             })
