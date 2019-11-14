@@ -10,11 +10,13 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.Route;
 import akka.japi.Pair;
+import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Sink;
 import akka.stream.javadsl.Source;
+import scala.concurrent.Future;
 import scala.util.Try;
 
 import java.io.IOException;
@@ -68,6 +70,7 @@ public class LoadTestingApp {
                     return new Pair<String, Integer>(url, count);
                 })
                 .mapAsync(4, r -> {
+                    Future<Object> output = Patterns.ask(
                     Sink<Pair<Try<HttpResponse>, Long>, CompletionStage<Long>> fold = Sink
                             .fold(0L, (agg, next) -> agg + System.currentTimeMillis() - next.second());
                     Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
