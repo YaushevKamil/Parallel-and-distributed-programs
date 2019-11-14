@@ -106,7 +106,7 @@ public class LoadTestingApp {
                                             .thenAccept(System.out::println)
                                             .join();
                                 }
-                                CompletableFuture<Response> whenResponse = asyncHttpClient
+                                CompletableFuture<Response> whenResponse = asyncHttpClient.
                                         .pre
                             })
                             .toMat(fold, Keep.right());;
