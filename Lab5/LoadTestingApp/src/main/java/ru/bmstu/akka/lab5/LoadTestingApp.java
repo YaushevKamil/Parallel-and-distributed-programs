@@ -72,7 +72,8 @@ public class LoadTestingApp {
                             .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(pair.second(), pair)))
                             .mapAsync(pair -> {
                                 // AsyncHttpClient ->
-                            });
+                            })
+                            .toMat(fold, Keep.right());;
                     //thenCompose(res)
                     // if (CacheActor.resPerformed)
                     //else crea
