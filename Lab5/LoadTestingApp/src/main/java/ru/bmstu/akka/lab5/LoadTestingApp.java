@@ -68,8 +68,8 @@ public class LoadTestingApp {
                     // if (CacheActor.resPerformed)
                     //else crea
                     return Source.from(Collections.singletonList(r))
-                            .toMat(testSink, Keep.right()).run(materializer)
-                            .thenApply(sum -> sum/(float)((r.second() == 0)? 1:r.second()));
+                            .toMat(testSink, Keep.right()).run(materializer);
+                            //.thenApply(sum -> sum/(float)((r.second() == 0)? 1:r.second()));
                 })
                 .map(res -> {
                     System.out.println(res);
