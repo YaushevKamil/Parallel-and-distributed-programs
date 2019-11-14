@@ -31,7 +31,7 @@ public class LoadTestingApp {
     private static final String URL_KEY = "testUrl";
     private static final String COUNT_KEY = "count";
 
-    private static final int COUNT_ZERO = 0;
+    private static final Long COUNT_ZERO = 0L;
 
     public static void main(String[] args) throws IOException {
         System.out.println("Start!");
