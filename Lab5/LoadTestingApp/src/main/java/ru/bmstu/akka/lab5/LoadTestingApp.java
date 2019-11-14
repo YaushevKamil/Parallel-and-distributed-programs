@@ -61,11 +61,11 @@ public class LoadTestingApp {
                     Map<String, String> paramsMap = req.getUri().query().toMap();
                     if (!paramsMap.containsKey(URL_KEY) || !paramsMap.containsKey(COUNT_KEY)) {
                         System.out.println(paramsMap.toString());
-                        return new Pair<String, Integer>(HOST, COUNT_ZERO);
+                        return new Pair<String, Long>(HOST, COUNT_ZERO);
                     }
                     String url = paramsMap.get(URL_KEY);
-                    Integer count = Integer.parseInt(paramsMap.get(COUNT_KEY));
-                    return new Pair<String, Integer>(url, count);
+                    Long count = Long.parseLong(paramsMap.get(COUNT_KEY));
+                    return new Pair<String, Long>(url, count);
                 })
                 .mapAsync(4, r -> {
                     Sink<Pair<Try<HttpResponse>, Long>, CompletionStage<Long>> fold = Sink.fold(0L, (agg, next) -> agg + System.currentTimeMillis() - next.second());
