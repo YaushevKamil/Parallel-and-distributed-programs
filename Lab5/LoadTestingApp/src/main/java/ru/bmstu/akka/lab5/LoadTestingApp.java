@@ -44,6 +44,7 @@ public class LoadTestingApp {
 
     private static Flow<HttpRequest, HttpResponse, NotUsed> createFlow(Http http, ActorSystem system, ActorMaterializer materializer) {
         return Flow.of(HttpRequest.class)
-                .map();
+                .map(req -> {})
+                .;
     }
 }
