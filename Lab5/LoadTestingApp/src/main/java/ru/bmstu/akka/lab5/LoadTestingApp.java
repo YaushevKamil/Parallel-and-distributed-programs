@@ -111,7 +111,7 @@ public class LoadTestingApp {
                                             return Futures.successful(currTime - startTime);
                                         });
                             })
-                            .toMat(fold, Keep.right());;
+                            .toMat(fold, Keep.right());
                     //thenCompose(res)
                     // if (CacheActor.resPerformed)
                     //else crea
