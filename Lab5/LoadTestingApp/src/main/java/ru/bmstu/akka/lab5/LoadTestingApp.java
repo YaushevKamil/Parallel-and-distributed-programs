@@ -109,8 +109,6 @@ public class LoadTestingApp {
                                             Long currTime = System.currentTimeMillis();
                                             return currTime - startTime;
                                         });
-                                whenResponse.join();
-//
                             })
                             .toMat(fold, Keep.right());;
                     //thenCompose(res)
