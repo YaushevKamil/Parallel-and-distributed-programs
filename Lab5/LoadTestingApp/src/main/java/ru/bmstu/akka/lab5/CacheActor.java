@@ -1,6 +1,7 @@
 package ru.bmstu.akka.lab5;
 
 import akka.actor.AbstractActor;
+import akka.japi.pf.ReceiveBuilder;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,6 +12,6 @@ public class CacheActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return null;
+        return ReceiveBuilder;
     }
 }
