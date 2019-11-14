@@ -99,7 +99,7 @@ public class LoadTestingApp {
                                 Long start = System.currentTimeMillis();
                                 String url;
                                 AsyncHttpClient asyncHttpClient = asyncHttpClient();
-                                asyncHttpClient
+                                CompletableFuture<Response> whenResponse = asyncHttpClient
                                         .prepareGet(url)
                                         .execute()
                                         .toCompletableFuture()
