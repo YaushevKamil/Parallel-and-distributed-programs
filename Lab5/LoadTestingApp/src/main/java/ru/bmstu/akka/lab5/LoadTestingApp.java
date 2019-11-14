@@ -93,6 +93,7 @@ public class LoadTestingApp {
                 .mapAsync(4, pair -> {
                     String url = pair.first();
                     Integer count = pair.second();
+                    
                     Future<Object> output = Patterns.ask(
                             cacheActor,
                             new GetMessage(url, count),
@@ -101,7 +102,7 @@ public class LoadTestingApp {
                     toJava(output).thenCompose(r -> {
                         r.getClass().
                         if (r.calced()) {
-                            return completeOKWithFuture(r.);
+                            return completeOKWithFuture(r.sa);
                         } else {
                             Sink<Long, CompletionStage<Long>> fold = Sink.fold(0L, Long::sum);
                             Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
