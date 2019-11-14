@@ -13,6 +13,7 @@ import akka.japi.Pair;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import akka.stream.javadsl.Keep;
+import akka.stream.javadsl.Sink;
 import akka.stream.javadsl.Source;
 
 import java.io.IOException;
@@ -65,6 +66,9 @@ public class LoadTestingApp {
                     return new Pair<HttpRequest, Integer>(HttpRequest.create(url), count);
                 })
                 .mapAsync(4, r -> {
+                    Sink<Pair<HttpRequest, Integer>, CompletionStage<Long>> testSink = Flow
+                            .<Pair<HttpRequest, Integer>>create()
+                            .;
                     //thenCompose(res)
                     // if (CacheActor.resPerformed)
                     //else crea
