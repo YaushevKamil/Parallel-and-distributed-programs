@@ -95,7 +95,11 @@ public class LoadTestingApp {
                             new GetMessage(url, count),
                             TIMEOUT_MS
                     );
-                    toJava(output).thenCompose(r -> )
+                    toJava(output).thenCompose(r -> {
+                        if (r.calced()) {
+                            
+                        }
+                    })
 
                     Sink<Long, CompletionStage<Long>> fold = Sink.fold(0L, Long::sum);
                     Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
