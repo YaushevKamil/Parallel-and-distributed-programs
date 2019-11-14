@@ -103,7 +103,9 @@ public class LoadTestingApp {
                                         .prepareGet(url)
                                         .execute()
                                         .toCompletableFuture()
-                                        .thenCompose();
+                                        .thenCompose(() -> {
+                                            return ;
+                                        });
 //                                            .thenApply(Response::getResponseBody)
 //                                            .thenAccept(System.out::println)
 //                                            .join();
