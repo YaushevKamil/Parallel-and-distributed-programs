@@ -97,7 +97,7 @@ public class LoadTestingApp {
                     );
                     toJava(output).thenCompose(r -> {
                         if (r.calced()) {
-                            return 
+                            return CompletedS
                         }
                     })
 
