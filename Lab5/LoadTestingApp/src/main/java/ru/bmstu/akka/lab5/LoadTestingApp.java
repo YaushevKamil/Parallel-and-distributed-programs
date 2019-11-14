@@ -82,7 +82,8 @@ public class LoadTestingApp {
                             cacheActor,
                             new Message(),
                             TIMEOUT_MS
-                    ).thenCompose();
+                    );
+                    output.
                     Sink<Pair<Try<HttpResponse>, Long>, CompletionStage<Long>> fold = Sink
                             .fold(0L, (agg, next) -> agg + System.currentTimeMillis() - next.second());
                     Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
