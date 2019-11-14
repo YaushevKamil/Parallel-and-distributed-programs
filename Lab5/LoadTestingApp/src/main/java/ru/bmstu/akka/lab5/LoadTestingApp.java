@@ -95,7 +95,7 @@ public class LoadTestingApp {
                             TIMEOUT_MS
                     );
                     output.map(msg -> {
-                        msg.
+                        msg.the
                     })
 
                     Sink<Long, CompletionStage<Long>> fold = Sink.fold(0L, Long::sum);
