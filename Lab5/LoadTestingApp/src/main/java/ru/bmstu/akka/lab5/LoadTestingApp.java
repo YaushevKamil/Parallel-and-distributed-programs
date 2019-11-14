@@ -99,7 +99,7 @@ public class LoadTestingApp {
                             TIMEOUT_MS
                     );
                     toJava(output).thenCompose(r -> {
-                        toJava(r).
+                        r.
                         if (r.calced()) {
                             return completeOKWithFuture(r.);
                         } else {
