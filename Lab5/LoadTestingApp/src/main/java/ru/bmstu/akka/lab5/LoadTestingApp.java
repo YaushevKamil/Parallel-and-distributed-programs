@@ -42,7 +42,7 @@ public class LoadTestingApp {
     public static void main(String[] args) throws IOException {
         System.out.println("Start!");
         ActorSystem system = ActorSystem.create("routes");
-        ActorRef storeActor = system.actorOf(Props.create(StoreActor.class));
+        ActorRef cacheActor = system.actorOf(Props.create(CacheActor.class));
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         LoadTestingApp tester = new LoadTestingApp();
