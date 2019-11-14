@@ -18,6 +18,7 @@ import akka.stream.javadsl.Flow;
 import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Sink;
 import akka.stream.javadsl.Source;
+import org.asynchttpclient.Response;
 import org.omg.CORBA.TIMEOUT;
 import scala.concurrent.Future;
 import scala.util.Try;
@@ -27,6 +28,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
 public class LoadTestingApp {
@@ -91,7 +93,7 @@ public class LoadTestingApp {
                             .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(pair.second(), pair)))
                             .mapAsync(pair -> {
                                 // AsyncHttpClient ->
-                                
+                                CompletableFuture<Response> 
                             })
                             .toMat(fold, Keep.right());;
                     //thenCompose(res)
