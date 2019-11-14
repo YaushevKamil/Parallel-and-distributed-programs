@@ -96,7 +96,13 @@ public class LoadTestingApp {
                             .mapAsync(pair -> {
                                 // AsyncHttpClient ->
                                 try (AsyncHttpClient asyncHttpClient = asyncHttpClient()) {
-                                    
+                                    asyncHttpClient
+                                            .prepareGet("http://www.example.com/")
+                                            .execute()
+                                            .toCompletableFuture()
+                                            .thenApply(Response::getResponseBody)
+                                            .thenAccept(System.out::println)
+                                            .join();
                                 }
                                 CompletableFuture<Response> whenResponse = asyncHttpClient
                                         .pre
