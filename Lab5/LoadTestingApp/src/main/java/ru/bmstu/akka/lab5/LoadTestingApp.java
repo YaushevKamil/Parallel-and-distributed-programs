@@ -63,13 +63,13 @@ public class LoadTestingApp {
                         return new Pair<String, Integer>(HOST, COUNT_ZERO);
                     }
                     String url = paramsMap.get(URL_KEY);
-                    Integer count = Integer.parseInt(paramsMap.get(COUNT_KEY));
+                    int count = Integer.parseInt(paramsMap.get(COUNT_KEY));
                     return new Pair<String, Integer>(url, count);
                 })
                 .mapAsync(4, r -> {
                     Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
                             .<Pair<String, Integer>>create()
-                            .mapConcat(pair -> new ArrayList<Pair>());
+                            .mapConcat(pair -> new ArrayList<Pair<String, Integer>>());
                     //thenCompose(res)
                     // if (CacheActor.resPerformed)
                     //else crea
