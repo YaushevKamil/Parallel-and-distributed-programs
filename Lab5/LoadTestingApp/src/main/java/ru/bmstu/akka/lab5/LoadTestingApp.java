@@ -31,7 +31,7 @@ public class LoadTestingApp {
     private static final String URL_KEY = "testUrl";
     private static final String COUNT_KEY = "count";
 
-    private static final Long COUNT_ZERO = 0L;
+    private static final int COUNT_ZERO = 0;
 
     public static void main(String[] args) throws IOException {
         System.out.println("Start!");
@@ -61,17 +61,17 @@ public class LoadTestingApp {
                     Map<String, String> paramsMap = req.getUri().query().toMap();
                     if (!paramsMap.containsKey(URL_KEY) || !paramsMap.containsKey(COUNT_KEY)) {
                         System.out.println(paramsMap.toString());
-                        return new Pair<String, Long>(HOST, COUNT_ZERO);
+                        return new Pair<String, Integer>(HOST, COUNT_ZERO);
                     }
                     String url = paramsMap.get(URL_KEY);
-                    Long count = Long.parseLong(paramsMap.get(COUNT_KEY));
-                    return new Pair<String, Long>(url, count);
+                    Integer count = Integer.parseInt(paramsMap.get(COUNT_KEY));
+                    return new Pair<String, Integer>(url, count);
                 })
                 .mapAsync(4, r -> {
-                    Sink<Pair<Try<HttpResponse>, Long>, CompletionStage<Long>> fold = Sink.fold(0L, (agg, next) -> agg + System.currentTimeMillis() - next.second());
-                    Sink<Pair<String, Long>, CompletionStage<Long>> testSink = Flow
-                            .<Pair<String, Long>>create()
-                            .mapConcat(pair -> new ArrayList<Pair<String, Long>>(Collections.nCopies(pair.second(), pair)))
+                    Sink<Pair<Try<HttpResponse>, Long>, CompletionStage<Long> > fold = Sink.fold(0L, (agg, next) -> agg + System.currentTimeMillis() - next.second());
+                    Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
+                            .<Pair<String, Integer>>create()
+                            .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(pair.second(), pair)))
                             .mapAsync(pair -> {
                                 // AsyncHttpClient ->
                             })
