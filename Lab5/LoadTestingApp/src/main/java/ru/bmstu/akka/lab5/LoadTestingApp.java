@@ -33,6 +33,8 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
+import static org.asynchttpclient.Dsl.asyncHttpClient;
+
 public class LoadTestingApp {
     private static final String HOST = "http://localhost";
     private static final int PORT = 8080;
