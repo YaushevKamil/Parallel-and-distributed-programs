@@ -86,10 +86,10 @@ public class LoadTestingApp {
                     Integer count = Integer.parseInt(paramsMap.get(COUNT_KEY));
                     return new Pair<String, Integer>(url, count);
                 })
-                .mapAsync(4, r -> {
+                .mapAsync(4, pair -> {
                     Future<Object> output = Patterns.ask(
                             cacheActor,
-                            new Message(),
+                            new Message(pair.first(), pair.second()),
                             TIMEOUT_MS
                     );
 
