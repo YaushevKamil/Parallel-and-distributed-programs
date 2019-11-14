@@ -35,6 +35,8 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
+
+import static akka.http.javadsl.server.Directives.completeOKWithFuture;
 import static scala.compat.java8.FutureConverters.toJava;
 
 import static akka.dispatch.Futures.future;
@@ -98,7 +100,9 @@ public class LoadTestingApp {
                     );
                     toJava(output).thenCompose(r -> {
                         if (r.calced()) {
-                            return CompletedFuture<>
+                            return completeOKWithFuture(r.);
+                        } else {
+
                         }
                     })
 
