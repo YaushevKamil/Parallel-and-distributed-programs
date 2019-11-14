@@ -2,18 +2,18 @@ package ru.bmstu.akka.lab5;
 
 public class CacheMessage {
     private String url;
-    private Integer count;
+    private Long delay;
 
-    public CacheMessage(String url, Integer count) {
+    public CacheMessage(String url, Long delay) {
         this.url = url;
-        this.count = count;
+        this.delay = delay;
     }
 
     public String getUrl() {
         return url;
     }
 
-    public Integer getCount() {
-        return count;
+    public Long getDelay() {
+        return delay;
     }
 }
