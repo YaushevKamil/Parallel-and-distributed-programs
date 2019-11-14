@@ -136,7 +136,17 @@ public class LoadTestingApp {
                 })
                 .map(res -> {
                     System.out.println(res);
-                    // res -> CacheActor
+                    res.
+                    cacheActor.tell(
+                            new CacheMessage(
+                                    packageId,
+                                    functionName,
+                                    script,
+                                    test.getParams(),
+                                    test.getExpectedResult()
+                            ),
+                            ActorRef.noSender()
+                    );
                     String averageTime = new DecimalFormat("#0.00").format(res);
                     return HttpResponse
                             .create()
