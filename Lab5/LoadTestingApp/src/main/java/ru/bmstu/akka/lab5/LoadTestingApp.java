@@ -99,7 +99,7 @@ public class LoadTestingApp {
                             )
                             .mapAsync(pair -> {
                                 Long startTime = System.currentTimeMillis();
-                                String url = pair.first;
+                                String url = ((Pair<String, Integer>) pair);
                                 AsyncHttpClient asyncHttpClient = asyncHttpClient();
                                 CompletableFuture<Response> whenResponse = asyncHttpClient
                                         .prepareGet(url)
