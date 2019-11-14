@@ -31,6 +31,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
+import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
@@ -109,7 +110,8 @@ public class LoadTestingApp {
                                         .toCompletableFuture()
                                         .thenCompose(() -> {
                                             Long currTime = System.currentTimeMillis();
-                                            return future(new Ca)
+                                            return future(new Callable<Long>() {
+                                            })
                                             //Futures.successful(currTime - startTime);
                                         });
                             })
