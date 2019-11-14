@@ -18,6 +18,8 @@ import akka.stream.javadsl.Flow;
 import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Sink;
 import akka.stream.javadsl.Source;
+
+import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Response;
 import org.omg.CORBA.TIMEOUT;
 import scala.concurrent.Future;
