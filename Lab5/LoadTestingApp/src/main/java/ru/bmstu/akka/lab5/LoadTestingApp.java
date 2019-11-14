@@ -20,6 +20,7 @@ import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Sink;
 import akka.stream.javadsl.Source;
 
+import com.sun.xml.internal.ws.util.CompletedFuture;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Response;
 import org.omg.CORBA.TIMEOUT;
@@ -97,7 +98,7 @@ public class LoadTestingApp {
                     );
                     toJava(output).thenCompose(r -> {
                         if (r.calced()) {
-                            return CompletedS
+                            return CompletedFuture<>
                         }
                     })
 
