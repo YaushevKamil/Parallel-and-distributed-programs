@@ -96,7 +96,7 @@ public class LoadTestingApp {
                             .<Pair<String, Integer>>create()
                             .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(pair.second(), pair)))
                             .mapAsync(pair -> {
-                                // AsyncHttpClient ->
+                                Long start = System.currentTimeMillis();
                                 try (AsyncHttpClient asyncHttpClient = asyncHttpClient()) {
                                     asyncHttpClient
                                             .prepareGet("http://www.example.com/")
