@@ -68,7 +68,7 @@ public class LoadTestingApp {
                 .mapAsync(4, r -> {
                     Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
                             .<Pair<String, Integer>>create()
-                            .mapConcat;
+                            .mapConcat();
                     //thenCompose(res)
                     // if (CacheActor.resPerformed)
                     //else crea
