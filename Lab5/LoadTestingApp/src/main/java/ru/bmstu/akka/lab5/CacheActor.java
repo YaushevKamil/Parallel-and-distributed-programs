@@ -14,7 +14,17 @@ public class CacheActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder
                 .create()
-                .match()
+                .match(StoreMessage.class, m -> {
+                    String packageId = m.getPackageId();
+                    String result = m.getResult();
+                    if (store.containsKey(packageId)) {
+                        store.get(packageId).add(result);
+                    } else {
+                        ArrayList<String> results = new ArrayList<>();
+                        results.add(result);
+                        store.put(packageId, results);
+                    }
+                })
                 .match()
                 .build();
     }
