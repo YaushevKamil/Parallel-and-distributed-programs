@@ -105,7 +105,7 @@ public class LoadTestingApp {
                                         .toCompletableFuture()
                                         .thenCompose(() -> {
                                             Long currTime = System.currentTimeMillis();
-                                            return ;
+                                            return Future<Long>(currTime - startTime);
                                         });
                                 whenResponse.join();
 //                                            .thenApply(Response::getResponseBody)
