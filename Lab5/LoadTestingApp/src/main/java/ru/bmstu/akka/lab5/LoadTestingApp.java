@@ -87,9 +87,11 @@ public class LoadTestingApp {
                     return new Pair<String, Integer>(url, count);
                 })
                 .mapAsync(4, pair -> {
+                    String url = pair.first();
+                    Integer count = pair.second();
                     Future<Object> output = Patterns.ask(
                             cacheActor,
-                            new Message(pair.first(), pair.second()),
+                            new GetMessage(, ),
                             TIMEOUT_MS
                     );
 
