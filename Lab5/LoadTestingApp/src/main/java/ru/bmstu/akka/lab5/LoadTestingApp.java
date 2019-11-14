@@ -108,10 +108,8 @@ public class LoadTestingApp {
                                         .toCompletableFuture()
                                         .thenCompose(() -> {
                                             Long currTime = System.currentTimeMillis();
-                                            return future(new Callable<String>() {
-                                                public String call() {
-                                                    return currTime - startTime;
-                                                }, system.dispatcher());
+                                            return 
+                                            //Futures.successful(currTime - startTime);
                                         });
                             })
                             .toMat(fold, Keep.right());
