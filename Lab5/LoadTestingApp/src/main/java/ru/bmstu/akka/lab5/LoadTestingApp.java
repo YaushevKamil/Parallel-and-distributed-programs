@@ -34,6 +34,7 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
+import static akka.dispatch.Futures.future;
 import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 public class LoadTestingApp {
