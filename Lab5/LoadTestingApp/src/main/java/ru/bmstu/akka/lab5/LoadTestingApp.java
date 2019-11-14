@@ -100,7 +100,7 @@ public class LoadTestingApp {
                                 String url;
                                 try (AsyncHttpClient asyncHttpClient = asyncHttpClient()) {
                                     asyncHttpClient
-                                            .prepareGet("http://www.example.com/")
+                                            .prepareGet(url)
                                             .execute()
                                             .toCompletableFuture()
                                             .thenApply(Response::getResponseBody)
