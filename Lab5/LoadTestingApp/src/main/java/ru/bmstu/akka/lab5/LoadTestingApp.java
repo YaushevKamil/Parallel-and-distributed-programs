@@ -111,7 +111,7 @@ public class LoadTestingApp {
                                         .thenCompose(() -> {
                                             Long currTime = System.currentTimeMillis();
                                             return future(new Callable<Long>() {
-                                                
+                                                public Long 
                                             })
                                             //Futures.successful(currTime - startTime);
                                         });
