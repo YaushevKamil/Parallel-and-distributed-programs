@@ -93,10 +93,8 @@ public class LoadTestingApp {
                             cacheActor,
                             new GetMessage(url, count),
                             TIMEOUT_MS
-                    );
-                    output.map(msg -> {
-                        msg.the
-                    })
+                    ).to;
+
 
                     Sink<Long, CompletionStage<Long>> fold = Sink.fold(0L, Long::sum);
                     Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
