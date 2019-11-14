@@ -90,8 +90,8 @@ public class LoadTestingApp {
                             TIMEOUT_MS
                     );
 
-                    Sink<Pair<Try<HttpResponse>, Long>, CompletionStage<Long>> fold = Sink
-                            .fold(0L, (agg, next) -> agg + System.currentTimeMillis() - next.second());
+                    Sink<Long, CompletionStage<Long>> fold = Sink
+                            .fold(0L, Long::sum);
                     Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
                             .<Pair<String, Integer>>create()
                             .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(pair.second(), pair)))
