@@ -102,42 +102,37 @@ public class LoadTestingApp {
                         if (r.calced()) {
                             return completeOKWithFuture(r.);
                         } else {
-
+                            Sink<Long, CompletionStage<Long>> fold = Sink.fold(0L, Long::sum);
+                            Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
+                                    .<Pair<String, Integer>>create()
+                                    .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(
+                                            Collections.nCopies(pair.second(),
+                                                    pair))
+                                    )
+                                    .mapAsync(4, pair -> {
+                                        Long startTime = System.currentTimeMillis();
+                                        String url = pair.first();
+                                        AsyncHttpClient asyncHttpClient = asyncHttpClient();
+                                        CompletableFuture<Response> whenResponse = asyncHttpClient
+                                                .prepareGet(url)
+                                                .execute()
+                                                .toCompletableFuture()
+                                                .thenCompose(() -> {
+                                                    Long currTime = System.currentTimeMillis();
+                                                    return future(new Callable<Long>() {
+                                                        public Long call() {
+                                                            return currTime - startTime;
+                                                        }
+                                                    }, system.dispatcher());
+                                                    //Futures.successful(currTime - startTime);
+                                                });
+                                    })
+                                    .toMat(fold, Keep.right());
+                            return Source.from(Collections.singletonList(pair))
+                                    .toMat(testSink, Keep.right()).run(materializer);
                         }
                     })
-
-                    Sink<Long, CompletionStage<Long>> fold = Sink.fold(0L, Long::sum);
-                    Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
-                            .<Pair<String, Integer>>create()
-                            .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(
-                                    Collections.nCopies(pair.second(),
-                                    pair))
-                            )
-                            .mapAsync(4, pair -> {
-                                Long startTime = System.currentTimeMillis();
-                                String url = pair.first();
-                                AsyncHttpClient asyncHttpClient = asyncHttpClient();
-                                CompletableFuture<Response> whenResponse = asyncHttpClient
-                                        .prepareGet(url)
-                                        .execute()
-                                        .toCompletableFuture()
-                                        .thenCompose(() -> {
-                                            Long currTime = System.currentTimeMillis();
-                                            return future(new Callable<Long>() {
-                                                public Long call() {
-                                                    return currTime - startTime;
-                                                }
-                                            }, system.dispatcher());
-                                            //Futures.successful(currTime - startTime);
-                                        });
-                            })
-                            .toMat(fold, Keep.right());
-                    //thenCompose(res)
-                    // if (CacheActor.resPerformed)
-                    //else crea
-                    return Source.from(Collections.singletonList(pair))
-                            .toMat(testSink, Keep.right()).run(materializer);
-                            //.thenApply(sum -> sum/(float)((r.second() == 0)? 1:r.second()));
+                    //.thenApply(sum -> sum/(float)((r.second() == 0)? 1:r.second()));
                 })
                 .map(res -> {
                     System.out.println(res);
