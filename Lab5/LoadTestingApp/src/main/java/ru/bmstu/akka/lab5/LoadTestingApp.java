@@ -93,10 +93,13 @@ public class LoadTestingApp {
                     Sink<Long, CompletionStage<Long>> fold = Sink.fold(0L, Long::sum);
                     Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
                             .<Pair<String, Integer>>create()
-                            .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(pair.second(), pair)))
+                            .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(
+                                    Collections.nCopies(pair.second(),
+                                    pair))
+                            )
                             .mapAsync(pair -> {
                                 Long startTime = System.currentTimeMillis();
-                                String url;
+                                String url = pair.first;
                                 AsyncHttpClient asyncHttpClient = asyncHttpClient();
                                 CompletableFuture<Response> whenResponse = asyncHttpClient
                                         .prepareGet(url)
