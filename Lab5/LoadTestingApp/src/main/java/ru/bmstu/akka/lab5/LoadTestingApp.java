@@ -15,6 +15,7 @@ import akka.stream.javadsl.Flow;
 import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Sink;
 import akka.stream.javadsl.Source;
+import scala.util.Try;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -67,6 +68,7 @@ public class LoadTestingApp {
                     return new Pair<String, Integer>(url, count);
                 })
                 .mapAsync(4, r -> {
+                    Sink<Pair<Try<HttpResponse>, Long>,  > fold = Sink.fold(0L, (agg, next) -> agg + System.currentTimeMillis() - next.second());
                     Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
                             .<Pair<String, Integer>>create()
                             .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(pair.second(), pair)))
