@@ -1,4 +1,7 @@
 package ru.bmstu.akka.lab5;
 
-public class CacheActor {
+import akka.actor.AbstractActor;
+
+public class CacheActor extends AbstractActor {
+
 }
