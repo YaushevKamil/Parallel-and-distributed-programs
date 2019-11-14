@@ -18,6 +18,7 @@ import akka.stream.javadsl.Source;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.CompletionStage;
@@ -68,7 +69,7 @@ public class LoadTestingApp {
                 .mapAsync(4, r -> {
                     Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
                             .<Pair<String, Integer>>create()
-                            .mapConcat();
+                            .mapConcat(pair -> new ArrayList<>());
                     //thenCompose(res)
                     // if (CacheActor.resPerformed)
                     //else crea
