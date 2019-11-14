@@ -34,6 +34,7 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
+import static scala.compat.java8.FutureConverters.toJava;
 
 import static akka.dispatch.Futures.future;
 import static org.asynchttpclient.Dsl.asyncHttpClient;
@@ -94,7 +95,7 @@ public class LoadTestingApp {
                             new GetMessage(url, count),
                             TIMEOUT_MS
                     );
-                    toJava
+                    toJava(output).thenCompose()
 
                     Sink<Long, CompletionStage<Long>> fold = Sink.fold(0L, Long::sum);
                     Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
