@@ -112,7 +112,7 @@ public class LoadTestingApp {
                                             Long currTime = System.currentTimeMillis();
                                             return future(new Callable<Long>() {
                                                 public Long call() {
-                                                    
+                                                    return currTime - startTime;
                                                 }
                                             })
                                             //Futures.successful(currTime - startTime);
