@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CacheActor extends AbstractActor {
-    private Map<String, ArrayList<String>> store = new HashMap<>();
+    private Map<String, ArrayList<Integer>> cache = new HashMap<>();
 
     @Override
     public Receive createReceive() {
