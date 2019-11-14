@@ -95,6 +95,9 @@ public class LoadTestingApp {
                             .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(pair.second(), pair)))
                             .mapAsync(pair -> {
                                 // AsyncHttpClient ->
+                                try (AsyncHttpClient asyncHttpClient = asyncHttpClient()) {
+                                    
+                                }
                                 CompletableFuture<Response> whenResponse = asyncHttpClient
                                         .pre
                             })
