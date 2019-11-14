@@ -93,7 +93,7 @@ public class LoadTestingApp {
                             .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(pair.second(), pair)))
                             .mapAsync(pair -> {
                                 // AsyncHttpClient ->
-                                CompletableFuture<Response> 
+                                CompletableFuture<Response> whenResponse
                             })
                             .toMat(fold, Keep.right());;
                     //thenCompose(res)
