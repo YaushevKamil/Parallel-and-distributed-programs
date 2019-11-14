@@ -103,9 +103,9 @@ public class LoadTestingApp {
                                             .prepareGet(url)
                                             .execute()
                                             .toCompletableFuture()
-                                            .thenApply(Response::getResponseBody)
-                                            .thenAccept(System.out::println)
-                                            .join();
+//                                            .thenApply(Response::getResponseBody)
+//                                            .thenAccept(System.out::println)
+//                                            .join();
                                 }
                                 CompletableFuture<Response> whenResponse = asyncHttpClient.
                                         .pre
