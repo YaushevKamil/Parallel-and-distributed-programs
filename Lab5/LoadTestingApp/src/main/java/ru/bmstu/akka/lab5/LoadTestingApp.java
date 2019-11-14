@@ -98,16 +98,16 @@ public class LoadTestingApp {
                             .mapAsync(pair -> {
                                 Long start = System.currentTimeMillis();
                                 String url;
-                                try (AsyncHttpClient asyncHttpClient = asyncHttpClient()) {
-                                    asyncHttpClient
-                                            .prepareGet(url)
-                                            .execute()
-                                            .toCompletableFuture()
-                                            .thenCompose();
+                                AsyncHttpClient asyncHttpClient = asyncHttpClient();
+                                asyncHttpClient
+                                        .prepareGet(url)
+                                        .execute()
+                                        .toCompletableFuture()
+                                        .thenCompose();
 //                                            .thenApply(Response::getResponseBody)
 //                                            .thenAccept(System.out::println)
 //                                            .join();
-                                }
+
                                 CompletableFuture<Response> whenResponse = asyncHttpClient.
                                         .pre
                             })
