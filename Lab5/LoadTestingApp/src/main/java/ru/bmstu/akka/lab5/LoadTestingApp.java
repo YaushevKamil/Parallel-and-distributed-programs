@@ -94,6 +94,7 @@ public class LoadTestingApp {
                             .mapAsync(pair -> {
                                 // AsyncHttpClient ->
                                 CompletableFuture<Response> whenResponse = asyncHttpClient
+                                        .pre
                             })
                             .toMat(fold, Keep.right());;
                     //thenCompose(res)
