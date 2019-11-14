@@ -91,7 +91,7 @@ public class LoadTestingApp {
                     Integer count = pair.second();
                     Future<Object> output = Patterns.ask(
                             cacheActor,
-                            new GetMessage(url),
+                            new GetMessage(url, count),
                             TIMEOUT_MS
                     );
 
