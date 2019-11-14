@@ -111,9 +111,6 @@ public class LoadTestingApp {
 //                                            .thenApply(Response::getResponseBody)
 //                                            .thenAccept(System.out::println)
 //                                            .join();
-
-                                CompletableFuture<Response> whenResponse = asyncHttpClient.
-                                        .pre
                             })
                             .toMat(fold, Keep.right());;
                     //thenCompose(res)
