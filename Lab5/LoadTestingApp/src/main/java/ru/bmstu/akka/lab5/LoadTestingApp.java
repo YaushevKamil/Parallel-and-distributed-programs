@@ -70,8 +70,8 @@ public class LoadTestingApp {
                 .mapAsync(4, r -> {
                     Sink<Pair<Try<HttpResponse>, Long>, CompletionStage<Long>> fold = Sink.fold(0L, (agg, next) -> agg + System.currentTimeMillis() - next.second());
                     Sink<Pair<String, Long>, CompletionStage<Long>> testSink = Flow
-                            .<Pair<String, Integer>>create()
-                            .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(pair.second(), pair)))
+                            .<Pair<String, Long>>create()
+                            .mapConcat(pair -> new ArrayList<Pair<String, Long>>(Collections.nCopies(pair.second(), pair)))
                             .mapAsync(pair -> {
                                 // AsyncHttpClient ->
                             })
