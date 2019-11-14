@@ -66,7 +66,7 @@ public class LoadTestingApp {
                     return new Pair<String, Integer>(url, count);
                 })
                 .mapAsync(4, r -> {
-                    Sink<Pair<HttpRequest, Integer>, CompletionStage<Long>> testSink = Flow
+                    Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
                             .<Pair<HttpRequest, Integer>>create()
                             .;
                     //thenCompose(res)
