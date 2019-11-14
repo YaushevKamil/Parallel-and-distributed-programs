@@ -67,7 +67,7 @@ public class LoadTestingApp {
                 })
                 .mapAsync(4, r -> {
                     Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
-                            .<Pair<HttpRequest, Integer>>create()
+                            .<Pair<String, Integer>>create()
                             .;
                     //thenCompose(res)
                     // if (CacheActor.resPerformed)
