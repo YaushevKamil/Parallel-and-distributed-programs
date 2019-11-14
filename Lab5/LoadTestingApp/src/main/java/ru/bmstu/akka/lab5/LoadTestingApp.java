@@ -106,6 +106,7 @@ public class LoadTestingApp {
                                         .thenCompose(() -> {
                                             return ;
                                         });
+                                whenResponse.join();
 //                                            .thenApply(Response::getResponseBody)
 //                                            .thenAccept(System.out::println)
 //                                            .join();
