@@ -110,9 +110,7 @@ public class LoadTestingApp {
                                             return currTime - startTime;
                                         });
                                 whenResponse.join();
-//                                            .thenApply(Response::getResponseBody)
-//                                            .thenAccept(System.out::println)
-//                                            .join();
+//
                             })
                             .toMat(fold, Keep.right());;
                     //thenCompose(res)
