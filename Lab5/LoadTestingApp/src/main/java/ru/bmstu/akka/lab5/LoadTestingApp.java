@@ -69,7 +69,7 @@ public class LoadTestingApp {
                 .mapAsync(4, r -> {
                     Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
                             .<Pair<String, Integer>>create()
-                            .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(Collections.nCopies()));
+                            .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(pair.second(), pair)));
                     //thenCompose(res)
                     // if (CacheActor.resPerformed)
                     //else crea
