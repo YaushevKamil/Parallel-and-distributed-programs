@@ -96,7 +96,7 @@ public class LoadTestingApp {
                             .<Pair<String, Integer>>create()
                             .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(pair.second(), pair)))
                             .mapAsync(pair -> {
-                                Long start = System.currentTimeMillis();
+                                Long startTime = System.currentTimeMillis();
                                 String url;
                                 AsyncHttpClient asyncHttpClient = asyncHttpClient();
                                 CompletableFuture<Response> whenResponse = asyncHttpClient
