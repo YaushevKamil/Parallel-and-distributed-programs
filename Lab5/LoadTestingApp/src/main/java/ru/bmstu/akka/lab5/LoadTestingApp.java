@@ -104,6 +104,7 @@ public class LoadTestingApp {
                                         .execute()
                                         .toCompletableFuture()
                                         .thenCompose(() -> {
+                                            Long currTime = System.currentTimeMillis();
                                             return ;
                                         });
                                 whenResponse.join();
