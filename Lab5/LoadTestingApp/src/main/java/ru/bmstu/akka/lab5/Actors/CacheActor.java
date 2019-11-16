@@ -1,7 +1,8 @@
-package ru.bmstu.akka.lab5;
+package ru.bmstu.akka.lab5.Actors;
 
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
+import ru.bmstu.akka.lab5.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,8 +15,8 @@ public class CacheActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder
                 .create()
-                .match(CacheMessage.class, m -> {
-                    String url = m.getUrl();
+                .match(Test.class, m -> {
+                    Test ;
                     Long delay = m.getDelay();
                     if (cache.containsKey(url)) {
                         cache.get(url).add(delay);
