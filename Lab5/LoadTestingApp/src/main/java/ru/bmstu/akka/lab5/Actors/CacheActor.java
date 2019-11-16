@@ -19,7 +19,8 @@ public class CacheActor extends AbstractActor {
                 .create()
                 .match(StoreMessage.class, msg -> cache.put(msg.getTest(), msg.getDelay()))
                 .match(GetMessage.class, msg -> {
-                    Test test = msg.getTest();
+                    String url = msg.getUrl();
+                    Integer count = msg.getCount();
                     sender().tell(new ResponseMessage(url, cache.get(url)), getSelf());
                 })
                 .build();
