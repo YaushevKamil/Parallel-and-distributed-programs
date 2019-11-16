@@ -25,10 +25,9 @@ public class Tester {
 
     private static final String URL_KEY = "testUrl";
     private static final String COUNT_KEY = "count";
+    private static final int TIMEOUT_MS = 5000;
 
     public Tester(ActorSystem system, ActorMaterializer materializer, AsyncHttpClient asyncHttpClient) {
-        private final int TIMEOUT_MS = 5000;
-
         this.materializer = materializer;
         this.cacheActor = system.actorOf(Props.create(CacheActor.class));
         this.asyncHttpClient = asyncHttpClient;
