@@ -32,8 +32,8 @@ public class Tester {
         return Flow.of(HttpRequest.class)
                 .map(req -> {
                     Map<String, String> query = req.getUri().query().toMap();
-                    if (!query.containsKey(URL_KEY) || !query.containsKey(COUNT_KEY)) {
-                        return new Pair<String, Integer>(HOST, COUNT_ONE);
+                    if (query.containsKey(URL_KEY) && query.containsKey(COUNT_KEY)) {
+
                     }
                     return new Pair<String, Integer>();
                 })
