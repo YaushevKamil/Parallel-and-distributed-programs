@@ -27,7 +27,8 @@ public class Tester {
     public Flow<HttpRequest, HttpResponse, NotUsed> createFlow() {
         return Flow.of(HttpRequest.class)
                 .map(req -> {
-                    Map<String, String> params = req.getUri().query().toMap();
+                    Map<String, String> query = req.getUri().query().toMap();
+                    return ;
                 })
                 .mapAsync()
                 .map();
