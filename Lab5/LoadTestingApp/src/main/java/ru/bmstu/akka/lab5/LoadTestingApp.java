@@ -57,7 +57,6 @@ public class LoadTestingApp {
 
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        LoadTestingApp tester = new LoadTestingApp();
 
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = createFlow(http, system, materializer, cacheActor);
 
