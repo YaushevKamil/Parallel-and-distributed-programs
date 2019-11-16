@@ -133,7 +133,7 @@ public class LoadTestingApp {
                             TIMEOUT_MS
                     );
                     CompletionStage<Object> stage = FutureConverters.toJava(actorResponse);
-                    return stage.thenCompose(r -> {
+                    return stage.thenCompose(result -> {
                         ResponseMessage msg = (ResponseMessage)r;
                         Long delay = msg.getDelay();
 //                        СompletionStage<Long>
