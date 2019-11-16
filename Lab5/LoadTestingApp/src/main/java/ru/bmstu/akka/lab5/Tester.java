@@ -27,8 +27,8 @@ public class Tester {
     private static final String COUNT_KEY = "count";
 
     public Tester(ActorSystem system, ActorMaterializer materializer, AsyncHttpClient asyncHttpClient) {
-        private static final int TIMEOUT_MS = 5000;
-        
+        private final int TIMEOUT_MS = 5000;
+
         this.materializer = materializer;
         this.cacheActor = system.actorOf(Props.create(CacheActor.class));
         this.asyncHttpClient = asyncHttpClient;
