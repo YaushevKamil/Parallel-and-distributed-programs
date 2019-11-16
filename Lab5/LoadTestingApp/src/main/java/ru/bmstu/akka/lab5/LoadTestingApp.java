@@ -129,7 +129,7 @@ public class LoadTestingApp {
                     String url = pair.first();
                     Integer count = pair.second();
                     return Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS)
-                            .thenAsk
+                            .thenApply
 
                     CompletionStage<Object> stage = FutureConverters.toJava(actorResponse);
                     return stage.thenCompose(result -> {
