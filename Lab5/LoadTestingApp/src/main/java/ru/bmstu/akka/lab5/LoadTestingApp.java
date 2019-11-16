@@ -52,7 +52,6 @@ public class LoadTestingApp {
     private static final int COUNT_ZERO = 0;
 
     public static void main(String[] args) throws IOException {
-        System.out.println("Start!");
         ActorSystem system = ActorSystem.create("routes");
         ActorRef cacheActor = system.actorOf(Props.create(CacheActor.class));
         final Http http = Http.get(system);
