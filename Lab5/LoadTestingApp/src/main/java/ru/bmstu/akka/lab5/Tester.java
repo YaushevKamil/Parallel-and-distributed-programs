@@ -47,7 +47,8 @@ public class Tester {
                 .mapAsync(4, pair -> {
                     String url = pair.first();
                     Integer count = pair.second();
-                    return Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS))
+                    return Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS));
+                }
                 .map();
     }
 }
