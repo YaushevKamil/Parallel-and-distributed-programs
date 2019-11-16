@@ -14,6 +14,8 @@ import ru.bmstu.akka.lab5.Actors.CacheActor;
 
 import java.util.Map;
 
+import static ru.bmstu.akka.lab5.LoadTestingApp.HOST;
+
 public class Tester {
     private final ActorMaterializer materializer;
     private final ActorRef cacheActor;
@@ -37,7 +39,7 @@ public class Tester {
                         Integer count = Integer.parseInt(query.get(COUNT_KEY));
                         return new Pair<String, Integer>(url, count);
                     } else {
-                        return new Pair<String, Integer>(url, count);
+                        return new Pair<String, Integer>(HOST, 1);
                     }
 
                 })
