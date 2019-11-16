@@ -25,7 +25,7 @@ public class Tester {
     public Flow<HttpRequest, HttpResponse, NotUsed> createFlow() {
         return Flow.of(HttpRequest.class)
                 .map(req -> {
-                    
+
                 })
                 .mapAsync()
                 .map();
