@@ -8,24 +8,27 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CacheActor extends AbstractActor {
-    private Map<String, Long> cache = new HashMap<>();
+    private Map<String, ArrayList<Long>> cache = new HashMap<>();
 
     @Override
     public Receive createReceive() {
         return ReceiveBuilder
                 .create()
-                .match(StoreMessage.class, m -> {
-                    String packageId = m.getPackageId();
-                    String result = m.getResult();
-                    if (store.containsKey(packageId)) {
-                        store.get(packageId).add(result);
+                .match(CacheMessage.class, m -> {
+                    String url = m.getUrl();
+                    Long delay = m.getDelay();
+                    if (cache.containsKey(url)) {
+                        cache.get(url).add(delay);
                     } else {
-                        ArrayList<String> results = new ArrayList<>();
-                        results.add(result);
-                        store.put(packageId, results);
+                        ArrayList<Long> results = new ArrayList<>();
+                        results.add(delay);
+                        cache.put(url, results);
                     }
                 })
-                .match()
+                .match(GetMessage.class, m -> {
+                    String url = m.getUrl();
+                    sender().tell(new ResponseMessage(url, cache.get(url).get(0)), getSelf());
+                })
                 .build();
     }
 }

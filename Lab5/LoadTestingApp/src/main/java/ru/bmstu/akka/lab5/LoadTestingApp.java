@@ -24,6 +24,7 @@ import com.sun.xml.internal.ws.util.CompletedFuture;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Response;
 import org.omg.CORBA.TIMEOUT;
+import scala.compat.java8.FutureConverters;
 import scala.concurrent.Future;
 import scala.util.Try;
 
@@ -35,9 +36,6 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
-
-import static akka.http.javadsl.server.Directives.completeOKWithFuture;
-import static scala.compat.java8.FutureConverters.toJava;
 
 import static akka.dispatch.Futures.future;
 import static org.asynchttpclient.Dsl.asyncHttpClient;
@@ -75,80 +73,77 @@ public class LoadTestingApp {
                 .thenAccept(unbound -> system.terminate());
     }
 
-    private static Flow<HttpRequest, HttpResponse, NotUsed> createFlow(Http http,
-                                                                       ActorSystem system,
-                                                                       ActorMaterializer materializer,
-                                                                       ActorRef cacheActor) {
+    private static Sink<Pair<String, Integer>, CompletionStage<Long>> createFlowOnFly() {
+        Sink<Pair<String, Long>, CompletionStage<Long>> fold = Sink.fold(0L, (agg, next) -> agg+next.second());
+        return Flow
+                .<Pair<String, Integer>>create()
+                .mapConcat(p -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(p.second(), p)))
+                .mapAsync(4, pair -> {
+                    Long startTime = System.currentTimeMillis();
+                    String url = pair.first();
+                    return asyncHttpClient()
+                            .prepareGet(url)
+                            .execute()
+                            .toCompletableFuture()
+                            //.thenApply(Response::getResponseBody)
+                            //.thenAccept(System.out::println)
+                            .thenCompose(r -> {
+                                Response resp = (Response)r;
+                                Long currTime = System.currentTimeMillis();
+                                return Futures.successful(currTime - startTime);
+                            });
+                })
+                .toMat(fold, Keep.right());
+    }
+
+    private static Flow<HttpRequest,
+                        HttpResponse,
+                        NotUsed> createFlow(
+                                Http http,
+                                ActorSystem system,
+                                ActorMaterializer materializer,
+                                ActorRef cacheActor
+    ) {
         return Flow.of(HttpRequest.class)
                 .map(req -> {
-                    Map<String, String> paramsMap = req.getUri().query().toMap();
-                    if (!paramsMap.containsKey(URL_KEY) || !paramsMap.containsKey(COUNT_KEY)) {
-                        System.out.println(paramsMap.toString());
+                    Map<String, String> params = req.getUri().query().toMap();
+                    if (!params.containsKey(URL_KEY) ||
+                        !params.containsKey(COUNT_KEY)) {
+                        System.out.println(params.toString());
                         return new Pair<String, Integer>(HOST, COUNT_ZERO);
                     }
-                    String url = paramsMap.get(URL_KEY);
-                    Integer count = Integer.parseInt(paramsMap.get(COUNT_KEY));
+                    String url = params.get(URL_KEY);
+                    Integer count = Integer.parseInt(params.get(COUNT_KEY));
                     return new Pair<String, Integer>(url, count);
                 })
                 .mapAsync(4, pair -> {
                     String url = pair.first();
                     Integer count = pair.second();
-
-                    Future<Object> output = Patterns.ask(
+                    Future<Object> actorResponse = Patterns.ask(
                             cacheActor,
                             new GetMessage(url, count),
                             TIMEOUT_MS
                     );
-                    toJava(output).thenCompose(r -> {
-                        r.getClass().
-                        if (r.calced()) {
-                            return completeOKWithFuture(r.sa);
+                    CompletionStage<Object> stage = FutureConverters.toJava(actorResponse);
+                    return stage.thenCompose(r -> {
+                        ResponseMessage msg = (ResponseMessage)r;
+                        Long delay = msg.getDelay();
+//                        СompletionStage<Long>
+                        if (msg.getDelay() > 0) {
+                            return CompletableFuture.completedFuture(delay);
                         } else {
-                            Sink<Long, CompletionStage<Long>> fold = Sink.fold(0L, Long::sum);
-                            Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = Flow
-                                    .<Pair<String, Integer>>create()
-                                    .mapConcat(pair -> new ArrayList<Pair<String, Integer>>(
-                                            Collections.nCopies(pair.second(),
-                                                    pair))
-                                    )
-                                    .mapAsync(4, pair -> {
-                                        Long startTime = System.currentTimeMillis();
-                                        String url = pair.first();
-                                        AsyncHttpClient asyncHttpClient = asyncHttpClient();
-                                        CompletableFuture<Response> whenResponse = asyncHttpClient
-                                                .prepareGet(url)
-                                                .execute()
-                                                .toCompletableFuture()
-                                                .thenCompose(() -> {
-                                                    Long currTime = System.currentTimeMillis();
-                                                    return future(new Callable<Long>() {
-                                                        public Long call() {
-                                                            return currTime - startTime;
-                                                        }
-                                                    }, system.dispatcher());
-                                                    //Futures.successful(currTime - startTime);
-                                                });
-                                    })
-                                    .toMat(fold, Keep.right());
+                            Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = createFlowOnFly();
                             return Source.from(Collections.singletonList(pair))
-                                    .toMat(testSink, Keep.right()).run(materializer);
+                                    .toMat(testSink, Keep.right()).run(materializer)
+                                    .thenApply(sum -> sum/(float)((count == 0) ? 1 : count));
                         }
-                    })
-                    //.thenApply(sum -> sum/(float)((r.second() == 0)? 1:r.second()));
+                    });
+                    //
                 })
                 .map(res -> {
                     System.out.println(res);
-                    res.
-                    cacheActor.tell(
-                            new CacheMessage(
-                                    packageId,
-                                    functionName,
-                                    script,
-                                    test.getParams(),
-                                    test.getExpectedResult()
-                            ),
-                            ActorRef.noSender()
-                    );
+                    cacheActor.tell(new CacheMessage(res.floatValue()), ActorRef.noSender());
+
                     String averageTime = new DecimalFormat("#0.00").format(res);
                     return HttpResponse
                             .create()

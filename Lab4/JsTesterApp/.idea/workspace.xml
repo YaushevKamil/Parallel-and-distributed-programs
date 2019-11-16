@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7edfc5e1-5e67-403a-a2b9-33fe892c1e56" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Lab5/LoadTestingApp/src/main/java/ru/bmstu/akka/lab5/ResponseMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lab5/LoadTestingApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab5/LoadTestingApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lab5/LoadTestingApp/src/main/java/ru/bmstu/akka/lab5/CacheActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab5/LoadTestingApp/src/main/java/ru/bmstu/akka/lab5/CacheActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab5/LoadTestingApp/src/main/java/ru/bmstu/akka/lab5/LoadTestingApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab5/LoadTestingApp/src/main/java/ru/bmstu/akka/lab5/LoadTestingApp.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
