@@ -19,7 +19,7 @@ public class CacheActor extends AbstractActor {
                 .match(StoreMessage.class, msg -> {
                     Test test = msg.getTest();
                     Long delay = msg.getDelay();
-                    cache.put();
+                    cache.put(test, delay);
                 })
                 .match(GetMessage.class, m -> {
                     String url = m.getUrl();
