@@ -17,7 +17,7 @@ public class Tester {
 
     public Tester(ActorSystem system, ActorMaterializer materializer, AsyncHttpClient asyncHttpClient) {
         this.materializer = materializer;
-        this.cacheActor = cacheActor = system.actorOf(Props.create(CacheActor.class));
+        this.cacheActor  = system.actorOf(Props.create(CacheActor.class));
 
     }
 
