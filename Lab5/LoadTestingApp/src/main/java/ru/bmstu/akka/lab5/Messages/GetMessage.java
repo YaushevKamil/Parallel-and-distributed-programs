@@ -1,8 +1,8 @@
 package ru.bmstu.akka.lab5;
 
 public class GetMessage {
-    private String url;
-    private Integer count;
+    private Test test;
+    private Long sum;
 
     public GetMessage(String url, Integer count) {
         this.url = url;
