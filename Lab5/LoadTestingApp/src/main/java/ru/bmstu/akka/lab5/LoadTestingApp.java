@@ -25,6 +25,7 @@ import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Response;
 
 import ru.bmstu.akka.lab5.Actors.CacheActor;
+import ru.bmstu.akka.lab5.Messages.GetMessage;
 import scala.compat.java8.FutureConverters;
 import scala.concurrent.Future;
 
