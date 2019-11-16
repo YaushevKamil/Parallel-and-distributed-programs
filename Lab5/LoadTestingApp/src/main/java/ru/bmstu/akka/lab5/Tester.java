@@ -33,7 +33,8 @@ public class Tester {
                 .map(req -> {
                     Map<String, String> query = req.getUri().query().toMap();
                     if (query.containsKey(URL_KEY) && query.containsKey(COUNT_KEY)) {
-
+                        String url = params.get(URL_KEY);
+                        Integer count = Integer.parseInt(params.get(COUNT_KEY));
                     }
                     return new Pair<String, Integer>();
                 })
