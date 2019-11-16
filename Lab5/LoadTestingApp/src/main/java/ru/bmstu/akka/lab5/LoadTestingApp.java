@@ -128,12 +128,9 @@ public class LoadTestingApp {
                 .mapAsync(4, pair -> {
                     String url = pair.first();
                     Integer count = pair.second();
-                    return Patterns.ask(
-                            cacheActor,
-                            new GetMessage(url, count),
-                            TIMEOUT_MS
-                    ).
-                            .
+                    return Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS)
+                            .thenAsk
+
                     CompletionStage<Object> stage = FutureConverters.toJava(actorResponse);
                     return stage.thenCompose(result -> {
                         ResponseMessage msg = (ResponseMessage)r;
