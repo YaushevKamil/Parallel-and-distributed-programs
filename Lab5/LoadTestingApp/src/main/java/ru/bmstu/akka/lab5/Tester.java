@@ -23,6 +23,6 @@ public class Tester {
     }
 
     public Flow<HttpRequest, HttpResponse, NotUsed> createFlow() {
-        return Flow.
+        return Flow.of (HttpRequest)
     }
 }
