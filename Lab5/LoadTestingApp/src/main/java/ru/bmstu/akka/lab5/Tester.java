@@ -14,11 +14,12 @@ import ru.bmstu.akka.lab5.Actors.CacheActor;
 public class Tester {
     private final ActorMaterializer materializer;
     private final ActorRef cacheActor;
+    private final AsyncHttpClient asyncHttpClient;
 
     public Tester(ActorSystem system, ActorMaterializer materializer, AsyncHttpClient asyncHttpClient) {
         this.materializer = materializer;
         this.cacheActor = system.actorOf(Props.create(CacheActor.class));
-        
+
 
     }
 
