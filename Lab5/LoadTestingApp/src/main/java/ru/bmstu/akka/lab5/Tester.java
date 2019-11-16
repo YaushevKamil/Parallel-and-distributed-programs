@@ -42,7 +42,7 @@ public class Tester {
                         return new Pair<String, Integer>(HOST, 1);
                     }
                 })
-                .mapAsync()
+                .mapAsync(4, )
                 .map();
     }
 }
