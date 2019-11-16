@@ -74,7 +74,6 @@ public class LoadTestingApp {
     }
 
     private static Sink<Pair<String, Integer>, CompletionStage<Long>> createFlowOnFly() {
-        Sink<Pair<String, Long>, CompletionStage<Long>> fold = Sink.fold(0L, (agg, next) -> agg+next.second());
         return Flow
                 .<Pair<String, Integer>>create()
                 .mapConcat(p -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(p.second(), p)))
@@ -93,7 +92,7 @@ public class LoadTestingApp {
                                 return Futures.successful(currTime - startTime);
                             });
                 })
-                .toMat(fold, Keep.right());
+                .toMat(Sink.fold(0L, Long::sum), Keep.right());
     }
 
     private static Flow<HttpRequest,

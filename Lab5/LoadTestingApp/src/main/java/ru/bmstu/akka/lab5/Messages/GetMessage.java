@@ -5,7 +5,7 @@ public class GetMessage {
     private Long sum;
 
     public GetMessage(String url, Integer count) {
-        this.url = url;
+        this.test = url;
         this.count = count;
     }
 
