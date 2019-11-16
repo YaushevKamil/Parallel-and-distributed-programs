@@ -45,7 +45,7 @@ import static org.asynchttpclient.Dsl.asyncHttpClient;
 public class LoadTestingApp {
     static final String HOST = "http://localhost";
     private static final int PORT = 8080;
-    private static final int TIMEOUT_MS = 5000;
+
 
     private static final String URL_KEY = "testUrl";
     private static final String COUNT_KEY = "count";
