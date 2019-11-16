@@ -11,6 +11,8 @@ import akka.stream.javadsl.Flow;
 import org.asynchttpclient.AsyncHttpClient;
 import ru.bmstu.akka.lab5.Actors.CacheActor;
 
+import java.util.Map;
+
 public class Tester {
     private final ActorMaterializer materializer;
     private final ActorRef cacheActor;
@@ -25,7 +27,7 @@ public class Tester {
     public Flow<HttpRequest, HttpResponse, NotUsed> createFlow() {
         return Flow.of(HttpRequest.class)
                 .map(req -> {
-
+                    Map<String, String> params = req.getUri().query().toMap();
                 })
                 .mapAsync()
                 .map();
