@@ -36,6 +36,8 @@ public class Tester {
                         String url = query.get(URL_KEY);
                         Integer count = Integer.parseInt(query.get(COUNT_KEY));
                         return new Pair<String, Integer>(url, count);
+                    } else {
+                        return new Pair<String, Integer>(url, count);
                     }
 
                 })
