@@ -59,8 +59,9 @@ public class LoadTestingApp {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
 
         final AsyncHttpClient asyncHttpClient = asyncHttpClient();
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = createFlow(http, system, materializer, cacheActor);
 
+
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = createFlow(http, system, materializer, cacheActor);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost(HOST, PORT),
