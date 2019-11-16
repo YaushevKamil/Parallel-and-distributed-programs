@@ -20,7 +20,6 @@ public class Tester {
         this.materializer = materializer;
         this.cacheActor = system.actorOf(Props.create(CacheActor.class));
         this.asyncHttpClient = asyncHttpClient;
-
     }
 
     public Flow<HttpRequest, HttpResponse, NotUsed> createFlow() {
