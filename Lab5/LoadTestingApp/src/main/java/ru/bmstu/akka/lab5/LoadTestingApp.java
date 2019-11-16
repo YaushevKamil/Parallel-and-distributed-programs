@@ -43,7 +43,7 @@ import static akka.dispatch.Futures.future;
 import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 public class LoadTestingApp {
-    private static final String HOST = "http://localhost";
+    static final String HOST = "http://localhost";
     private static final int PORT = 8080;
     private static final int TIMEOUT_MS = 5000;
 
