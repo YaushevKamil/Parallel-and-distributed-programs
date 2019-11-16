@@ -72,7 +72,14 @@ public class LoadTestingApp {
         System.in.read();
         binding
                 .thenCompose(ServerBinding::unbind)
-                .thenAccept(unbound -> system.terminate());
+                .thenAccept(unbound -> {
+                    system.terminate();
+                    try {
+                        asyncHttpClient.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
     }
 
     private static Sink<Pair<String, Integer>, CompletionStage<Long>> createFlowOnFly() {
