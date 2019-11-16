@@ -2,6 +2,7 @@ package ru.bmstu.akka.lab5.Actors;
 
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
+import ru.bmstu.akka.lab5.Messages.StoreMessage;
 import ru.bmstu.akka.lab5.Test;
 
 import java.util.ArrayList;
@@ -15,16 +16,10 @@ public class CacheActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder
                 .create()
-                .match(Test.class, m -> {
-                    Test ;
-                    Long delay = m.getDelay();
-                    if (cache.containsKey(url)) {
-                        cache.get(url).add(delay);
-                    } else {
-                        ArrayList<Long> results = new ArrayList<>();
-                        results.add(delay);
-                        cache.put(url, results);
-                    }
+                .match(StoreMessage.class, msg -> {
+                    Test test = msg.getTest();
+                    Long delay = msg.getDelay();
+                    cache.put();
                 })
                 .match(GetMessage.class, m -> {
                     String url = m.getUrl();
