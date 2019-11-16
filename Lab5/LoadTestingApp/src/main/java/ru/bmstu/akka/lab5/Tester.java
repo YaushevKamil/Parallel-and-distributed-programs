@@ -9,7 +9,7 @@ import akka.stream.javadsl.Flow;
 import org.asynchttpclient.AsyncHttpClient;
 
 public class Tester {
-    private final
+    private final ActorMaterializer materializer
 
     public Tester(ActorSystem system, ActorMaterializer materializer, AsyncHttpClient asyncHttpClient) {
         this.syst
