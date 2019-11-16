@@ -6,6 +6,7 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
+import akka.japi.Pair;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import org.asynchttpclient.AsyncHttpClient;
@@ -28,7 +29,7 @@ public class Tester {
         return Flow.of(HttpRequest.class)
                 .map(req -> {
                     Map<String, String> query = req.getUri().query().toMap();
-                    return ;
+                    return new Pair<String, Integer>;
                 })
                 .mapAsync()
                 .map();
