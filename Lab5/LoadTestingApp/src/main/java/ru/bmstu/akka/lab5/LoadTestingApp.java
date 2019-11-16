@@ -132,7 +132,8 @@ public class LoadTestingApp {
                             cacheActor,
                             new GetMessage(url, count),
                             TIMEOUT_MS
-                    );
+                    ).
+                            .
                     CompletionStage<Object> stage = FutureConverters.toJava(actorResponse);
                     return stage.thenCompose(result -> {
                         ResponseMessage msg = (ResponseMessage)r;
