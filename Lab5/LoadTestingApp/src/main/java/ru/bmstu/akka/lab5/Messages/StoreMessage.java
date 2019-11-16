@@ -1,16 +1,15 @@
 package ru.bmstu.akka.lab5;
 
-public class CacheMessage {
-    private String url;
+public class StoreMessage {
+    private Test test;
     private Long delay;
-    private float delay2;
 
-    public CacheMessage(String url, Long delay) {
+    public StoreMessage(String url, Long delay) {
         this.url = url;
         this.delay = delay;
     }
 
-    public CacheMessage(float delay) {
+    public StoreMessage(float delay) {
         this.url = "";
         this.delay2 = delay2;
     }
