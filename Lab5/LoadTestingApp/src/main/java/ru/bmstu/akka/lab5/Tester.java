@@ -14,7 +14,7 @@ public class Tester {
 
     public Tester(ActorSystem system, ActorMaterializer materializer, AsyncHttpClient asyncHttpClient) {
         this.materializer = materializer;
-        
+
     }
 
     public Flow<HttpRequest, HttpResponse, NotUsed> createFlow() {
