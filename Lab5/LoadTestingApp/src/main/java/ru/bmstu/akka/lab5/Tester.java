@@ -36,14 +36,7 @@ public class Tester {
     public Flow<HttpRequest, HttpResponse, NotUsed> createFlow() {
         return Flow.of(HttpRequest.class)
                 .map(req -> {
-                    Map<String, String> query = req.getUri().query().toMap();
-                    if (query.containsKey(URL_KEY) && query.containsKey(COUNT_KEY)) {
-                        String url = query.get(URL_KEY);
-                        Integer count = Integer.parseInt(query.get(COUNT_KEY));
-                        return new Pair<String, Integer>(url, count);
-                    } else {
-                        return new Pair<String, Integer>(HOST, 1);
-                    }
+
                 })
                 .mapAsync(4, pair -> {
                     String url = pair.first();
@@ -51,5 +44,16 @@ public class Tester {
                     return Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS));
                 }
                 .map();
+    }
+
+    private Pair<String, Integer> parseRequest(HttpRequest request) {
+        Map<String, String> query = request.getUri().query().toMap();
+        if (query.containsKey(URL_KEY) && query.containsKey(COUNT_KEY)) {
+            String url = query.get(URL_KEY);
+            Integer count = Integer.parseInt(query.get(COUNT_KEY));
+            return new Pair<String, Integer>(url, count);
+        } else {
+            return new Pair<String, Integer>(HOST, 1);
+        }
     }
 }
