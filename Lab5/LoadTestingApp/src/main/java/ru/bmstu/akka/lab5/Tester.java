@@ -7,10 +7,12 @@ import akka.actor.Props;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.japi.Pair;
+import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import org.asynchttpclient.AsyncHttpClient;
 import ru.bmstu.akka.lab5.Actors.CacheActor;
+import ru.bmstu.akka.lab5.Messages.GetMessage;
 
 import java.util.Map;
 
@@ -42,7 +44,10 @@ public class Tester {
                         return new Pair<String, Integer>(HOST, 1);
                     }
                 })
-                .mapAsync(4, )
+                .mapAsync(4, pair -> {
+                    String url = pair.first();
+                    Integer count = pair.second();
+                    return Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS))
                 .map();
     }
 }
