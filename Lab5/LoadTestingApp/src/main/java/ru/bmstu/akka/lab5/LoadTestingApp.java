@@ -58,8 +58,8 @@ public class LoadTestingApp {
 
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-
         final AsyncHttpClient asyncHttpClient = asyncHttpClient();
+        
 
 
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = createFlow(http, system, materializer, cacheActor);
@@ -129,7 +129,7 @@ public class LoadTestingApp {
                     String url = pair.first();
                     Integer count = pair.second();
                     return Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS)
-                            .thenApply
+                            .thenApply(o -> )
 
                     CompletionStage<Object> stage = FutureConverters.toJava(actorResponse);
                     return stage.thenCompose(result -> {
