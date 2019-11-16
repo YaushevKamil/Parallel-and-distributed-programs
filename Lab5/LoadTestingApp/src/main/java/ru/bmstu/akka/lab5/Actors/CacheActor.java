@@ -23,7 +23,7 @@ public class CacheActor extends AbstractActor {
                 })
                 .match(GetMessage.class, m -> {
                     String url = m.getUrl();
-                    sender().tell(new ResponseMessage(url, cache.get(url).get(0)), getSelf());
+                    sender().tell(new ResponseMessage(url, cache.get(url)), getSelf());
                 })
                 .build();
     }
