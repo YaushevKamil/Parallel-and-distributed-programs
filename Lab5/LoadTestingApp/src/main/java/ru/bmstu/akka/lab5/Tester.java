@@ -41,7 +41,6 @@ public class Tester {
                     } else {
                         return new Pair<String, Integer>(HOST, 1);
                     }
-
                 })
                 .mapAsync()
                 .map();
