@@ -128,7 +128,7 @@ public class LoadTestingApp {
                 .mapAsync(4, pair -> {
                     String url = pair.first();
                     Integer count = pair.second();
-                    Future<Object> actorResponse = Patterns.ask(
+                    return Patterns.ask(
                             cacheActor,
                             new GetMessage(url, count),
                             TIMEOUT_MS
