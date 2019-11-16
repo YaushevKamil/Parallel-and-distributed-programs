@@ -1,11 +1,11 @@
 package ru.bmstu.akka.lab5.Messages;
 
 public class GetMessage {
-    private Test test;
-    private Long sum;
+    private String url;
+    private Integer count;
 
     public GetMessage(String url, Integer count) {
-        this.test = url;
+        this.url = url;
         this.count = count;
     }
 
