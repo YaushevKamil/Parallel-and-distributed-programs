@@ -29,7 +29,7 @@ public class Tester {
         return Flow.of(HttpRequest.class)
                 .map(req -> {
                     Map<String, String> query = req.getUri().query().toMap();
-                    return new Pair<String, Integer>;
+                    return new Pair<String, Integer>();
                 })
                 .mapAsync()
                 .map();
