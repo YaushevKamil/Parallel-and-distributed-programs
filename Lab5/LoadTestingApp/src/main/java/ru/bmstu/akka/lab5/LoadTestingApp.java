@@ -116,8 +116,7 @@ public class LoadTestingApp {
         return Flow.of(HttpRequest.class)
                 .map(req -> {
                     Map<String, String> params = req.getUri().query().toMap();
-                    if (!params.containsKey(URL_KEY) ||
-                        !params.containsKey(COUNT_KEY)) {
+                    if (!params.containsKey(URL_KEY) || !params.containsKey(COUNT_KEY)) {
                         System.out.println(params.toString());
                         return new Pair<String, Integer>(HOST, COUNT_ONE);
                     }
