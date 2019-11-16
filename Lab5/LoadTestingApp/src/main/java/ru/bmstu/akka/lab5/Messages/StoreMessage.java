@@ -1,21 +1,18 @@
 package ru.bmstu.akka.lab5.Messages;
 
+import ru.bmstu.akka.lab5.Test;
+
 public class StoreMessage {
     private Test test;
     private Long delay;
 
-    public StoreMessage(String url, Long delay) {
-        this.url = url;
+    public StoreMessage(Test test, Long delay) {
+        this.test = test;
         this.delay = delay;
     }
 
-    public StoreMessage(float delay) {
-        this.url = "";
-        this.delay2 = delay2;
-    }
-
-    public String getUrl() {
-        return url;
+    public Test getTest() {
+        return test;
     }
 
     public Long getDelay() {
