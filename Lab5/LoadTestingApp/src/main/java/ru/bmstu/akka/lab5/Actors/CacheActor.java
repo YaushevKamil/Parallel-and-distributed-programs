@@ -2,7 +2,8 @@ package ru.bmstu.akka.lab5.Actors;
 
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
-import ru.bmstu.akka.lab5.Messages.StoreMessage;
+
+import ru.bmstu.akka.lab5.Messages.*;
 import ru.bmstu.akka.lab5.Test;
 
 import java.util.ArrayList;
@@ -16,13 +17,9 @@ public class CacheActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder
                 .create()
-                .match(StoreMessage.class, msg -> {
+                .match(StoreMessage.class, msg -> cache.put(msg.getTest(), msg.getDelay()))
+                .match(GetMessage.class, msg -> {
                     Test test = msg.getTest();
-                    Long delay = msg.getDelay();
-                    cache.put(test, delay);
-                })
-                .match(GetMessage.class, m -> {
-                    String url = m.getUrl();
                     sender().tell(new ResponseMessage(url, cache.get(url)), getSelf());
                 })
                 .build();

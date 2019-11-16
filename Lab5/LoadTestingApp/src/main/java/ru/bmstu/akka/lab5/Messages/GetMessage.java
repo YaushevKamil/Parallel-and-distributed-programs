@@ -1,4 +1,4 @@
-package ru.bmstu.akka.lab5;
+package ru.bmstu.akka.lab5.Messages;
 
 public class GetMessage {
     private Test test;
