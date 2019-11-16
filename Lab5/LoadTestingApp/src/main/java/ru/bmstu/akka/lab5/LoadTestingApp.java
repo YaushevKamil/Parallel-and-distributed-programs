@@ -62,7 +62,7 @@ public class LoadTestingApp {
 
         final Tester tester = new Tester(system, materializer, asyncHttpClient);
 
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = tester.createFlow(http, system, materializer, cacheActor);
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = tester.createFlow(http, system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost(HOST, PORT),
