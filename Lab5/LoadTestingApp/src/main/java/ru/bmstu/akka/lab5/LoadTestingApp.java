@@ -49,7 +49,7 @@ public class LoadTestingApp {
     private static final String URL_KEY = "testUrl";
     private static final String COUNT_KEY = "count";
 
-    private static final int COUNT_ZERO = 0;
+    private static final int COUNT_ONE = 1;
 
     public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create("routes");
@@ -118,7 +118,7 @@ public class LoadTestingApp {
                     if (!params.containsKey(URL_KEY) ||
                         !params.containsKey(COUNT_KEY)) {
                         System.out.println(params.toString());
-                        return new Pair<String, Integer>(HOST, COUNT_ZERO);
+                        return new Pair<String, Integer>(HOST, COUNT_ONE);
                     }
                     String url = params.get(URL_KEY);
                     Integer count = Integer.parseInt(params.get(COUNT_KEY));
