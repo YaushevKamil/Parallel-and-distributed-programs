@@ -35,7 +35,7 @@ public class Tester {
 
     public Flow<HttpRequest, HttpResponse, NotUsed> createFlow() {
         return Flow.of(HttpRequest.class)
-                .map(req -> this::parseRequest)
+                .map(this::parseRequest)
                 .mapAsync(4, pair -> {
                     String url = pair.first();
                     Integer count = pair.second();
