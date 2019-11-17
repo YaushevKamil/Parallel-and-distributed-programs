@@ -22,6 +22,7 @@ public class CacheActor extends AbstractActor {
                 })
                 .match(GetMessage.class, msg -> {
                     System.out.println("ACTOR::" + msg.toString());
+                    System.out.println(msg.getUrl() + "" + msg.getCount());
                     sender()
                             .tell(new ResponseMessage(new StoreMessage(msg, cache.get(msg))),
                                     getSelf());
