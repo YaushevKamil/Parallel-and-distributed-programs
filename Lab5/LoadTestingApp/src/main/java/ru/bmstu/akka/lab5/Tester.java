@@ -13,6 +13,7 @@ import akka.stream.javadsl.Flow;
 import org.asynchttpclient.AsyncHttpClient;
 import ru.bmstu.akka.lab5.Actors.CacheActor;
 import ru.bmstu.akka.lab5.Messages.GetMessage;
+import ru.bmstu.akka.lab5.Messages.ResponseMessage;
 import ru.bmstu.akka.lab5.Messages.StoreMessage;
 import scala.compat.java8.FutureConverters;
 
@@ -70,10 +71,9 @@ public class Tester {
         Integer count = test.second();
         return FutureConverters.toJava(
                 Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS)
-                ).thenApply(o -> (StoreMessage)o)
+                ).thenApply(o -> (ResponseMessage)o)
                 .thenCompose(resp -> {
-                    resp.
-                    Optional<>
+                    Optional<StoreMessage> messageOptional = resp.getResult();
                 });
     }
 }
