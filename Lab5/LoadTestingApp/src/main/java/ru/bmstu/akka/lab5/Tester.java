@@ -83,7 +83,7 @@ public class Tester {
     private Sink<Pair<String, Integer>, CompletionStage<Long>> createSink(Pair<String, Integer> test) {
         return Flow.<Pair<String, Integer>>create()
                 .mapConcat(p -> Collections.nCopies(p.second(), p))
-                .mapAsync()
+                .mapAsync(4, )
                 .toMat(Sink.fold(0L, Long::sum), Keep.right());
     }
 }
