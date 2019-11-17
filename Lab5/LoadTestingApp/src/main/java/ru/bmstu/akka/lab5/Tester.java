@@ -49,7 +49,7 @@ public class Tester {
         return Flow.of(HttpRequest.class)
                 .map(this::parseRequest)
                 .mapAsync(4, this::processTest)
-                .map();
+                .map(this::);
     }
 
     private Pair<String, Integer> parseRequest(HttpRequest request) {
