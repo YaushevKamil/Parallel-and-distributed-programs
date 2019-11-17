@@ -83,7 +83,7 @@ public class Tester {
         Integer count = test.second();
         return Source.from(Collections.singletonList(test))
                 .toMat(testSink, Keep.right()).run(materializer)
-                .thenApply(sum -> new StoreMessage(new GetMessage(, ), sum/test.second()));
+                .thenApply(sum -> new StoreMessage(new GetMessage(url, count), sum/count));
     }
 
     private Sink<Pair<String, Integer>, CompletionStage<Long>> createSink(Pair<String, Integer> test) {
