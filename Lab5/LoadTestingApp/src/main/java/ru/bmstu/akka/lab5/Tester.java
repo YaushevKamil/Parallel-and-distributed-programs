@@ -89,7 +89,10 @@ public class Tester {
 
     private CompletionStage<Long> getResponseTime(String url) {
         Long startTime = System.currentTimeMillis();
-        
+        return asyncHttpClient
+                .prepareGet(url)
+                .execute()
+                .toCompletableFuture()
     }
 
 
