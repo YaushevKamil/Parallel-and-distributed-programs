@@ -69,6 +69,6 @@ public class Tester {
         Integer count = test.second();
         return FutureConverters.toJava(
                 Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS)
-                ).thenApply();
+                ).thenApply(o -> );
     }
 }
