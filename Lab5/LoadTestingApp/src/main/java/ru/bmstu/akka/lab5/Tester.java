@@ -111,6 +111,6 @@ public class Tester {
         return HttpResponse
                 .create()
                 .withStatus(200)
-                .withEntity("Average response time" + result.getDelay + " ms");
+                .withEntity("Average response time" + result.getDelay() + " ms");
     }
 }
