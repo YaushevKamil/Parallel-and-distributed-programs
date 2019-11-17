@@ -77,7 +77,7 @@ public class Tester {
                     Optional<StoreMessage> messageOptional = resp.getResult();
                     return messageOptional.isPresent() ?
                             CompletableFuture.completedFuture(messageOptional.get()) :
-                            ;
+                            performTest(test);
                 });
     }
 }
