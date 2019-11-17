@@ -70,6 +70,8 @@ public class Tester {
         return FutureConverters.toJava(
                 Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS)
                 ).thenApply(o -> (StoreMessage)o)
-                .thenCompose();
+                .thenCompose(resp -> {
+                    
+                });
     }
 }
