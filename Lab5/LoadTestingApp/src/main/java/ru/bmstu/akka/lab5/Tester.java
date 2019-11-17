@@ -18,6 +18,8 @@ import ru.bmstu.akka.lab5.Messages.ResponseMessage;
 import ru.bmstu.akka.lab5.Messages.StoreMessage;
 import scala.compat.java8.FutureConverters;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
@@ -79,6 +81,6 @@ public class Tester {
 
     private Sink<Pair<String, Integer>, CompletionStage<Long>> createSink(Pair<String, Integer> test) {
         return Flow.<Pair<String, Integer>>create()
-                .
+                .mapConcat(p -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(p.second(), p)))
     }
 }
