@@ -73,6 +73,6 @@ public class Tester {
     }
 
     private CompletionStage<StoreMessage> performTest(Pair<String, Integer> test) {
-        
+
     }
 }
