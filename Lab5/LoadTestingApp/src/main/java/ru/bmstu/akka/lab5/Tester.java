@@ -81,7 +81,7 @@ public class Tester {
         final Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = createSink(test);
         return Source.from(Collections.singletonList(test))
                 .toMat(testSink, Keep.right()).run(materializer)
-                .thenApply(sum -> new StoreMessage())
+                .thenApply(sum -> new StoreMessage(new ))
     }
 
     private Sink<Pair<String, Integer>, CompletionStage<Long>> createSink(Pair<String, Integer> test) {
