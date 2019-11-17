@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CacheActor extends AbstractActor {
-    private Map<Test, Long> cache = new HashMap<>();
+    private Map<GetMessage, Long> cache = new HashMap<>();
 
     @Override
     public Receive createReceive() {
