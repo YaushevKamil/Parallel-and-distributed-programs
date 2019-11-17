@@ -52,12 +52,8 @@ class Tester {
 
     private Pair<String, Integer> parseRequest(HttpRequest request) {
         Map<String, String> query = request.getUri().query().toMap();
-        String url = HOST;
-        Integer count = 1;
-
-            url = query.get(URL_KEY);
-            count = Integer.parseInt(query.get(COUNT_KEY));
-        
+        String url = query.get(URL_KEY);
+        Integer count = Integer.parseInt(query.get(COUNT_KEY));
         System.out.println("parse: " + url + " " + count);
         return new Pair<>(url, count);
     }
