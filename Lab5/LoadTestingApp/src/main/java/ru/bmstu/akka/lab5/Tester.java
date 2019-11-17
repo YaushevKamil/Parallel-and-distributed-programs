@@ -75,7 +75,7 @@ public class Tester {
                 .thenCompose(resp -> {
                     Optional<StoreMessage> messageOptional = resp.getResult();
                     return messageOptional.isPresent() ?
-                            
+                            Comp
                 });
     }
 }
