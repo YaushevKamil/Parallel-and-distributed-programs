@@ -107,6 +107,6 @@ public class Tester {
 
     private HttpResponse completeRequest(StoreMessage result) {
         System.out.println(result);
-        cacheActor.tell(reuslt, 
+        cacheActor.tell(result, 
     }
 }
