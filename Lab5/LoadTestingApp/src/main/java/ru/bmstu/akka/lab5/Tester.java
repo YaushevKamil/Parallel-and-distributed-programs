@@ -17,6 +17,7 @@ import ru.bmstu.akka.lab5.Messages.StoreMessage;
 import scala.compat.java8.FutureConverters;
 
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.CompletionStage;
 import java.util.regex.Pattern;
 
@@ -71,7 +72,7 @@ public class Tester {
                 Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS)
                 ).thenApply(o -> (StoreMessage)o)
                 .thenCompose(resp -> {
-                    StoreMessage
+                    Optional<>
                 });
     }
 }
