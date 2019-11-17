@@ -54,14 +54,13 @@ public class Tester {
 
     private Pair<String, Integer> parseRequest(HttpRequest request) {
         Map<String, String> query = request.getUri().query().toMap();
+        String url = HOST;
+        Integer count = 1;
         if (query.containsKey(URL_KEY) && query.containsKey(COUNT_KEY)) {
-            String url = query.get(URL_KEY);
-            Integer count = Integer.parseInt(query.get(COUNT_KEY));
-            System.out.println(url + " " + count);
-            return new Pair<String, Integer>(url, count);
-        } else {
-            return new Pair<String, Integer>(HOST, 1);
+            url = query.get(URL_KEY);
+            count = Integer.parseInt(query.get(COUNT_KEY));
         }
+        System.out.println(url + " " + count);return new Pair<String, Integer>(url, count);
     }
 
     private CompletionStage<StoreMessage> processTest(Pair<String, Integer> test) {
