@@ -59,7 +59,7 @@ class Tester {
             count = Integer.parseInt(query.get(COUNT_KEY));
         }
         System.out.println("parse: " + url + " " + count);
-        return new Pair<String, Integer>(url, count);
+        return new Pair<>(url, count);
     }
 
     private CompletionStage<StoreMessage> processTest(Pair<String, Integer> test) {
@@ -77,7 +77,7 @@ class Tester {
     }
 
     private CompletionStage<StoreMessage> performTest(Pair<String, Integer> test) {
-        final Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = createSink(test);
+        final Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = createSink();
         String url = test.first();
         Integer count = test.second();
         return Source.from(Collections.singletonList(test))
@@ -85,7 +85,7 @@ class Tester {
                 .thenApply(sum -> new StoreMessage(new GetMessage(url, count), sum/count));
     }
 
-    private Sink<Pair<String, Integer>, CompletionStage<Long>> createSink(Pair<String, Integer> test) {
+    private Sink<Pair<String, Integer>, CompletionStage<Long>> createSink() {
         return Flow.<Pair<String, Integer>>create()
                 .mapConcat(p -> Collections.nCopies(p.second(), p.first()))
                 .mapAsync(4, this::getResponseTime)
@@ -100,8 +100,6 @@ class Tester {
                 .toCompletableFuture()
                 .thenCompose(resp -> {
                     Long currentTime = System.currentTimeMillis();
-                    Long delay = currentTime-startTime;
-                    System.out.println("Time: " + delay);
                     return CompletableFuture.completedFuture(currentTime-startTime);
                 });
     }
