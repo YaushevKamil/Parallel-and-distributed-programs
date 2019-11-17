@@ -87,7 +87,7 @@ public class Tester {
                 .toMat(Sink.fold(0L, Long::sum), Keep.right());
     }
 
-    private <T> CompletionStage<T> measureTime(String url) {
+    private CompletionStage<Long> getmeasureTime(String url) {
     }
 
 
