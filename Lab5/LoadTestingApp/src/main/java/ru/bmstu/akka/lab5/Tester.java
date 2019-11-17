@@ -103,7 +103,7 @@ public class Tester {
                 .thenCompose(resp -> {
                     Long currentTime = System.currentTimeMillis();
                     Long delay = currentTime-startTime;
-                    System.out.println("Time: " + currentTime + " - " + startTime + delay);
+                    System.out.println("Time: " + currentTime + " - " + startTime + " = " + delay);
                     return CompletableFuture.completedFuture(currentTime-startTime);
                 });
     }
