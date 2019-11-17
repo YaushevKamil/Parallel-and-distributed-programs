@@ -58,8 +58,7 @@ class Tester {
         Map<String, String> query = request.getUri().query().toMap();
         String url = Optional.ofNullable(query.get(URL_KEY)).orElseGet(() -> DEFAULT_URL);
         String count = Optional.ofNullable(query.get(COUNT_KEY)).orElseGet(() -> DEFAULT_COUNT);
-        System.out.println("parse: " + url + " " + Integer.parseInt(count));
-        return new Pair<>(url, count);
+        return new Pair<>(url, Integer.parseInt(count));
     }
 
     private CompletionStage<StoreMessage> processTest(Pair<String, Integer> test) {
