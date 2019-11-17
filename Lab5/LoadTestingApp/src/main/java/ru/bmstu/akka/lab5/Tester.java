@@ -79,7 +79,7 @@ public class Tester {
 
     private CompletionStage<StoreMessage> performTest(Pair<String, Integer> test) {
         final Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = createSink(test);
-        return Source.from(Collections.singletonList(pair))
+        return Source.from(Collections.singletonList(test))
                 .toMat(testSink, Keep.right()).run(materializer)
     }
 
