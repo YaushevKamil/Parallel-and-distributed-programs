@@ -93,7 +93,9 @@ public class Tester {
                 .prepareGet(url)
                 .execute()
                 .toCompletableFuture()
-                .thenCompose(resp -> Compl)
+                .thenCompose(resp -> CompletableFuture.completedFuture((
+                        
+                        )))
     }
 
 
