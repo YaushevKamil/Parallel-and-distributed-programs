@@ -76,7 +76,8 @@ public class Tester {
                 .thenCompose(resp -> {
                     Optional<StoreMessage> messageOptional = resp.getResult();
                     return messageOptional.isPresent() ?
-                            CompletableFuture.completedFuture
+                            CompletableFuture.completedFuture(messageOptional.get()) :
+                            ;
                 });
     }
 }
