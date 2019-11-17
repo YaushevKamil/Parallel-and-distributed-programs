@@ -60,7 +60,7 @@ public class Tester {
             url = query.get(URL_KEY);
             count = Integer.parseInt(query.get(COUNT_KEY));
         }
-        System.out.println(url + " " + count);
+        System.out.println("parse: " + url + " " + count);
         return new Pair<String, Integer>(url, count);
     }
 
