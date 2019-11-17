@@ -1,5 +1,7 @@
 package ru.bmstu.akka.lab5.Messages;
 
+import java.util.Optional;
+
 public class ResponseMessage {
     private StoreMessage result;
 
@@ -7,7 +9,7 @@ public class ResponseMessage {
         this.result = result;
     }
 
-    public StoreMessage getResult() {
+    public Optional<StoreMessage> getResult() {
         return result;
     }
 }
