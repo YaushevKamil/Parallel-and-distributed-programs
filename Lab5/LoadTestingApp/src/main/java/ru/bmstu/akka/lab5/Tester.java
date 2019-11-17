@@ -35,7 +35,9 @@ class Tester {
 
     private static final String URL_KEY = "testUrl";
     private static final String COUNT_KEY = "count";
+
     private static final String DEFAULT_URL = "https://www.w3.org/";
+    private static final String DEFAULT_COUNT = "1";
 
     private static final int TIMEOUT_MS = 5000;
 
@@ -55,7 +57,7 @@ class Tester {
     private Pair<String, Integer> parseRequest(HttpRequest request) {
         Map<String, String> query = request.getUri().query().toMap();
         String url = Optional.ofNullable(query.get(URL_KEY)).orElseGet(() -> DEFAULT_URL);
-        String count = Optional.ofNullable(query.get(COUNT_KEY)).orElseGet(() -> DEFAULT_URL);
+        String count = Optional.ofNullable(query.get(COUNT_KEY)).orElseGet(() -> DEFAULT_COUNT);
         if (query.containsKey(URL_KEY) && query.containsKey(COUNT_KEY)) {
             url = ;
             count = Integer.parseInt(query.get(COUNT_KEY));
