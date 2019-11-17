@@ -54,10 +54,10 @@ class Tester {
         Map<String, String> query = request.getUri().query().toMap();
         String url = HOST;
         Integer count = 1;
-        if (query.containsKey(URL_KEY) && query.containsKey(COUNT_KEY)) {
+
             url = query.get(URL_KEY);
             count = Integer.parseInt(query.get(COUNT_KEY));
-        }
+        
         System.out.println("parse: " + url + " " + count);
         return new Pair<>(url, count);
     }
