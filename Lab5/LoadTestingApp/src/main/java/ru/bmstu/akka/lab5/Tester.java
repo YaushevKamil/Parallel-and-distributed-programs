@@ -72,5 +72,7 @@ public class Tester {
                 });
     }
 
-    private 
+    private CompletionStage<StoreMessage> performTest(Pair<String, Integer> test) {
+        
+    }
 }
