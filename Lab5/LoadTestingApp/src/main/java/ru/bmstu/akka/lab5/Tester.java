@@ -67,7 +67,8 @@ public class Tester {
     private CompletionStage<StoreMessage> processTest(Pair<String, Integer> test) {
         String url = test.first();
         Integer count = test.second();
-        return FutureConverters.toJavaPatterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS)
-                .andThen(re -> re)
+        return FutureConverters.toJava(
+                Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS)
+                ).thenApply();
     }
 }
