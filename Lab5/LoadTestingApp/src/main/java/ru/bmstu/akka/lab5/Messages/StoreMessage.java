@@ -1,7 +1,5 @@
 package ru.bmstu.akka.lab5.Messages;
 
-import ru.bmstu.akka.lab5.Test;
-
 public class StoreMessage {
     private GetMessage test;
     private Long delay;
