@@ -20,17 +20,15 @@ import ru.bmstu.akka.lab5.Messages.ResponseMessage;
 import ru.bmstu.akka.lab5.Messages.StoreMessage;
 import scala.compat.java8.FutureConverters;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
-import java.util.regex.Pattern;
 
 import static ru.bmstu.akka.lab5.LoadTestingApp.HOST;
 
-public class Tester {
+class Tester {
     private final ActorMaterializer materializer;
     private final ActorRef cacheActor;
     private final AsyncHttpClient asyncHttpClient;
@@ -39,13 +37,13 @@ public class Tester {
     private static final String COUNT_KEY = "count";
     private static final int TIMEOUT_MS = 5000;
 
-    public Tester(ActorSystem system, ActorMaterializer materializer, AsyncHttpClient asyncHttpClient) {
+    Tester(ActorSystem system, ActorMaterializer materializer, AsyncHttpClient asyncHttpClient) {
         this.materializer = materializer;
         this.cacheActor = system.actorOf(Props.create(CacheActor.class));
         this.asyncHttpClient = asyncHttpClient;
     }
 
-    public Flow<HttpRequest, HttpResponse, NotUsed> createFlow() {
+    Flow<HttpRequest, HttpResponse, NotUsed> createFlow() {
         return Flow.of(HttpRequest.class)
                 .map(this::parseRequest)
                 .mapAsync(4, this::processTest)
