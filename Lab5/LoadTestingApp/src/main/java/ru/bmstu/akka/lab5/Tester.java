@@ -57,6 +57,7 @@ public class Tester {
         if (query.containsKey(URL_KEY) && query.containsKey(COUNT_KEY)) {
             String url = query.get(URL_KEY);
             Integer count = Integer.parseInt(query.get(COUNT_KEY));
+            System.out.println(url + " " + count);
             return new Pair<String, Integer>(url, count);
         } else {
             return new Pair<String, Integer>(HOST, 1);
