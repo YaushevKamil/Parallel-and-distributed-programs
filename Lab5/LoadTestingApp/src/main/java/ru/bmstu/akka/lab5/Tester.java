@@ -60,7 +60,6 @@ class Tester {
                 .orElseGet(() -> DEFAULT_URL);
         String count = Optional.ofNullable(query.get(COUNT_KEY))
                 .orElseGet(() -> DEFAULT_COUNT);
-        System.out.println(url + " " + count);
         return new Pair<>(url, Integer.parseInt(count));
     }
 
