@@ -13,8 +13,11 @@ import akka.stream.javadsl.Flow;
 import org.asynchttpclient.AsyncHttpClient;
 import ru.bmstu.akka.lab5.Actors.CacheActor;
 import ru.bmstu.akka.lab5.Messages.GetMessage;
+import ru.bmstu.akka.lab5.Messages.StoreMessage;
 
 import java.util.Map;
+import java.util.concurrent.CompletionStage;
+import java.util.regex.Pattern;
 
 import static ru.bmstu.akka.lab5.LoadTestingApp.HOST;
 
@@ -40,6 +43,11 @@ public class Tester {
                     String url = pair.first();
                     Integer count = pair.second();
                     return Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS));
+
+                }p -> {
+                    String url = pair.first();
+                    Integer count = pair.second();
+
                 }
                 .map();
     }
@@ -53,5 +61,11 @@ public class Tester {
         } else {
             return new Pair<String, Integer>(HOST, 1);
         }
+    }
+
+    private CompletionStage<StoreMessage> processTest(Pair<String, Integer> test) {
+        String url = test.first();
+        Integer count = test.second();
+        return Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS))
     }
 }
