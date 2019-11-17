@@ -83,11 +83,13 @@ public class Tester {
     private Sink<Pair<String, Integer>, CompletionStage<Long>> createSink(Pair<String, Integer> test) {
         return Flow.<Pair<String, Integer>>create()
                 .mapConcat(p -> Collections.nCopies(p.second(), p.first()))
-                .mapAsync(4, this::measureTime)
+                .mapAsync(4, this::getResponseTime)
                 .toMat(Sink.fold(0L, Long::sum), Keep.right());
     }
 
-    private CompletionStage<Long> getmeasureTime(String url) {
+    private CompletionStage<Long> getResponseTime(String url) {
+        Long startTime = System.currentTimeMillis();
+        
     }
 
 
