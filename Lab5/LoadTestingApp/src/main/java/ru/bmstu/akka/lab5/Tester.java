@@ -67,5 +67,6 @@ public class Tester {
         String url = test.first();
         Integer count = test.second();
         return Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS))
+        .
     }
 }
