@@ -60,7 +60,8 @@ public class Tester {
             url = query.get(URL_KEY);
             count = Integer.parseInt(query.get(COUNT_KEY));
         }
-        System.out.println(url + " " + count);return new Pair<String, Integer>(url, count);
+        System.out.println(url + " " + count);
+        return new Pair<String, Integer>(url, count);
     }
 
     private CompletionStage<StoreMessage> processTest(Pair<String, Integer> test) {
