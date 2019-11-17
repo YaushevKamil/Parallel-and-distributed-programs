@@ -10,6 +10,7 @@ import akka.japi.Pair;
 import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Sink;
 import org.asynchttpclient.AsyncHttpClient;
 import ru.bmstu.akka.lab5.Actors.CacheActor;
@@ -83,6 +84,6 @@ public class Tester {
         return Flow.<Pair<String, Integer>>create()
                 .mapConcat(p -> Collections.nCopies(p.second(), p))
                 .mapAsync()
-                .
+                .toMat(Sink.fold(0L, Long::sum), Keep.right())
     }
 }
