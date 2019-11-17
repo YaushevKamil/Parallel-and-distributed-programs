@@ -10,7 +10,7 @@ public class ResponseMessage {
     }
 
     public Optional<StoreMessage> getResult() {
-        return 
+        return result.getDelay() != null 
 //        return Optional.ofNullable(result);
     }
 }
