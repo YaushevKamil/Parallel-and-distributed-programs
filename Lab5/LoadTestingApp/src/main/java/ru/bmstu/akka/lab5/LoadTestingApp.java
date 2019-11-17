@@ -83,10 +83,10 @@ public class LoadTestingApp {
                 });
     }
 
-    private static Sink<Pair<String, Integer>, CompletionStage<Long>> createFlowOnFly() {
+    private static Sink<Pair<String, Integer>, CompletionStage<Long>> createSink() {
         return Flow
                 .<Pair<String, Integer>>create()
-                .mapConcat(p -> new ArrayList<Pair<String, Integer>>(Collections.nCopies(p.second(), p)))
+                .mapConcat(p -> Collections.nCopies(p.second(), p))
                 .mapAsync(4, pair -> {
                     Long startTime = System.currentTimeMillis();
                     String url = pair.first();
@@ -137,7 +137,7 @@ public class LoadTestingApp {
                         if (msg.getDelay() > 0) {
                             return CompletableFuture.completedFuture(delay);
                         } else {
-                            Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = createFlowOnFly();
+                            Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = createSink();
                             return Source.from(Collections.singletonList(pair))
                                     .toMat(testSink, Keep.right()).run(materializer)
                                     .thenApply(sum -> sum/(float)((count == 0) ? 1 : count));

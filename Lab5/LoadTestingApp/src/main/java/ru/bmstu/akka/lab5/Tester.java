@@ -84,6 +84,6 @@ public class Tester {
         return Flow.<Pair<String, Integer>>create()
                 .mapConcat(p -> Collections.nCopies(p.second(), p))
                 .mapAsync()
-                .toMat(Sink.fold(0L, Long::sum), Keep.right())
+                .toMat(Sink.fold(0L, Long::sum), Keep.right());
     }
 }
