@@ -102,7 +102,8 @@ public class Tester {
                 .toCompletableFuture()
                 .thenCompose(resp -> {
                     Long currentTime = System.currentTimeMillis();
-                    System.out.println("Time: " + currentTime + " - " + startTime + Long.toString(currentTime-startTime));
+                    Long delay = currentTime-startTime;
+                    System.out.println("Time: " + currentTime + " - " + startTime + delay);
                     return CompletableFuture.completedFuture(currentTime-startTime);
                 });
     }
