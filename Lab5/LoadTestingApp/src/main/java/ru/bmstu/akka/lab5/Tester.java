@@ -76,4 +76,6 @@ public class Tester {
     private CompletionStage<StoreMessage> performTest(Pair<String, Integer> test) {
         final Sink<Pair<String, Integer>, CompletionStage<Long>> testSink =
     }
+
+    private createSink
 }
