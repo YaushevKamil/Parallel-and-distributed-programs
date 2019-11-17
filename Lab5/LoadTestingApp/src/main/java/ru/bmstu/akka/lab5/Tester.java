@@ -14,6 +14,7 @@ import org.asynchttpclient.AsyncHttpClient;
 import ru.bmstu.akka.lab5.Actors.CacheActor;
 import ru.bmstu.akka.lab5.Messages.GetMessage;
 import ru.bmstu.akka.lab5.Messages.StoreMessage;
+import scala.compat.java8.FutureConverters;
 
 import java.util.Map;
 import java.util.concurrent.CompletionStage;
@@ -66,7 +67,7 @@ public class Tester {
     private CompletionStage<StoreMessage> processTest(Pair<String, Integer> test) {
         String url = test.first();
         Integer count = test.second();
-        return Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS)
+        return FutureConverters.toJavaPatterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS)
                 .andThen(re -> re)
     }
 }
