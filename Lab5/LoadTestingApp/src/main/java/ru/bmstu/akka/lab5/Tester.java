@@ -105,5 +105,5 @@ public class Tester {
                 });
     }
 
-    private HttpResponse completeRequest(StoreMessage )
+    private HttpResponse completeRequest(StoreMessage result)
 }
