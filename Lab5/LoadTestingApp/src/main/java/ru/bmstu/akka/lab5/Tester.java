@@ -36,7 +36,7 @@ class Tester {
     private static final String URL_KEY = "testUrl";
     private static final String COUNT_KEY = "count";
 
-    private static final String DEFAULT_URL = "https://www.w3.org/";
+    private static final String DEFAULT_URL = "http://bmstu.ru/";
     private static final String DEFAULT_COUNT = "1";
 
     private static final int TIMEOUT_MS = 5000;
