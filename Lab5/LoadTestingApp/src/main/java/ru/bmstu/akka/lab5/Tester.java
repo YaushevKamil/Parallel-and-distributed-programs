@@ -55,7 +55,7 @@ class Tester {
         Optional<String> url = Optional.ofNullable(query.get(URL_KEY));
         Optional<String> count = Optional.ofNullable(query.get(COUNT_KEY));
         System.out.println("parse: " + url + " " + count);
-        return new Pair<>(url, Integer.parseInt(count));
+        return new Pair<>(url.get(), Integer.parseInt(count.get()));
     }
 
     private CompletionStage<StoreMessage> processTest(Pair<String, Integer> test) {
