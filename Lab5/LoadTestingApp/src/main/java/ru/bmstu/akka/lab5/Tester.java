@@ -12,6 +12,7 @@ import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import akka.stream.javadsl.Keep;
 import akka.stream.javadsl.Sink;
+import akka.stream.javadsl.Source;
 import org.asynchttpclient.AsyncHttpClient;
 import ru.bmstu.akka.lab5.Actors.CacheActor;
 import ru.bmstu.akka.lab5.Messages.GetMessage;
@@ -78,7 +79,8 @@ public class Tester {
 
     private CompletionStage<StoreMessage> performTest(Pair<String, Integer> test) {
         final Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = createSink(test);
-        return
+        return Source.from(Collections.singletonList(pair))
+                .toMat(testSink, Keep.right()).run(materializer)
     }
 
     private Sink<Pair<String, Integer>, CompletionStage<Long>> createSink(Pair<String, Integer> test) {
