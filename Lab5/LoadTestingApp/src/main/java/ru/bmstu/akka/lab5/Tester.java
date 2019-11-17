@@ -82,12 +82,12 @@ public class Tester {
 
     private Sink<Pair<String, Integer>, CompletionStage<Long>> createSink(Pair<String, Integer> test) {
         return Flow.<Pair<String, Integer>>create()
-                .mapConcat(p -> Collections.nCopies(p.second(), p))
+                .mapConcat(p -> Collections.nCopies(p.second(), p.first()))
                 .mapAsync(4, this::measureTime)
                 .toMat(Sink.fold(0L, Long::sum), Keep.right());
     }
 
-    private <T> CompletionStage<T> measureTime(Pair<String, Integer> stringIntegerPair) {
+    private <T> CompletionStage<T> measureTime(String url) {
     }
 
 
