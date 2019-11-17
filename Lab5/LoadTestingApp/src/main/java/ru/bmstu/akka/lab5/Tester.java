@@ -35,6 +35,8 @@ class Tester {
 
     private static final String URL_KEY = "testUrl";
     private static final String COUNT_KEY = "count";
+    private static final String DEFAULT_URL = "https://www.w3.org/";
+
     private static final int TIMEOUT_MS = 5000;
 
     Tester(ActorSystem system, ActorMaterializer materializer, AsyncHttpClient asyncHttpClient) {
