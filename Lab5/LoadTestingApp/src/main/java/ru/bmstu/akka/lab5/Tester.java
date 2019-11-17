@@ -54,7 +54,7 @@ class Tester {
 
     private Pair<String, Integer> parseRequest(HttpRequest request) {
         Map<String, String> query = request.getUri().query().toMap();
-        String url = HOST;
+        String url = DEFAULT_URL;
         Integer count = 1;
         if (query.containsKey(URL_KEY) && query.containsKey(COUNT_KEY)) {
             url = query.get(URL_KEY);
