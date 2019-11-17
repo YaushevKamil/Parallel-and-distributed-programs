@@ -58,11 +58,7 @@ class Tester {
         Map<String, String> query = request.getUri().query().toMap();
         String url = Optional.ofNullable(query.get(URL_KEY)).orElseGet(() -> DEFAULT_URL);
         String count = Optional.ofNullable(query.get(COUNT_KEY)).orElseGet(() -> DEFAULT_COUNT);
-        if (query.containsKey(URL_KEY) && query.containsKey(COUNT_KEY)) {
-            url = ;
-            count = Integer.parseInt(query.get(COUNT_KEY));
-        }
-        System.out.println("parse: " + url + " " + count);
+        System.out.println("parse: " + url + " " + Integer.parseInt(count));
         return new Pair<>(url, count);
     }
 
