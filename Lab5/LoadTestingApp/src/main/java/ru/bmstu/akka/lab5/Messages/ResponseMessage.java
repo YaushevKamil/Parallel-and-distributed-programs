@@ -1,10 +1,9 @@
 package ru.bmstu.akka.lab5.Messages;
 
 public class ResponseMessage {
-    private String url;
-    private Long delay;
+    private StoreMessage;
 
-    ResponseMessage(String url, Long delay) {
+    ResponseMessage(StoreMessage ) {
         this.url = url;
         this.delay = delay;
     }
