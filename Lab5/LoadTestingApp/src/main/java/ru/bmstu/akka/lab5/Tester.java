@@ -106,7 +106,6 @@ public class Tester {
     }
 
     private HttpResponse completeRequest(StoreMessage result) {
-        System.out.println(result.getDelay());
         cacheActor.tell(result, ActorRef.noSender());
         return HttpResponse
                 .create()
