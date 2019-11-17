@@ -77,7 +77,8 @@ public class Tester {
     }
 
     private CompletionStage<StoreMessage> performTest(Pair<String, Integer> test) {
-        final Sink<Pair<String, Integer>, CompletionStage<Long>> testSink =
+        final Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = createSink(test);
+        
     }
 
     private Sink<Pair<String, Integer>, CompletionStage<Long>> createSink(Pair<String, Integer> test) {
@@ -93,10 +94,10 @@ public class Tester {
                 .prepareGet(url)
                 .execute()
                 .toCompletableFuture()
-                .thenCompose(resp -> CompletableFuture.completedFuture((
-                        
-                        )))
+                .thenCompose(resp -> {
+                    Long currentTime = System.currentTimeMillis();
+                    return CompletableFuture.completedFuture(currentTime-startTime);
+                });
     }
-
 
 }
