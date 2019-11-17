@@ -78,6 +78,7 @@ public class Tester {
     }
 
     private Sink<Pair<String, Integer>, CompletionStage<Long>> createSink(Pair<String, Integer> test) {
-        return Flow.<Pair<String, Integer>>create
+        return Flow.<Pair<String, Integer>>create()
+                .
     }
 }
