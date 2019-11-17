@@ -10,6 +10,6 @@ public class ResponseMessage {
     }
 
     public Optional<StoreMessage> getResult() {
-        return result;
+        return Optional.ofNullable(result);
     }
 }
