@@ -36,7 +36,7 @@ class Tester {
     private static final String URL_KEY = "testUrl";
     private static final String COUNT_KEY = "count";
 
-    private static final String DEFAULT_URL = "http://eu.bmstu.ru/";
+    private static final String DEFAULT_URL = "http://bmstu.ru/";
     private static final String DEFAULT_COUNT = "1";
 
     private static final int TIMEOUT_MS = 5000;
@@ -60,6 +60,7 @@ class Tester {
                 .orElseGet(() -> DEFAULT_URL);
         String count = Optional.ofNullable(query.get(COUNT_KEY))
                 .orElseGet(() -> DEFAULT_COUNT);
+        System.out.println(url + " " + count);
         return new Pair<>(url, Integer.parseInt(count));
     }
 
