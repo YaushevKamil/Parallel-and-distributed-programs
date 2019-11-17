@@ -15,11 +15,7 @@ public class CacheActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder
                 .create()
-                .match(StoreMessage.class, msg -> {
-                    System.out.println("ACTOR::" + msg.getClass().getSimpleName());
-                    System.out.println("\t" + msg.getTest().getUrl() + " " + msg.getTest().getCount() + " " + msg.getDelay());
-                    cache.put(msg.getTest(), msg.getDelay());
-                })
+                .match(StoreMessage.class, msg -> cache.put(msg.getTest(), msg.getDelay()))
                 .match(GetMessage.class, msg -> {
                     System.out.println("ACTOR::" + msg.getClass().getSimpleName());
                     System.out.println("\t" + msg.getUrl() + " " + msg.getCount());
