@@ -93,6 +93,7 @@ public class Tester {
                 .prepareGet(url)
                 .execute()
                 .toCompletableFuture()
+                .thenCompose()
     }
 
 
