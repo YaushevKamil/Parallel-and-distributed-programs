@@ -19,6 +19,7 @@ import scala.compat.java8.FutureConverters;
 
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 import java.util.regex.Pattern;
 
@@ -75,7 +76,7 @@ public class Tester {
                 .thenCompose(resp -> {
                     Optional<StoreMessage> messageOptional = resp.getResult();
                     return messageOptional.isPresent() ?
-                            Comp
+                            CompletableFuture.completedFuture
                 });
     }
 }
