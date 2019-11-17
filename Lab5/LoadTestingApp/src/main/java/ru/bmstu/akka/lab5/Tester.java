@@ -108,6 +108,9 @@ public class Tester {
     private HttpResponse completeRequest(StoreMessage result) {
         System.out.println(result);
         cacheActor.tell(result, ActorRef.noSender());
-        
+        return HttpResponse
+                .create()
+                .withStatus(200)
+                .withEntity("Average response time" + averageTime + " ms");
     }
 }
