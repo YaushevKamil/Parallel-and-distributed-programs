@@ -17,7 +17,7 @@ public class CacheActor extends AbstractActor {
                 .create()
                 .match(StoreMessage.class, msg -> {
                     System.out.println("ACTOR::" + msg.toString());
-                    System.out.println(msg.getTest() + " " + msg.getDelay());
+                    System.out.println(msg.getTest().getUrl() + " " + msg.getTest().getUrl() + " " + msg.getDelay());
                     cache.put(msg.getTest(), msg.getDelay());
                 })
                 .match(GetMessage.class, msg -> {
