@@ -52,10 +52,14 @@ class Tester {
 
     private Pair<String, Integer> parseRequest(HttpRequest request) {
         Map<String, String> query = request.getUri().query().toMap();
-        Optional<String> url = Optional.ofNullable(query.get(URL_KEY));
-        Optional<String> count = Optional.ofNullable(query.get(COUNT_KEY));
+        String url = HOST;
+        Integer count = 1;
+        if (query.containsKey(URL_KEY) && query.containsKey(COUNT_KEY)) {
+            url = query.get(URL_KEY);
+            count = Integer.parseInt(query.get(COUNT_KEY));
+        }
         System.out.println("parse: " + url + " " + count);
-        return new Pair<>(url.get(), Integer.parseInt(count.get()));
+        return new Pair<>(url, count);
     }
 
     private CompletionStage<StoreMessage> processTest(Pair<String, Integer> test) {
@@ -96,6 +100,8 @@ class Tester {
                 .toCompletableFuture()
                 .thenCompose(resp -> {
                     Long currentTime = System.currentTimeMillis();
+                    Long delay = currentTime-startTime;
+                    System.out.println("Time: " + delay);
                     return CompletableFuture.completedFuture(currentTime-startTime);
                 });
     }
