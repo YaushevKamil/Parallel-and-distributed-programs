@@ -52,8 +52,8 @@ class Tester {
 
     private Pair<String, Integer> parseRequest(HttpRequest request) {
         Map<String, String> query = request.getUri().query().toMap();
-        String url = query.get(URL_KEY);
-        String count = query.get(COUNT_KEY);
+        Optional<String> url = Optional.ofNullable(query.get(URL_KEY));
+        Optional<String> count = Optional.ofNullable(query.get(COUNT_KEY));
         System.out.println("parse: " + url + " " + count);
         return new Pair<>(url, Integer.parseInt(count));
     }
