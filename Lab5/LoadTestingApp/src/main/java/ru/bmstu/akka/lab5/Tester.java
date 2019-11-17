@@ -43,16 +43,7 @@ public class Tester {
     public Flow<HttpRequest, HttpResponse, NotUsed> createFlow() {
         return Flow.of(HttpRequest.class)
                 .map(this::parseRequest)
-                .mapAsync(4, pair -> {
-                    String url = pair.first();
-                    Integer count = pair.second();
-                    return Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS));
-
-                }p -> {
-                    String url = pair.first();
-                    Integer count = pair.second();
-
-                }
+                .mapAsync(4, this::processTest)
                 .map();
     }
 
