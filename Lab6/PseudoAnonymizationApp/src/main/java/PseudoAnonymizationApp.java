@@ -12,7 +12,6 @@ public class PseudoAnonymizationApp {
 
             final Http http = Http.get(system);
             final ActorMaterializer materializer = ActorMaterializer.create(system);
-            final AsyncHttpClient asyncHttpClient = asyncHttpClient();
 
             final Tester tester = new Tester(system, materializer, asyncHttpClient);
 
