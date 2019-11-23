@@ -19,7 +19,7 @@ import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 public class LoadTestingApp {
     static final String HOST = "http://localhost";
-    private static final int PORT = 8080;
+    private static final int PORT = 8081;
 
     public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create("routes");
@@ -36,6 +36,8 @@ public class LoadTestingApp {
                 ConnectHttp.toHost(HOST, PORT),
                 materializer
         );
+
+        //http://localhost:8080/?testUrl=http://rambler.ru&count=20
 
         System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
         System.in.read();

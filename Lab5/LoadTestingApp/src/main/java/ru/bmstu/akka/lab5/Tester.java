@@ -45,6 +45,8 @@ class Tester {
         this.materializer = materializer;
         this.cacheActor = system.actorOf(Props.create(CacheActor.class));
         this.asyncHttpClient = asyncHttpClient;
+        System.out.println(cacheActor.path());
+//        ActorRef actor = system.actorSelection();
     }
 
     Flow<HttpRequest, HttpResponse, NotUsed> createFlow() {
@@ -99,9 +101,9 @@ class Tester {
                 .prepareGet(url)
                 .execute()
                 .toCompletableFuture()
-                .thenCompose(resp -> {
+                .thenApply(resp -> {
                     Long currentTime = System.currentTimeMillis();
-                    return CompletableFuture.completedFuture(currentTime-startTime);
+                    return currentTime-startTime;
                 });
     }
 
