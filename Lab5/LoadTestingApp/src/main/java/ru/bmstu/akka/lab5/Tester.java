@@ -67,7 +67,7 @@ class Tester {
         Integer count = test.second();
         return FutureConverters.toJava(
                 Patterns.ask(cacheActor, new GetMessage(url, count), TIMEOUT_MS)
-                ).thenApply(o -> (ResponseMessage)o)
+            ).thenApply(o -> (ResponseMessage)o)
                 .thenCompose(resp -> {
                     Optional<StoreMessage> messageOptional = resp.getResult();
                     return messageOptional.isPresent() ?
