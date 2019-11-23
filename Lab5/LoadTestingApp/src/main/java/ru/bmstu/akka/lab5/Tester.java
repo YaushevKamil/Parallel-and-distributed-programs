@@ -31,16 +31,15 @@ import static ru.bmstu.akka.lab5.LoadTestingApp.HOST;
 class Tester {
     private static final String URL_KEY = "testUrl";
     private static final String COUNT_KEY = "count";
+    private static final int TIMEOUT_MS = 5000;
 
     private static final String DEFAULT_URL = "http://iu9.bmstu.ru/";
     private static final String DEFAULT_COUNT = "1";
 
-    private static final int TIMEOUT_MS = 5000;
-
     private final ActorMaterializer materializer;
     private final ActorRef cacheActor;
     private final AsyncHttpClient asyncHttpClient;
-    
+
     Tester(ActorSystem system, ActorMaterializer materializer, AsyncHttpClient asyncHttpClient) {
         this.materializer = materializer;
         this.cacheActor = system.actorOf(Props.create(CacheActor.class));
