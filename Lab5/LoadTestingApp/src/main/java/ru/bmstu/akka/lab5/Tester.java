@@ -29,10 +29,6 @@ import java.util.concurrent.CompletionStage;
 import static ru.bmstu.akka.lab5.LoadTestingApp.HOST;
 
 class Tester {
-    private final ActorMaterializer materializer;
-    private final ActorRef cacheActor;
-    private final AsyncHttpClient asyncHttpClient;
-
     private static final String URL_KEY = "testUrl";
     private static final String COUNT_KEY = "count";
 
@@ -41,12 +37,14 @@ class Tester {
 
     private static final int TIMEOUT_MS = 5000;
 
+    private final ActorMaterializer materializer;
+    private final ActorRef cacheActor;
+    private final AsyncHttpClient asyncHttpClient;
+    
     Tester(ActorSystem system, ActorMaterializer materializer, AsyncHttpClient asyncHttpClient) {
         this.materializer = materializer;
         this.cacheActor = system.actorOf(Props.create(CacheActor.class));
         this.asyncHttpClient = asyncHttpClient;
-        System.out.println(cacheActor.path());
-//        ActorRef actor = system.actorSelection();
     }
 
     Flow<HttpRequest, HttpResponse, NotUsed> createFlow() {
