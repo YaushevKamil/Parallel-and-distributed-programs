@@ -6,7 +6,7 @@ public class PseudoAnonymizationApp {
             System.out.println("Usage: PseudoAnonymizationApp <ZooKeeperAddr> <host> <port_1> ( ... <port_n> )");
 
 
-            ActorSystem system = ActorSystem.create("routes");
+            ActorSystem system = ActorSystem.create("anonymizer");
 
             final Http http = Http.get(system);
             final ActorMaterializer materializer = ActorMaterializer.create(system);
