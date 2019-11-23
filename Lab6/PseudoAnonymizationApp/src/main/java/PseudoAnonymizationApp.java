@@ -5,7 +5,11 @@ import akka.stream.ActorMaterializer;
 import java.io.IOException;
 
 public class PseudoAnonymizationApp {
+    private static final String HOST = "http://localhost";
+    private static final int PORT = 8081;
+
     public static void main(String[] args) throws IOException {
+
         if (args.length < 3) {
             System.out.println("Usage: PseudoAnonymizationApp <ZooKeeperAddr> <host> <port_1> ( ... <port_n> )");
 
