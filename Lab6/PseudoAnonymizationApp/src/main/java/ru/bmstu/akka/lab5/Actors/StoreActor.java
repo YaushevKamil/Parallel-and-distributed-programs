@@ -16,7 +16,7 @@ public class StoreActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(StoreMessage.class, msg -> servers = msg.getServers())
                 .match(GetMessage.class, msg -> {
-                    sender().tell(new ResponseMessage(new Random().nextInt(servers.length)));
+                    sender().tell(new ResponseMessage(new Random().nextInt(servers.length)), );
                 })
                 .build();
     }
