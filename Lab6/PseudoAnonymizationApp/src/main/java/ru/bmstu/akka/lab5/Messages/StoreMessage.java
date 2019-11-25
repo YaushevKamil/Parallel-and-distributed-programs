@@ -6,4 +6,6 @@ public class StoreMessage {
     public StoreMessage(String[] servers) {
         this.servers = servers;
     }
+
+    public String[] getServers
 }
