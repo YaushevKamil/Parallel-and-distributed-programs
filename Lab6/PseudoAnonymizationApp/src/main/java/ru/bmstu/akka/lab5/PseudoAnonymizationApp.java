@@ -29,9 +29,9 @@ public class PseudoAnonymizationApp {
 
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        final Anonymizer anonymize = new Anonymizer(system, materializer, asyncHttpClient);
+        final Anonymizer anonymizer = new Anonymizer(system, materializer, asyncHttpClient);
 
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = tester.createFlow();
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = anonymizer.createRoute();
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost(HOST, PORT),
