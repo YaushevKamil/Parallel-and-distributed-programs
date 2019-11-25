@@ -1,3 +1,5 @@
+package ru.bmstu.akka.lab5;
+
 import akka.NotUsed;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.ConnectHttp;
