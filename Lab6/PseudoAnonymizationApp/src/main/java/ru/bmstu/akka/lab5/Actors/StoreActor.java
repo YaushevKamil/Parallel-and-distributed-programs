@@ -10,6 +10,7 @@ import java.util.Random;
 
 public class StoreActor extends AbstractActor {
     private String[] servers; // RENAME
+    private Random 
 
     private static int getRandomNumber(int bound) {
         return new Random().nextInt(bound);
