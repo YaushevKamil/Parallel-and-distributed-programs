@@ -13,7 +13,7 @@ public class StoreActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(StoreMessage.class, msg -> servers = msg.getServers())
                 .match(GetMessage.class, msg -> {
-                    sender()
+                    sender().tell
                 })
                 .build();
     }
