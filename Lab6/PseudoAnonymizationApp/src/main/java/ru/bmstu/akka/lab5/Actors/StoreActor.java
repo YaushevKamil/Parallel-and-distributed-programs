@@ -21,7 +21,7 @@ public class StoreActor extends AbstractActor {
     }
 
     private int getRandomNumber(int bound) {
-        return new Random().nextInt(bound);
+        return random.nextInt(bound);
     }
 
     @Override
