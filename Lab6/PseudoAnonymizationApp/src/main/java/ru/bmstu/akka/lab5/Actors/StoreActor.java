@@ -17,7 +17,7 @@ public class StoreActor extends AbstractActor {
 //    }
 
     public StoreActor() {
-        random = new Random();
+        this.random = new Random();
     }
 
     @Override
