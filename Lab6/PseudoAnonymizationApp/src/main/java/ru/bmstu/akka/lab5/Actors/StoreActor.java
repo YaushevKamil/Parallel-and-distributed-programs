@@ -20,7 +20,7 @@ public class StoreActor extends AbstractActor {
         this.random = new Random();
     }
 
-    private static int getRandomNumber(Random random, int bound) {
+    private int getRandomNumber(int bound) {
         return random.nextInt(bound);
     }
 
@@ -28,7 +28,7 @@ public class StoreActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(StoreMessage.class, msg -> servers = msg.getServers())
-                .match(GetMessage.class, msg -> sender().tell(new ResponseMessage(getRandomNumber(random, servers.length)),
+                .match(GetMessage.class, msg -> sender().tell(new ResponseMessage(getRandomNumber(servers.length)),
                         self()))
                 .build();
     }
