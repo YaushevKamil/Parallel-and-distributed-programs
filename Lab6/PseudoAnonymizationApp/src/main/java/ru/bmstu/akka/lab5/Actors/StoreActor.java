@@ -11,15 +11,15 @@ import java.util.Random;
 public class StoreActor extends AbstractActor {
     private String[] servers; // RENAME
 
+    private static int getRandomNumber(int bound) {
+        return new Random().nextInt(bound);
+    }
+
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(StoreMessage.class, msg -> servers = msg.getServers())
                 .match(GetMessage.class, msg -> sender().tell(new ResponseMessage(getRandomNumber(servers.length)), self()))
                 .build();
-    }
-
-    private static int getRandomNumber(int bound) {
-        return new Random().nextInt(bound);
     }
 }
