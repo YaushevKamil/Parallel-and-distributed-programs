@@ -9,7 +9,7 @@ import ru.bmstu.akka.lab5.Messages.StoreMessage;
 import java.util.Random;
 
 public class StoreActor extends AbstractActor {
-    private String[] addresses; // RENAME
+    private String[] addresses;
     private Random random;
 
 //    private static int getRandomNumber(int bound) {
