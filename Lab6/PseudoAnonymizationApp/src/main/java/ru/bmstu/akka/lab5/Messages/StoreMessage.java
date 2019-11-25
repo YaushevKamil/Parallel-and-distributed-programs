@@ -1,13 +1,13 @@
 package ru.bmstu.akka.lab5.Messages;
 
 public class StoreMessage {
-    private final String[] servers;
+    private final String[] addresses;
 
     public StoreMessage(String[] servers) {
-        this.servers = servers;
+        this.addresses = servers;
     }
 
-    public String[] getServers() {
-        return servers;
+    public String[] getAddresses() {
+        return addresses;
     }
 }
