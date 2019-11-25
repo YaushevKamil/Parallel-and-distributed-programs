@@ -8,6 +8,6 @@ public class StoreMessage {
     }
 
     public String[] getServers() {
-        
+        return servers;
     }
 }
