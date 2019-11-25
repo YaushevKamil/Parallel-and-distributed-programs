@@ -1,3 +1,5 @@
 package ru.bmstu.akka.lab5.Messages;
 
-public class GetMessage {}
+public class GetMessage {
+    public GetMessage() {}
+}
