@@ -12,9 +12,9 @@ public class StoreActor extends AbstractActor {
     private String[] servers; // RENAME
     private Random random;
 
-    private static int getRandomNumber(int bound) {
-        return new Random().nextInt(bound);
-    }
+//    private static int getRandomNumber(int bound) {
+//        return new Random().nextInt(bound);
+//    }
 
     @Override
     public Receive createReceive() {
