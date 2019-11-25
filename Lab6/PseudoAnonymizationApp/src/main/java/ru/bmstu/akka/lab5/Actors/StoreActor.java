@@ -9,7 +9,7 @@ import ru.bmstu.akka.lab5.Messages.StoreMessage;
 import java.util.Random;
 
 public class StoreActor extends AbstractActor {
-    private String[] servers; // RENAME
+    private String[] addresses; // RENAME
     private Random random;
 
 //    private static int getRandomNumber(int bound) {
@@ -27,8 +27,8 @@ public class StoreActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(StoreMessage.class, msg -> servers = msg.getServers())
-                .match(GetMessage.class, msg -> sender().tell(new ResponseMessage(getRandomNumber(servers.length)),
+                .match(StoreMessage.class, msg -> addresses = msg.getServers())
+                .match(GetMessage.class, msg -> sender().tell(new ResponseMessage(getRandomNumber(addresses.length)),
                         self()))
                 .build();
     }
