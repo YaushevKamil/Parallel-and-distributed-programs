@@ -20,7 +20,7 @@ public class StoreActor extends AbstractActor {
         this.random = new Random();
     }
 
-    private int getRandomNumber(int bound) {
+    private static int getRandomNumber(Random random, int bound) {
         return random.nextInt(bound);
     }
 
