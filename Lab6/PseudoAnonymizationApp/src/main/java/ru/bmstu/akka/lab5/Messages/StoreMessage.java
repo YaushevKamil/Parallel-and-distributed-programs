@@ -1,7 +1,7 @@
 package ru.bmstu.akka.lab5.Messages;
 
 public class StoreMessage {
-    private String[] servers;
+    private final String[] servers;
 
     public StoreMessage(String[] servers) {
         this.servers = servers;
