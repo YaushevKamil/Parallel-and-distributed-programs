@@ -3,5 +3,7 @@ package ru.bmstu.akka.lab5.Messages;
 public class StoreMessage {
     private String[] servers;
 
-    public StoreMessage
+    public StoreMessage(String[] servers) {
+        
+    }
 }
