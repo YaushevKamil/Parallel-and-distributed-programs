@@ -7,5 +7,7 @@ public class StoreMessage {
         this.servers = servers;
     }
 
-    public String[] getServers
+    public String[] getServers() {
+        
+    }
 }
