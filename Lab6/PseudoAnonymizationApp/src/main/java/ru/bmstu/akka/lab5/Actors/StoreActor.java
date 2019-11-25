@@ -20,6 +20,10 @@ public class StoreActor extends AbstractActor {
         this.random = new Random();
     }
 
+    private int getRandomNumber(int bound) {
+        return new Random().nextInt(bound);
+    }
+
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
