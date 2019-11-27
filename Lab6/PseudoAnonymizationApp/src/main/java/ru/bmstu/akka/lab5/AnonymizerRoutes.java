@@ -61,7 +61,7 @@ public class AnonymizerRoutes extends AllDirectives {
             ).thenApply(o -> /*(ResponseMessage)*/(String)o)
             .thenCompose(addr -> {
                 return makeRequest(Uri.create(addr).query(Query.create(
-                        Pair.create()
+                        Pair.create(URL_ARG_NAME)
                 )))
             })
     }
