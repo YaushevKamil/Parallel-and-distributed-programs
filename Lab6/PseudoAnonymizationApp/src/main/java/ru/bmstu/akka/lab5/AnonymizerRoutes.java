@@ -38,16 +38,16 @@ public class AnonymizerRoutes extends AllDirectives {
 
     public Route getRoutes() {
         return route(
-                get(() -> {
-                    parameter(URL_ARG_NAME, url -> {
+                get(() ->
+                    parameter(URL_ARG_NAME, url ->
                         parameter(COUNT_ARG_NAME, countString -> {
                             int count = strToInt(countString);
                             return count == 0 ?
                                     completeWithFuture(makeRequest(url)) :
                                     completeWithFuture(redirectRequest(url, count));
                         })
-                    })
-                })
+                    )
+                )
         );
     }
 
