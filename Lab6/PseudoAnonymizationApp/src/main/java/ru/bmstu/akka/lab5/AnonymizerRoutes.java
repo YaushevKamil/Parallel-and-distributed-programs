@@ -56,6 +56,8 @@ public class AnonymizerRoutes extends AllDirectives {
         return FutureConverters.toJava(
                 Patterns.ask(storeActor, new GetMessage(), TIMEOUT_MS)
             )
-            .thenCompose(addr -> )
+            .thenCompose(addr -> {
+                
+            })
     }
 }
