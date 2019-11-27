@@ -50,6 +50,6 @@ public class AnonymizerRoutes extends AllDirectives {
     }
 
     private CompletionStage<HttpResponse> redirect(String url, int count) {
-        return Patterns.ask(storeActor)
+        return Patterns.ask(storeActor, new )
     }
 }
