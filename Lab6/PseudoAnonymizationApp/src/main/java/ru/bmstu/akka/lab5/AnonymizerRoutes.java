@@ -5,6 +5,7 @@ import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
+import akka.http.javadsl.model.Query;
 import akka.http.javadsl.model.Uri;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
@@ -58,7 +59,7 @@ public class AnonymizerRoutes extends AllDirectives {
                 Patterns.ask(storeActor, new GetMessage(), TIMEOUT_MS)
             ).thenApply(o -> /*(ResponseMessage)*/(String)o)
             .thenCompose(addr -> {
-                return makeRequest(Uri.create(addr).query())
+                return makeRequest(Uri.create(addr).query(Query.create))
             })
     }
 }
