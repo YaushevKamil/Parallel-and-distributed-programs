@@ -2,10 +2,8 @@ package ru.bmstu.akka.lab5;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
-import akka.http.javadsl.server.Route;
 import akka.http.javadsl.server.AllDirectives;
-
-import static akka.http.javadsl.server.Directives.route;
+import akka.http.javadsl.server.Route;
 
 public class AnonymizerRoutes {
     private final ActorSystem system;
