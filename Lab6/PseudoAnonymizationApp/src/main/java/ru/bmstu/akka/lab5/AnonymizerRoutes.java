@@ -20,7 +20,11 @@ public class AnonymizerRoutes extends AllDirectives {
     public Route getRoutes() {
         return route(
                 get(() -> {
-                    parameter(URL_ARG_NAME, url -> )
+                    parameter(URL_ARG_NAME, url -> {
+                        parameter(COUNT_ARG_NAME, count -> {
+                            
+                        })
+                    })
                 })
         );
     }
