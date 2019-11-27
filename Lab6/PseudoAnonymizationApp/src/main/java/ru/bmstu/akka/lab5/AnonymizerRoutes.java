@@ -9,6 +9,7 @@ import akka.http.javadsl.model.Query;
 import akka.http.javadsl.model.Uri;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
+import akka.japi.Pair;
 import akka.pattern.Patterns;
 import ru.bmstu.akka.lab5.Messages.GetMessage;
 import scala.compat.java8.FutureConverters;
@@ -60,7 +61,7 @@ public class AnonymizerRoutes extends AllDirectives {
             ).thenApply(o -> /*(ResponseMessage)*/(String)o)
             .thenCompose(addr -> {
                 return makeRequest(Uri.create(addr).query(Query.create(
-                        
+                        Pair.create()
                 )))
             })
     }
