@@ -63,8 +63,7 @@ public class AnonymizerRoutes extends AllDirectives {
                     Uri.create(addr).query(Query.create(
                                     Pair.create(URL_ARG_NAME, url),
                                     Pair.create(COUNT_ARG_NAME, Integer.toString(count-1))
-                            )
-                                            .toString()
+                            ).toString()
                             )
             )
             );
