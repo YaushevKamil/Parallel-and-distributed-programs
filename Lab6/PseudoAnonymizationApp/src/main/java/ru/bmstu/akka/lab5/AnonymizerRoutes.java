@@ -60,13 +60,12 @@ public class AnonymizerRoutes extends AllDirectives {
                 Patterns.ask(storeActor, new GetMessage(), TIMEOUT_MS)
             ).thenApply(o -> /*(ResponseMessage)*/(String)o)
             .thenCompose(addr -> makeRequest(
-                    Uri
-                            .create(addr)
+                    Uri.create(addr)
                             .query(Query.create(
                                     Pair.create(URL_ARG_NAME, url),
                                     Pair.create(COUNT_ARG_NAME, Integer.toString(count-1))
-                            ).toString()
                             )
+                            ).toString()
             )
             );
     }
