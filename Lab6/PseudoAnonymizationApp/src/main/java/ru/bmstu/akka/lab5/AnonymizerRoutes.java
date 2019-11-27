@@ -5,11 +5,11 @@ import akka.actor.ActorSystem;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
 
-public class AnonymizerRoutes {
+public class AnonymizerRoutes extends AllDirectives {
     private final ActorSystem system;
     private final ActorRef storeActor;
 
-    public AnonymizerRoutes(ActorSystem system, ActorRef storeActor) {
+    public AnonymizerRoutes(ActorSystem system, ActorRef storeActor)  {
         this.system = system;
         this.storeActor = storeActor;
     }
