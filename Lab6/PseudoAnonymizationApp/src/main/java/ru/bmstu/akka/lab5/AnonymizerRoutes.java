@@ -2,8 +2,11 @@ package ru.bmstu.akka.lab5;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
+
+import java.util.concurrent.CompletionStage;
 
 public class AnonymizerRoutes extends AllDirectives {
     private static final String URL_ARG_NAME = "url";
@@ -36,5 +39,9 @@ public class AnonymizerRoutes extends AllDirectives {
                     })
                 })
         );
+    }
+
+    private CompletionStage<HttpResponse> makeRequest(String url) {
+        
     }
 }
