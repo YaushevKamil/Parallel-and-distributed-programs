@@ -38,7 +38,7 @@ public class PseudoAnonymizationApp {
                 materializer
         );
 
-            //http://localhost:8080/?testUrl=http://rambler.ru&count=20
+            //http://localhost:8080/? u rl=http://rambler.ru&count=20
 
             System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
             System.in.read();
