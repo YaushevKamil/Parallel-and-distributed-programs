@@ -9,7 +9,8 @@ public class Anonymizer {
     private ActorRef storeActor;
 
     public Anonymizer(ActorSystem system, String zooKeeperHost, String host, String port) {
-        storeActor = system.actorOf(Props.create(StoreActor.class), "Host")
+        storeActor = system.actorOf(Props.create(StoreActor.class), "HostStorage");
+        
 
     }
 }
