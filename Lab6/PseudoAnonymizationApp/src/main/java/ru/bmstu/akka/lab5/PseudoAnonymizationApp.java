@@ -31,7 +31,7 @@ public class PseudoAnonymizationApp {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         final Anonymizer anonymizer = new Anonymizer(system, host, port);
 
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = anonymizer.createRoute();
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = anonymizer.createRoutes().flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost(HOST, PORT),
