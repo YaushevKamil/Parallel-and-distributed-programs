@@ -11,4 +11,6 @@ public class AnonymizerRoutes {
         this.system = system;
         this.storeActor = storeActor;
     }
+
+    public Rou
 }
