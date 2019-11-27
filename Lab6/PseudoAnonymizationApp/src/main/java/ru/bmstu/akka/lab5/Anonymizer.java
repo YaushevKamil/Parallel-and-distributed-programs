@@ -7,6 +7,7 @@ public class Anonymizer {
     private ActorRef storeActor;
 
     public Anonymizer(ActorSystem system, String zooKeeperHost, String host, String port) {
+        
 
     }
 }
