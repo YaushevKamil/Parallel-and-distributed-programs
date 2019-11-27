@@ -1,4 +1,4 @@
-package ru.bmstu.akka.lab5;
+package ru.bmstu.akka.lab6;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
@@ -11,8 +11,8 @@ import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
 import akka.japi.Pair;
 import akka.pattern.Patterns;
-import ru.bmstu.akka.lab5.Messages.GetMessage;
-import ru.bmstu.akka.lab5.Messages.ResponseMessage;
+import ru.bmstu.akka.lab6.Messages.GetMessage;
+import ru.bmstu.akka.lab6.Messages.ResponseMessage;
 import scala.compat.java8.FutureConverters;
 
 import java.util.concurrent.CompletionStage;

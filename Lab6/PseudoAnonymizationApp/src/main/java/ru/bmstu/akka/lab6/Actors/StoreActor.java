@@ -1,10 +1,10 @@
-package ru.bmstu.akka.lab5.Actors;
+package ru.bmstu.akka.lab6.Actors;
 
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
-import ru.bmstu.akka.lab5.Messages.GetMessage;
-import ru.bmstu.akka.lab5.Messages.ResponseMessage;
-import ru.bmstu.akka.lab5.Messages.StoreMessage;
+import ru.bmstu.akka.lab6.Messages.GetMessage;
+import ru.bmstu.akka.lab6.Messages.ResponseMessage;
+import ru.bmstu.akka.lab6.Messages.StoreMessage;
 
 import java.util.Random;
 

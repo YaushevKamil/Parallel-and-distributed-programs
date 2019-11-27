@@ -1,4 +1,4 @@
-package ru.bmstu.akka.lab5;
+package ru.bmstu.akka.lab6;
 
 import akka.NotUsed;
 import akka.actor.ActorSystem;
