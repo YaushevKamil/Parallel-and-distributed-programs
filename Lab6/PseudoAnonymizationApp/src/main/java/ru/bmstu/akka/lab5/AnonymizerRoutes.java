@@ -15,7 +15,6 @@ import ru.bmstu.akka.lab5.Messages.GetMessage;
 import scala.compat.java8.FutureConverters;
 
 import java.util.concurrent.CompletionStage;
-import java.util.regex.Pattern;
 
 public class AnonymizerRoutes extends AllDirectives {
     private static final String URL_ARG_NAME = "url";
