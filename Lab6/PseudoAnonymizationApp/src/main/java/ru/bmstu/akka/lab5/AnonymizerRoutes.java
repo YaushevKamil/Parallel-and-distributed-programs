@@ -30,7 +30,8 @@ public class AnonymizerRoutes extends AllDirectives {
                         parameter(COUNT_ARG_NAME, countString -> {
                             int count = strToInt(countString);
                             return count == 0 ?
-                                    CompleteW
+                                    completeWithFuture() :
+                                    completeWithFuture();
                         })
                     })
                 })
