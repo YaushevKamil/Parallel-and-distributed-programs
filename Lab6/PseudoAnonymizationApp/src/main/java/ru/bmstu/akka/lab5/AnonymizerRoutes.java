@@ -6,4 +6,9 @@ import akka.actor.ActorSystem;
 public class AnonymizerRoutes {
     private final ActorSystem system;
     private final ActorRef storeActor;
+
+    public AnonymizerRoutes(ActorSystem system, ActorRef storeActor) {
+        this.system = system;
+        this.storeActor = storeActor;
+    }
 }
