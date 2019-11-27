@@ -6,7 +6,7 @@ import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
 
 public class AnonymizerRoutes extends AllDirectives {
-    private static 
+    private static final String URL
 
     private final ActorSystem system;
     private final ActorRef storeActor;
