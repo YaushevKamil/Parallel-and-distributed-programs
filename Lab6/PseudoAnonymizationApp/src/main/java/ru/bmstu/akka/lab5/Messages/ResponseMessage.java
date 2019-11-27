@@ -1,13 +1,13 @@
 package ru.bmstu.akka.lab5.Messages;
 
 public class ResponseMessage {
-    private final int randomNumber;
+    private final String address;
 
-    public ResponseMessage(int randomNumber) {
-        this.randomNumber = randomNumber;
+    public ResponseMessage(String address) {
+        this.address = address;
     }
 
     public int getRandomNumber() {
-        return randomNumber;
+        return address;
     }
 }
