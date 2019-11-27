@@ -59,11 +59,14 @@ public class AnonymizerRoutes extends AllDirectives {
         return FutureConverters.toJava(
                 Patterns.ask(storeActor, new GetMessage(), TIMEOUT_MS)
             ).thenApply(o -> /*(ResponseMessage)*/(String)o)
-            .thenCompose(addr -> {
-                return makeRequest(Uri.create(addr).query(Query.create(
-                        Pair.create(URL_ARG_NAME, url),
-                        Pair.create(COUNT_ARG_NAME, Integer.toString(count-1))
-                )))
-            })
+            .thenCompose(addr -> makeRequest(
+                    Uri.create(addr).query(Query.create(
+                                    Pair.create(URL_ARG_NAME, url),
+                                    Pair.create(COUNT_ARG_NAME, Integer.toString(count-1))
+                            )
+                                            .toString()
+                            )
+            )
+            );
     }
 }
