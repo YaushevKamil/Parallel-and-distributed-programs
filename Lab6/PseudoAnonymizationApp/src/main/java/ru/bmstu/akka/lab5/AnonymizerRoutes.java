@@ -14,6 +14,6 @@ public class AnonymizerRoutes {
     }
 
     public Route getRoutes() {
-        return 
+        return route
     }
 }
