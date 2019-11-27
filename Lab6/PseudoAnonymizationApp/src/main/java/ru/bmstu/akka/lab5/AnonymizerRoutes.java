@@ -57,7 +57,7 @@ public class AnonymizerRoutes extends AllDirectives {
                 Patterns.ask(storeActor, new GetMessage(), TIMEOUT_MS)
             ).thenApply(o -> /*(ResponseMessage)*/(String)o)
             .thenCompose(addr -> {
-                Uri.create(addr)
+                return makeRequest(Uri.create(addr))
             })
     }
 }
