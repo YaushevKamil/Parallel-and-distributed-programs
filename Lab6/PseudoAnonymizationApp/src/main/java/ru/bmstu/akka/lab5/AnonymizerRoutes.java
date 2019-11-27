@@ -55,7 +55,7 @@ public class AnonymizerRoutes extends AllDirectives {
     private CompletionStage<HttpResponse> redirect(String url, int count) {
         return FutureConverters.toJava(
                 Patterns.ask(storeActor, new GetMessage(), TIMEOUT_MS)
-            ).thenApply(o -> (ResponseMessage)o)
+            ).thenApply(o -> /*(ResponseMessage)*/(String)o)
             .thenCompose(addr -> {
 
             })
