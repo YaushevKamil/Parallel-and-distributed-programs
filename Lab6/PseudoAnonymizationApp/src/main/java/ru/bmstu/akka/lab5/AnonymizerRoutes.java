@@ -17,12 +17,18 @@ public class AnonymizerRoutes extends AllDirectives {
         this.storeActor = storeActor;
     }
 
+    private static int strToInt(String numString) {
+        return numString.length() > 0 ?
+                Integer.parseInt(numString) :
+                INT_ZERO;
+    }
+
     public Route getRoutes() {
         return route(
                 get(() -> {
                     parameter(URL_ARG_NAME, url -> {
                         parameter(COUNT_ARG_NAME, count -> {
-                            
+
                         })
                     })
                 })
