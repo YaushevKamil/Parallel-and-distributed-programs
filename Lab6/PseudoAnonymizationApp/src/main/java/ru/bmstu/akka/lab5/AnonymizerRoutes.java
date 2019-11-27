@@ -12,6 +12,7 @@ import akka.http.javadsl.server.Route;
 import akka.japi.Pair;
 import akka.pattern.Patterns;
 import ru.bmstu.akka.lab5.Messages.GetMessage;
+import ru.bmstu.akka.lab5.Messages.ResponseMessage;
 import scala.compat.java8.FutureConverters;
 
 import java.util.concurrent.CompletionStage;
@@ -58,9 +59,9 @@ public class AnonymizerRoutes extends AllDirectives {
         return FutureConverters.toJava(
                 Patterns.ask(storeActor, new GetMessage(), TIMEOUT_MS)
             )
-                .thenApply(o -> /*(ResponseMessage)*/(String)o)
-                .thenCompose(addr -> makeRequest(
-                        Uri.create(addr)
+                .thenApply(o -> (ResponseMessage)o)
+                .thenCompose(msg -> makeRequest(
+                        Uri.create(msg.getAddress())
                                 .query(
                                         Query.create(
                                                 Pair.create(URL_ARG_NAME, url),
