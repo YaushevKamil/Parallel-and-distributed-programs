@@ -9,6 +9,7 @@ import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import ru.bmstu.akka.lab5.Messages.GetMessage;
+import scala.compat.java8.FutureConverters;
 
 import java.util.concurrent.CompletionStage;
 import java.util.regex.Pattern;
@@ -52,7 +53,9 @@ public class AnonymizerRoutes extends AllDirectives {
     }
 
     private CompletionStage<HttpResponse> redirect(String url, int count) {
-        return Patterns.ask(storeActor, new GetMessage(), TIMEOUT_MS)
-                .thenCompose()
+        return FutureConverters.toJava(
+                Patterns.ask(storeActor, new GetMessage(), TIMEOUT_MS)
+            )
+            .thenCompose()
     }
 }
