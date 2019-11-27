@@ -7,7 +7,7 @@ public class ResponseMessage {
         this.address = address;
     }
 
-    public int getRandomNumber() {
+    public String getAddress() {
         return address;
     }
 }
