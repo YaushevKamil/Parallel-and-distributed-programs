@@ -6,7 +6,7 @@ import akka.actor.ActorSystem;
 public class Anonymizer {
     private ActorRef storeActor;
 
-    public Anonymizer(ActorSystem system, String zooKeeperHost, String host) {
+    public Anonymizer(ActorSystem system, String zooKeeperHost, String host, ) {
 
     }
 }
