@@ -15,7 +15,7 @@ public class Anonymizer {
         routes = new AnonymizerRoutes(system, storeActor);
     }
 
-    public Route createRoute() {
+    public Route createRoutes() {
         return routes.getRoutes();
     }
 }
