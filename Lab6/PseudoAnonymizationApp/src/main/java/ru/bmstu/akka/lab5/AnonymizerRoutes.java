@@ -7,8 +7,10 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
+import akka.pattern.Patterns;
 
 import java.util.concurrent.CompletionStage;
+import java.util.regex.Pattern;
 
 public class AnonymizerRoutes extends AllDirectives {
     private static final String URL_ARG_NAME = "url";
@@ -48,6 +50,6 @@ public class AnonymizerRoutes extends AllDirectives {
     }
 
     private CompletionStage<HttpResponse> redirect(String url, int count) {
-        
+        return Patterns.ask
     }
 }
