@@ -16,9 +16,9 @@ public class AnonymizerRoutes extends AllDirectives {
 
     public Route getRoutes() {
         return route(
-                get(
-                        parameter()
-                )
-        )
+                get(() -> {
+                    parameter()
+                })
+        );
     }
 }
