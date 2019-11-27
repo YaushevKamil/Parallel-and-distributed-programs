@@ -2,6 +2,7 @@ package ru.bmstu.akka.lab5;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.http.javadsl.Http;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
@@ -42,6 +43,6 @@ public class AnonymizerRoutes extends AllDirectives {
     }
 
     private CompletionStage<HttpResponse> makeRequest(String url) {
-        return Http.get
+        return Http.get()
     }
 }
