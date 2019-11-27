@@ -20,7 +20,7 @@ public class AnonymizerRoutes extends AllDirectives {
     private static int strToInt(String numString) {
         return numString.length() > 0 ?
                 Integer.parseInt(numString) :
-                INT_ZERO;
+                0;
     }
 
     public Route getRoutes() {
