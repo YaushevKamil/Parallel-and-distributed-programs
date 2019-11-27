@@ -24,11 +24,16 @@ public class StoreActor extends AbstractActor {
         return random.nextInt(bound);
     }
 
+    private String getRandomAddress() {
+        return addresses[getRandomNumber(addresses.length)];
+    }
+
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(StoreMessage.class, msg -> addresses = msg.getAddresses())
-                .match(GetMessage.class, msg -> sender().tell(new ResponseMessage(getRandomNumber(addresses.length)),
+                .match(GetMessage.class, msg -> sender().tell(
+                        new ResponseMessage(),
                         self()))
                 .build();
     }
