@@ -44,7 +44,7 @@ public class AnonymizerRoutes extends AllDirectives {
                             int count = strToInt(countString);
                             return count == 0 ?
                                     completeWithFuture(makeRequest(url)) :
-                                    completeWithFuture();
+                                    completeWithFuture(redirectRequest(url, count));
                         })
                     })
                 })
