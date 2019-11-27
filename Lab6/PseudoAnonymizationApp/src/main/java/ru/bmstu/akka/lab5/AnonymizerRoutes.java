@@ -55,18 +55,21 @@ public class AnonymizerRoutes extends AllDirectives {
         return Http.get(system).singleRequest(HttpRequest.create(url));
     }
 
-    private CompletionStage<HttpResponse> redirect(String url, int count) {
+    private CompletionStage<HttpResponse> redirectRequest(String url, int count) {
         return FutureConverters.toJava(
                 Patterns.ask(storeActor, new GetMessage(), TIMEOUT_MS)
-            ).thenApply(o -> /*(ResponseMessage)*/(String)o)
-            .thenCompose(addr -> makeRequest(
-                    Uri.create(addr)
-                            .query(Query.create(
-                                    Pair.create(URL_ARG_NAME, url),
-                                    Pair.create(COUNT_ARG_NAME, Integer.toString(count-1))
-                            )
-                            ).toString()
             )
+                .thenApply(o -> /*(ResponseMessage)*/(String)o)
+                .thenCompose(addr -> makeRequest(
+                        Uri.create(addr)
+                                .query(
+                                        Query.create(
+                                                Pair.create(URL_ARG_NAME, url),
+                                                Pair.create(COUNT_ARG_NAME, Integer.toString(count-1))
+                                        )
+                                )
+                                .toString()
+                    )
             );
     }
 }
