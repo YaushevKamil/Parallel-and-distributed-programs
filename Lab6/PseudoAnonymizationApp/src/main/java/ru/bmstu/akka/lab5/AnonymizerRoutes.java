@@ -27,8 +27,9 @@ public class AnonymizerRoutes extends AllDirectives {
         return route(
                 get(() -> {
                     parameter(URL_ARG_NAME, url -> {
-                        parameter(COUNT_ARG_NAME, count -> {
-                            
+                        parameter(COUNT_ARG_NAME, countString -> {
+                            int count = strToInt(countString);
+                            return 
                         })
                     })
                 })
