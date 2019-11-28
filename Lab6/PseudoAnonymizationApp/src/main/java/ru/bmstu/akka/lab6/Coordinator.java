@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 class Coordinator {
     private final int SESSION_TIMEOUT_MS = 3000;
@@ -32,17 +31,6 @@ class Coordinator {
 
     private ZooKeeper connect(String address) throws IOException {
         return new ZooKeeper(address, SESSION_TIMEOUT_MS, watchedEvent -> watchConnection(watchedEvent, address));
-    }
-
-    private void watchConnection(WatchedEvent watchedEvent, String address) {
-        if (watchedEvent.getState() == Watcher.Event.KeeperState.Expired ||
-                watchedEvent.getState() == Watcher.Event.KeeperState.Disconnected) {
-            try {
-                tryConnect(address);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     private void createNode(String address) throws KeeperException, InterruptedException {
@@ -73,6 +61,17 @@ class Coordinator {
             e.printStackTrace();
         }
         return new ArrayList<>();
+    }
+
+    private void watchConnection(WatchedEvent watchedEvent, String address) {
+        if (watchedEvent.getState() == Watcher.Event.KeeperState.Expired ||
+                watchedEvent.getState() == Watcher.Event.KeeperState.Disconnected) {
+            try {
+                tryConnect(address);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void watchChildren(WatchedEvent watchedEvent) {
