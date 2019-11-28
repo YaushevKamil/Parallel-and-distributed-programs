@@ -32,10 +32,10 @@ class Coordinator {
     }
 
     private ZooKeeper connect(String address) {
-        return new ZooKeeper(address, SESSION_TIMEOUT_MS, watchedEvent -> )
+        return new ZooKeeper(address, SESSION_TIMEOUT_MS, watchedEvent -> watchCreation(watchedEvent, address));
     }
 
-    private void watchCreation(WatchedEvent watchedEvent) {
+    private void watchCreation(WatchedEvent watchedEvent, String address) {
         if (watchedEvent.getState() == Watcher.Event.KeeperState.Expired ||
                 watchedEvent.getState() == Watcher.Event.KeeperState.Disconnected) {
             tryConnect(address);
