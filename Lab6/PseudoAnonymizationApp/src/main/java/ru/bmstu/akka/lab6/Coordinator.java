@@ -46,6 +46,8 @@ class Coordinator {
         }
     }
 
+    private 
+
     private byte[] getData(String server) {
         try {
             return zoo.getData(ROOT_PATH + '/' + server, false, null);
