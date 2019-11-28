@@ -29,7 +29,7 @@ class Coordinator {
         List<String> addresses = new ArrayList<>();
         for (String server : servers) {
             byte[] address = zoo.getData(ROOT_PATH + '/' + server, false, null);
-            addresses.add(address);
+            addresses.add(new String(address));
         }
     }
 
