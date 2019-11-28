@@ -30,7 +30,7 @@ class Coordinator {
 
     }
 
-    
+    private 
 
     private void watchNodes() {
         String[] addresses = Objects.requireNonNull(getChildren())
