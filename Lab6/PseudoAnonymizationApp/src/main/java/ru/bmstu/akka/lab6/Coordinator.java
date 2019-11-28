@@ -30,7 +30,8 @@ class Coordinator {
     }
 
     private ZooKeeper connect(String address) throws IOException {
-        return new ZooKeeper(address, SESSION_TIMEOUT_MS, watchedEvent -> watchConnection(watchedEvent, address));
+        return new ZooKeeper(address, SESSION_TIMEOUT_MS, watchedEvent ->
+                watchConnections(watchedEvent, address));
     }
 
     private void createNode(String address) throws KeeperException, InterruptedException {
@@ -72,7 +73,7 @@ class Coordinator {
         return new byte[0];
     }
 
-    private void watchConnection(WatchedEvent watchedEvent, String address) {
+    private void watchConnections(WatchedEvent watchedEvent, String address) {
         if (watchedEvent.getState() == Watcher.Event.KeeperState.Expired ||
                 watchedEvent.getState() == Watcher.Event.KeeperState.Disconnected) {
             try {
@@ -88,7 +89,7 @@ class Coordinator {
             watchNodes();
         }
     }
-    
+
     void terminate() {
         try {
             zoo.close();
