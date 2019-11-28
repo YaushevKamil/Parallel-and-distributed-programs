@@ -30,8 +30,8 @@ class Coordinator {
 
     }
 
-    private void create() {
-
+    private void createNode() {
+        zoo.create()
     }
 
     private void watchNodes() {
