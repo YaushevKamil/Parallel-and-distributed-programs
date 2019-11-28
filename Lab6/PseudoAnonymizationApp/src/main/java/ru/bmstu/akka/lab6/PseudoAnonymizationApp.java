@@ -9,6 +9,7 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import org.apache.zookeeper.KeeperException;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
@@ -17,7 +18,7 @@ public class PseudoAnonymizationApp {
     private static final String HOST = "http://localhost";
     private static final int PORT = 8080;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, KeeperException, InterruptedException {
         if (args.length < 3) {
             System.out.println("Usage: PseudoAnonymizationApp <host> <port_0> (<port_1> ... <port_n>)");
             System.exit(-1);
@@ -29,7 +30,7 @@ public class PseudoAnonymizationApp {
 
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        final Anonymizer anonymizer = new Anonymizer(system, host, port);
+        final Anonymizer anonymizer = new Anonymizer(system, host, HOST, PORT);
 
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = anonymizer.createRoutes().flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
