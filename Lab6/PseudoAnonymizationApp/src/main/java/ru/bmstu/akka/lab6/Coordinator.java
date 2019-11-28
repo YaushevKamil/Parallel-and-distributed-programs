@@ -2,12 +2,12 @@ package ru.bmstu.akka.lab6;
 
 import akka.actor.ActorRef;
 import org.apache.zookeeper.KeeperException;
+import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 import ru.bmstu.akka.lab6.Messages.StoreMessage;
 
 import java.io.IOException;
-import java.nio.file.WatchEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +29,7 @@ class Coordinator {
 
     private void watchNodes() {
         try {
-            List<String> servers = zoo.getChildren(ROOT_PATH, watchedEvent -> watchedEvent.getType());
+            List<String> servers = zoo.getChildren(ROOT_PATH, this::watchChildren);
             List<String> addresses = new ArrayList<>();
             for (String server : servers) {
                 byte[] address = zoo.getData(ROOT_PATH + '/' + server, false, null);
@@ -42,7 +42,7 @@ class Coordinator {
         }
     }
 
-    private void watchChildren(WatchEvent watchedEvent) {
+    private void watchChildren(WatchedEvent watchedEvent) {
         if (watchedEvent.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
             watchNodes();
         }
