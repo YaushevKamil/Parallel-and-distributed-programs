@@ -16,13 +16,10 @@ class Coordinator {
     Coordinator(String zooKeeperHost, ActorRef storeActor) throws IOException {
         this.zooKeeperHost = zooKeeperHost;
         this.storeActor = storeActor;
-        createZoo();
-    }
-
-    private void createZoo() throws IOException {
-        Watcher watcher;
         this.zoo = new ZooKeeper(zooKeeperHost, SESSION_TIMEOUT_MS, (Watcher) this);
+
     }
+    
 
 
     void terminate() {
