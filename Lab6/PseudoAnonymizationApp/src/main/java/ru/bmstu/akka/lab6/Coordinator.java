@@ -19,8 +19,8 @@ class Coordinator {
         this.zoo = new ZooKeeper(zooKeeperHost, SESSION_TIMEOUT_MS, (Watcher) this);
 
     }
-    
 
+    private void 
 
     void terminate() {
         try {
