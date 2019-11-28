@@ -28,20 +28,18 @@ class Coordinator {
 
     }
 
-    private void watchNodes() {
+    private void watchNodes() throws KeeperException, InterruptedException {
         try {
             List<String> servers = zoo.getChildren(ROOT_PATH, this::watchChildren);
 
-            List<String> addresses = servers.stream()
-                    .map(server -> zoo.getData(ROOT_PATH + '/' + server, false, null))
-                    .map(String::new)
-                    .collect(Collectors.toList());
-//            List<String> addresses = new ArrayList<>();
+            //            List<String> addresses = new ArrayList<>();
 //            for (String server : servers) {
 //                byte[] address = zoo.getData(ROOT_PATH + '/' + server, false, null);
 //                addresses.add(new String(address));
 //            }
-            storeActor.tell(new StoreMessage(addresses.toArray(new String[0])), ActorRef.noSender());
+            storeActor.tell(new StoreMessage(servers.stream()
+                    .map(this::getData)
+                    .map(String::new).toArray(String[]::new)), ActorRef.noSender());
         }
         catch (KeeperException | InterruptedException e) {
             e.printStackTrace();
