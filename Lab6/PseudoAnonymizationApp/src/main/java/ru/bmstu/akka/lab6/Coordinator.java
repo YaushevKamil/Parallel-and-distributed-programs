@@ -30,7 +30,9 @@ class Coordinator {
 
     }
 
-    private void create
+    private void create() {
+
+    }
 
     private void watchNodes() {
         String[] addresses = Objects.requireNonNull(getChildren())
