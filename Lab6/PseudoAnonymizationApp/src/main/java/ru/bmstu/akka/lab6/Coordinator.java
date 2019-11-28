@@ -28,7 +28,7 @@ class Coordinator {
         watchNodes();
     }
 
-    private ZooKeeper createZooKeeper(String address) {
+    private ZooKeeper connectZK(String address) {
         return new ZooKeeper(address, SESSION_TIMEOUT_MS, watchedEvent -> )
     }
 
@@ -39,7 +39,7 @@ class Coordinator {
     }
 
     private void tryConnect() {
-        this.zoo = createZooKeeper();
+        this.zoo = connectZK();
         watchNodes();
     }
 
