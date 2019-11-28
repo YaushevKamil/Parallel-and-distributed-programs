@@ -31,7 +31,7 @@ class Coordinator {
         watchNodes();
     }
 
-    private ZooKeeper connect(String address) {
+    private ZooKeeper connect(String address) throws IOException {
         return new ZooKeeper(address, SESSION_TIMEOUT_MS, watchedEvent -> watchCreation(watchedEvent, address));
     }
 
