@@ -45,9 +45,7 @@ class Coordinator {
                 .toArray(String[]::new);
         storeActor.tell(new StoreMessage(addresses), ActorRef.noSender());
     }
-
-
-
+    
     private List<String> getChildren() {
         try {
             return zoo.getChildren(ROOT_PATH, this::watchChildren);
