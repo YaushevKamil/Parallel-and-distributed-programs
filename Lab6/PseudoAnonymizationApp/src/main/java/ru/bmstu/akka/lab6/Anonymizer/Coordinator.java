@@ -71,6 +71,7 @@ class Coordinator {
     private void watchChildren(WatchedEvent watchedEvent) {
         if (watchedEvent.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
             watchNodes();
+            System.out.println("watchChildren");
         }
     }
 
