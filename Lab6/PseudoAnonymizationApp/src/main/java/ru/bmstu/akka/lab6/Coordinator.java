@@ -31,7 +31,7 @@ class Coordinator {
         return new ZooKeeper(address, SESSION_TIMEOUT_MS, )
     }
 
-    private void watchChildren(WatchedEvent watchedEvent) {
+    private void watchCreation(WatchedEvent watchedEvent) {
         if (watchedEvent.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
             watchNodes();
         }
