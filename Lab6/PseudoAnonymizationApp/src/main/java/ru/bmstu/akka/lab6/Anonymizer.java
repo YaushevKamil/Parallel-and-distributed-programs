@@ -7,14 +7,16 @@ import akka.http.javadsl.model.Uri;
 import akka.http.javadsl.server.Route;
 import ru.bmstu.akka.lab6.Actors.StoreActor;
 
+import java.io.IOException;
+
 class Anonymizer {
     private final AnonymizerRoutes routes;
     private final Coordinator coordinator;
 
-    Anonymizer(ActorSystem system, String zooKeeperHost, String host, int port) {
+    Anonymizer(ActorSystem system, String zooKeeperHost, String host, int port) throws IOException {
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class), "HostStorage");
         String address = Uri.create("").host(host).port(port).toString();
-        coordinator = new Coordinator(zooKeeperHost, storeActor, );
+        coordinator = new Coordinator(zooKeeperHost, storeActor, address);
         routes = new AnonymizerRoutes(system, storeActor);
     }
 

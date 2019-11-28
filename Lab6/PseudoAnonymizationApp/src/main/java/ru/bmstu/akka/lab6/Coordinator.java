@@ -20,11 +20,11 @@ class Coordinator {
     private final ActorRef storeActor;
     private ZooKeeper zoo;
 
-    Coordinator(String zooKeeperHost, ActorRef storeActor, String address) throws IOException {
+    Coordinator(String zooKeeperHost, ActorRef storeActor, String address) throws IOException, KeeperException, InterruptedException {
         this.zooKeeperHost = zooKeeperHost;
         this.storeActor = storeActor;
         this.zoo = new ZooKeeper(zooKeeperHost, SESSION_TIMEOUT_MS, (Watcher) this);
-        createNode();
+        createNode(address);
     }
 
     private void createNode(String address) throws KeeperException, InterruptedException {
