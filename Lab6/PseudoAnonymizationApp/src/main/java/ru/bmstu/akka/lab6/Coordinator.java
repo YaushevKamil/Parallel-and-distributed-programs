@@ -28,7 +28,7 @@ class Coordinator {
         List<String> servers = zoo.getChildren(ROOT_PATH, this);
         List<String> addresses = new ArrayList<>();
         for (String server : servers) {
-            byte[] addr = zoo.getData(ROOT_PATH + s, false, null);
+            byte[] addr = zoo.getData(ROOT_PATH + '/' +s, false, null);
             System.out.println("server " + s + " data=" + new String(data));
         }
     }
