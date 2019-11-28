@@ -24,5 +24,10 @@ hs_err_pid*
 
 
 # Idea and Maven Folders
-/.idea
+/Lab1/WordCountApp/.idea
+/Lab2/FlightsDelayApp/.idea
+/Lab3/FlightsDelayApp/.idea
+/Lab4/JsTesterApp/.idea
+/Lab5/LoadTestingApp/.idea
+/Lab6/PseudoAnonymizationApp/.idea
 /target
