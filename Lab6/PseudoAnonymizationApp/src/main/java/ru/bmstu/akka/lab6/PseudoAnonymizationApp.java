@@ -46,6 +46,7 @@ public class PseudoAnonymizationApp {
                     .thenCompose(ServerBinding::unbind)
                     .thenAccept(unbound -> {
                         system.terminate();
+                        anonymizer.terminate();
                     });
         }
         }
