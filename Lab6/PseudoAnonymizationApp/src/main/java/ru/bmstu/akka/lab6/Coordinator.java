@@ -10,6 +10,7 @@ import ru.bmstu.akka.lab6.Messages.StoreMessage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 class Coordinator {
@@ -34,8 +35,7 @@ class Coordinator {
             storeActor.tell(new StoreMessage(servers.stream()
                     .map(this::getData)
                     .map(String::new).toArray(String[]::new)), ActorRef.noSender());
-            String[] addresses = zoo
-                    .getChildren(ROOT_PATH, this::watchChildren)
+            String[] addresses = Objects.requireNonNull(getChildren())
                     .stream()
                     .map(this::getData)
                     .map(String::new).toArray(String[]::new);
