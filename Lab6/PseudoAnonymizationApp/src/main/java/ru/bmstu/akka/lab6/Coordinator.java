@@ -54,6 +54,10 @@ class Coordinator {
         }
     }
 
+    private byte[] getData(String server) throws KeeperException, InterruptedException {
+        return zoo.getData(ROOT_PATH + '/' + server, false, null);
+    }
+
     void terminate() {
         try {
             zoo.close();
