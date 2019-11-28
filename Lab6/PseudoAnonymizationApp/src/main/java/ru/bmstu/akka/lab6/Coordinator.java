@@ -14,5 +14,11 @@ class Coordinator {
         this.zoo = ;
     }
 
-    
+    public void terminate() {
+        try {
+            zoo.close();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
