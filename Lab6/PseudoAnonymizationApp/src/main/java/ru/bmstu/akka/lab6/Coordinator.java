@@ -52,7 +52,12 @@ class Coordinator {
     }
 
     private List<String> getChildren() {
-        return zoo.getChildren(ROOT_PATH, this::watchChildren);
+        try {
+            return zoo.getChildren(ROOT_PATH, this::watchChildren);
+        } catch (KeeperException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     private byte[] getData(String server) {
