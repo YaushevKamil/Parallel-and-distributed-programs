@@ -28,7 +28,7 @@ class Coordinator {
     }
 
     private ZooKeeper createZooKeeper() {
-        
+        return new ZooKeeper()
     }
 
     private void createNode(String address) throws KeeperException, InterruptedException {
