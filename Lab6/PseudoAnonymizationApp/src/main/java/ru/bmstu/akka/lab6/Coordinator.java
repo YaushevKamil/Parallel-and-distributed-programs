@@ -31,6 +31,8 @@ class Coordinator {
         return new ZooKeeper(address, SESSION_TIMEOUT_MS, )
     }
 
+    private 
+
     private void createNode(String address) throws KeeperException, InterruptedException {
         zoo.create(
                 NODE_PATH,
