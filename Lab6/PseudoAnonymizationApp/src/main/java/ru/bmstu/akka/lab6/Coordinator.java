@@ -24,7 +24,7 @@ class Coordinator {
     }
 
     private void watchNodes() {
-        List<String> servers = zoo.getChildren("/servers", this);
+        List<String> servers = zoo.getChildren(ROOT_PATH, this);
         for (String s : servers) {
             byte[] data = zoo.getData("/servers/" + s, false, null);
             System.out.println("server " + s + " data=" + new String(data));
