@@ -38,7 +38,7 @@ class Coordinator {
         }
     }
 
-    private void retry() {
+    private void tryConnect() {
         this.zoo = createZooKeeper();
         watchNodes();
     }
