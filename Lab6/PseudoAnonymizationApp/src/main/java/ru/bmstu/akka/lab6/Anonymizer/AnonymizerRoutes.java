@@ -1,4 +1,4 @@
-package ru.bmstu.akka.lab6;
+package ru.bmstu.akka.lab6.Anonymizer;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;

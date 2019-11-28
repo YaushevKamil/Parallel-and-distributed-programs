@@ -1,4 +1,4 @@
-package ru.bmstu.akka.lab6;
+package ru.bmstu.akka.lab6.Anonymizer;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
@@ -10,22 +10,22 @@ import ru.bmstu.akka.lab6.Actors.StoreActor;
 
 import java.io.IOException;
 
-class Anonymizer {
+public class Anonymizer {
     private final AnonymizerRoutes routes;
     private final Coordinator coordinator;
 
-    Anonymizer(ActorSystem system, String zooKeeperHost, String host, int port) throws IOException, KeeperException, InterruptedException {
+    public Anonymizer(ActorSystem system, String zooKeeperHost, String host, int port) throws IOException, KeeperException, InterruptedException {
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class), "HostStorage");
         String address = Uri.create("").host(host).port(port).toString();
         coordinator = new Coordinator(zooKeeperHost, storeActor, address);
         routes = new AnonymizerRoutes(system, storeActor);
     }
 
-    Route createRoutes() {
+    public Route createRoutes() {
         return routes.getRoutes();
     }
 
-    void terminate() {
+    public void terminate() {
         coordinator.terminate();
     }
 }
