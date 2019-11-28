@@ -9,7 +9,8 @@ import java.util.List;
 
 class Coordinator {
     private final int SESSION_TIMEOUT_MS = 3000;
-    private final String ROOT_PATH = "";
+    private final String ROOT_PATH = "/servers";
+    private final String ROOT_PATH = "/servers";
 
     private final String zooKeeperHost;
     private final ActorRef storeActor;
