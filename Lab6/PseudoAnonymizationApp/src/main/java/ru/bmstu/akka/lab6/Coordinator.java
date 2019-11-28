@@ -28,12 +28,12 @@ class Coordinator {
     }
 
     private ZooKeeper createZooKeeper(String address) {
-        return new ZooKeeper(address, SESSION_TIMEOUT_MS, )
+        return new ZooKeeper(address, SESSION_TIMEOUT_MS, watchedEvent -> )
     }
 
     private void watchCreation(WatchedEvent watchedEvent) {
-        if (watchedEvent.getType() == Watcher.Event.KeeperState.Expired ) {
-            watchNodes();
+        if (watchedEvent.getType() == Watcher.Event.KeeperState.Expired) {
+            retry();
         }
     }
 
