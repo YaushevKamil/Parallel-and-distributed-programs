@@ -14,10 +14,12 @@ class Coordinator {
         this.zoo = f();
     }
 
-    
+    private ZooKeeper createZoo() {
+        
+    }
 
 
-    public void terminate() {
+    void terminate() {
         try {
             zoo.close();
         } catch (InterruptedException e) {
