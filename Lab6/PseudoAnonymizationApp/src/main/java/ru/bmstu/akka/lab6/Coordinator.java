@@ -15,10 +15,12 @@ class Coordinator {
     private final String ROOT_PATH = "/servers";
     private final String NODE_PATH = ROOT_PATH + "/s";
 
+    private final String zkAddress;
     private final ActorRef storeActor;
     private ZooKeeper zoo;
 
-    Coordinator(String zooKeeperHost, ActorRef storeActor, String address) throws IOException, KeeperException, InterruptedException {
+    Coordinator(String zkAddress, ActorRef storeActor, String address) throws IOException, KeeperException, InterruptedException {
+
         this.storeActor = storeActor;
         tryConnect(zooKeeperHost);
         createNode(address);
