@@ -31,7 +31,7 @@ class Coordinator {
             byte[] address = zoo.getData(ROOT_PATH + '/' + server, false, null);
             addresses.add(new String(address));
         }
-        
+        storeActor.tell()
     }
 
     void terminate() {
