@@ -36,8 +36,10 @@ class Coordinator {
                     .map(this::getData)
                     .map(String::new).toArray(String[]::new)), ActorRef.noSender());
             String[] addresses = getChildren()
-                    Optional.ofNullable()
                     .stream()
+                    .map(Optional::ofNullable)
+                    .filter(Optional::isPresent)
+                    .map(Optional)
                     .map(this::getData)
                     .map(String::new).toArray(String[]::new);
         }
