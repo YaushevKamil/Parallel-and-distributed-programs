@@ -5,6 +5,7 @@ import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 
 import java.io.IOException;
+import java.util.List;
 
 class Coordinator {
     private final int SESSION_TIMEOUT_MS = 3000;
