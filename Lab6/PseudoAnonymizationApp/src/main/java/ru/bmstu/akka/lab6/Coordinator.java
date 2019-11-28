@@ -63,6 +63,15 @@ class Coordinator {
         return new ArrayList<>();
     }
 
+    private byte[] getNodeData(String server) {
+        try {
+            return zoo.getData(ROOT_PATH + '/' + server, false, null);
+        } catch (KeeperException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return new byte[0];
+    }
+
     private void watchConnection(WatchedEvent watchedEvent, String address) {
         if (watchedEvent.getState() == Watcher.Event.KeeperState.Expired ||
                 watchedEvent.getState() == Watcher.Event.KeeperState.Disconnected) {
@@ -79,16 +88,7 @@ class Coordinator {
             watchNodes();
         }
     }
-
-    private byte[] getNodeData(String server) {
-        try {
-            return zoo.getData(ROOT_PATH + '/' + server, false, null);
-        } catch (KeeperException | InterruptedException e) {
-            e.printStackTrace();
-        }
-        return new byte[0];
-    }
-
+    
     void terminate() {
         try {
             zoo.close();
