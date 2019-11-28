@@ -3,6 +3,7 @@ package ru.bmstu.akka.lab6;
 import akka.actor.ActorRef;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
+import ru.bmstu.akka.lab6.Messages.StoreMessage;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ class Coordinator {
             byte[] address = zoo.getData(ROOT_PATH + '/' + server, false, null);
             addresses.add(new String(address));
         }
-        storeActor.tell()
+        storeActor.tell(new StoreMessage())
     }
 
     void terminate() {
