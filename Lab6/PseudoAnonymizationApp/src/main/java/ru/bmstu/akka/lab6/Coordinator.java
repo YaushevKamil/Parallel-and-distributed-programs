@@ -21,7 +21,11 @@ class Coordinator {
     }
 
     private void watchNodes() {
-        
+        List<String> servers = zoo.getChildren("/servers", this);
+        for (String s : servers) {
+            byte[] data = zoo.getData("/servers/" + s, false, null);
+            System.out.println("server " + s + " data=" + new String(data));
+        }
     }
 
     void terminate() {
