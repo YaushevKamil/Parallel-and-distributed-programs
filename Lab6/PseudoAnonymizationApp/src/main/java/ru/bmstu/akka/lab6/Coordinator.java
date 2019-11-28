@@ -35,6 +35,8 @@ class Coordinator {
         storeActor.tell(new StoreMessage(addresses.toArray(new String[0])), ActorRef.noSender());
     }
 
+    
+
     void terminate() {
         try {
             zoo.close();
