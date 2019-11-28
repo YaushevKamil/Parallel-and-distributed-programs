@@ -24,7 +24,7 @@ class Coordinator {
         this.zooKeeperHost = zooKeeperHost;
         this.storeActor = storeActor;
         this.zoo = new ZooKeeper(zooKeeperHost, SESSION_TIMEOUT_MS, (Watcher) this);
-
+        
     }
 
     private void createNode(String address) throws KeeperException, InterruptedException {
