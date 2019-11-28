@@ -31,11 +31,6 @@ class Coordinator {
     private void watchNodes() {
         try {
             List<String> servers = zoo.getChildren(ROOT_PATH, this::watchChildren);
-            //            List<String> addresses = new ArrayList<>();
-//            for (String server : servers) {
-//                byte[] address = zoo.getData(ROOT_PATH + '/' + server, false, null);
-//                addresses.add(new String(address));
-//            }
             storeActor.tell(new StoreMessage(servers.stream()
                     .map(this::getData)
                     .map(String::new).toArray(String[]::new)), ActorRef.noSender());
@@ -57,6 +52,7 @@ class Coordinator {
         } catch (KeeperException | InterruptedException e) {
             e.printStackTrace();
         }
+        return new byte[0];
     }
 
     void terminate() {
