@@ -27,7 +27,7 @@ class Coordinator {
         createNode(address);
     }
 
-    private ZooKeeper
+    private ZooKeeper 
 
     private void createNode(String address) throws KeeperException, InterruptedException {
         zoo.create(
