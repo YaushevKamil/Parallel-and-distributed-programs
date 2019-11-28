@@ -20,7 +20,9 @@ class Coordinator {
 
     }
 
-    private void 
+    private void watchNodes() {
+        
+    }
 
     void terminate() {
         try {
