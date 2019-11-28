@@ -31,7 +31,7 @@ class Coordinator {
     }
 
     private void createNode() {
-        zoo.create()
+        zoo.create(NODE_PATH, )
     }
 
     private void watchNodes() {
