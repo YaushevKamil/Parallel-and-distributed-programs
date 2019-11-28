@@ -37,7 +37,9 @@ class Coordinator {
     }
 
     private void watchChildren(WatchEvent watchedEvent) {
-        
+        if (watchedEvent.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
+            watchNodes();
+        }
     }
 
     void terminate() {
