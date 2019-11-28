@@ -31,21 +31,17 @@ class Coordinator {
     }
 
     private void watchNodes() {
-        //            List<String> servers = zoo.getChildren(ROOT_PATH, this::watchChildren);
-//            storeActor.tell(new StoreMessage(servers.stream()
-//                    .map(this::getData)
-//                    .map(String::new).toArray(String[]::new)), ActorRef.noSender());
         String[] addresses = Objects.requireNonNull(getChildren())
                 .stream()
                 .map(Optional::ofNullable)
                 .filter(Optional::isPresent)
                 .map(Optional::get)
-                .map(this::getData)
+                .map(this::getNodeData)
                 .map(String::new)
                 .toArray(String[]::new);
         storeActor.tell(new StoreMessage(addresses), ActorRef.noSender());
     }
-    
+
     private List<String> getChildren() {
         try {
             return zoo.getChildren(ROOT_PATH, this::watchChildren);
@@ -61,7 +57,7 @@ class Coordinator {
         }
     }
 
-    private byte[] getData(String server) {
+    private byte[] getNodeData(String server) {
         try {
             return zoo.getData(ROOT_PATH + '/' + server, false, null);
         } catch (KeeperException | InterruptedException e) {
