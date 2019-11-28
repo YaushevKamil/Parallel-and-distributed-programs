@@ -26,7 +26,7 @@ class Coordinator {
         createNode(address);
     }
 
-    private void tryConnect(String address) {
+    private void tryConnect(String address) throws IOException {
         this.zoo = connect(address);
         watchNodes();
     }
@@ -38,7 +38,11 @@ class Coordinator {
     private void watchCreation(WatchedEvent watchedEvent, String address) {
         if (watchedEvent.getState() == Watcher.Event.KeeperState.Expired ||
                 watchedEvent.getState() == Watcher.Event.KeeperState.Disconnected) {
-            tryConnect(address);
+            try {
+                tryConnect(address);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
