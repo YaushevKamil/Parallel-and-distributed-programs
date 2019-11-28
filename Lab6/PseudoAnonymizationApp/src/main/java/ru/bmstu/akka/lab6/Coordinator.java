@@ -26,19 +26,19 @@ class Coordinator {
         createNode(address);
     }
 
+    private void tryConnect(String address) {
+        this.zoo = connect(address);
+        watchNodes();
+    }
+
     private ZooKeeper connect(String address) {
         return new ZooKeeper(address, SESSION_TIMEOUT_MS, watchedEvent -> )
     }
 
     private void watchCreation(WatchedEvent watchedEvent) {
         if (watchedEvent.getType() == Watcher.Event.KeeperState.Expired) {
-            retry();
+            tryConnect();
         }
-    }
-
-    private void tryConnect(String address) {
-        this.zoo = connect(address);
-        watchNodes();
     }
 
     private void createNode(String address) throws KeeperException, InterruptedException {
