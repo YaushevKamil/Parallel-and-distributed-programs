@@ -1,6 +1,7 @@
 package ru.bmstu.akka.lab6;
 
 import akka.actor.ActorRef;
+import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 import ru.bmstu.akka.lab6.Messages.StoreMessage;
@@ -36,7 +37,9 @@ class Coordinator {
             }
             storeActor.tell(new StoreMessage(addresses.toArray(new String[0])), ActorRef.noSender());
         }
-        catch ()
+        catch (KeeperException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     private void watchChildren(WatchEvent watchedEvent) {
