@@ -39,7 +39,7 @@ class Coordinator {
                     .stream()
                     .map(Optional::ofNullable)
                     .filter(Optional::isPresent)
-                    .map(Optional)
+                    .map(Optional::get)
                     .map(this::getData)
                     .map(String::new).toArray(String[]::new);
         }
