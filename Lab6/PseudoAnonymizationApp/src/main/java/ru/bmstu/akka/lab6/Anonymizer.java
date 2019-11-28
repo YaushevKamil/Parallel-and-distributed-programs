@@ -10,7 +10,7 @@ class Anonymizer {
     private final AnonymizerRoutes routes;
     private final Coordinator coordinator;
 
-    Anonymizer(ActorSystem system, String zooKeeperHost, String host, String port) {
+    Anonymizer(ActorSystem system, String zooKeeperHost, String host, int port) {
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class), "HostStorage");
         coordinator = new Coordinator(zooKeeperHost, storeActor);
         routes = new AnonymizerRoutes(system, storeActor);
