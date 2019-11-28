@@ -16,7 +16,6 @@ class Coordinator {
     private final String ROOT_PATH = "/servers";
     private final String NODE_PATH = ROOT_PATH + "/s";
 
-//    private final String zooKeeperHost;
     private final ActorRef storeActor;
     private ZooKeeper zoo;
 
@@ -32,10 +31,10 @@ class Coordinator {
     }
 
     private ZooKeeper connect(String address) throws IOException {
-        return new ZooKeeper(address, SESSION_TIMEOUT_MS, watchedEvent -> watchCreation(watchedEvent, address));
+        return new ZooKeeper(address, SESSION_TIMEOUT_MS, watchedEvent -> watchConnection(watchedEvent, address));
     }
 
-    private void watchCreation(WatchedEvent watchedEvent, String address) {
+    private void watchConnection(WatchedEvent watchedEvent, String address) {
         if (watchedEvent.getState() == Watcher.Event.KeeperState.Expired ||
                 watchedEvent.getState() == Watcher.Event.KeeperState.Disconnected) {
             try {
