@@ -10,6 +10,7 @@ import ru.bmstu.akka.lab6.Messages.StoreMessage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 class Coordinator {
     private final int SESSION_TIMEOUT_MS = 3000;
@@ -31,11 +32,15 @@ class Coordinator {
         try {
             List<String> servers = zoo.getChildren(ROOT_PATH, this::watchChildren);
 //            List<String> addresses = new ArrayList<>();
-            List<String> addresses =
-            for (String server : servers) {
-                byte[] address = zoo.getData(ROOT_PATH + '/' + server, false, null);
-                addresses.add(new String(address));
-            }
+            List<String> addresses = servers.stream()
+                    .map(server -> zoo.getData(ROOT_PATH + '/' + server, false, null))
+                    .map(String::new)
+                    .collect(Collectors.toList());
+
+//            for (String server : servers) {
+//                byte[] address = zoo.getData(ROOT_PATH + '/' + server, false, null);
+//                addresses.add(new String(address));
+//            }
             storeActor.tell(new StoreMessage(addresses.toArray(new String[0])), ActorRef.noSender());
         }
         catch (KeeperException | InterruptedException e) {
