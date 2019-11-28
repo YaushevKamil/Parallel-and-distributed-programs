@@ -36,7 +36,9 @@ class Coordinator {
         storeActor.tell(new StoreMessage(addresses.toArray(new String[0])), ActorRef.noSender());
     }
 
-    private void watchChildren(WatchEvent) {}
+    private void watchChildren(WatchEvent watchedEvent) {
+        
+    }
 
     void terminate() {
         try {
