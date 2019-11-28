@@ -27,7 +27,7 @@ class Coordinator {
     }
 
     private void tryConnect() throws IOException {
-        this.zoo = connect();
+        zoo = connect();
         watchNodes();
     }
 
@@ -56,6 +56,23 @@ class Coordinator {
         storeActor.tell(new StoreMessage(addresses), ActorRef.noSender());
     }
 
+    private void watchConnections(WatchedEvent watchedEvent) {
+        if (watchedEvent.getState() == Watcher.Event.KeeperState.Expired ||
+                watchedEvent.getState() == Watcher.Event.KeeperState.Disconnected) {
+            try {
+                tryConnect();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void watchChildren(WatchedEvent watchedEvent) {
+        if (watchedEvent.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
+            watchNodes();
+        }
+    }
+
     private List<String> getChildren() {
         try {
             return zoo.getChildren(ROOT_PATH, this::watchChildren);
@@ -72,23 +89,6 @@ class Coordinator {
             e.printStackTrace();
         }
         return new byte[0];
-    }
-
-    private void watchConnections(WatchedEvent watchedEvent) {
-        if (watchedEvent.getState() == Watcher.Event.KeeperState.Expired ||
-                watchedEvent.getState() == Watcher.Event.KeeperState.Disconnected) {
-            try {
-                tryConnect();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    private void watchChildren(WatchedEvent watchedEvent) {
-        if (watchedEvent.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
-            watchNodes();
-        }
     }
 
     void terminate() {
