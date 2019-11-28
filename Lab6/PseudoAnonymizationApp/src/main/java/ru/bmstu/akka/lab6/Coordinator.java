@@ -32,7 +32,7 @@ class Coordinator {
     }
 
     private void watchCreation(WatchedEvent watchedEvent) {
-        if (watchedEvent.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
+        if (watchedEvent.getType() == Watcher.Event.KeeperState.Expired) {
             watchNodes();
         }
     }
