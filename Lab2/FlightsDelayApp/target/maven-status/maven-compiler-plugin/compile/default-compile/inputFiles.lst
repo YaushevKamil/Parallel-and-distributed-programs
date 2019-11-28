@@ -1,7 +1,0 @@
-/home/captain/Documents/git/Parallel-and-distributed-programs/Lab2/FlightsDelayApp/src/main/java/ru/bmstu/hadoop/lab2/FlightsComparator.java
-/home/captain/Documents/git/Parallel-and-distributed-programs/Lab2/FlightsDelayApp/src/main/java/ru/bmstu/hadoop/lab2/FlightsReducer.java
-/home/captain/Documents/git/Parallel-and-distributed-programs/Lab2/FlightsDelayApp/src/main/java/ru/bmstu/hadoop/lab2/FlightsPartitioner.java
-/home/captain/Documents/git/Parallel-and-distributed-programs/Lab2/FlightsDelayApp/src/main/java/ru/bmstu/hadoop/lab2/AirportMapper.java
-/home/captain/Documents/git/Parallel-and-distributed-programs/Lab2/FlightsDelayApp/src/main/java/ru/bmstu/hadoop/lab2/FlightsDelayApp.java
-/home/captain/Documents/git/Parallel-and-distributed-programs/Lab2/FlightsDelayApp/src/main/java/ru/bmstu/hadoop/lab2/FlightWritableComparable.java
-/home/captain/Documents/git/Parallel-and-distributed-programs/Lab2/FlightsDelayApp/src/main/java/ru/bmstu/hadoop/lab2/FlightMapper.java

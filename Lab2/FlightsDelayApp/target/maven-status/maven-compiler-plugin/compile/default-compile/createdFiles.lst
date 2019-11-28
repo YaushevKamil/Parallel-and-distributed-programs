@@ -1,8 +1,0 @@
-ru/bmstu/hadoop/lab2/FlightsDelayApp.class
-ru/bmstu/hadoop/lab2/FlightsComparator.class
-ru/bmstu/hadoop/lab2/CSVUtils.class
-ru/bmstu/hadoop/lab2/FlightsPartitioner.class
-ru/bmstu/hadoop/lab2/FlightWritableComparable.class
-ru/bmstu/hadoop/lab2/FlightMapper.class
-ru/bmstu/hadoop/lab2/FlightsReducer.class
-ru/bmstu/hadoop/lab2/AirportMapper.class
