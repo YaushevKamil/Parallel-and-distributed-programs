@@ -28,7 +28,7 @@ class Coordinator {
     }
 
     private ZooKeeper createZooKeeper(String address) {
-        return new ZooKeeper(address, )
+        return new ZooKeeper(address, SESSION_TIMEOUT_MS, )
     }
 
     private void createNode(String address) throws KeeperException, InterruptedException {
