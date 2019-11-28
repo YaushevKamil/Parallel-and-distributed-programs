@@ -25,6 +25,7 @@ class Coordinator {
         this.storeActor = storeActor;
         this.zoo = createZooKeeper(zooKeeperHost);
         createNode(address);
+        watchNodes();
     }
 
     private ZooKeeper createZooKeeper(String address) {
