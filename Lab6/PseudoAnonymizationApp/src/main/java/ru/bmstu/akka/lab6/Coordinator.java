@@ -16,14 +16,14 @@ class Coordinator {
     private final String ROOT_PATH = "/servers";
     private final String NODE_PATH = ROOT_PATH + "/s";
 
-    private final String zooKeeperHost;
+//    private final String zooKeeperHost;
     private final ActorRef storeActor;
     private ZooKeeper zoo;
 
     Coordinator(String zooKeeperHost, ActorRef storeActor, String address) throws IOException, KeeperException, InterruptedException {
-        this.zooKeeperHost = zooKeeperHost;
+//        this.zooKeeperHost = zooKeeperHost;
         this.storeActor = storeActor;
-        this.zoo = createZooKeeper();
+        this.zoo = createZooKeeper(zooKeeperHost);
         createNode(address);
     }
 
