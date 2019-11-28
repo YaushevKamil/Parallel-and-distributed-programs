@@ -48,7 +48,5 @@ public class PseudoAnonymizationApp {
                         system.terminate();
                         anonymizer.terminate();
                     });
-        }
-        }
     }
 }
