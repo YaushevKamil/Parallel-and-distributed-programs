@@ -38,7 +38,8 @@ class Coordinator {
     }
 
     private void retry() {
-        
+        this.zoo = createZooKeeper();
+        watchNodes();
     }
 
     private void createNode(String address) throws KeeperException, InterruptedException {
