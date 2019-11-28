@@ -16,7 +16,7 @@ public class Anonymizer {
 
     public Anonymizer(ActorSystem system, String zooKeeperHost, String host, int port) throws IOException, KeeperException, InterruptedException {
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class), "HostStorage");
-        String address = Uri.create("").host(host).port(port).toString();
+        String address = host + ':' + port;
         coordinator = new Coordinator(zooKeeperHost, storeActor, address);
         routes = new AnonymizerRoutes(system, storeActor);
     }
