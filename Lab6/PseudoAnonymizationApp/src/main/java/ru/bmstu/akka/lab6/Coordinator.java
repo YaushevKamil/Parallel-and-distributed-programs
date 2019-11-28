@@ -27,7 +27,7 @@ class Coordinator {
 
     }
 
-    private void createNode(String address) {
+    private void createNode(String address) throws KeeperException, InterruptedException {
         zoo.create(
                 NODE_PATH,
                 address.getBytes(),
