@@ -1,10 +1,7 @@
 package ru.bmstu.akka.lab6;
 
 import akka.actor.ActorRef;
-import org.apache.zookeeper.KeeperException;
-import org.apache.zookeeper.WatchedEvent;
-import org.apache.zookeeper.Watcher;
-import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.*;
 import ru.bmstu.akka.lab6.Messages.StoreMessage;
 
 import java.io.IOException;
@@ -31,7 +28,12 @@ class Coordinator {
     }
 
     private void createNode(String address) {
-        zoo.create(NODE_PATH, address.getBytes(), )
+        zoo.create(
+                NODE_PATH,
+                address.getBytes(),
+                ZooDefs.Ids.OPEN_ACL_UNSAFE,
+                CreateMode.EPHEMERAL_SEQUENTIAL
+        );
     }
 
     private void watchNodes() {
