@@ -6,6 +6,7 @@ import org.apache.zookeeper.ZooKeeper;
 import ru.bmstu.akka.lab6.Messages.StoreMessage;
 
 import java.io.IOException;
+import java.nio.file.WatchEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +36,7 @@ class Coordinator {
         storeActor.tell(new StoreMessage(addresses.toArray(new String[0])), ActorRef.noSender());
     }
 
-    private void watchChildren
+    private void watchChildren(WatchEvent) {}
 
     void terminate() {
         try {
