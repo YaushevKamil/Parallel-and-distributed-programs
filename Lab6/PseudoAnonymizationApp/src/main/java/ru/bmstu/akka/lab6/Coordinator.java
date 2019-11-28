@@ -27,12 +27,12 @@ class Coordinator {
     }
 
     private void tryConnect() throws IOException {
-        this.zoo = connect(zkAddress);
+        this.zoo = connect();
         watchNodes();
     }
 
-    private ZooKeeper connect(String address) throws IOException {
-        return new ZooKeeper(address, SESSION_TIMEOUT_MS, this::watchConnections);
+    private ZooKeeper connect() throws IOException {
+        return new ZooKeeper(zkAddress, SESSION_TIMEOUT_MS, this::watchConnections);
     }
 
     private void createNode(String address) throws KeeperException, InterruptedException {
