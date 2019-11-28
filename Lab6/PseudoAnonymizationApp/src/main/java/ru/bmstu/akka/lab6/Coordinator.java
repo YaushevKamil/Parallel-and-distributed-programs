@@ -20,7 +20,7 @@ class Coordinator {
     private ZooKeeper zoo;
 
     Coordinator(String zkAddress, ActorRef storeActor, String address) throws IOException, KeeperException, InterruptedException {
-
+        this.zkAddress = zkAddress;
         this.storeActor = storeActor;
         tryConnect(zooKeeperHost);
         createNode(address);
