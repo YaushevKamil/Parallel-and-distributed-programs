@@ -60,7 +60,7 @@ class Coordinator {
         } catch (KeeperException | InterruptedException e) {
             e.printStackTrace();
         }
-        return null;
+        return new ArrayList<>();
     }
 
     private byte[] getData(String server) {
