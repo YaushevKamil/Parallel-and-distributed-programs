@@ -27,7 +27,7 @@ class Coordinator {
         createNode(address);
     }
 
-    private ZooKeeper createZooKeeper() {
+    private ZooKeeper createZooKeeper(String host) {
         return new ZooKeeper()
     }
 
