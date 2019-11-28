@@ -34,6 +34,11 @@ class Coordinator {
             storeActor.tell(new StoreMessage(servers.stream()
                     .map(this::getData)
                     .map(String::new).toArray(String[]::new)), ActorRef.noSender());
+            String[] addresses = zoo
+                    .getChildren(ROOT_PATH, this::watchChildren)
+                    .stream()
+                    .map(this::getData)
+                    .map(String::new).toArray(String[]::new);
         }
         catch (KeeperException | InterruptedException e) {
             e.printStackTrace();
@@ -46,7 +51,9 @@ class Coordinator {
         }
     }
 
-    private 
+    private List<String> getChildren() {
+        return zoo.getChildren(ROOT_PATH, this::watchChildren);
+    }
 
     private byte[] getData(String server) {
         try {
