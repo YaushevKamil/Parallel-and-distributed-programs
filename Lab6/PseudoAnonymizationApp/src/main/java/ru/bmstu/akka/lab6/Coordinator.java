@@ -11,11 +11,12 @@ class Coordinator {
     Coordinator(String zooKeeperHost, ActorRef storeActor) {
         this.zooKeeperHost = zooKeeperHost;
         this.storeActor = storeActor;
-        this.zoo = f();
+        createZoo();
+        //this.zoo = f();
     }
 
-    private ZooKeeper createZoo() {
-        return 
+    private void createZoo() {
+        this.zoo = 
     }
 
 
