@@ -1,6 +1,7 @@
 package ru.bmstu.akka.lab6;
 
 import akka.actor.ActorRef;
+import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 
@@ -28,7 +29,13 @@ class Coordinator {
         List<String> servers = zoo.getChildren(ROOT_PATH, this);
         List<String> addresses = new ArrayList<>();
         for (String server : servers) {
-            byte[] addr = zoo.getData(ROOT_PATH + '/' + server, false, null);
+            try {
+                byte[] addr = zoo.getData(ROOT_PATH + '/' + server, false, null);
+            } catch (KeeperException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println("server " + s + " data=" + new String(data));
         }
     }
