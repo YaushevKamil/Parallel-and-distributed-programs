@@ -5,6 +5,8 @@ import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 
 class Coordinator {
+    private final String SESSION_TIMEOUT_MS = 
+
     private final String zooKeeperHost;
     private final ActorRef storeActor;
     private final ZooKeeper zoo;
