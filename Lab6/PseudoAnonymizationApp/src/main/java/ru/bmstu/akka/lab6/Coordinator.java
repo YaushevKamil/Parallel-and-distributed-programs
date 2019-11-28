@@ -31,7 +31,11 @@ class Coordinator {
         return new ZooKeeper(address, SESSION_TIMEOUT_MS, )
     }
 
-    private 
+    private void watchChildren(WatchedEvent watchedEvent) {
+        if (watchedEvent.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
+            watchNodes();
+        }
+    }
 
     private void createNode(String address) throws KeeperException, InterruptedException {
         zoo.create(
