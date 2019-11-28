@@ -19,4 +19,8 @@ class Anonymizer {
     Route createRoutes() {
         return routes.getRoutes();
     }
+
+    void terminate() {
+        coordinator.terminate();
+    }
 }
