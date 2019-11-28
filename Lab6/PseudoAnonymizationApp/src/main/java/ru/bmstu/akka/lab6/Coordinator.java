@@ -5,7 +5,7 @@ import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 
 class Coordinator {
-    private final String SESSION_TIMEOUT_MS = 3000;
+    private final int SESSION_TIMEOUT_MS = 3000;
 
     private final String zooKeeperHost;
     private final ActorRef storeActor;
@@ -20,7 +20,7 @@ class Coordinator {
 
     private void createZoo() {
         Watcher watcher;
-        this.zoo = new ZooKeeper(zooKeeperHost, , watcher);
+        this.zoo = new ZooKeeper(zooKeeperHost, SESSION_TIMEOUT_MS, watcher);
     }
 
 
