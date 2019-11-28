@@ -22,18 +22,18 @@ class Coordinator {
     Coordinator(String zkAddress, ActorRef storeActor, String address) throws IOException, KeeperException, InterruptedException {
         this.zkAddress = zkAddress;
         this.storeActor = storeActor;
-        tryConnect(zooKeeperHost);
+        tryConnect();
         createNode(address);
     }
 
-    private void tryConnect(String address) throws IOException {
-        this.zoo = connect(address);
+    private void tryConnect() throws IOException {
+        this.zoo = connect(zkAddress);
         watchNodes();
     }
 
     private ZooKeeper connect(String address) throws IOException {
         return new ZooKeeper(address, SESSION_TIMEOUT_MS, watchedEvent ->
-                watchConnections(watchedEvent, address));
+                watchConnections(watchedEvent));
     }
 
     private void createNode(String address) throws KeeperException, InterruptedException {
@@ -75,11 +75,11 @@ class Coordinator {
         return new byte[0];
     }
 
-    private void watchConnections(WatchedEvent watchedEvent, String address) {
+    private void watchConnections(WatchedEvent watchedEvent) {
         if (watchedEvent.getState() == Watcher.Event.KeeperState.Expired ||
                 watchedEvent.getState() == Watcher.Event.KeeperState.Disconnected) {
             try {
-                tryConnect(address);
+                tryConnect();
             } catch (IOException e) {
                 e.printStackTrace();
             }
