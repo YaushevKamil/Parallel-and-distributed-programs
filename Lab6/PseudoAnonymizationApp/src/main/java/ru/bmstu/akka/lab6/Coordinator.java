@@ -31,7 +31,7 @@ class Coordinator {
     }
 
     private void createNode(String address) {
-        zoo.create(NODE_PATH, address)
+        zoo.create(NODE_PATH, address.getBytes(), )
     }
 
     private void watchNodes() {
