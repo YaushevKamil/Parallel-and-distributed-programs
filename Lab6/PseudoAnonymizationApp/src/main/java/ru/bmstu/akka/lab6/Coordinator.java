@@ -32,8 +32,7 @@ class Coordinator {
     }
 
     private ZooKeeper connect(String address) throws IOException {
-        return new ZooKeeper(address, SESSION_TIMEOUT_MS, watchedEvent ->
-                watchConnections(watchedEvent));
+        return new ZooKeeper(address, SESSION_TIMEOUT_MS, this::watchConnections);
     }
 
     private void createNode(String address) throws KeeperException, InterruptedException {
