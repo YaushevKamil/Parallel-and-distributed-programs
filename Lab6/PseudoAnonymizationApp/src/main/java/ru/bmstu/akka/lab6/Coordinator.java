@@ -28,13 +28,15 @@ class Coordinator {
 
     private void watchNodes() {
         try {
-        List<String> servers = zoo.getChildren(ROOT_PATH, watchedEvent -> watchedEvent.getType());
-        List<String> addresses = new ArrayList<>();
-        for (String server : servers) {
-            byte[] address = zoo.getData(ROOT_PATH + '/' + server, false, null);
-            addresses.add(new String(address));
+            List<String> servers = zoo.getChildren(ROOT_PATH, watchedEvent -> watchedEvent.getType());
+            List<String> addresses = new ArrayList<>();
+            for (String server : servers) {
+                byte[] address = zoo.getData(ROOT_PATH + '/' + server, false, null);
+                addresses.add(new String(address));
+            }
+            storeActor.tell(new StoreMessage(addresses.toArray(new String[0])), ActorRef.noSender());
         }
-        storeActor.tell(new StoreMessage(addresses.toArray(new String[0])), ActorRef.noSender());
+        catch ()
     }
 
     private void watchChildren(WatchEvent watchedEvent) {
