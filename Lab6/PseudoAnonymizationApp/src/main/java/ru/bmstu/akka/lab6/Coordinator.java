@@ -1,6 +1,7 @@
 package ru.bmstu.akka.lab6;
 
 import akka.actor.ActorRef;
+import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 
 class Coordinator {
@@ -16,7 +17,8 @@ class Coordinator {
     }
 
     private void createZoo() {
-        this.zoo = 
+        Watcher watcher;
+        this.zoo = new ZooKeeper(, , watcher);
     }
 
 
