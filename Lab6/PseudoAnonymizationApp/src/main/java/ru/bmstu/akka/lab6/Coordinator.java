@@ -4,6 +4,8 @@ import akka.actor.ActorRef;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 
+import java.io.IOException;
+
 class Coordinator {
     private final int SESSION_TIMEOUT_MS = 3000;
 
@@ -18,9 +20,9 @@ class Coordinator {
         //this.zoo = f();
     }
 
-    private void createZoo() {
+    private void createZoo() throws IOException {
         Watcher watcher;
-        this.zoo = new ZooKeeper(zooKeeperHost, SESSION_TIMEOUT_MS, watcher);
+        this.zoo = new ZooKeeper(zooKeeperHost, SESSION_TIMEOUT_MS, this);
     }
 
 
