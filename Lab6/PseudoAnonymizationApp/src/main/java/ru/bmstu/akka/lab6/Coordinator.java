@@ -11,18 +11,17 @@ class Coordinator {
 
     private final String zooKeeperHost;
     private final ActorRef storeActor;
-    private final ZooKeeper zoo;
+    private ZooKeeper zoo;
 
-    Coordinator(String zooKeeperHost, ActorRef storeActor) {
+    Coordinator(String zooKeeperHost, ActorRef storeActor) throws IOException {
         this.zooKeeperHost = zooKeeperHost;
         this.storeActor = storeActor;
         createZoo();
-        //this.zoo = f();
     }
 
     private void createZoo() throws IOException {
         Watcher watcher;
-        this.zoo = new ZooKeeper(zooKeeperHost, SESSION_TIMEOUT_MS, this);
+        this.zoo = new ZooKeeper(zooKeeperHost, SESSION_TIMEOUT_MS, (Watcher) this);
     }
 
 
