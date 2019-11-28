@@ -18,7 +18,7 @@ class Coordinator {
 
     private void createZoo() {
         Watcher watcher;
-        this.zoo = new ZooKeeper(, , watcher);
+        this.zoo = new ZooKeeper(zooKeeperHost, , watcher);
     }
 
 
