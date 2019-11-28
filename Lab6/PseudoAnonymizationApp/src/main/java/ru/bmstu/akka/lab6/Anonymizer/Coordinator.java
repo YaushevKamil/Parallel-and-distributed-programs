@@ -21,6 +21,7 @@ class Coordinator {
 
     Coordinator(String zkAddress, ActorRef storeActor, String address) throws IOException, KeeperException, InterruptedException {
         this.zkAddress = zkAddress;
+        System.out.println(zkAddress);
         this.storeActor = storeActor;
         tryConnect();
         createNode(address);
