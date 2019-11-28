@@ -21,11 +21,9 @@ class Coordinator {
     private ZooKeeper zoo;
 
     Coordinator(String zooKeeperHost, ActorRef storeActor, String address) throws IOException, KeeperException, InterruptedException {
-//        this.zooKeeperHost = zooKeeperHost;
         this.storeActor = storeActor;
-        this.zoo = createZooKeeper(zooKeeperHost);
+        tryConnect(zooKeeperHost);
         createNode(address);
-        watchNodes();
     }
 
     private ZooKeeper connect(String address) {
