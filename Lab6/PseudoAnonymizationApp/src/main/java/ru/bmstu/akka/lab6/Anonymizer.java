@@ -8,7 +8,7 @@ import ru.bmstu.akka.lab6.Actors.StoreActor;
 
 class Anonymizer {
     private final AnonymizerRoutes routes;
-    private final Coordinator 
+    private final Coordinator coordinator;
 
     Anonymizer(ActorSystem system, String zooKeeperHost, String host, String port) {
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class), "HostStorage");
