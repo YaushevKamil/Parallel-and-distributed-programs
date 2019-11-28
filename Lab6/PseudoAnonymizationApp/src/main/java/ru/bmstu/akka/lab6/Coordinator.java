@@ -36,9 +36,9 @@ class Coordinator {
     }
 
     private void watchCreation(WatchedEvent watchedEvent) {
-        if (watchedEvent.getType() == Watcher.Event.KeeperState.Expired ||
+        if (watchedEvent.getState() == Watcher.Event.KeeperState.Expired ||
                 watchedEvent.getState() == Watcher.Event.KeeperState.Disconnected) {
-            tryConnect();
+            tryConnect(address);
         }
     }
 
