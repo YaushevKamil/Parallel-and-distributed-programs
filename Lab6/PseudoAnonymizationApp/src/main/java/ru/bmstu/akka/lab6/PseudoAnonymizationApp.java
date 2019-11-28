@@ -20,7 +20,7 @@ public class PseudoAnonymizationApp {
     private static final int PORT = 8080;
 
     public static void main(String[] args) throws IOException, KeeperException, InterruptedException {
-        if (args.length < 2) {
+        if (args.length < 1) {
             System.out.println("Usage: PseudoAnonymizationApp <host> <port_0> (<port_1> ... <port_n>)");
             System.exit(-1);
         }
