@@ -10,6 +10,7 @@ import ru.bmstu.akka.lab6.Messages.StoreMessage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -30,29 +31,22 @@ class Coordinator {
     }
 
     private void watchNodes() {
-        try {
-            List<String> servers = zoo.getChildren(ROOT_PATH, this::watchChildren);
-            storeActor.tell(new StoreMessage(servers.stream()
-                    .map(this::getData)
-                    .map(String::new).toArray(String[]::new)), ActorRef.noSender());
-            String[] addresses = getChildren()
-                    .stream()
-                    .map(Optional::ofNullable)
-                    .filter(Optional::isPresent)
-                    .map(Optional::get)
-                    .map(this::getData)
-                    .map(String::new).toArray(String[]::new);
-        }
-        catch (KeeperException | InterruptedException e) {
-            e.printStackTrace();
-        }
+        //            List<String> servers = zoo.getChildren(ROOT_PATH, this::watchChildren);
+//            storeActor.tell(new StoreMessage(servers.stream()
+//                    .map(this::getData)
+//                    .map(String::new).toArray(String[]::new)), ActorRef.noSender());
+        String[] addresses = Objects.requireNonNull(getChildren())
+                .stream()
+                .map(Optional::ofNullable)
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .map(this::getData)
+                .map(String::new)
+                .toArray(String[]::new);
+        storeActor.tell(new StoreMessage(addresses), ActorRef.noSender());
     }
 
-    private void watchChildren(WatchedEvent watchedEvent) {
-        if (watchedEvent.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
-            watchNodes();
-        }
-    }
+
 
     private List<String> getChildren() {
         try {
@@ -61,6 +55,12 @@ class Coordinator {
             e.printStackTrace();
         }
         return new ArrayList<>();
+    }
+
+    private void watchChildren(WatchedEvent watchedEvent) {
+        if (watchedEvent.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
+            watchNodes();
+        }
     }
 
     private byte[] getData(String server) {
