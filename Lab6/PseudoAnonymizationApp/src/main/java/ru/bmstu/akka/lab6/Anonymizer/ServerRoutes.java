@@ -20,13 +20,13 @@ class ServerRoutes extends AllDirectives {
     private static final int TIMEOUT_MS = 5000;
     private final static String SCHEME = "http://";
 
-    private final ActorSystem system;
-    private final ActorRef storeActor;
+//    private final ActorSystem system;
+//    private final ActorRef storeActor;
 
-    ServerRoutes(ActorSystem system, ActorRef storeActor) {
-        this.system = system;
-        this.storeActor = storeActor;
-    }
+//    ServerRoutes(ActorSystem system, ActorRef storeActor) {
+//        this.system = system;
+//        this.storeActor = storeActor;
+//    }
 
     private static int strToInt(String numString) {
         return numString.length() > 0 ?
@@ -34,7 +34,7 @@ class ServerRoutes extends AllDirectives {
                 0;
     }
 
-    Route getRoutes() {
+    static Route getRoutes(ActorSystem system, ActorRef storeActor) {
         return route(
                 get(() ->
                     parameter(URL_ARG_NAME, url ->
@@ -54,12 +54,13 @@ class ServerRoutes extends AllDirectives {
         return Http.get(system).singleRequest(HttpRequest.create(url));
     }
 
-    private CompletionStage<HttpResponse> redirectRequest(ActorRef storeActor, String url, int count) {
+    private CompletionStage<HttpResponse> redirectRequest(ActorSystem system, ActorRef storeActor, String url, int count) {
         return FutureConverters.toJava(
                 Patterns.ask(storeActor, new GetMessage(), TIMEOUT_MS)
             )
                 .thenApply(o -> (ResponseMessage)o)
                 .thenCompose(msg -> makeRequest(
+                        system,
                         Uri.create(SCHEME + msg.getAddress())
                                 .query(
                                         Query.create(
