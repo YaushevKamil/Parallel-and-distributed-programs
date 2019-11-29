@@ -10,7 +10,7 @@ import java.net.URISyntaxException;
 public class PseudoAnonymizationApp {
     private static final String SCHEME = "http://";
     public static void main(String[] args) throws InterruptedException, IOException, KeeperException, URISyntaxException {
-        if (args.length < 2) {
+        if (args.length != 2) {
             System.out.println("Usage: PseudoAnonymizationApp <zkAddr> <anonAddr>");
             System.exit(-1);
         }
