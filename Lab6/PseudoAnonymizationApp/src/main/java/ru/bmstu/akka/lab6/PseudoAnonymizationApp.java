@@ -16,7 +16,7 @@ public class PseudoAnonymizationApp {
         }
         String zkAddress = args[0];
         String hostAddress = args[1];
-        URI uri = new URI("http://" + hostAddress);
+        URI uri = new URI(SCHEME + hostAddress);
         String host = uri.getHost();
         int port = uri.getPort();
 
