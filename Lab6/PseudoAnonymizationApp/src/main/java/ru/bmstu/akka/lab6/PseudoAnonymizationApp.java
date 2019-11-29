@@ -17,14 +17,11 @@ public class PseudoAnonymizationApp {
         String zkAddress = args[0];
         String hostAddress = args[1];
         URI uri = new URI(SCHEME + hostAddress);
-        String host = uri.getHost();
-        int port = uri.getPort();
 
-        //http://localhost:8082/?url=http://rambler.ru&count=20
-
-        Server server = new Server(host, port, zkAddress);
+        Server server = new Server(uri.getHost(), uri.getPort(), zkAddress);
         server.start();
         System.in.read();
         server.terminate();
     }
 }
+//http://localhost:8082/?url=http://rambler.ru&count=20
