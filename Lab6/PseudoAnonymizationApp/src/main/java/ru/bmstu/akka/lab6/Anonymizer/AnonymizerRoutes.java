@@ -3,10 +3,7 @@ package ru.bmstu.akka.lab6.Anonymizer;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
-import akka.http.javadsl.model.HttpRequest;
-import akka.http.javadsl.model.HttpResponse;
-import akka.http.javadsl.model.Query;
-import akka.http.javadsl.model.Uri;
+import akka.http.javadsl.model.*;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
 import akka.japi.Pair;
@@ -21,6 +18,7 @@ class AnonymizerRoutes extends AllDirectives {
     private static final String URL_ARG_NAME = "url";
     private static final String COUNT_ARG_NAME = "count";
     private static final int TIMEOUT_MS = 5000;
+    private final static String SCHEME = "http";
 
     private final ActorSystem system;
     private final ActorRef storeActor;
@@ -52,6 +50,7 @@ class AnonymizerRoutes extends AllDirectives {
     }
 
     private CompletionStage<HttpResponse> makeRequest(String url) {
+        System.out.println(url);
         return Http.get(system).singleRequest(HttpRequest.create(url));
     }
 
@@ -61,7 +60,7 @@ class AnonymizerRoutes extends AllDirectives {
             )
                 .thenApply(o -> (ResponseMessage)o)
                 .thenCompose(msg -> makeRequest(
-                        Uri.create(msg.getAddress())
+                        Uri.create("http://" + msg.getAddress())
                                 .query(
                                         Query.create(
                                                 Pair.create(URL_ARG_NAME, url),

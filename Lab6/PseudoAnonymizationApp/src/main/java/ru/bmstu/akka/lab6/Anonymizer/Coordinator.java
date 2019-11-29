@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 class Coordinator {
-    private final int SESSION_TIMEOUT_MS = 3000;
+    private final int SESSION_TIMEOUT_MS = 5000;
     private final String ROOT_PATH = "/servers";
     private final String NODE_PATH = ROOT_PATH + "/s";
 
@@ -21,27 +21,27 @@ class Coordinator {
 
     Coordinator(String zkAddress, ActorRef storeActor, String address) throws IOException, KeeperException, InterruptedException {
         this.zkAddress = zkAddress;
-        System.out.println(zkAddress);
         this.storeActor = storeActor;
         tryConnect();
-        createNode(address);
+//        createNode(ROOT_PATH, "0", CreateMode.PERSISTENT);
+        createNode(NODE_PATH, address, CreateMode.EPHEMERAL_SEQUENTIAL);
+        watchNodes();
     }
 
     private void tryConnect() throws IOException {
         zoo = connect();
-        watchNodes();
     }
 
     private ZooKeeper connect() throws IOException {
         return new ZooKeeper(zkAddress, SESSION_TIMEOUT_MS, this::watchConnections);
     }
 
-    private void createNode(String address) throws KeeperException, InterruptedException {
+    private void createNode(String path, String address, CreateMode mode) throws KeeperException, InterruptedException {
         zoo.create(
-                NODE_PATH,
+                path,
                 address.getBytes(),
                 ZooDefs.Ids.OPEN_ACL_UNSAFE,
-                CreateMode.EPHEMERAL_SEQUENTIAL
+                mode
         );
     }
 
@@ -71,7 +71,6 @@ class Coordinator {
     private void watchChildren(WatchedEvent watchedEvent) {
         if (watchedEvent.getType() == Watcher.Event.EventType.NodeChildrenChanged) {
             watchNodes();
-            System.out.println("watchChildren");
         }
     }
 
