@@ -23,7 +23,7 @@ class Coordinator {
         this.zkAddress = zkAddress;
         this.storeActor = storeActor;
         tryConnect();
-//        createNode(ROOT_PATH, "0", CreateMode.PERSISTENT);
+        createNode(ROOT_PATH, "0", CreateMode.PERSISTENT);
         createNode(NODE_PATH, address, CreateMode.EPHEMERAL_SEQUENTIAL);
         watchNodes();
     }
