@@ -29,7 +29,7 @@ public class Server {
         this.host = host;
         this.port = port;
         this.system = ActorSystem.create("anonymizer");
-        ActorRef storeActor = system.actorOf(Props.create(StoreActor.class), "HostStorage");
+        this.ActorRef storeActor = system.actorOf(Props.create(StoreActor.class), "HostStorage");
 
         String address = host+':'+port;
         this.coordinator = new Coordinator(connectString, storeActor, address);
@@ -37,7 +37,7 @@ public class Server {
         System.out.println("Server online at " + address);
     }
 
-    private void createHandler(ActorRef  storeActor) {
+    private void createHandler() {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = new ServerRoutes(system, storeActor)
                 .getRoutes()
@@ -47,6 +47,10 @@ public class Server {
                 ConnectHttp.toHost(host, port),
                 materializer
         );
+    }
+
+    public void start() {
+        createHandler();
     }
 
     public void terminate() {
