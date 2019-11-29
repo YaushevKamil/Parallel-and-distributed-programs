@@ -18,7 +18,7 @@ class AnonymizerRoutes extends AllDirectives {
     private static final String URL_ARG_NAME = "url";
     private static final String COUNT_ARG_NAME = "count";
     private static final int TIMEOUT_MS = 5000;
-    private final static String SCHEME = "http";
+    private final static String SCHEME = "http://";
 
     private final ActorSystem system;
     private final ActorRef storeActor;

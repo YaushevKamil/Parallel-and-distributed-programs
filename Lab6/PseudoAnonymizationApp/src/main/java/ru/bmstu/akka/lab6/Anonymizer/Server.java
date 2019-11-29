@@ -32,14 +32,16 @@ public class Server {
         this.system = ActorSystem.create("anonymizer");
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class), "HostStorage");
         coordinator = new Coordinator(connectString, storeActor, host);
-        routes = new AnonymizerRoutes(system, storeActor);
-        createHandler();
+
+        createHandler(storeActor);
         System.out.println("Server online at " + address);
     }
 
-    private void createHandler() {
+    private void createHandler(ActorRef  storeActor) {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = routes.getRoutes().flow(system, materializer);
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = new AnonymizerRoutes(system, storeActor)
+                .getRoutes()
+                .flow(system, materializer);
         binding = Http.get(system).bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost(host, port),
