@@ -20,10 +20,10 @@ import java.util.concurrent.CompletionStage;
 public class Server {
     private final String host;
     private final int port;
-    private CompletionStage<ServerBinding> binding;
     private final ActorSystem system;
     private final ActorRef storeActor;
     private final Coordinator coordinator;
+    private CompletionStage<ServerBinding> binding;
 
     public Server(String host, int port, String connectString) throws InterruptedException, IOException, KeeperException {
         this.host = host;
