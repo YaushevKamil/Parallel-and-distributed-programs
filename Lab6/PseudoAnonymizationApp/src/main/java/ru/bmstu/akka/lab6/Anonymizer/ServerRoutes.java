@@ -41,20 +41,20 @@ class ServerRoutes extends AllDirectives {
                         parameter(COUNT_ARG_NAME, countString -> {
                             int count = strToInt(countString);
                             return count == 0 ?
-                                    completeWithFuture(makeRequest(url)) :
-                                    completeWithFuture(redirectRequest(url, count));
+                                    completeWithFuture(makeRequest(system, url)) :
+                                    completeWithFuture(redirectRequest(storeActor, url, count));
                         })
                     )
                 )
         );
     }
 
-    private CompletionStage<HttpResponse> makeRequest(String url) {
+    private CompletionStage<HttpResponse> makeRequest(ActorSystem system, String url) {
         System.out.println(url);
         return Http.get(system).singleRequest(HttpRequest.create(url));
     }
 
-    private CompletionStage<HttpResponse> redirectRequest(String url, int count) {
+    private CompletionStage<HttpResponse> redirectRequest(ActorRef storeActor, String url, int count) {
         return FutureConverters.toJava(
                 Patterns.ask(storeActor, new GetMessage(), TIMEOUT_MS)
             )
