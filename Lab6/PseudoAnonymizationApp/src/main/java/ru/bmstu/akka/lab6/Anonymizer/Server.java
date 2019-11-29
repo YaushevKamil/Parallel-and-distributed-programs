@@ -22,26 +22,27 @@ public class Server {
     private final int port;
     private CompletionStage<ServerBinding> binding;
     private final ActorSystem system;
+    ActorRef storeActor;
     private final Coordinator coordinator;
 
     public Server(String host, int port, String connectString) throws InterruptedException, IOException, KeeperException {
-        String address = host+':'+port;
         this.host = host;
         this.port = port;
         this.system = ActorSystem.create("anonymizer");
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class), "HostStorage");
-        coordinator = new Coordinator(connectString, storeActor, address);
 
+        String address = host+':'+port;
+        this.coordinator = new Coordinator(connectString, storeActor, address);
         createHandler(storeActor);
         System.out.println("Server online at " + address);
     }
 
     private void createHandler(ActorRef  storeActor) {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = new AnonymizerRoutes(system, storeActor)
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = new ServerRoutes(system, storeActor)
                 .getRoutes()
                 .flow(system, materializer);
-        binding = Http.get(system).bindAndHandle(
+        this.binding = Http.get(system).bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost(host, port),
                 materializer

@@ -10,13 +10,13 @@ import ru.bmstu.akka.lab6.Actors.StoreActor;
 import java.io.IOException;
 
 class Anonymizer {
-    private final AnonymizerRoutes routes;
+    private final ServerRoutes routes;
     private final Coordinator coordinator;
 
     Anonymizer(ActorSystem system, String connectString, String host) throws IOException, KeeperException, InterruptedException {
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class), "HostStorage");
         coordinator = new Coordinator(connectString, storeActor, host);
-        routes = new AnonymizerRoutes(system, storeActor);
+        routes = new ServerRoutes(system, storeActor);
     }
 
     Route createRoutes() {

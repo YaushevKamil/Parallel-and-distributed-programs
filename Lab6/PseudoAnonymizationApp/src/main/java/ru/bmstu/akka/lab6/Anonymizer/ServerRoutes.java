@@ -14,7 +14,7 @@ import scala.compat.java8.FutureConverters;
 
 import java.util.concurrent.CompletionStage;
 
-class AnonymizerRoutes extends AllDirectives {
+class ServerRoutes extends AllDirectives {
     private static final String URL_ARG_NAME = "url";
     private static final String COUNT_ARG_NAME = "count";
     private static final int TIMEOUT_MS = 5000;
@@ -23,7 +23,7 @@ class AnonymizerRoutes extends AllDirectives {
     private final ActorSystem system;
     private final ActorRef storeActor;
 
-    AnonymizerRoutes(ActorSystem system, ActorRef storeActor) {
+    ServerRoutes(ActorSystem system, ActorRef storeActor) {
         this.system = system;
         this.storeActor = storeActor;
     }
