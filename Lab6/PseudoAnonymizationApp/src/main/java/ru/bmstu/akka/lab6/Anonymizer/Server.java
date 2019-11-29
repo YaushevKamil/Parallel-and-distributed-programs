@@ -22,7 +22,7 @@ public class Server {
     private final int port;
     private CompletionStage<ServerBinding> binding;
     private final ActorSystem system;
-    ActorRef storeActor;
+    private final ActorRef storeActor;
     private final Coordinator coordinator;
 
     public Server(String host, int port, String connectString) throws InterruptedException, IOException, KeeperException {
