@@ -60,7 +60,7 @@ class AnonymizerRoutes extends AllDirectives {
             )
                 .thenApply(o -> (ResponseMessage)o)
                 .thenCompose(msg -> makeRequest(
-                        Uri.create("http://" + msg.getAddress())
+                        Uri.create(SCHEME + msg.getAddress())
                                 .query(
                                         Query.create(
                                                 Pair.create(URL_ARG_NAME, url),
