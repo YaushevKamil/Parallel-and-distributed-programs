@@ -3,7 +3,6 @@ package ru.bmstu.akka.lab6;
 import akka.http.javadsl.model.Uri;
 import org.apache.zookeeper.KeeperException;
 import ru.bmstu.akka.lab6.Anonymizer.Server;
-//import ru.bmstu.akka.lab6.Anonymizer.ServerRoutes;
 
 import java.io.IOException;
 
