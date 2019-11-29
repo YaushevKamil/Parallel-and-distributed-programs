@@ -22,7 +22,6 @@ public class Server {
     private final int port;
     private CompletionStage<ServerBinding> binding;
     private final ActorSystem system;
-    private final AnonymizerRoutes routes;
     private final Coordinator coordinator;
 
     public Server(String host, int port, String connectString) throws InterruptedException, IOException, KeeperException {
@@ -31,7 +30,7 @@ public class Server {
         this.port = port;
         this.system = ActorSystem.create("anonymizer");
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class), "HostStorage");
-        coordinator = new Coordinator(connectString, storeActor, host);
+        coordinator = new Coordinator(connectString, storeActor, address);
 
         createHandler(storeActor);
         System.out.println("Server online at " + address);
