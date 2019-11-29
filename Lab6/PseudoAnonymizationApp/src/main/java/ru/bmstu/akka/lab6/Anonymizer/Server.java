@@ -52,7 +52,7 @@ public class Server {
                 .thenCompose(ServerBinding::unbind)
                 .thenAccept(unbound -> {
                     system.terminate();
-                    anonymizer.terminate();
+                    coordinator.terminate();
                 });
     }
 }
