@@ -40,8 +40,8 @@ public class Server {
 
     private void createHandler() {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = new ServerRoutes(system, storeActor)
-                .getRoutes()
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = ServerRoutes
+                .getRoutes(system, storeActor)
                 .flow(system, materializer);
         this.binding = Http.get(system).bindAndHandle(
                 routeFlow,

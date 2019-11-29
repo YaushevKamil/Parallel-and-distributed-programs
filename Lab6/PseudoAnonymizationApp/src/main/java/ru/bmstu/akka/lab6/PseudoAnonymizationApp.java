@@ -1,24 +1,23 @@
 package ru.bmstu.akka.lab6;
 
+import akka.http.javadsl.model.Uri;
 import org.apache.zookeeper.KeeperException;
 import ru.bmstu.akka.lab6.Anonymizer.Server;
+import ru.bmstu.akka.lab6.Anonymizer.ServerRoutes;
 
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 
 public class PseudoAnonymizationApp {
-    private static final String SCHEME = "http://";
-    public static void main(String[] args) throws InterruptedException, IOException, KeeperException, URISyntaxException {
+    public static void main(String[] args) throws InterruptedException, IOException, KeeperException {
         if (args.length != 2) {
             System.out.println("Usage: PseudoAnonymizationApp <zkAddr> <anonAddr>");
             System.exit(-1);
         }
         String zkAddress = args[0];
         String hostAddress = args[1];
-        URI hostUri = new URI(SCHEME + hostAddress);
+        Uri hostUri = ServerRoutes.getUri(hostAddress);
 
-        Server server = new Server(hostUri.getHost(), hostUri.getPort(), zkAddress);
+        Server server = new Server(hostUri.getHost().toString(), hostUri.getPort(), zkAddress);
         server.start();
         System.in.read();
         server.terminate();
