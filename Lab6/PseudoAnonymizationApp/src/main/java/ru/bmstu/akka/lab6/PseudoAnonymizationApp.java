@@ -6,7 +6,7 @@ import ru.bmstu.akka.lab6.Anonymizer.Server;
 
 import java.io.IOException;
 
-import static ru.bmstu.akka.lab6.Anonymizer.ServerRoutes.*;
+import static ru.bmstu.akka.lab6.Anonymizer.ServerRoutes.getUri;
 
 public class PseudoAnonymizationApp {
     public static void main(String[] args) throws InterruptedException, IOException, KeeperException {
