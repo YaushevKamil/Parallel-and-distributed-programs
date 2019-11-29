@@ -29,12 +29,13 @@ public class Server {
         this.host = host;
         this.port = port;
         this.system = ActorSystem.create("anonymizer");
-        this.ActorRef storeActor = system.actorOf(Props.create(StoreActor.class), "HostStorage");
+        this.storeActor = system.actorOf(Props.create(StoreActor.class), "HostStorage");
+        this.coordinator = new Coordinator(connectString, storeActor, host+':'+port);
+    }
 
-        String address = host+':'+port;
-        this.coordinator = new Coordinator(connectString, storeActor, address);
-        createHandler(storeActor);
-        System.out.println("Server online at " + address);
+    public void start() {
+        createHandler();
+        System.out.println("Server online at " + (host+':'+port));
     }
 
     private void createHandler() {
@@ -47,10 +48,6 @@ public class Server {
                 ConnectHttp.toHost(host, port),
                 materializer
         );
-    }
-
-    public void start() {
-        createHandler();
     }
 
     public void terminate() {

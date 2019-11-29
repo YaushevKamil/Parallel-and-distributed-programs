@@ -19,11 +19,10 @@ public class PseudoAnonymizationApp {
         URI uri = new URI("http://" + address);
         String host = uri.getHost();
         int port = uri.getPort();
-
-        Server server = new Server(host, port, connectString);
         //http://localhost:8082/?url=http://rambler.ru&count=20
+        Server server = new Server(host, port, connectString);
+        server.start();
         System.in.read();
-
         server.terminate();
     }
 }
