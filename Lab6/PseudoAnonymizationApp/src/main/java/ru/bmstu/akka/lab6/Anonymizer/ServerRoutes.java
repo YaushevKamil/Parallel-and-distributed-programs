@@ -42,7 +42,7 @@ class ServerRoutes extends AllDirectives {
                             int count = strToInt(countString);
                             return count == 0 ?
                                     completeWithFuture(makeRequest(system, url)) :
-                                    completeWithFuture(redirectRequest(storeActor, url, count));
+                                    completeWithFuture(redirectRequest(system, storeActor, url, count));
                         })
                     )
                 )
