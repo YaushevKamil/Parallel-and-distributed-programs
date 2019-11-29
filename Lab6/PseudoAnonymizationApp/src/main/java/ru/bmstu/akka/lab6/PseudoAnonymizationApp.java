@@ -13,14 +13,15 @@ public class PseudoAnonymizationApp {
             System.out.println("Usage: PseudoAnonymizationApp <zkAddr> <anonAddr>");
             System.exit(-1);
         }
-        String connectString = args[0];
-        String address = args[1];
-
-        URI uri = new URI("http://" + address);
+        String zkAddress = args[0];
+        String hostAddress = args[1];
+        URI uri = new URI("http://" + hostAddress);
         String host = uri.getHost();
         int port = uri.getPort();
+
         //http://localhost:8082/?url=http://rambler.ru&count=20
-        Server server = new Server(host, port, connectString);
+        
+        Server server = new Server(host, port, zkAddress);
         server.start();
         System.in.read();
         server.terminate();
