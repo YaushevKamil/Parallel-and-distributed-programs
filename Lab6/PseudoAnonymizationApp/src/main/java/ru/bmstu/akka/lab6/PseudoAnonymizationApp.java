@@ -8,6 +8,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class PseudoAnonymizationApp {
+    private static final String SCHEME = "http://";
     public static void main(String[] args) throws InterruptedException, IOException, KeeperException, URISyntaxException {
         if (args.length < 2) {
             System.out.println("Usage: PseudoAnonymizationApp <zkAddr> <anonAddr>");
@@ -20,7 +21,7 @@ public class PseudoAnonymizationApp {
         int port = uri.getPort();
 
         //http://localhost:8082/?url=http://rambler.ru&count=20
-        
+
         Server server = new Server(host, port, zkAddress);
         server.start();
         System.in.read();
