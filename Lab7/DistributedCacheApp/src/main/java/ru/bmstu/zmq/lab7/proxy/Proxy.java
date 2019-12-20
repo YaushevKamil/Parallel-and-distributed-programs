@@ -3,6 +3,7 @@ package ru.bmstu.zmq.lab7.proxy;
 import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
+import org.zeromq.ZMsg;
 
 public class Proxy {
     private String clientAddress;
