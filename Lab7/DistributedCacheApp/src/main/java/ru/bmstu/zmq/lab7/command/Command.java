@@ -19,7 +19,13 @@ public class Command {
         if (sepStr.length == 0) return null;
         switch (sepStr[0]) {
             case "GET"
-                
+                ;
+            case "PUT"
+                ;
+            case "NOTIFY"
+                ;
+            case "ERROR"
+                ;
         }
     }
 //    public getCommand
