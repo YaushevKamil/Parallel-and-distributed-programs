@@ -50,8 +50,8 @@ public class Command {
         return numString != null && numPattern.matcher(numString).matches();
     }
 
-    private static int strToInt(String numString) {
-        return numString.length() > 0 ?
+    private int strToInt(String numString) {
+        return isNumeric(numString) ?
                 Integer.parseInt(numString) :
                 INT_ZERO;
     }
