@@ -3,9 +3,6 @@ package ru.bmstu.zmq.lab7.proxy;
 import org.zeromq.*;
 import ru.bmstu.zmq.lab7.command.Command;
 
-import static ru.bmstu.zmq.lab7.command.Command.*;
-import static ru.bmstu.zmq.lab7.command.Command.Type.GET;
-
 public class Proxy {
     private String clientAddress;
     private String cacheAddress;
