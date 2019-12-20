@@ -33,7 +33,7 @@ public class Proxy {
         while(!Thread.currentThread().isInterrupted()) {
             poller.poll();
             if (poller.pollin(0)) { //client // create const
-                ZMs
+                ZMsg
             } else if (poller.pollin(1)) { // cache
 
             }
