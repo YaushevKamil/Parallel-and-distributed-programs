@@ -40,8 +40,8 @@ public class Client {
 
     private String sendGetMessage(Command cmd) {
         sendMessage(cmd);
-        Command cmd = new Command(receiveMessage());
-
+        Command recvCmd = new Command(receiveMessage());
+        
     }
 
     private String sendPutMessage(Command cmd) {
