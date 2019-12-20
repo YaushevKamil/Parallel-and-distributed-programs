@@ -11,10 +11,11 @@ public class ClientApp {
             System.out.println("Usage: ClientApp <clientAddress>");
             System.exit(-1);
         }
-        String clientAddress = args[1];
+        String clientAddress = args[0];
         Scanner scanner = new Scanner(System.in);
         PrintStream outputStream = System.out;
         ZContext context = new ZContext();
+        
         Client client = new Client(context, clientAddress);
         client.start(scanner, outputStream);
     }
