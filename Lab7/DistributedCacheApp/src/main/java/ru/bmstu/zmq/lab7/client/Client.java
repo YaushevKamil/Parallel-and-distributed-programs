@@ -41,7 +41,7 @@ public class Client {
     private String sendGetMessage(Command cmd) {
         sendMessage(cmd);
 
-        ZMsg recv = ZMsg.recvMsg(req);
+
 
     }
 
@@ -56,9 +56,8 @@ public class Client {
     }
 
     private String receiveMessage() {
-        ZMsg msg = ZMsg.newStringMsg(cmd.toString());
-        System.out.println("Message to proxy: " + msg);
-        msg.send(req);
+        ZMsg recv = ZMsg.recvMsg(req);
+        
     }
 
     public void terminate() {
