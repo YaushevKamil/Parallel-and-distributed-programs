@@ -27,7 +27,7 @@ public class Command {
                     args.add(Integer.parseInt(sepStr[1]));
                 }
             case "PUT":
-                ;
+                this.type = CommandType.PUT;
             case "NOTIFY":
                 ;
             case "ERROR":
