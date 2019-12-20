@@ -17,10 +17,10 @@ public class Command {
     private Pattern numPattern = Pattern.compile(NUM_PATTERN);
 
     public Command(String raw) {
-
+        parseCommand(raw);
     }
 
-    private String[] parseCommand(String raw) {
+    private void parseCommand(String raw) {
         //Pattern.matches("А.+а","");
         String[] sepCmd = raw.trim().split(DELIMITER);
         if (sepCmd.length == 0) return null;
