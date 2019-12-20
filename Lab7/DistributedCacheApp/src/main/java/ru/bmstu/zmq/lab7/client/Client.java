@@ -30,6 +30,7 @@ public class Client {
             switch (cmd.getCommandType()) {
                 case GET:
                     Integer result = sendGetMessage(cmd);
+                    
                 case PUT:
                     ;
             }
@@ -40,7 +41,7 @@ public class Client {
         req.connect(clientAddress);
     }
 
-    private String sendGetMessage(Command cmd) {
+    private Integer sendGetMessage(Command cmd) {
         sendMessage(cmd);
         Command respCmd = new Command(receiveMessage());
         return respCmd.getCommandType() == SUCCESSFUL ?

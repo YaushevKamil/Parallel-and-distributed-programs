@@ -66,7 +66,7 @@ public class Command {
                 INT_ZERO;
     }
 
-    public String getResult() {
+    public Integer getResult() {
         return null;
     }
 
