@@ -30,7 +30,7 @@ public class Client {
             switch (cmd.getCommandType()) {
                 case GET:
                     Integer result = sendGetMessage(cmd);
-                    output.println();
+                    output.println(result != null ? result.toString() : "ERROR!");
                 case PUT:
                     ;
             }
