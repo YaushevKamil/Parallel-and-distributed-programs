@@ -66,7 +66,7 @@ public class Proxy {
     }
 
     private void sendMessageToCache(ZFrame cacheId, ZFrame clientId, Command cmd) {
-        
+        ZMsg
     }
 
     public void terminate() {
