@@ -21,18 +21,18 @@ public class Client {
     }
 
     public void start(Scanner scanner, PrintStream outputStream) {
-        connect();
+        //connect();
         while (!Thread.currentThread().isInterrupted()) {
             outputStream.print("[Client: " + clientAddress + "]$: ");
-            Command cmd = new Command(scanner.nextLine());
-            switch (cmd.getCommandType()) {
-                case GET:
-                    Integer result = receiveFromGetMessage(cmd);
-                    outputStream.println(result != null ? result.toString() : "ERROR!");
-                case PUT:
-                    String res = receiveFromPutMessage(cmd);
-                    outputStream.println(res);
-            }
+//            Command cmd = new Command(scanner.nextLine());
+//            switch (cmd.getCommandType()) {
+//                case GET:
+//                    Integer result = receiveFromGetMessage(cmd);
+//                    outputStream.println(result != null ? result.toString() : "ERROR!");
+//                case PUT:
+//                    String res = receiveFromPutMessage(cmd);
+//                    outputStream.println(res);
+//            }
         }
     }
 
