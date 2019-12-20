@@ -36,7 +36,7 @@ public class Proxy {
             poller.poll();
             if (poller.pollin(0)) { //client // create const
                 ZMsg msg = ZMsg.recvMsg(clientRouter);
-                System.out.println("Client message: " +  msg.toString());
+                System.out.println("Message from client: " +  msg.toString());
                 ZFrame clientId = msg.pop();
                 msg.pop();
                 Command cmd = new Command(msg.popString());
