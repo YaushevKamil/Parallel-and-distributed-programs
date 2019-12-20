@@ -36,7 +36,7 @@ public class Proxy {
         setupRouter();
         while(!Thread.currentThread().isInterrupted()) {
             poller.poll();
-            if (poller.pollin(CLIENT_POLL)) { //client // create const
+            if (poller.pollin(CLIENT_POLL)) {
                 ZMsg msg = ZMsg.recvMsg(clientRouter);
                 System.out.println("Message from client: " +  msg.toString());
                 ZFrame clientId = msg.pop();
@@ -48,7 +48,7 @@ public class Proxy {
                     case PUT:
                         ;
                 }
-            } else if (poller.pollin(CACHE_POLL)) { // cache
+            } else if (poller.pollin(CACHE_POLL)) {
                 ZMsg msg = ZMsg.recvMsg(cacheRouter);
                 System.out.println("Message from cache: " +  msg.toString());
                 ZFrame cacheId = msg.pop();
