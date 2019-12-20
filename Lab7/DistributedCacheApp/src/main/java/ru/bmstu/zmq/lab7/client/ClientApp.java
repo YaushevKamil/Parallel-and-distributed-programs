@@ -8,9 +8,9 @@ import java.util.Scanner;
 public class ClientApp {
     public static void main(String[] args) {
         String clientAddress = args[1];
-        ZContext context = new ZContext();
         Scanner scanner = new Scanner(System.in);
         PrintStream outputStream = System.out;
+        ZContext context = new ZContext();
         Client client = new Client(context, clientAddress);
         client.start(scanner, outputStream);
     }
