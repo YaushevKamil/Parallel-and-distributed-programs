@@ -57,4 +57,8 @@ public class Proxy {
             }
         }
     }
+
+    public void terminate() {
+        
+    }
 }
