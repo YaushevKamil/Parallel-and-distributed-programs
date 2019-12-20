@@ -34,5 +34,7 @@ public class Command {
                 this.type = CommandType.ERROR;
         }
     }
+
+    private static 
 //    public getCommand
 }
