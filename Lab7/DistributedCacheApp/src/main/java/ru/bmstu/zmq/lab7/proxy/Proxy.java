@@ -50,7 +50,12 @@ public class Proxy {
                 ZMsg msg = ZMsg.recvMsg(cacheRouter);
                 System.out.println("Message from cache: " +  msg.toString());
                 ZFrame cacheId = msg.pop();
-                
+                switch (cmd.getCommandType()) {
+                    case GET:
+                        ;
+                    case PUT:
+                        ;
+                }
             }
         }
     }
