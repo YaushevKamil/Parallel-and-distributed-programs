@@ -1,6 +1,7 @@
 package ru.bmstu.zmq.lab7.proxy;
 
 import org.zeromq.*;
+import ru.bmstu.zmq.lab7.command.Command;
 
 public class Proxy {
     private String clientAddress;
@@ -35,7 +36,7 @@ public class Proxy {
                 System.out.println("Client message: " +  msg.toString());
                 ZFrame clientId = msg.pop();
                 msg.pop();
-                
+                Command
             } else if (poller.pollin(1)) { // cache
                 ZMsg msg = ZMsg.recvMsg(cacheRouter);
                 System.out.println("Cache message: " +  msg.toString());
