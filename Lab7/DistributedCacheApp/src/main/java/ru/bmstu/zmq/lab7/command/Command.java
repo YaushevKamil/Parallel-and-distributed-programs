@@ -23,6 +23,7 @@ public class Command {
         switch (sepStr[0]) {
             case "GET"
                 this.type = CommandType.GET;
+                if (sepStr.length)
                 args.add();
             case "PUT"
                 ;
