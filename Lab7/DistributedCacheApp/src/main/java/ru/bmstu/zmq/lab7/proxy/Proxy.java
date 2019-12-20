@@ -52,7 +52,7 @@ public class Proxy {
                 ZFrame cacheId = msg.pop();
                 Command cmd = new Command(msg.popString());
                 switch (cmd.getCommandType()) {
-                    case GET:
+                    case RESUL:
                         ;
                     case PUT:
                         ;
