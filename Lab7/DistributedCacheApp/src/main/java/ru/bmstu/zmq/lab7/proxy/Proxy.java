@@ -25,7 +25,8 @@ public class Proxy {
     public void bind() {
         clientRouter.bind(clientAddress);
         cacheRouter.bind(cacheAddress);
-        poller.register(clientRouter, )
+        poller.register(clientRouter, ZMQ.Poller.POLLIN);
+        poller.register(cacheRouter, ZMQ.Poller.POLLIN);
     }
 
 }
