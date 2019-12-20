@@ -43,7 +43,7 @@ public class Client {
         System.out.println("Message to proxy: " + msg);
         msg.send(req);
 
-        ZMsg recv = msg.recvMsg(req);
+        ZMsg recv = ZMsg.recvMsg(req);
         
     }
 
