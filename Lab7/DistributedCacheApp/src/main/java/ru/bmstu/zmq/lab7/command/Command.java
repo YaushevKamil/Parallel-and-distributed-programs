@@ -18,7 +18,7 @@ public class Command {
         String[] sepStr = raw.trim().split(DELIMITER);
         if (sepStr.length == 0) return null;
         switch (sepStr[0]) {
-            case 
+            case "GET"
         }
     }
 //    public getCommand
