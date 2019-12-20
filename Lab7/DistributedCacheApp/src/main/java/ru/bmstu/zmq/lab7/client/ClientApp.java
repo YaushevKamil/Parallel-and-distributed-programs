@@ -1,5 +1,10 @@
 package ru.bmstu.zmq.lab7.client;
 
-public class ClientApp {
+import org.zeromq.ZContext;
 
+public class ClientApp {
+    public static void main(String[] args) {
+        ZContext context = new ZContext();
+
+    }
 }
