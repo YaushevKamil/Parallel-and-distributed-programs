@@ -29,10 +29,10 @@ public class Client {
             Command cmd = new Command(scanner.nextLine());
             switch (cmd.getCommandType()) {
                 case GET:
-                    Integer result = sendGetMessage(cmd);
+                    Integer result = receiveFromGetMessage(cmd);
                     output.println(result != null ? result.toString() : "ERROR!");
                 case PUT:
-                    String res = sendPutMessage(cmd);
+                    String res = receiveFromPutMessage(cmd);
                     output.println(res);
             }
         }
@@ -42,7 +42,7 @@ public class Client {
         req.connect(clientAddress);
     }
 
-    private Integer sendGetMessage(Command cmd) {
+    private Integer receiveFromGetMessage(Command cmd) {
         sendMessage(cmd);
         Command respCmd = new Command(receiveMessage());
         return respCmd.getCommandType() == SUCCESSFUL ?
@@ -50,7 +50,7 @@ public class Client {
                 null;
     }
 
-    private String sendPutMessage(Command cmd) {
+    private String receiveFromPutMessage(Command cmd) {
         sendMessage(cmd);
         return receiveMessage();
     }
