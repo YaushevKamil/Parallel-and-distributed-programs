@@ -6,7 +6,7 @@ public class Command {
     }
 
     public Command(String raw) {
-        
+        String[]
     }
 //    public getCommand
 }
