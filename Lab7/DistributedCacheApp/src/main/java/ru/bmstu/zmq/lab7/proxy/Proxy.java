@@ -22,6 +22,8 @@ public class Proxy {
         // cache
     }
 
-    public 
+    public void bind() {
+        
+    }
 
 }
