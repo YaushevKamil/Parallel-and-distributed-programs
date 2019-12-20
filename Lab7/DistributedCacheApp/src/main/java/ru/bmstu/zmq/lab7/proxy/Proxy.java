@@ -65,8 +65,8 @@ public class Proxy {
         }
     }
 
-    private void sendMessageToCache() {
-        
+    private void sendMessageToCache(ZFrame cacheId) {
+
     }
 
     public void terminate() {
