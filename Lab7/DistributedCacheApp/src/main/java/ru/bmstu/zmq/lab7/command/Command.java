@@ -44,6 +44,8 @@ public class Command {
         }
     }
 
+    private 
+
     private static int strToInt(String numString) {
         return numString.length() > 0 ?
                 Integer.parseInt(numString) :
