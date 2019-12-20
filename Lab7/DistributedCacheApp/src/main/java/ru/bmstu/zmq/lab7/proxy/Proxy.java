@@ -59,6 +59,7 @@ public class Proxy {
     }
 
     public void terminate() {
+        poller.close();
         
     }
 }
