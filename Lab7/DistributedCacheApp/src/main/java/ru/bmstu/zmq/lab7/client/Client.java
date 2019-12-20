@@ -37,6 +37,8 @@ public class Client {
         req.connect(clientAddress);
     }
 
+    private String 
+
     public void terminate() {
         context.destroySocket(req);
     }
