@@ -57,7 +57,7 @@ public class Client {
 
     private String receiveMessage() {
         ZMsg recv = ZMsg.recvMsg(req);
-        
+        System.out.println();
     }
 
     public void terminate() {
