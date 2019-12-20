@@ -15,7 +15,7 @@ public class Proxy {
         this.clientAddress = clientAddress;
         this.cacheAddress = cacheAddress;
         this.context = context;
-        this.clientRouter
+        this.clientRouter = context
     }
 
 }
