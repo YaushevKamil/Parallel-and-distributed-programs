@@ -20,13 +20,13 @@ public class Command {
 
     private String[] parseCommand(String raw) {
         //Pattern.matches("А.+а","");
-        String[] sepStr = raw.trim().split(DELIMITER);
-        if (sepStr.length == 0) return null;
-        switch (sepStr[0]) {
+        String[] sepCmd = raw.trim().split(DELIMITER);
+        if (sepCmd.length == 0) return null;
+        switch (sepCmd[0]) {
             case "GET":
                 this.type = CommandType.GET;
-                if (sepStr.length > 1) {
-                    args.add(strToInt(sepStr[1]));
+                if (sepCmd.length > 1) {
+                    args.add(strToInt(sepCmd[1]));
                 }
             case "PUT":
                 this.type = CommandType.PUT;
