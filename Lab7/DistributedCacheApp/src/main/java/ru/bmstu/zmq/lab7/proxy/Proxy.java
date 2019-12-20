@@ -31,7 +31,9 @@ public class Proxy {
     public void createHandler() {
         while(!Thread.currentThread().isInterrupted()) {
             poller.poll();
-            if (poller.pollin())
+            if (poller.pollin(0)) { //
+
+            } else if (poller.pollin(1))
         }
     }
 
