@@ -4,9 +4,9 @@ public class Command {
     public enum CommandType {
         GET, PUT, NOTIFY, ERROR
     }
-    
-    public Command(String raw) {
 
+    public Command(String raw) {
+        
     }
 //    public getCommand
 }
