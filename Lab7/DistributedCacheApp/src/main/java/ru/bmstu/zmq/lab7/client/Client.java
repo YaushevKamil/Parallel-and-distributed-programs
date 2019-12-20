@@ -3,6 +3,7 @@ package ru.bmstu.zmq.lab7.client;
 import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
+import ru.bmstu.zmq.lab7.command.Command;
 
 import java.io.PrintStream;
 import java.net.Socket;
@@ -23,7 +24,7 @@ public class Client {
         connect();
         while (!Thread.currentThread().isInterrupted()) {
             System.out.println("[Client]$: ");
-            
+            Command cmd = new Command()
         }
     }
 
