@@ -43,6 +43,8 @@ public class Proxy {
                 switch (cmd.getCommandType()) {
                     case GET:
                         ;
+                    case PUT:
+                        ;
                 }
             } else if (poller.pollin(1)) { // cache
                 ZMsg msg = ZMsg.recvMsg(cacheRouter);
