@@ -64,5 +64,13 @@ public class Command {
                 Integer.parseInt(numString) :
                 INT_ZERO;
     }
+
+    public String toString() {
+        StringBuilder res = new StringBuilder(type.toString());
+        for (Integer arg : args) {
+            res.append(" ").append(arg);
+        }
+        return res.toString();
+    }
 //    public getCommand
 }
