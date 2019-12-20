@@ -39,14 +39,14 @@ public class Client {
     }
 
     private String sendGetMessage(Command cmd) {
-
+        sendMessage(cmd);
 
         ZMsg recv = ZMsg.recvMsg(req);
 
     }
 
-    private String sendPutMessage() {
-
+    private String sendPutMessage(Command cmd) {
+        sendMessage(cmd);
     }
 
     private void sendMessage(Command cmd) {
