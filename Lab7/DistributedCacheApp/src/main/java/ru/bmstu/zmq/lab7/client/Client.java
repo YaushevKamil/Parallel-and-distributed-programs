@@ -40,7 +40,7 @@ public class Client {
 
     private String sendGetMessage(Command putCmd) {
         ZMsg msg = ZMsg.newStringMsg(putCmd.toString());
-        System.out.println();
+        System.out.println("Client");
     }
 
     private String sendPutMessage() {
