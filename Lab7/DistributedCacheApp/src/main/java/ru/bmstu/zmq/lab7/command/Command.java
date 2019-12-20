@@ -12,7 +12,8 @@ public class Command {
     }
 
     private String[] parseCommand(String raw) {
-        Pattern.matches("А.+а","");
+        //Pattern.matches("А.+а","");
+        String[] 
     }
 //    public getCommand
 }
