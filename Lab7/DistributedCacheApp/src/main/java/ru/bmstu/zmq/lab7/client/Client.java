@@ -32,6 +32,6 @@ public class Client {
     }
 
     public void terminate() {
-        context.destroy();
+        context.destroySocket();
     }
 }
