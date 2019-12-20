@@ -5,11 +5,12 @@ package ru.bmstu.zmq.lab7.command;
 import java.util.ArrayList;
 
 public class Command {
-    private static final String DELIMITER = "\\s+";
-    private ArrayList<Integer> args;
     public enum CommandType {
         GET, PUT, NOTIFY, ERROR
     }
+    private static final String DELIMITER = "\\s+";
+    private ArrayList<Integer> args;
+    private CommandType type;
 
     public Command(String raw) {
 
