@@ -5,13 +5,14 @@ import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
 
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Client {
     private String clientAddress;
     private ZContext context;
     private ZMQ.Socket req;
 
-    public Client(ZContext context, String clientAddress) {
+    public Client(ZContext context, String clientAddress, Scanner scanner) {
         this.clientAddress = clientAddress;
         this.context = context;
         this.req = context.createSocket(SocketType.REQ);
