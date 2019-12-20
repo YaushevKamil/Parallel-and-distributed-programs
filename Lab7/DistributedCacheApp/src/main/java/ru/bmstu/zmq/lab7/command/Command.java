@@ -13,12 +13,13 @@ public class Command {
     private static final int INT_ZERO = 0;
     private static final String DELIMITER = "\\s+";
     private static final String NUM_PATTERN = "\\d+";
-    private ArrayList<Integer> args;
+    private List<Integer> args;
     private Type type;
     private Pattern numPattern = Pattern.compile(NUM_PATTERN);
 
     public Command(Type type, Integer ...args) {
-        
+        this.type = type;
+
     }
 
     public Command(String raw) {
