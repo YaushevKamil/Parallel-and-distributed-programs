@@ -33,10 +33,9 @@ public class Command {
             case "PUT":
                 this.type = CommandType.PUT;
                 if (sepCmd.length > 2) {
-                    args.add(strToInt(sepCmd[1]));
-                    args.add(strToInt(sepCmd[2]));
+                    args.add(strToInt(sepCmd[1]), strToInt(sepCmd[2]));
                 } else {
-                    args.add(INT_ZERO);
+                    args.add(INT_ZERO, INT_ZERO);
                 }
             case "NOTIFY":
                 this.type = CommandType.NOTIFY;
