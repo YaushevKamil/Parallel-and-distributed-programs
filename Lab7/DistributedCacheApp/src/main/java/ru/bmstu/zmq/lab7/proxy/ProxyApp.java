@@ -5,7 +5,7 @@ import org.zeromq.ZContext;
 public class ProxyApp {
     public static void main(String[] args) {
         ZContext context = new ZContext();
-        String 
+        String ClientAddress
         Proxy proxy = new proxy(context);
     }
 }
