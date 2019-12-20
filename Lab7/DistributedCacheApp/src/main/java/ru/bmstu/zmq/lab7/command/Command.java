@@ -67,8 +67,7 @@ public class Command {
     }
 
     public Integer getResult() {
-        
-        return null;
+        return this.type == Type.RESULT null;
     }
 
     @Override
