@@ -1,5 +1,6 @@
 package ru.bmstu.zmq.lab7.command;
 
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
 import java.util.ArrayList;
