@@ -20,18 +20,18 @@ public class Client {
         this.req = context.createSocket(SocketType.REQ);
     }
 
-    public void start(Scanner scanner, PrintStream output) {
+    public void start(Scanner scanner, PrintStream outputStream) {
         connect();
         while (!Thread.currentThread().isInterrupted()) {
-            output.print("[Client]$: ");
+            outputStream.print("[Client]$: ");
             Command cmd = new Command(scanner.nextLine());
             switch (cmd.getCommandType()) {
                 case GET:
                     Integer result = receiveFromGetMessage(cmd);
-                    output.println(result != null ? result.toString() : "ERROR!");
+                    outputStream.println(result != null ? result.toString() : "ERROR!");
                 case PUT:
                     String res = receiveFromPutMessage(cmd);
-                    output.println(res);
+                    outputStream.println(res);
             }
         }
     }
