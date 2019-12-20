@@ -9,6 +9,8 @@ public class Command {
 
     }
 
-    private 
+    private String[] parseCommand(String raw) {
+        
+    }
 //    public getCommand
 }
