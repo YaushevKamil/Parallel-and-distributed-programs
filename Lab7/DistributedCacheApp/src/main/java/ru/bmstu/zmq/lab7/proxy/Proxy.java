@@ -1,5 +1,6 @@
 package ru.bmstu.zmq.lab7.proxy;
 
+import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
 
@@ -15,7 +16,9 @@ public class Proxy {
         this.clientAddress = clientAddress;
         this.cacheAddress = cacheAddress;
         this.context = context;
-        this.clientRouter = context.createSocket()
+        this.clientRouter = context.createSocket(SocketType.ROUTER);
+        this.cacheRouter = context.createSocket(SocketType.ROUTER);
+        
     }
 
 }
