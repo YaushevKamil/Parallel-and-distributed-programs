@@ -29,7 +29,7 @@ public class Client {
             Command cmd = new Command(scanner.nextLine());
             switch (cmd.getCommandType()) {
                 case GET:
-                    Integer result = sendGetMessage();
+                    Integer result = sendGetMessage(cmd);
                 case PUT:
                     ;
             }
