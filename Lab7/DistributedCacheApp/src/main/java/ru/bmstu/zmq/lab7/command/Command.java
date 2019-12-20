@@ -47,9 +47,7 @@ public class Command {
     }
 
     private boolean isNumeric(String numString) {
-        return numString == null ?
-                
-                numPattern.matcher(numString).matches();
+        return numString != null && numPattern.matcher(numString).matches();
     }
 
     private static int strToInt(String numString) {
