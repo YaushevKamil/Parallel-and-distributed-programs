@@ -23,7 +23,7 @@ public class Command {
     private void parseCommand(String raw) {
         //Pattern.matches("А.+а","");
         String[] sepCmd = raw.trim().split(DELIMITER);
-        if (sepCmd.length == 0) return null;
+        if (sepCmd.length == 0) return;
         switch (sepCmd[0]) {
             case "GET":
                 this.type = CommandType.GET;
