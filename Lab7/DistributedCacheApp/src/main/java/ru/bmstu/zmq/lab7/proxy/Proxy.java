@@ -19,7 +19,6 @@ public class Proxy {
         this.cacheRouter = context.createSocket(SocketType.ROUTER);
         this.poller = context.createPoller(2);
         // cache
-        bind();
     }
 
     public void bind() {
