@@ -44,6 +44,7 @@ public class Client {
         msg.send(req);
 
         ZMsg recv = msg.recvMsg(req);
+        
     }
 
     private String sendPutMessage() {
