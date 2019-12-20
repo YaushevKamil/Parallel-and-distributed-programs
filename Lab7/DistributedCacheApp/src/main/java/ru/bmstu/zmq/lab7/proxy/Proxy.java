@@ -4,6 +4,7 @@ import org.zeromq.*;
 import ru.bmstu.zmq.lab7.command.Command;
 
 public class Proxy {
+    private static final int POLLER_SIZE = 2;
     private String clientAddress;
     private String cacheAddress;
     private ZContext context;
@@ -17,7 +18,7 @@ public class Proxy {
         this.context = context;
         this.clientRouter = context.createSocket(SocketType.ROUTER);
         this.cacheRouter = context.createSocket(SocketType.ROUTER);
-        this.poller = context.createPoller(2);
+        this.poller = context.createPoller(POLLER_SIZE);
         // cache
     }
 
