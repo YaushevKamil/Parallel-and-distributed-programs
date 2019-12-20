@@ -30,4 +30,6 @@ hs_err_pid*
 /Lab4/JsTesterApp/.idea
 /Lab5/LoadTestingApp/.idea
 /Lab6/PseudoAnonymizationApp/.idea
-/target
+/Lab7/DistributedCacheApp/.idea
+/Lab7/DistributedCacheApp/DistributedCacheApp.iml
+/Lab7/DistributedCacheApp/target
