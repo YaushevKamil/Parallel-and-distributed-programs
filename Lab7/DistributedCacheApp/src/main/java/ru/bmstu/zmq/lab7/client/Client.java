@@ -42,6 +42,8 @@ public class Client {
         ZMsg msg = ZMsg.newStringMsg(cmd.toString());
         System.out.println("Message to proxy: " + msg);
         msg.send(req);
+
+        
     }
 
     private String sendPutMessage() {
