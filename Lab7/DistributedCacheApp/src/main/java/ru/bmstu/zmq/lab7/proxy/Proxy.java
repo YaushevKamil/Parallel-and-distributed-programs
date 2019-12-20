@@ -57,7 +57,8 @@ public class Proxy {
                 Command cmd = new Command(msg.popString());
                 switch (cmd.getCommandType()) {
                     case RESULT:
-                        ZFrame clientId;
+                        ZFrame clientId = msg.pop();
+                        
                     case NOTIFY:
                         ;
                 }
