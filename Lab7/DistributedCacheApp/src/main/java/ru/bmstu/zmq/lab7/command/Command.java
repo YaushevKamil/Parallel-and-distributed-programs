@@ -26,11 +26,11 @@ public class Command {
                 if (sepStr.length > 1) {
                     args.add(Integer.parseInt(sepStr[1]));
                 }
-            case "PUT"
+            case "PUT":
                 ;
-            case "NOTIFY"
+            case "NOTIFY":
                 ;
-            case "ERROR"
+            case "ERROR":
                 ;
         }
     }
