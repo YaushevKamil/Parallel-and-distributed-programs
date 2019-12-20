@@ -38,8 +38,8 @@ public class Client {
         req.connect(clientAddress);
     }
 
-    private String sendGetMessage(Command ) {
-        ZMsg msg = ZMsg.newStringMsg()
+    private String sendGetMessage(Command putCmd) {
+        ZMsg msg = ZMsg.newStringMsg(putCmd);
     }
 
     private String sendPutMessage() {
