@@ -38,7 +38,7 @@ public class Client {
         req.connect(clientAddress);
     }
 
-    private String sendGetMessage() {
+    private String sendGetMessage(Command ) {
         ZMsg msg = ZMsg.newStringMsg()
     }
 
