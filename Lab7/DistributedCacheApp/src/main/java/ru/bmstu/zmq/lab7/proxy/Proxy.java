@@ -4,10 +4,11 @@ import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
 
 public class Proxy {
-    private final String clientAddress;
-    private final String cacheAddress;
+    private String clientAddress;
+    private String cacheAddress;
     private ZContext context;
-    private ZMQ.Socket 
+    private ZMQ.Socket clientRouter;
+    private ZMQ.Socket clientRouter;
 
     public Proxy(ZContext context, String clientAddress, String cacheAddress) {
         this.clientAddress = clientAddress;
