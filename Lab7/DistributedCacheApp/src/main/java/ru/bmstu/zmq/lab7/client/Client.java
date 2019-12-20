@@ -19,9 +19,10 @@ public class Client {
 
     public void start() {
         connect();
+        
     }
 
     public void connect() {
-        req.connect();
+        req.connect(clientAddress);
     }
 }
