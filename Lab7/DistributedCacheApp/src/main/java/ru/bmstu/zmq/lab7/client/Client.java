@@ -44,7 +44,8 @@ public class Client {
         sendMessage(cmd);
         Command respCmd = new Command(receiveMessage());
         return respCmd.getCommandType() == SUCCESSFUL ?
-                respCmd.
+                respCmd.getResult() :
+                
     }
 
     private String sendPutMessage(Command cmd) {
