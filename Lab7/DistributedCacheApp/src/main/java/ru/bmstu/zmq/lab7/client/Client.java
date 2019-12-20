@@ -9,8 +9,6 @@ import ru.bmstu.zmq.lab7.command.Command;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-import static ru.bmstu.zmq.lab7.command.Command.Type.SUCCESSFUL;
-
 public class Client {
     private String clientAddress;
     private ZContext context;
@@ -45,7 +43,7 @@ public class Client {
     private Integer receiveFromGetMessage(Command cmd) {
         sendMessage(cmd);
         Command respCmd = new Command(receiveMessage());
-        return respCmd.getCommandType() == SUCCESSFUL ?
+        return respCmd.getCommandType() == Command.Type.SUCCESSFUL ?
                 respCmd.getResult() :
                 null;
     }
