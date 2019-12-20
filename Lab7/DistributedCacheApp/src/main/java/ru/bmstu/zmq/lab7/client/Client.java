@@ -37,7 +37,13 @@ public class Client {
         req.connect(clientAddress);
     }
 
-    private String 
+    private String sendGetMessage() {
+
+    }
+
+    private String sendPutMessage() {
+        
+    }
 
     public void terminate() {
         context.destroySocket(req);
