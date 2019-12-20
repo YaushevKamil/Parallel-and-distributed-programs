@@ -29,9 +29,9 @@ public class Command {
             case "PUT":
                 this.type = CommandType.PUT;
             case "NOTIFY":
-                ;
+                this.type = CommandType.NOTIFY;
             case "ERROR":
-                ;
+                this.type = CommandType.ERROR;
         }
     }
 //    public getCommand
