@@ -66,6 +66,10 @@ public class Command {
                 INT_ZERO;
     }
 
+    public String getResult() {
+        return null;
+    }
+
     @Override
     public String toString() {
         return args
