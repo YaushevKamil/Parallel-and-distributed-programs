@@ -23,7 +23,7 @@ public class Command {
         switch (sepStr[0]) {
             case "GET"
                 this.type = CommandType.GET;
-                args;
+                args.add();
             case "PUT"
                 ;
             case "NOTIFY"
