@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class ClientApp {
     public static void main(String[] args) {
+        if (args.length != 2) {
         String clientAddress = args[1];
         Scanner scanner = new Scanner(System.in);
         PrintStream outputStream = System.out;
