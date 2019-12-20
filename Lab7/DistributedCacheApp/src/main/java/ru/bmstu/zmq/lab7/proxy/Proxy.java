@@ -71,7 +71,7 @@ public class Proxy {
         msg.add(clientId);
         msg.add(cmd.toString());
         System.out.println("Message to cache: " + msg);
-        msg.send(cacheRouter);
+        msg.send(cacheRouter); // destroy -> false
     }
 
     public void terminate() {
