@@ -71,6 +71,7 @@ public class Proxy {
         msg.add(clientId);
         msg.add(cmd.toString());
         System.out.println("Message to cache: " + msg);
+        
     }
 
     public void terminate() {
