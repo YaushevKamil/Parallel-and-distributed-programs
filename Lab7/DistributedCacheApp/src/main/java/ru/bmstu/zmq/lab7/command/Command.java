@@ -68,8 +68,8 @@ public class Command {
 
     public Integer getResult() {
         return this.type == Type.RESULT  && args.size() == 1 ?
-        args.get(0) :
-        null;
+                args.get(0) :
+                null;
     }
 
     @Override
