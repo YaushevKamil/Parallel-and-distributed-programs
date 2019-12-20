@@ -34,6 +34,7 @@ public class Proxy {
                 ZMsg msg = ZMsg.recvMsg(clientRouter);
                 System.out.println("Client message: " +  msg.toString());
                 ZFrame clientId = msg.pop();
+                msg.pop();
                 
             } else if (poller.pollin(1)) { // cache
                 ZMsg msg = ZMsg.recvMsg(cacheRouter);
