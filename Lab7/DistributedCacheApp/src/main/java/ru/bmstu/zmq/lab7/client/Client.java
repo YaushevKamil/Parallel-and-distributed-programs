@@ -30,7 +30,7 @@ public class Client {
             switch (cmd.getCommandType()) {
                 case GET:
                     Integer result = sendGetMessage(cmd);
-                    
+                    output.println();
                 case PUT:
                     ;
             }
