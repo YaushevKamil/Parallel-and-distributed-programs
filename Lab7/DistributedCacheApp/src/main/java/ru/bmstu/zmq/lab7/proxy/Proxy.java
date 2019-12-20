@@ -31,9 +31,11 @@ public class Proxy {
     public void createHandler() {
         while(!Thread.currentThread().isInterrupted()) {
             poller.poll();
-            if (poller.pollin(0)) { //
+            if (poller.pollin(0)) { //client // create const
 
-            } else if (poller.pollin(1))
+            } else if (poller.pollin(1)) { // cache
+
+            }
         }
     }
 
