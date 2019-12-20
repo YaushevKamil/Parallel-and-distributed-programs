@@ -12,13 +12,13 @@ public class Client {
     private ZContext context;
     private ZMQ.Socket req;
 
-    public Client(ZContext context, String clientAddress, Scanner scanner) {
+    public Client(ZContext context, String clientAddress) {
         this.clientAddress = clientAddress;
         this.context = context;
         this.req = context.createSocket(SocketType.REQ);
     }
 
-    public void start() {
+    public void start(Scanner scanner) {
         connect();
         while (!Thread.currentThread().isInterrupted()) {
             System.out.println("[Client]$: ");
