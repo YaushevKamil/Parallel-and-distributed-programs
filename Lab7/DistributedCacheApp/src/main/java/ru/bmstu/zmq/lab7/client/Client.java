@@ -45,6 +45,7 @@ public class Client {
 
     private String sendPutMessage(Command cmd) {
         sendMessage(cmd);
+        return receiveMessage();
     }
 
     private void sendMessage(Command cmd) {
