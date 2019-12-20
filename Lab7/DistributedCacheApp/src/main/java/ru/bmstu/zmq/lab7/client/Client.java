@@ -4,6 +4,8 @@ import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
 
+import java.net.Socket;
+
 public class Client {
     private String clientAddress;
     private ZContext context;
@@ -20,6 +22,6 @@ public class Client {
     }
 
     public void connect() {
-        
+        Socket
     }
 }
