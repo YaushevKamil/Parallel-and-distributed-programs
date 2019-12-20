@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class Command {
     public enum Type {
-        GET, PUT, NOTIFY, RESULT, ERROR
+        GET, PUT, NOTIFY, RESULT, SUCCESSFUL, ERROR
     }
 
     private static final int INT_ZERO = 0;
