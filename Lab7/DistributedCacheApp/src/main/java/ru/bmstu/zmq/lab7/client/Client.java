@@ -30,4 +30,8 @@ public class Client {
     public void connect() {
         req.connect(clientAddress);
     }
+
+    public void terminate() {
+        
+    }
 }
