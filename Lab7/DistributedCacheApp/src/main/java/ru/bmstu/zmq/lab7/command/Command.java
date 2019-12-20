@@ -51,6 +51,10 @@ public class Command {
         }
     }
 
+    public CommandType getCommandType() {
+        return this.type;
+    }
+
     private boolean isNumeric(String numString) {
         return numString != null && numPattern.matcher(numString).matches();
     }
