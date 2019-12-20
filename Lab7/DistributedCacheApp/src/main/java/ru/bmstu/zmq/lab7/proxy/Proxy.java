@@ -65,7 +65,7 @@ public class Proxy {
         }
     }
 
-    private 
+    private void send
 
     public void terminate() {
         poller.close();
