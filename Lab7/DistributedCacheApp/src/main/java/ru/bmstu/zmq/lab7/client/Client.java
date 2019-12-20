@@ -16,6 +16,10 @@ public class Client {
     }
 
     public void start() {
+        connect();
+    }
+
+    public void connect() {
         
     }
 }
