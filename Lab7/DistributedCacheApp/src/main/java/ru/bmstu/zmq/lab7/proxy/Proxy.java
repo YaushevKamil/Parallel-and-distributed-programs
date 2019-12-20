@@ -65,9 +65,9 @@ public class Proxy {
         }
     }
 
-    private void sendMessageToClient(ZFrame clientId, Command cmd) {
+    private void sendMessageToClient(ZFrame clientId, String result) {
         ZMsg msg = new ZMsg();
-
+        
     }
 
     private void sendMessageToCache(ZFrame cacheId, ZFrame clientId, Command cmd) {
