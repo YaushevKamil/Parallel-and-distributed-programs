@@ -55,7 +55,7 @@ public class Client {
         msg.send(req);
     }
 
-    private void receiveMessage(Command cmd) {
+    private String receiveMessage() {
         ZMsg msg = ZMsg.newStringMsg(cmd.toString());
         System.out.println("Message to proxy: " + msg);
         msg.send(req);
