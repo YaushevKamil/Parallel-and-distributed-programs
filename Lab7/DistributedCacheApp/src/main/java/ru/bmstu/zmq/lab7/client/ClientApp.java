@@ -8,6 +8,8 @@ import java.util.Scanner;
 public class ClientApp {
     public static void main(String[] args) {
         if (args.length != 1) {
+            System.out.println("Usage 
+        }
         String clientAddress = args[1];
         Scanner scanner = new Scanner(System.in);
         PrintStream outputStream = System.out;
