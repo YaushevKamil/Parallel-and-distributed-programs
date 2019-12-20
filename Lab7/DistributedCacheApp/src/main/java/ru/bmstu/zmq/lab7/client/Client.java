@@ -41,7 +41,7 @@ public class Client {
     private String sendGetMessage(Command cmd) {
         sendMessage(cmd);
         Command recvCmd = new Command(receiveMessage());
-        
+        return 
     }
 
     private String sendPutMessage(Command cmd) {
