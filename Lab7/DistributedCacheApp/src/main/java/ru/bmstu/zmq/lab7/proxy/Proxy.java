@@ -25,7 +25,7 @@ public class Proxy {
     public void bind() {
         clientRouter.bind(clientAddress);
         cacheRouter.bind(cacheAddress);
-        poller.register()
+        poller.register(clientRouter, )
     }
 
 }
