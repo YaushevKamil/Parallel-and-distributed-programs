@@ -70,7 +70,7 @@ public class Proxy {
         msg.add(clientId);
         msg.add((String) null); // ""
         msg.add(result);
-        msg.send(clientRouter);
+        msg.send(clientRouter); // destroy -> false
     }
 
     private void sendMessageToCache(ZFrame cacheId, ZFrame clientId, Command cmd) {
