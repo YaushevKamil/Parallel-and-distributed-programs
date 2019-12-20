@@ -1,6 +1,6 @@
 package ru.bmstu.zmq.lab7.command;
 
-//import java.util.regex.Pattern;
+import java.util.regex.Pattern;
 
 import java.util.ArrayList;
 
@@ -13,6 +13,7 @@ public class Command {
     private static final String DELIMITER = "\\s+";
     private ArrayList<Integer> args;
     private CommandType type;
+    private
 
     public Command(String raw) {
 
@@ -45,7 +46,7 @@ public class Command {
     }
 
     private boolean isNumeric(String numString) {
-        
+
     }
 
     private static int strToInt(String numString) {
