@@ -6,7 +6,6 @@ import org.zeromq.ZMQ;
 import ru.bmstu.zmq.lab7.command.Command;
 
 import java.io.PrintStream;
-import java.net.Socket;
 import java.util.Scanner;
 
 public class Client {
