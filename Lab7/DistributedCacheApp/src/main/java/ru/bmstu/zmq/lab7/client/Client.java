@@ -11,6 +11,6 @@ public class Client {
     public Client(ZContext context, String clientAddress) {
         this.clientAddress = clientAddress;
         this.context = context;
-        this.req
+        this.req = context
     }
 }
