@@ -30,6 +30,7 @@ public class Proxy {
     }
 
     public void start() {
+        bind();
         while(!Thread.currentThread().isInterrupted()) {
             poller.poll();
             if (poller.pollin(0)) { //client // create const
