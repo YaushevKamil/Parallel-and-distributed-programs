@@ -28,5 +28,6 @@ public class Proxy {
         poller.register(clientRouter, ZMQ.Poller.POLLIN);
         poller.register(cacheRouter, ZMQ.Poller.POLLIN);
     }
+    public void createHandler
 
 }
