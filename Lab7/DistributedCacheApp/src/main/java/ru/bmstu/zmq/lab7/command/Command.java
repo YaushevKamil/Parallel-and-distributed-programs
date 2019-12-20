@@ -1,6 +1,6 @@
 package ru.bmstu.zmq.lab7.command;
 
-import java.util.regex.Pattern;
+//import java.util.regex.Pattern;
 
 public class Command {
     private static final String DELIMITER = "\\s+";
