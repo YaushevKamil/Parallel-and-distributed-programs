@@ -14,4 +14,8 @@ public class Client {
         this.context = context;
         this.req = context.createSocket(SocketType.REQ);
     }
+
+    public void start() {
+        
+    }
 }
