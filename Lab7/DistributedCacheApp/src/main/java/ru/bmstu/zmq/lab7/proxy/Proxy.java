@@ -5,8 +5,8 @@ import ru.bmstu.zmq.lab7.command.Command;
 
 public class Proxy {
     private static final int POLLER_SIZE = 2;
-    private static final int CLIENT_POLLIN = 0;
-    private static final int CACHE_POLLIN = 1;
+    private static final int CLIENT_POLL = 0;
+    private static final int CACHE_POLL = 1;
 
     private String clientAddress;
     private String cacheAddress;
@@ -36,7 +36,7 @@ public class Proxy {
         setupRouter();
         while(!Thread.currentThread().isInterrupted()) {
             poller.poll();
-            if (poller.pollin(CLIENT_POLLIN)) { //client // create const
+            if (poller.pollin(CLIENT_POLL)) { //client // create const
                 ZMsg msg = ZMsg.recvMsg(clientRouter);
                 System.out.println("Message from client: " +  msg.toString());
                 ZFrame clientId = msg.pop();
@@ -48,7 +48,7 @@ public class Proxy {
                     case PUT:
                         ;
                 }
-            } else if (poller.pollin(CACHE_POLLIN)) { // cache
+            } else if (poller.pollin(CACHE_POLL)) { // cache
                 ZMsg msg = ZMsg.recvMsg(cacheRouter);
                 System.out.println("Message from cache: " +  msg.toString());
                 ZFrame cacheId = msg.pop();
