@@ -54,7 +54,7 @@ public class Proxy {
                 switch (cmd.getCommandType()) {
                     case RESULT:
                         ;
-                    case PUT:
+                    case NOTIFY:
                         ;
                 }
             }
