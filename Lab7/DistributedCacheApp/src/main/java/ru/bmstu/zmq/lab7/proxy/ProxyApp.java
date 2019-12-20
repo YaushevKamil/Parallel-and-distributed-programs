@@ -8,7 +8,7 @@ public class ProxyApp {
         String clientAddress = null; // Temporary
         String cacheAddress = null;
         Proxy proxy = new Proxy(context, clientAddress, cacheAddress);
-        proxy.handle();
+        proxy.start();
         proxy.terminate();
     }
 }
