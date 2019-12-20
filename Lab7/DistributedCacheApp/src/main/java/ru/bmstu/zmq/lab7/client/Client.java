@@ -56,8 +56,8 @@ public class Client {
     }
 
     private String receiveMessage() {
-        ZMsg recv = ZMsg.recvMsg(req);
-        System.out.println("Message from proxy: " + );
+        ZMsg receivedMsg = ZMsg.recvMsg(req);
+        System.out.println("Message from proxy: " + receivedMsg);
     }
 
     public void terminate() {
