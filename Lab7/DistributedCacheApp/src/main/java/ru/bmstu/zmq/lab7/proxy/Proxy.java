@@ -49,7 +49,8 @@ public class Proxy {
             } else if (poller.pollin(1)) { // cache
                 ZMsg msg = ZMsg.recvMsg(cacheRouter);
                 System.out.println("Message from cache: " +  msg.toString());
-                ZFrame 
+                ZFrame cacheId = msg.pop();
+                
             }
         }
     }
