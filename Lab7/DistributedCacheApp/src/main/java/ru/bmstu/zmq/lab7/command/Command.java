@@ -19,7 +19,7 @@ public class Command {
 
     public Command(Type type, Integer ...args) {
         this.type = type;
-        this.args = args);
+        this.args = Arrays.asListargs);
     }
 
     public Command(String raw) {
