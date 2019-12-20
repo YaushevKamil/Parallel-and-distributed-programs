@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import java.util.ArrayList;
 
 public class Command {
-    public enum CommandType {
+    public enum Type {
         GET, PUT, NOTIFY, ERROR
     }
 
@@ -13,7 +13,7 @@ public class Command {
     private static final String DELIMITER = "\\s+";
     private static final String NUM_PATTERN = "\\d+";
     private ArrayList<Integer> args;
-    private CommandType type;
+    private Type type;
     private Pattern numPattern = Pattern.compile(NUM_PATTERN);
 
     public Command(String raw) {
@@ -26,32 +26,32 @@ public class Command {
         if (sepCmd.length == 0) return;
         switch (sepCmd[0]) {
             case "GET":
-                this.type = CommandType.GET;
+                this.type = Type.GET;
                 if (sepCmd.length > 1) {
                     args.add(strToInt(sepCmd[1]));
                 } else {
                     args.add(INT_ZERO);
                 }
             case "PUT":
-                this.type = CommandType.PUT;
+                this.type = Type.PUT;
                 if (sepCmd.length > 2) {
                     args.add(strToInt(sepCmd[1]), strToInt(sepCmd[2]));
                 } else {
                     args.add(INT_ZERO, INT_ZERO);
                 }
             case "NOTIFY":
-                this.type = CommandType.NOTIFY;
+                this.type = Type.NOTIFY;
                 if (sepCmd.length > 2) {
                     args.add(strToInt(sepCmd[1]), strToInt(sepCmd[2]));
                 } else {
                     args.add(INT_ZERO, INT_ZERO);
                 }
             case "ERROR":
-                this.type = CommandType.ERROR;
+                this.type = Type.ERROR;
         }
     }
 
-    public CommandType getCommandType() {
+    public Type getCommandType() {
         return this.type;
     }
 

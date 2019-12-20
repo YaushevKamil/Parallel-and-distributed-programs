@@ -38,7 +38,7 @@ public class Proxy {
                 msg.pop();
                 Command cmd = new Command(msg.popString());
                 switch (cmd.getCommandType()) {
-                    case 
+                    case Command.Type.
                 }
             } else if (poller.pollin(1)) { // cache
                 ZMsg msg = ZMsg.recvMsg(cacheRouter);
