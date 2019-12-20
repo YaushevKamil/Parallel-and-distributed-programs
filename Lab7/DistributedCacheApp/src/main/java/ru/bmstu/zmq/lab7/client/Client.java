@@ -1,5 +1,6 @@
 package ru.bmstu.zmq.lab7.client;
 
+import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
 
@@ -11,6 +12,6 @@ public class Client {
     public Client(ZContext context, String clientAddress) {
         this.clientAddress = clientAddress;
         this.context = context;
-        this.req = context.createSocket()
+        this.req = context.createSocket(SocketType.REQ);
     }
 }
