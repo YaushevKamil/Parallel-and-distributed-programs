@@ -65,7 +65,9 @@ public class Proxy {
         }
     }
 
-    private void sendMessageToCache
+    private void sendMessageToCache() {
+        
+    }
 
     public void terminate() {
         poller.close();
