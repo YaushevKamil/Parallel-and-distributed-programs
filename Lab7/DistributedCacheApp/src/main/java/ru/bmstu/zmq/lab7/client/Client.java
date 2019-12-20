@@ -40,7 +40,7 @@ public class Client {
 
     private String sendGetMessage(Command cmd) {
         sendMessage(cmd);
-        
+        Command
     }
 
     private String sendPutMessage(Command cmd) {
