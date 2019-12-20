@@ -10,8 +10,8 @@ public class ClientApp {
         String clientAddress = args[1];
         ZContext context = new ZContext();
         Scanner scanner = new Scanner(System.in);
-        PrintStream output = System.out;
+        PrintStream outputStream = System.out;
         Client client = new Client(context, clientAddress);
-        client.start(scanner, output);
+        client.start(scanner, outputStream);
     }
 }
