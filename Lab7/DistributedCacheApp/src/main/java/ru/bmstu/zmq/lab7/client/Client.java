@@ -38,9 +38,10 @@ public class Client {
         req.connect(clientAddress);
     }
 
-    private String sendGetMessage(Command putCmd) {
-        ZMsg msg = ZMsg.newStringMsg(putCmd.toString());
+    private String sendGetMessage(Command cmd) {
+        ZMsg msg = ZMsg.newStringMsg(cmd.toString());
         System.out.println("Message to proxy: " + msg);
+
     }
 
     private String sendPutMessage() {
