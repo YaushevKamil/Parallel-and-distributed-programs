@@ -5,6 +5,7 @@ import ru.bmstu.zmq.lab7.command.Command;
 
 public class Proxy {
     private static final int POLLER_SIZE = 2;
+    private static final int CLIENT_POLLIN = 0;
     private String clientAddress;
     private String cacheAddress;
     private ZContext context;
@@ -33,7 +34,7 @@ public class Proxy {
         setupRouter();
         while(!Thread.currentThread().isInterrupted()) {
             poller.poll();
-            if (poller.pollin(0)) { //client // create const
+            if (poller.pollin(CLIENT_POLLIN)) { //client // create const
                 ZMsg msg = ZMsg.recvMsg(clientRouter);
                 System.out.println("Message from client: " +  msg.toString());
                 ZFrame clientId = msg.pop();
