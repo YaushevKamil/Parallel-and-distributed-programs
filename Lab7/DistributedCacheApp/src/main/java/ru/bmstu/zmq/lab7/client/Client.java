@@ -3,6 +3,7 @@ package ru.bmstu.zmq.lab7.client;
 import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
+import org.zeromq.ZMsg;
 import ru.bmstu.zmq.lab7.command.Command;
 
 import java.io.PrintStream;
@@ -38,7 +39,7 @@ public class Client {
     }
 
     private String sendGetMessage() {
-        ZMsg 
+        ZMsg
     }
 
     private String sendPutMessage() {
