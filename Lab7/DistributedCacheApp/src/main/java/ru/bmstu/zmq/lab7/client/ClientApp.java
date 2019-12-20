@@ -15,8 +15,9 @@ public class ClientApp {
         Scanner scanner = new Scanner(System.in);
         PrintStream outputStream = System.out;
         ZContext context = new ZContext();
-        
+
         Client client = new Client(context, clientAddress);
         client.start(scanner, outputStream);
+        client.terminate();
     }
 }
