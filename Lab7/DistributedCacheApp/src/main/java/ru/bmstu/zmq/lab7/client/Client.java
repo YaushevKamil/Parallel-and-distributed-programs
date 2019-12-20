@@ -40,7 +40,7 @@ public class Client {
 
     private String sendGetMessage(Command putCmd) {
         ZMsg msg = ZMsg.newStringMsg(putCmd.toString());
-        System.out.println("Client");
+        System.out.println("Message to proxy: " + msg);
     }
 
     private String sendPutMessage() {
