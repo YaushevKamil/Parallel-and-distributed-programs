@@ -9,7 +9,8 @@ public class Client {
     private ZMQ.Socket req;
 
     public Client(ZContext context, String clientAddress) {
-        this.context = context;
         this.clientAddress = clientAddress;
+        this.context = context;
+
     }
 }
