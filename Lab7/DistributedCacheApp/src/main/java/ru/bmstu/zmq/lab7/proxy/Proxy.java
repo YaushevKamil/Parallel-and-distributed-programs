@@ -3,6 +3,9 @@ package ru.bmstu.zmq.lab7.proxy;
 import org.zeromq.*;
 import ru.bmstu.zmq.lab7.command.Command;
 
+import static ru.bmstu.zmq.lab7.command.Command.*;
+import static ru.bmstu.zmq.lab7.command.Command.Type.GET;
+
 public class Proxy {
     private String clientAddress;
     private String cacheAddress;
@@ -38,7 +41,8 @@ public class Proxy {
                 msg.pop();
                 Command cmd = new Command(msg.popString());
                 switch (cmd.getCommandType()) {
-                    case Command.Type.
+                    case GET:
+                        ;
                 }
             } else if (poller.pollin(1)) { // cache
                 ZMsg msg = ZMsg.recvMsg(cacheRouter);
