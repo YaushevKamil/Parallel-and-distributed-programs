@@ -69,7 +69,8 @@ public class Proxy {
         ZMsg msg = new ZMsg();
         msg.add(cacheId);
         msg.add(clientId);
-        msg.add();
+        msg.add(cmd.toString());
+        
     }
 
     public void terminate() {
