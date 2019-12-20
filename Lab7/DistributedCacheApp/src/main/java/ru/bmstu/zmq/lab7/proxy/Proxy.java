@@ -65,6 +65,8 @@ public class Proxy {
         }
     }
 
+    private 
+
     public void terminate() {
         poller.close();
         context.destroySocket(clientRouter);
