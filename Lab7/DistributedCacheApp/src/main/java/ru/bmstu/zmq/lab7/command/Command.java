@@ -11,9 +11,10 @@ public class Command {
 
     private static final int INT_ZERO = 0;
     private static final String DELIMITER = "\\s+";
+    private static final String NUM_PATTERN = "\\d+";
     private ArrayList<Integer> args;
     private CommandType type;
-    private Pattern numPattern = Pattern.compile("-?\\d+(\\.\\d+)?");
+    private Pattern numPattern = Pattern.compile(NUM_PATTERN);
 
     public Command(String raw) {
 
