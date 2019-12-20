@@ -18,7 +18,7 @@ public class Client {
         this.req = context.createSocket(SocketType.REQ);
     }
 
-    public void start(Scanner scanner) {
+    public void start(Scanner scanner, ) {
         connect();
         while (!Thread.currentThread().isInterrupted()) {
             System.out.println("[Client]$: ");
