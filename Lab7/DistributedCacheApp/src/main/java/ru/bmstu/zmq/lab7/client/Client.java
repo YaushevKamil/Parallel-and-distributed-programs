@@ -6,7 +6,7 @@ import org.zeromq.ZMQ;
 public class Client {
     private String clientAddress;
     private ZContext context;
-    private ZMQ.Socket clientRouter;
+    private ZMQ.Socket req;
 
     public Client(ZContext context, String clientAddress) {
 
