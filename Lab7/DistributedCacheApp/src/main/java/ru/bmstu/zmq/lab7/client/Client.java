@@ -22,6 +22,6 @@ public class Client {
     }
 
     public void connect() {
-        Socket
+        Socket.connect
     }
 }
