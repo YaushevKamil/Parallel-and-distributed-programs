@@ -4,6 +4,7 @@ import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
 
+import java.io.PrintStream;
 import java.net.Socket;
 import java.util.Scanner;
 
@@ -18,7 +19,7 @@ public class Client {
         this.req = context.createSocket(SocketType.REQ);
     }
 
-    public void start(Scanner scanner, Print) {
+    public void start(Scanner scanner, PrintStream output) {
         connect();
         while (!Thread.currentThread().isInterrupted()) {
             System.out.println("[Client]$: ");

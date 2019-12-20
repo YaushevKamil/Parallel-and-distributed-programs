@@ -2,6 +2,7 @@ package ru.bmstu.zmq.lab7.client;
 
 import org.zeromq.ZContext;
 
+import java.io.PrintStream;
 import java.util.Scanner;
 
 public class ClientApp {
@@ -9,6 +10,8 @@ public class ClientApp {
         String clientAddress = args[1];
         ZContext context = new ZContext();
         Scanner scanner = new Scanner(System.in);
-        Client client = new Client(context, clientAddress, scanner);
+        PrintStream output = System.out;
+        Client client = new Client(context, clientAddress);
+        client.start(scanner, output);
     }
 }
