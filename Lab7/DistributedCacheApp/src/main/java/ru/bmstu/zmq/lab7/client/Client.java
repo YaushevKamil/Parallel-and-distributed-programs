@@ -38,11 +38,11 @@ public class Client {
     }
 
     private String sendGetMessage() {
-
+        ZMsg 
     }
 
     private String sendPutMessage() {
-        
+
     }
 
     public void terminate() {
