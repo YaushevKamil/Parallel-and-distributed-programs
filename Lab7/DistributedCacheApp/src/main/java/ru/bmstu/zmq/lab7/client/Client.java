@@ -39,7 +39,7 @@ public class Client {
     }
 
     private String sendGetMessage() {
-        ZMsg msg = ZMsg.recvMsg(req);
+        ZMsg msg = ZMsg.newStringMsg()
     }
 
     private String sendPutMessage() {
