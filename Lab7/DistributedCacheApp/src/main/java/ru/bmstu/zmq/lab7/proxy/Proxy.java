@@ -25,6 +25,7 @@ public class Proxy {
     public void bind() {
         clientRouter.bind(clientAddress);
         cacheRouter.bind(cacheAddress);
+        
     }
 
 }
