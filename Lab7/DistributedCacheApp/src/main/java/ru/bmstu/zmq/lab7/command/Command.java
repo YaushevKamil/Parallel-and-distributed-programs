@@ -13,7 +13,7 @@ public class Command {
 
     private String[] parseCommand(String raw) {
         //Pattern.matches("А.+а","");
-        String[] 
+        String[] separatedString = raw.trim().split(DELIME);
     }
 //    public getCommand
 }
