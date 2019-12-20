@@ -67,7 +67,9 @@ public class Command {
     }
 
     public Integer getResult() {
-        return this.type == Type.RESULT null;
+        return this.type == Type.RESULT  && args.size() > ?
+        :
+        null;
     }
 
     @Override
