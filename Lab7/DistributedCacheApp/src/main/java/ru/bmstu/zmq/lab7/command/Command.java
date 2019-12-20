@@ -1,5 +1,6 @@
 package ru.bmstu.zmq.lab7.command;
 
+import java.util.List;
 import java.util.regex.Pattern;
 
 import java.util.ArrayList;
@@ -19,10 +20,11 @@ public class Command {
 
     public Command(Type type, Integer ...args) {
         this.type = type;
-
+        this.args = new ArrayList<>(args);
     }
 
     public Command(String raw) {
+        this.args = new ArrayList<>();
         parseCommand(raw);
     }
 
