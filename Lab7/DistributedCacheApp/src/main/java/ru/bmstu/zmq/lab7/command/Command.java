@@ -44,7 +44,9 @@ public class Command {
         }
     }
 
-    private boolean isNumeric(String )
+    private boolean isNumeric(String numString) {
+        
+    }
 
     private static int strToInt(String numString) {
         return numString.length() > 0 ?
