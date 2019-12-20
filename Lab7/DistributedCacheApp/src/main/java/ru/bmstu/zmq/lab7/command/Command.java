@@ -13,7 +13,7 @@ public class Command {
     private static final String DELIMITER = "\\s+";
     private ArrayList<Integer> args;
     private CommandType type;
-    private Pattern 
+    private Pattern intPattern
 
     public Command(String raw) {
 
