@@ -23,7 +23,7 @@ public class Client {
         connect();
         while (!Thread.currentThread().isInterrupted()) {
             System.out.println("[Client]$: ");
-
+            
         }
     }
 
