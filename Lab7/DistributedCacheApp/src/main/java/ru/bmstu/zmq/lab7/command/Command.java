@@ -41,6 +41,11 @@ public class Command {
                 }
             case "NOTIFY":
                 this.type = CommandType.NOTIFY;
+                if (sepCmd.length > 2) {
+                    args.add(strToInt(sepCmd[1]), strToInt(sepCmd[2]));
+                } else {
+                    args.add(INT_ZERO, INT_ZERO);
+                }
             case "ERROR":
                 this.type = CommandType.ERROR;
         }
