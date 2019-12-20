@@ -18,7 +18,7 @@ public class Proxy {
         this.context = context;
         this.clientRouter = context.createSocket(SocketType.ROUTER);
         this.cacheRouter = context.createSocket(SocketType.ROUTER);
-        this.poller = con
+        this.poller = context.createPoller()
     }
 
 }
