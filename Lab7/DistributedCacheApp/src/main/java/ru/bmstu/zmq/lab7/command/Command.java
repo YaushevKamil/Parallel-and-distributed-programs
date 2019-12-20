@@ -17,7 +17,9 @@ public class Command {
     private Type type;
     private Pattern numPattern = Pattern.compile(NUM_PATTERN);
 
-    public Command(Type type, Integer ...)
+    public Command(Type type, Integer ...args) {
+        
+    }
 
     public Command(String raw) {
         parseCommand(raw);
