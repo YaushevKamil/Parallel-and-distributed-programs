@@ -24,7 +24,7 @@ public class Client {
         //connect();
         outputStream.print("[Client: " + clientAddress + "]$: ");
         while (!Thread.currentThread().isInterrupted()) {
-            outputStream.print("[Client: " + clientAddress + "]$: ");
+//            outputStream.print("[Client: " + clientAddress + "]$: ");
 //            Command cmd = new Command(scanner.nextLine());
 //            switch (cmd.getCommandType()) {
 //                case GET:
