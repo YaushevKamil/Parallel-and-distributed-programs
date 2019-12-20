@@ -7,7 +7,7 @@ public class Proxy {
     private final String clientAddress;
     private final String cacheAddress;
     private ZContext context;
-    private ZMQ.Socket
+    private ZMQ.Socket 
 
     public Proxy(ZContext context, String clientAddress, String cacheAddress) {
         this.clientAddress = clientAddress;
