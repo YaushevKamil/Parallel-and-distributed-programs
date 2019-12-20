@@ -25,6 +25,7 @@ public class Client {
         while (!Thread.currentThread().isInterrupted()) {
             System.out.println("[Client]$: ");
             Command cmd = new Command(scanner.nextLine());
+            
         }
     }
 
