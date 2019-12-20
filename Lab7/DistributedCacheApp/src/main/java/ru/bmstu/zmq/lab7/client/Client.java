@@ -42,9 +42,9 @@ public class Client {
 
     private String sendGetMessage(Command cmd) {
         sendMessage(cmd);
-        Command recvCmd = new Command(receiveMessage());
-        return recvCmd.getCommandType() == SUCCESSFUL ?
-                
+        Command respCmd = new Command(receiveMessage());
+        return respCmd.getCommandType() == SUCCESSFUL ?
+                respCmd.
     }
 
     private String sendPutMessage(Command cmd) {
