@@ -28,7 +28,7 @@ public class Proxy {
         poller.register(cacheRouter, ZMQ.Poller.POLLIN);
     }
 
-    public void handle() {
+    public void start() {
         while(!Thread.currentThread().isInterrupted()) {
             poller.poll();
             if (poller.pollin(0)) { //client // create const
