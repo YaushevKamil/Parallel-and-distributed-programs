@@ -32,6 +32,7 @@ public class Client {
                     Integer result = sendGetMessage(cmd);
                     output.println(result != null ? result.toString() : "ERROR!");
                 case PUT:
+                    String result = sendPutMessage(cmd);
                     output.println();
             }
         }
