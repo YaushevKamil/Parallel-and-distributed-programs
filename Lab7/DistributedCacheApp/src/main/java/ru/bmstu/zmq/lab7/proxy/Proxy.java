@@ -29,7 +29,7 @@ public class Proxy {
         poller.register(cacheRouter, ZMQ.Poller.POLLIN);
     }
     public void createHandler() {
-        while(!Thre)
+        while(!Thread.currentThread())
     }
 
 }
