@@ -1,6 +1,5 @@
 package ru.bmstu.zmq.lab7.command;
 
-import java.util.List;
 import java.util.regex.Pattern;
 
 import java.util.ArrayList;
@@ -14,13 +13,13 @@ public class Command {
     private static final int INT_ZERO = 0;
     private static final String DELIMITER = "\\s+";
     private static final String NUM_PATTERN = "\\d+";
-    private List<Integer> args;
+    private ArrayList<Integer> args;
     private Type type;
     private Pattern numPattern = Pattern.compile(NUM_PATTERN);
 
     public Command(Type type, Integer ...args) {
         this.type = type;
-        this.args = new ArrayList<>(args);
+        this.args = args);
     }
 
     public Command(String raw) {
