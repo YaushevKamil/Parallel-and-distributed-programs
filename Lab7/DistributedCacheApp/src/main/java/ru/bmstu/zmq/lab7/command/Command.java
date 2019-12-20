@@ -15,9 +15,11 @@ public class Command {
 
     private String[] parseCommand(String raw) {
         //Pattern.matches("А.+а","");
-        String[] separatedString = raw.trim().split(DELIMITER);
-        if (separatedString.length == 0) return null;
-        switch ()
+        String[] sepStr = raw.trim().split(DELIMITER);
+        if (sepStr.length == 0) return null;
+        switch (sepStr[0]) {
+            case 
+        }
     }
 //    public getCommand
 }
