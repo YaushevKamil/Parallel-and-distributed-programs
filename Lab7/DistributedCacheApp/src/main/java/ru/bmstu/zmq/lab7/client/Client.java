@@ -26,7 +26,8 @@ public class Client {
             System.out.println("[Client]$: ");
             Command cmd = new Command(scanner.nextLine());
             switch (cmd.getCommandType()) {
-                case 
+                case GET:
+                    
             }
         }
     }
