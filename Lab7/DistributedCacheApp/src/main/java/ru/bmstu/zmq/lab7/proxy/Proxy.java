@@ -36,6 +36,7 @@ public class Proxy {
             if (poller.pollin(0)) { //client // create const
                 ZMsg msg = ZMsg.recvMsg(clientRouter);
                 System.out.println("Client message: " +  msg.toString());
+                
             } else if (poller.pollin(1)) { // cache
 
             }
