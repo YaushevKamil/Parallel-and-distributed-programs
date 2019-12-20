@@ -39,7 +39,7 @@ public class Proxy {
 
             } else if (poller.pollin(1)) { // cache
                 ZMsg msg = ZMsg.recvMsg(cacheRouter);
-                System.out.println("Router message: " +  msg.toString());
+                System.out.println("Cache message: " +  msg.toString());
             }
         }
     }
