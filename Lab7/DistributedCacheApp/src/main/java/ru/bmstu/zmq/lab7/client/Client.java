@@ -20,7 +20,7 @@ public class Client {
     public void start() {
         connect();
         while (!Thread.currentThread().isInterrupted()) {
-            
+            System.out.println("[Client]");
         }
     }
 
