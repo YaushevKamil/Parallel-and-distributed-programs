@@ -6,7 +6,7 @@ public class ProxyApp {
     public static void main(String[] args) {
         ZContext context = new ZContext();
         String clientAddress = null; // Temporary
-        String cacheAddress = null;
+        String cacheAddress = null;  // Temporary
         Proxy proxy = new Proxy(context, clientAddress, cacheAddress);
         proxy.start();
         proxy.terminate();
