@@ -3,6 +3,7 @@ package ru.bmstu.zmq.lab7.command;
 import java.util.regex.Pattern;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class Command {
     public enum Type {
@@ -65,12 +66,12 @@ public class Command {
                 INT_ZERO;
     }
 
+    @Override
     public String toString() {
-        StringBuilder res = new StringBuilder(type.toString());
-        for (Integer arg : args) {
-            res.append(" ").append(arg);
-        }
-        return res.toString();
+        return args
+                .stream()
+                .map(arg -> " " + arg)
+                .collect(Collectors.joining("", type.toString(), ""));
     }
 //    public getCommand
 }
