@@ -67,6 +67,7 @@ public class Command {
     }
 
     public Integer getResult() {
+        
         return null;
     }
 
