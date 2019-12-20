@@ -21,12 +21,11 @@ public class Command {
         String[] sepStr = raw.trim().split(DELIMITER);
         if (sepStr.length == 0) return null;
         switch (sepStr[0]) {
-            case "GET"
+            case "GET":
                 this.type = CommandType.GET;
                 if (sepStr.length > 1) {
                     args.add(Integer.parseInt(sepStr[1]));
                 }
-
             case "PUT"
                 ;
             case "NOTIFY"
