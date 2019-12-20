@@ -44,7 +44,7 @@ public class Command {
         }
     }
 
-    private 
+    private boolean is
 
     private static int strToInt(String numString) {
         return numString.length() > 0 ?
