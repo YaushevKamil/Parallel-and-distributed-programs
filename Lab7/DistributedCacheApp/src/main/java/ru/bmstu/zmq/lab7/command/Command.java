@@ -24,7 +24,7 @@ public class Command {
             case "GET"
                 this.type = CommandType.GET;
                 if (sepStr.length > 1) {
-                    args.add();
+                    args.add(Integer.parseInt(sepStr[1]));
                 }
 
             case "PUT"
