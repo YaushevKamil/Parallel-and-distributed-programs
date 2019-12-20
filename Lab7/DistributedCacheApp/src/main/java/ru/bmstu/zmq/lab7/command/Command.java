@@ -1,7 +1,7 @@
 package ru.bmstu.zmq.lab7.command;
 
 public enum CommandType {
-    GET, PUT, 
+    GET, PUT, ERROR
 }
 
 public class Command {
