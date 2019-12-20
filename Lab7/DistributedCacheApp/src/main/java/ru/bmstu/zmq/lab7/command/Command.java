@@ -8,6 +8,8 @@ public class Command {
     public enum CommandType {
         GET, PUT, NOTIFY, ERROR
     }
+
+    private static final int INT_ZERO = 0;
     private static final String DELIMITER = "\\s+";
     private ArrayList<Integer> args;
     private CommandType type;
@@ -35,6 +37,10 @@ public class Command {
         }
     }
 
-    private static 
+    private static int strToInt(String numString) {
+        return numString.length() > 0 ?
+                Integer.parseInt(numString) :
+                INT_ZERO;
+    }
 //    public getCommand
 }
