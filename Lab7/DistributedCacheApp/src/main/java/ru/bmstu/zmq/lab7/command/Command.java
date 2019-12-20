@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Command {
     public enum Type {
-        GET, PUT, NOTIFY, ERROR
+        GET, PUT, NOTIFY, RESULT, ERROR
     }
 
     private static final int INT_ZERO = 0;
