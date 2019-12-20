@@ -8,7 +8,8 @@ import java.util.Scanner;
 public class ClientApp {
     public static void main(String[] args) {
         if (args.length != 1) {
-            System.out.println("Usage: ClientApp
+            System.out.println("Usage: ClientApp <clientAddress>");
+            
         }
         String clientAddress = args[1];
         Scanner scanner = new Scanner(System.in);
