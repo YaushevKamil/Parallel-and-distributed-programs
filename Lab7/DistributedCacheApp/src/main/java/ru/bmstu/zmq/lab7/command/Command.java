@@ -19,6 +19,7 @@ public class Command {
         if (sepStr.length == 0) return null;
         switch (sepStr[0]) {
             case "GET"
+                
         }
     }
 //    public getCommand
