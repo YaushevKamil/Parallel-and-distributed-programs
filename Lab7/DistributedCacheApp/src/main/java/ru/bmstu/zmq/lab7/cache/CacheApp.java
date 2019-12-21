@@ -15,7 +15,8 @@ public class CacheApp {
         }
         String address = args[0];
         Pattern numPattern = Pattern.compile(NUM_PATTERN);
-        int leftBound = strToint
+        int leftBound = strToInt(args[1], numPattern);
+
         ZContext context = new ZContext();
 
         Cache cache = new Cache(context, address);
