@@ -7,5 +7,7 @@ public class Storage {
     private int firstInd;
     private int lastInd;
 
-    public 
+    public Storage(int ) {
+
+    }
 }
