@@ -27,18 +27,18 @@ public class Cache {
         this.nextNotifyTime = System.currentTimeMillis();
     }
 
-    private void connect() {
-        dealer.connect(address);
-    }
-
-    public void setupDealer() {
-        poller.register(dealer, ZMQ.Poller.POLLIN);
-    }
-
     public void start() {
         connect();
         setupDealer();
         handle();
+    }
+
+    private void connect() {
+        dealer.connect(address);
+    }
+
+    private void setupDealer() {
+        poller.register(dealer, ZMQ.Poller.POLLIN);
     }
 
     public void handle() {
