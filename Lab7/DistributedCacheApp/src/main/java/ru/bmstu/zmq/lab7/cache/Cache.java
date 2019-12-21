@@ -48,14 +48,14 @@ public class Cache {
                 switch (cmd.getCommandType()) {
                     case GET:
                         ZMsg reply = new ZMsg();
-                        int reqInd = cmd.getIndex();
-                        reply.add(new Command(Command.Type.RESULT, storage.get(reqInd)).toString());
+                        int reqIndex = cmd.getIndex();
+                        reply.add(new Command(Command.Type.RESULT, storage.get(reqIndex)).toString());
                         reply.add(clientId);
                         reply.send(dealer);
                     case PUT:
-                        int ind = cmd.getIndex();
-                        int val = cmd.getValue();
-                        storage.put()
+                        int index = cmd.getIndex();
+                        int value = cmd.getValue();
+                        storage.put(index, value);
                 }
             }
         }
