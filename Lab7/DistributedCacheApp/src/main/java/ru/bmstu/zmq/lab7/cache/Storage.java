@@ -14,4 +14,8 @@ public class Storage {
         this.lastInd = lastInd;
         storage = new ArrayList<Integer>(Collections.nCopies(lastInd-firstInd+1, initialValue));
     }
+
+    public get(int ind) {
+
+    }
 }
