@@ -20,7 +20,7 @@ public class CacheApp {
         int initialValue = strToInt(args[3], numPattern);
         ZContext context = new ZContext();
 
-        Cache cache = new Cache(context, address);
+        Cache cache = new Cache(context, address, leftBound, rightBound, initialValue);
     }
 
     private static void usage() {
