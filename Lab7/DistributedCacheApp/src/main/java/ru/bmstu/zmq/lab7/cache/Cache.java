@@ -21,7 +21,7 @@ public class Cache {
     }
 
     private void connect() {
-
+        dealer.connect(ad)
     }
 
     public void terminate() {
