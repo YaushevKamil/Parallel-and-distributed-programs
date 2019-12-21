@@ -13,7 +13,7 @@ public class Cache {
     public Cache(ZContext context, String address, int leftBound, int rightBound, int initialValue) {
         this.address = address;
         this.context = context;
-        this.dealer = 
+        this.dealer = context.createSocket();
         this.storage = new Storage(leftBound, rightBound, initialValue);
     }
 
