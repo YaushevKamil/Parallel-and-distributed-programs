@@ -10,7 +10,7 @@ public class CacheApp {
 
     public static void main(String[] args) {
         if (args.length != 4) {
-            usage();
+            System.out.println("Usage: CacheApp <address> <leftBound> <rightBound> <initialValue>");
             System.exit(-1);
         }
         String address = args[0];
@@ -21,10 +21,6 @@ public class CacheApp {
         ZContext context = new ZContext();
 
         Cache cache = new Cache(context, address, leftBound, rightBound, initialValue);
-    }
-
-    private static void usage() {
-        System.out.println("Usage: CacheApp <address> <leftBound> <rightBound> <initialValue>");
     }
 
     private static boolean isNumeric(String numString, Pattern numPattern) {
