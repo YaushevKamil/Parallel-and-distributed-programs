@@ -77,7 +77,9 @@ public class Command {
     }
 
     public Integer getIndex() {
-        
+        return this.type == Type.RESULT  && args.size() == 1 ?
+                args.get(0) :
+                null;
     }
 
     public Integer getResult() {
