@@ -20,6 +20,6 @@ public class ActiveStorage {
             return firstIndex <= index && index <= lastIndex;
         }
 
-        
+        public
     }
 }
