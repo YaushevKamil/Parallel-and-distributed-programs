@@ -5,6 +5,7 @@ import org.zeromq.ZFrame;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class ActiveStorage {
     private static class StorageInfo {
@@ -71,8 +72,8 @@ public class ActiveStorage {
                 .stream()
                 .filter(s -> s.isIndexInside(index))
                 .filter(not(StorageInfo::isAlive))
-                .collect()
-                .map(s -> storages.remove(s));
+                .collect(Collectors.toList())
+                .forEach(s -> storages.remove(s));
         return ;
     }
 }
