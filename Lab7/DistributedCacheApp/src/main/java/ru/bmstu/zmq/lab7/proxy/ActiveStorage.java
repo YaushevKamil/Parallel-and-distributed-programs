@@ -5,7 +5,7 @@ import org.zeromq.ZFrame;
 public class ActiveStorage {
     private static class StorageInfo {
         private static final int NOTIFY_DURATION_MS = 500;
-        
+
         ZFrame storageId;
         int firstIndex;
         int lastIndex;
@@ -29,7 +29,7 @@ public class ActiveStorage {
 
         public boolean isAlive() {
             long currentTime = System.currentTimeMillis();
-            return (currentTime - lastNotifyTime) < 2 *
+            return (currentTime - lastNotifyTime) < 2 * NOTIFY_DURATION_MS;
         }
     }
 
