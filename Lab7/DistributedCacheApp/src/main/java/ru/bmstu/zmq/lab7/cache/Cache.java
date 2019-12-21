@@ -15,4 +15,12 @@ public class Cache {
         this.address = address;
         this.storage = new Storage(leftBound, rightBound, initialValue);
     }
+
+    public void start() {
+
+    }
+
+    public void terminate() {
+        
+    }
 }

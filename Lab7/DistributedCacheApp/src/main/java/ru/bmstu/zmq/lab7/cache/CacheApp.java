@@ -21,6 +21,8 @@ public class CacheApp {
         ZContext context = new ZContext();
 
         Cache cache = new Cache(context, address, leftBound, rightBound, initialValue);
+        cache.start();
+        cache.terminate();
     }
 
     private static boolean isNumeric(String numString, Pattern numPattern) {
