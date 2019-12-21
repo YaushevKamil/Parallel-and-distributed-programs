@@ -62,11 +62,15 @@ public class ActiveStorage {
         storages.add(storageInfo);
     }
 
+    public static <T> Predicate<T> not(Predicate<T> t) {
+        return t.negate();
+    }
+
     public List<ZFrame> getAliveStorages(int index) {
         storages
                 .stream()
                 .filter(s -> s.isIndexInside(index))
-                .filter(Predicate..not(StorageInfo::isAlive))
+                .filter(not(StorageInfo::isAlive))
                 .
     }
 }
