@@ -114,5 +114,4 @@ public class Command {
                 .map(arg -> " " + arg)
                 .collect(Collectors.joining("", type.toString(), ""));
     }
-//    public getCommand
 }

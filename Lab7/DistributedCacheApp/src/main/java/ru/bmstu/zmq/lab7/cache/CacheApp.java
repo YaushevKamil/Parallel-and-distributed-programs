@@ -1,7 +1,6 @@
 package ru.bmstu.zmq.lab7.cache;
 
 import org.zeromq.ZContext;
-import ru.bmstu.zmq.lab7.command.Command;
 
 import java.util.regex.Pattern;
 
