@@ -53,7 +53,7 @@ public class Cache {
                         reply.add(clientId);
                         reply.send(dealer);
                     case PUT:
-                        
+                        storage.put()
                 }
             }
         }
