@@ -33,13 +33,14 @@ public class Cache {
     public void start() {
         connect();
         setupDealer();
-        
+
 
     }
 
 
 
     public void terminate() {
-        
+        poller.close();
+
     }
 }
