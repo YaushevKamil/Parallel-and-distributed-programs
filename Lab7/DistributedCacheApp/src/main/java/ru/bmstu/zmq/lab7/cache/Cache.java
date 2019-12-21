@@ -11,6 +11,7 @@ public class Cache {
     private Storage storage;
 
     public Cache(ZContext context, String address, int leftBound, int rightBound, int initialValue) {
-
+        this.context = context;
+        
     }
 }
