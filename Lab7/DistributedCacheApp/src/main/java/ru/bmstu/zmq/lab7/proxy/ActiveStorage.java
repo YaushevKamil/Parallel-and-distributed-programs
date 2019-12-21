@@ -13,7 +13,7 @@ public class ActiveStorage {
             this.storageId = storageId;
             this.firstIndex = 0;
             this.lastIndex = 0;
-            lastNotifyTime
+            lastNotifyTime = System.currentTimeMillis();
         }
     }
 }
