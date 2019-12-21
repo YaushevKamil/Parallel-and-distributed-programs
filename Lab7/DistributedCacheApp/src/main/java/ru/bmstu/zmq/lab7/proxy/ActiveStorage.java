@@ -29,7 +29,8 @@ public class ActiveStorage {
     }
 
     public ZFrame getStorage(int index) {
-        
+        return getStorages(index)
+                .
     }
 
     public List<ZFrame> getStorages(int index) {
