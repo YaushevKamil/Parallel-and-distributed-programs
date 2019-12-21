@@ -42,8 +42,9 @@ public class ActiveStorage {
         @Override
         public boolean equals(Object o) {
             if (!(o instanceof StorageInfo)) {
-                
+                return false;
             }
+            
         }
     }
 
