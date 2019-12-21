@@ -32,7 +32,7 @@ public class ActiveStorage {
     public Optional<ZFrame> getStorage(int index) {
         return getStorages(index)
                 .stream()
-                .findAny()
+                .findAny();
     }
 
     public List<ZFrame> getStorages(int index) {
