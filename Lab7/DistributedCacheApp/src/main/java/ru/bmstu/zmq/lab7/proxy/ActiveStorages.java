@@ -30,12 +30,12 @@ public class ActiveStorages {
     }
 
     public Optional<ZFrame> getStorageId(int index) {
-        return getStorages(index)
+        return getStorageIds(index)
                 .stream()
                 .findAny();
     }
 
-    public List<ZFrame> getStoragesIds(int index) {
+    public List<ZFrame> getStorageIds(int index) {
         storages.stream()
                 .filter(s -> s.isIndexInside(index))
                 .filter(not(StorageInfo::isAlive))
