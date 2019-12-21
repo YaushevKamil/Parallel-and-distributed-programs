@@ -4,5 +4,8 @@ import java.util.List;
 
 public class Storage {
     private List<Integer> storage;
-    private int 
+    private int firstInd;
+    private int lastInd;
+
+    
 }
