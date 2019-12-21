@@ -17,7 +17,10 @@ public class Cache {
     }
 
     public void start() {
+        connect();
+    }
 
+    private void connect() {
     }
 
     public void terminate() {
