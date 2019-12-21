@@ -57,7 +57,10 @@ public class Cache {
                         int value = cmd.getValue();
                         storage.put(index, value);
                 }
-                if (nextNotifyTime )
+                currentTime = System.currentTimeMillis();
+                if (nextNotifyTime < currentTime) {
+                    sendNotifyMessage();
+                }
             }
         }
     }
