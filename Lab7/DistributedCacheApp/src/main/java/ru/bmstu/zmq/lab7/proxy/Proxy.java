@@ -54,7 +54,7 @@ public class Proxy {
             } else if (poller.pollin(CACHE_POLL)) {
                 ZMsg msg = ZMsg.recvMsg(cacheRouter);
                 System.out.println("Message from cache: " +  msg.toString());
-                ZFrame cacheId = msg.pop();
+                ZFrame storageId = msg.pop();
                 Command cmd = new Command(msg.popString());
                 switch (cmd.getCommandType()) {
                     case RESULT:
@@ -76,9 +76,9 @@ public class Proxy {
         msg.send(clientRouter); // destroy -> false
     }
 
-    private void sendMessageToCache(ZFrame cacheId, ZFrame clientId, Command cmd) {
+    private void sendMessageToCache(ZFrame storageId, ZFrame clientId, Command cmd) {
         ZMsg msg = new ZMsg();
-        msg.add(cacheId);
+        msg.add(storageId);
         msg.add(clientId);
         msg.add(cmd.toString());
         System.out.println("Message to cache: " + msg);
