@@ -15,7 +15,7 @@ public class Storage {
         storage = new ArrayList<Integer>(Collections.nCopies(lastInd-firstInd+1, initialValue));
     }
 
-    public get(int ind) {
-
+    public int get(int ind) {
+        
     }
 }
