@@ -23,7 +23,7 @@ public class Cache {
     }
 
     public void setupDealer() {
-        poller.register(dealer, )
+        poller.register(dealer, ZMQ.Poller.POLLIN);
     }
 
     public void start() {
