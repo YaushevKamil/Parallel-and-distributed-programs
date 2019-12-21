@@ -47,7 +47,7 @@ public class Proxy {
                 Command cmd = new Command(msg.popString());
                 switch (cmd.getCommandType()) {
                     case GET:
-                        Optional<ZFrame> ;
+                        Optional<ZFrame> storageId;
                     case PUT:
                         ;
                 }
