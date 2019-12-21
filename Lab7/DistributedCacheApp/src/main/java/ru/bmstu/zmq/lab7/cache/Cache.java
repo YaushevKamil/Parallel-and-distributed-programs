@@ -18,10 +18,11 @@ public class Cache {
 
     public void start() {
         connect();
+        
     }
 
     private void connect() {
-        dealer.connect(ad)
+        dealer.connect(address);
     }
 
     public void terminate() {
