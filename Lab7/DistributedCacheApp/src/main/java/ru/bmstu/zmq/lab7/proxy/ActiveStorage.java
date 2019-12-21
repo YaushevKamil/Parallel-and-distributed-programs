@@ -44,7 +44,7 @@ public class ActiveStorage {
             if (!(o instanceof StorageInfo)) {
                 return false;
             }
-            
+            return this.storageId == 
         }
     }
 
