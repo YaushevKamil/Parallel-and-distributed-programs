@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class CacheApp {
     private static final String NUM_PATTERN = "\\d+";
-    
+
     public static void main(String[] args) {
         if (args.length != 3) {
             usage();
@@ -19,7 +19,7 @@ public class CacheApp {
         System.out.println("Usage: CacheApp <leftBound> <rightBound> <initialValue>");
     }
 
-    private boolean isNumeric(String numString, ) {
+    private boolean isNumeric(String numString, Pattern numPattern) {
         return numString != null && numPattern.matcher(numString).matches();
     }
 
