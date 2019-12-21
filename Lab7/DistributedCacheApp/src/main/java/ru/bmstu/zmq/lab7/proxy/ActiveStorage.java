@@ -4,6 +4,7 @@ import org.zeromq.ZFrame;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -28,9 +29,10 @@ public class ActiveStorage {
         return t.negate();
     }
 
-    public ZFrame getStorage(int index) {
+    public Optional<ZFrame> getStorage(int index) {
         return getStorages(index)
-                .get(0)
+                .stream()
+                .findAny()
     }
 
     public List<ZFrame> getStorages(int index) {
