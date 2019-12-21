@@ -76,7 +76,9 @@ public class Command {
                 INT_ZERO;
     }
 
-    public Integer get
+    public Integer getIndex() {
+        
+    }
 
     public Integer getResult() {
         return this.type == Type.RESULT  && args.size() == 1 ?
