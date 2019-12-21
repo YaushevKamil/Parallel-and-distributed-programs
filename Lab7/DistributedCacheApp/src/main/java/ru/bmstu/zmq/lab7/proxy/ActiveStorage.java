@@ -3,7 +3,7 @@ package ru.bmstu.zmq.lab7.proxy;
 import org.zeromq.ZFrame;
 
 public class ActiveStorage {
-    private class StorageInfo {
+    private static class StorageInfo {
         ZFrame storageId;
         int firstIndex;
         int lastIndex;
@@ -25,4 +25,6 @@ public class ActiveStorage {
             lastNotifyTime = System.currentTimeMillis();
         }
     }
+
+    
 }
