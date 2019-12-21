@@ -3,6 +3,8 @@ package ru.bmstu.zmq.lab7.proxy;
 import org.zeromq.*;
 import ru.bmstu.zmq.lab7.command.Command;
 
+import java.util.Optional;
+
 public class Proxy {
     private static final int POLLER_SIZE = 2;
     private static final int CLIENT_POLL = 0;
@@ -45,7 +47,7 @@ public class Proxy {
                 Command cmd = new Command(msg.popString());
                 switch (cmd.getCommandType()) {
                     case GET:
-                        //Optional<ZFrame>;
+                        Optional<ZFrame> ;
                     case PUT:
                         ;
                 }
