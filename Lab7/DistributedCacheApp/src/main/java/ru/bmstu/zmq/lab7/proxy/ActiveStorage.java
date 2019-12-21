@@ -34,13 +34,15 @@ public class ActiveStorage {
             return (currentTime - lastNotifyTime) < 2 * NOTIFY_DURATION_MS;
         }
 
-        public ZFrame getId() {
+        public ZFrame getStorageId() {
             return storageId;
         }
     }
 
     private List<StorageInfo> storages;
 
-    
+    public void insertStorage(ZFrame storageId, int firstIndex, int lastIndex) {
+        
+    }
 
 }
