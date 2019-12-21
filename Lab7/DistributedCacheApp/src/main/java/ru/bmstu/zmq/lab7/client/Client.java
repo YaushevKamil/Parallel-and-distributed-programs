@@ -22,6 +22,10 @@ public class Client {
 
     public void start(Scanner scanner, PrintStream outputStream) {
         connect();
+        handle(scanner, outputStream);
+    }
+
+    public void handle(Scanner scanner, PrintStream outputStream) {
         while (!Thread.currentThread().isInterrupted()) {
             outputStream.print("[Client(" + clientAddress + ")]$: ");
             Command cmd = new Command(scanner.nextLine());
