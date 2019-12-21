@@ -71,6 +71,7 @@ public class ActiveStorage {
                 .stream()
                 .filter(s -> s.isIndexInside(index))
                 .filter(not(StorageInfo::isAlive))
+                .collect()
                 .map(s -> storages.remove(s));
         return ;
     }
