@@ -33,8 +33,10 @@ public class Cache {
     public void start() {
         connect();
         setupDealer();
+        // I'm Alive
+        while () {
 
-
+        }
     }
 
 
