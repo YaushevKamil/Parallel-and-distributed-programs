@@ -22,7 +22,7 @@ public class ActiveStorage {
             updateNotifyTime();
         }
 
-        public static isIndexInside(int index) {
+        public boolean isIndexInside(int index) {
             return firstIndex <= index && index <= lastIndex;
         }
 
@@ -64,7 +64,7 @@ public class ActiveStorage {
     public List<ZFrame> getAliveStorages(int index) {
         storages
                 .stream()
-                .filter(StorageInfo::isIndexInside(index))
+                .filter(s -> s.isIndexInside(index))
                 .filter(StorageInfo::isAlive)
                 .
     }
