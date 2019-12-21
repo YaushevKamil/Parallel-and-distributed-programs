@@ -13,7 +13,8 @@ public class ActiveStorage {
             this.storageId = storageId;
             this.firstIndex = firstIndex;
             this.lastIndex = lastIndex;
-            lastNotifyTime = System.currentTimeMillis();
+//            lastNotifyTime = System.currentTimeMillis();
+            updateNotifyTime();
         }
 
         public boolean isIndexInside(int index) {
@@ -21,7 +22,7 @@ public class ActiveStorage {
         }
 
         public void updateNotifyTime() { // f() => f(long newTimeValue)!!!
-            
+            lastNotifyTime = System.currentTimeMillis();
         }
     }
 }
