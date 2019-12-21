@@ -5,6 +5,8 @@ import ru.bmstu.zmq.lab7.command.Command;
 import java.util.regex.Pattern;
 
 public class CacheApp {
+    private static final String NUM_PATTERN = "\\d+";
+    
     public static void main(String[] args) {
         if (args.length != 3) {
             usage();
