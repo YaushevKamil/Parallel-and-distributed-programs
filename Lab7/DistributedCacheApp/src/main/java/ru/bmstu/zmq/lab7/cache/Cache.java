@@ -22,6 +22,10 @@ public class Cache {
         this.storage = new Storage(leftBound, rightBound, initialValue);
     }
 
+    public void setupDealer() {
+        
+    }
+
     public void start() {
         connect();
 
