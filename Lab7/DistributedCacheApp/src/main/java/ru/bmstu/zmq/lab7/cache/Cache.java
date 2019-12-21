@@ -32,6 +32,8 @@ public class Cache {
 
     public void start() {
         connect();
+        setupDealer();
+        
 
     }
 
