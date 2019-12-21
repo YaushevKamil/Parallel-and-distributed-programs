@@ -40,7 +40,8 @@ public class Cache {
         setupDealer();
         sendNotifyMessage();
         while (!Thread.currentThread().isInterrupted()) {
-            
+            long currentTime = System.currentTimeMillis();
+            poller.poll()
         }
     }
 
