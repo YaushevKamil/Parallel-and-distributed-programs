@@ -52,7 +52,9 @@ public class ActiveStorage {
     }
 
     public void insertStorage(ZFrame storageId, int firstIndex, int lastIndex) {
-        storages.remove()
+        StorageInfo storageInfo = new StorageInfo(storageId, firstIndex, lastIndex);
+        storages.remove(storageInfo);
+        storages.add(storageInfo);
     }
 
 }
