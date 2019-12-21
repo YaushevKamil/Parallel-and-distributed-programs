@@ -4,6 +4,7 @@ import org.zeromq.ZFrame;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class ActiveStorage {
     private static class StorageInfo {
@@ -65,7 +66,7 @@ public class ActiveStorage {
         storages
                 .stream()
                 .filter(s -> s.isIndexInside(index))
-                .filter(not(StorageInfo::isAlive))
+                .filter(Predicate.not(StorageInfo::isAlive))
                 .
     }
 }
