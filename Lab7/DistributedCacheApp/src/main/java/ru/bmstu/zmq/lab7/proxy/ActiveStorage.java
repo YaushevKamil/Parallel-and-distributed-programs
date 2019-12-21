@@ -58,8 +58,6 @@ public class ActiveStorage {
                 return;
             }
         }
-        storages.remove(storageInfo);
         storages.add(storageInfo);
     }
-
 }
