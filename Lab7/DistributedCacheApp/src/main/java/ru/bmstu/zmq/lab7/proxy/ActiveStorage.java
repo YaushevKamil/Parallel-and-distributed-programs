@@ -32,7 +32,9 @@ public class ActiveStorage {
             return (currentTime - lastNotifyTime) < 2 * NOTIFY_DURATION_MS;
         }
 
-        public getId
+        public getId() {
+            return storageId;
+        }
     }
 
 
