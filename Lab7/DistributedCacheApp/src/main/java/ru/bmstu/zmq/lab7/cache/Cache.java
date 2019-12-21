@@ -39,7 +39,7 @@ public class Cache {
         }
     }
 
-    public  
+    private void 
 
     public void terminate() {
         poller.close();
