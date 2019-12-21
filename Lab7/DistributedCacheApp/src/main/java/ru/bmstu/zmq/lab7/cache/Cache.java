@@ -72,7 +72,8 @@ public class Cache {
     private void sendNotifyMessage() {
         int firstIndex = storage.getFirstInd();
         int lastIndex = storage.getLastInd();
-        ZMsg notify = ZMsg.newStringMsg(new Command(NOTIFY, firstIndex, lastIndex).toString());
+        ZMsg notify = new ZMsg();
+        notify.add(new Command(NOTIFY, firstIndex, lastIndex).toString());
         notify.send(dealer);
         nextNotifyTime += NOTIFY_DURATION_MS;
     }
