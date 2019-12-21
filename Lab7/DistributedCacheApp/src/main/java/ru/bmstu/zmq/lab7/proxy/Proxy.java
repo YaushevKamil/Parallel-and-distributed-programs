@@ -72,7 +72,7 @@ public class Proxy {
                         Command succeedCmd = new Command(Command.Type.SUCCESSFUL, cmd.getResult());
                         sendMessageToClient(clientId, succeedCmd.toString());
                     case NOTIFY:
-                        activeStorages.insertStorage();
+                        activeStorages.insertStorage(storageId, );
                 }
             }
         }
