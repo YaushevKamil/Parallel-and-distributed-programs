@@ -1,5 +1,6 @@
 package ru.bmstu.zmq.lab7.cache;
 
+import org.zeromq.ZContext;
 import ru.bmstu.zmq.lab7.command.Command;
 
 import java.util.regex.Pattern;
@@ -13,7 +14,9 @@ public class CacheApp {
             System.exit(-1);
         }
         Pattern numPattern = Pattern.compile(NUM_PATTERN);
-        
+        ZContext context = new ZContext();
+
+        Cache cache = new Cache(context, );
     }
 
     private static void usage() {
