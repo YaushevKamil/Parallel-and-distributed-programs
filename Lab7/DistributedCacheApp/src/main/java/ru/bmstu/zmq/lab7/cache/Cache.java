@@ -16,7 +16,7 @@ public class Cache {
     private ZMQ.Socket dealer;
     private ZMQ.Poller poller;
     private Storage storage;
-    private long nextNotify
+    private long nextNotifyTime;
 
     public Cache(ZContext context, String address, int leftBound, int rightBound, int initialValue) {
         this.address = address;
@@ -45,7 +45,7 @@ public class Cache {
 
     private void sendNotifyMessage() {
         ZMsg.newStringMsg(new Command(Command.Type.NOTIFY, storage.getFirstInd(), storage.getLastInd()).toString());
-
+        ne
     }
 
     public void terminate() {
