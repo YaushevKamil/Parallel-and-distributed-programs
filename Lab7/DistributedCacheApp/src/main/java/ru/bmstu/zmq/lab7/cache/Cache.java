@@ -57,7 +57,7 @@ public class Cache {
                         int value = cmd.getValue();
                         storage.put(index, value);
                 }
-                if ()
+                if (nextNotifyTime )
             }
         }
     }
