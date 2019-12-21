@@ -8,7 +8,7 @@ public class Cache {
     private Storage storage;
     private ZContext context;
     private ZMQ.Socket dealer;
-
+    private ZMQ.Poller poller;
 
     public Cache(ZContext context, String address, int leftBound, int rightBound, int initialValue) {
 
