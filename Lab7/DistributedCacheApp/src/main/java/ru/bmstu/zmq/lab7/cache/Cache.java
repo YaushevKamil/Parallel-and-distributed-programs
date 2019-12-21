@@ -22,6 +22,10 @@ public class Cache {
         this.storage = new Storage(leftBound, rightBound, initialValue);
     }
 
+    private void connect() {
+        dealer.connect(address);
+    }
+
     public void setupDealer() {
         poller.register(dealer, ZMQ.Poller.POLLIN);
     }
@@ -31,9 +35,7 @@ public class Cache {
 
     }
 
-    private void connect() {
-        dealer.connect(address);
-    }
+
 
     public void terminate() {
         
