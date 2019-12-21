@@ -15,6 +15,7 @@ public class Cache {
         this.address = address;
         this.context = context;
         this.dealer = context.createSocket(SocketType.DEALER);
+        
         this.storage = new Storage(leftBound, rightBound, initialValue);
     }
 
