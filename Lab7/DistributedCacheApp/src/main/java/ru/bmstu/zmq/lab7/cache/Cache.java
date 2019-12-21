@@ -4,7 +4,8 @@ import org.zeromq.ZContext;
 
 public class Cache {
     private String address; // ?????????
-
+    private Storage storage;
+    
 
     public Cache(ZContext context, String address, int leftBound, int rightBound, int initialValue) {
 
