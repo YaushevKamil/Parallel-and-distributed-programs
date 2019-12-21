@@ -25,6 +25,10 @@ public class Client {
         handle(scanner, outputStream);
     }
 
+    public void connect() {
+        req.connect(clientAddress);
+    }
+
     public void handle(Scanner scanner, PrintStream outputStream) {
         while (!Thread.currentThread().isInterrupted()) {
             outputStream.print("[Client(" + clientAddress + ")]$: ");
@@ -38,10 +42,6 @@ public class Client {
                     outputStream.println(res);
             }
         }
-    }
-
-    public void connect() {
-        req.connect(clientAddress);
     }
 
     private Integer receiveFromGetMessage(Command cmd) {
