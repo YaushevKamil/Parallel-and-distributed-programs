@@ -4,6 +4,7 @@ import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
 import org.zeromq.ZMsg;
+import ru.bmstu.zmq.lab7.command.Command;
 
 public class Cache {
     private static final int POLLER_SIZE = 1;
@@ -41,7 +42,7 @@ public class Cache {
     }
 
     private void sendNotifyMessage() {
-        ZMsg.newStringMsg(new)
+        ZMsg.newStringMsg(new Command)
     }
 
     public void terminate() {
