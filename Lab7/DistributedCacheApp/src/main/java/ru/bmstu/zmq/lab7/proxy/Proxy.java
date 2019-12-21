@@ -48,10 +48,11 @@ public class Proxy {
                 switch (cmd.getCommandType()) {
                     case GET:
                         Optional<ZFrame> storageId = activeStorages.getStorageId(cmd.getIndex());
-                        storageId.isPresent() ?
-                                sendMessageToCache(storageId.get(), clientId, cmd) :
-                                sendMessageToClient(clientId, "ERROR");
-                        storageId.ifPresent();
+                        if (storageId.isPresent()) {
+                            sendMessageToCache(storageId.get(), clientId, cmd);
+                        } else {
+                            sendMessageToClient(clientId, "ERROR");
+                        }
                     case PUT:
                         ;
                 }
