@@ -82,6 +82,12 @@ public class Command {
                 null;
     }
 
+    public Integer getValue() {
+        return this.type == Type.GET  && args.size() == 1 ?
+                args.get(0) :
+                null;
+    }
+
     public Integer getResult() {
         return this.type == Type.RESULT  && args.size() == 1 ?
                 args.get(0) :

@@ -54,7 +54,7 @@ public class Cache {
                         reply.send(dealer);
                     case PUT:
                         int ind = cmd.getIndex();
-                        int val = 
+                        int val =
                         storage.put()
                 }
             }
