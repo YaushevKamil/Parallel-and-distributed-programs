@@ -27,7 +27,7 @@ public class ActiveStorage {
 
         public boolean isAlive() {
             long currentTime = System.currentTimeMillis();
-            return 
+            return (currentTime - lastNotifyTime) < 2 * 
         }
     }
 
