@@ -46,7 +46,8 @@ public class Cache {
                 ZFrame clientId = msg.pop();
                 Command cmd = new Command(msg.toString());
                 switch (cmd.getCommandType()) {
-                    case 
+                    case GET:
+                        
                 }
             }
         }
