@@ -20,6 +20,8 @@ public class ActiveStorage {
             return firstIndex <= index && index <= lastIndex;
         }
 
-        public void updaye
+        public void updateNotifyTime() { // f() => f(long newTimeValue)!!!
+            
+        }
     }
 }
