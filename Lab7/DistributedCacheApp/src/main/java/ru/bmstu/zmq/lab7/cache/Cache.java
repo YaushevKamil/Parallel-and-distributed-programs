@@ -43,7 +43,9 @@ public class Cache {
             long currentTime = System.currentTimeMillis();
             System.out.println("time: " + (nextNotifyTime - currentTime));
             poller.poll(nextNotifyTime - currentTime);
-            
+            if () {
+
+            }
         }
     }
 
