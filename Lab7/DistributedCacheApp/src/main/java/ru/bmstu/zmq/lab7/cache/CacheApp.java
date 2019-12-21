@@ -2,13 +2,15 @@ package ru.bmstu.zmq.lab7.cache;
 
 import ru.bmstu.zmq.lab7.command.Command;
 
+import java.util.regex.Pattern;
+
 public class CacheApp {
     public static void main(String[] args) {
         if (args.length != 3) {
             usage();
             System.exit(-1);
         }
-
+        Pattern numPattern = Pattern.compile(NUM_PATTERN);
     }
 
     private static void usage() {
