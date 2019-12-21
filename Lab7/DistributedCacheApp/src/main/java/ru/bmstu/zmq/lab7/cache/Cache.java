@@ -46,6 +46,7 @@ public class Cache {
             if (poller.pollin(PROXY_POLL)) {
                 ZMsg msg = ZMsg.recvMsg(dealer);
                 System.out.println("Message from proxy: " + msg);
+                ZFra
                 Command cmd = new Command();
             }
         }
