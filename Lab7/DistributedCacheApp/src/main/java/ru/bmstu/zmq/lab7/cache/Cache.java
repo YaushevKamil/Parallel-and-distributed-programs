@@ -41,7 +41,7 @@ public class Cache {
         sendNotifyMessage();
         while (!Thread.currentThread().isInterrupted()) {
             long currentTime = System.currentTimeMillis();
-            System.out.println(nextNotifyTime - currentTime);
+            System.out.println("time: " + (nextNotifyTime - currentTime));
             poller.poll(nextNotifyTime - currentTime);
         }
     }
