@@ -43,7 +43,7 @@ public class Cache {
             if (poller.pollin(PROXY_POLL)) {
                 ZMsg msg = ZMsg.recvMsg(dealer);
                 System.out.println("Message from proxy: " + msg);
-                ZFrame
+                ZFrame clientId = msg.pop();
                 Command cmd = new Command();
             }
         }
