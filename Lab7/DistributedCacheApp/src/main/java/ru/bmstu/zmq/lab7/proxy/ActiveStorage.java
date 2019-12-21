@@ -2,6 +2,8 @@ package ru.bmstu.zmq.lab7.proxy;
 
 import org.zeromq.ZFrame;
 
+import java.util.List;
+
 public class ActiveStorage {
     private static class StorageInfo {
         private static final int NOTIFY_DURATION_MS = 500;
@@ -37,6 +39,6 @@ public class ActiveStorage {
         }
     }
 
-    private 
+    private List<StorageInfo> storages
 
 }
