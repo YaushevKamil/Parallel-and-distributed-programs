@@ -11,7 +11,9 @@ public class ActiveStorage {
 
         public StorageInfo(ZFrame storageId) {
             this.storageId = storageId;
-            
+            this.firstIndex = 0;
+            this.lastIndex = 0;
+            lastNotifyTime
         }
     }
 }
