@@ -54,7 +54,7 @@ public class Proxy {
                             sendMessageToClient(clientId, "ERROR");
                         }
                     case PUT:
-                        ;
+                        List<ZFrame> ;
                 }
             } else if (poller.pollin(CACHE_POLL)) {
                 ZMsg msg = ZMsg.recvMsg(cacheRouter);
