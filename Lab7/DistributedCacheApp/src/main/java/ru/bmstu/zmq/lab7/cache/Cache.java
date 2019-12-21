@@ -45,7 +45,7 @@ public class Cache {
                 System.out.println("Message from proxy: " + msg);
                 ZFrame clientId = msg.pop();
                 Command cmd = new Command(msg.toString());
-                
+                switch ()
             }
         }
     }
