@@ -28,9 +28,11 @@ public class ActiveStorage {
         return t.negate();
     }
 
-    public ZFrame 
+    public ZFrame getStorage(int index) {
+        
+    }
 
-    public List<ZFrame> getAliveStorages(int index) {
+    public List<ZFrame> getStorages(int index) {
         storages.stream()
                 .filter(s -> s.isIndexInside(index))
                 .filter(not(StorageInfo::isAlive))
