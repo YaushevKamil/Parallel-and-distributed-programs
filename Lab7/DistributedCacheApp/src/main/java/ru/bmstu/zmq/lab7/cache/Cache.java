@@ -3,6 +3,7 @@ package ru.bmstu.zmq.lab7.cache;
 import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
+import org.zeromq.ZMsg;
 
 public class Cache {
     private static final int POLLER_SIZE = 1;
@@ -40,7 +41,7 @@ public class Cache {
     }
 
     private void sendNotifyMessage() {
-        ZMsg
+        ZMsg.
     }
 
     public void terminate() {
