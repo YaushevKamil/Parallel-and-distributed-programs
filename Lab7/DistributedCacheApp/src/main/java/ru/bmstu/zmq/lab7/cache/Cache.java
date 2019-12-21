@@ -35,7 +35,7 @@ public class Cache {
         setupDealer();
         // I'm Alive
         while (!Thread.currentThread().isInterrupted()) {
-            
+
         }
     }
 
