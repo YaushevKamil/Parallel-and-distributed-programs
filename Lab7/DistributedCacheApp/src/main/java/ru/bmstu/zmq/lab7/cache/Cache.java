@@ -50,7 +50,8 @@ public class Cache {
                         ZMsg reply = new ZMsg();
                         int reqInd = cmd.getIndex();
                         reply.add(new Command(Command.Type.RESULT, storage.get(reqInd)).toString());
-                        reply.add()
+                        reply.add(clientId);
+                        
                 }
             }
         }
