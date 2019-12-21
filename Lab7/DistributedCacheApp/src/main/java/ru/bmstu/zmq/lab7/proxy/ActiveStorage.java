@@ -61,7 +61,7 @@ public class ActiveStorage {
         storages.add(storageInfo);
     }
 
-    public getAliveStorages(int index) {
-
+    public List<ZFrame> getAliveStorages(int index) {
+        
     }
 }
