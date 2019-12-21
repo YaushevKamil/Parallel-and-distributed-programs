@@ -9,7 +9,7 @@ import ru.bmstu.zmq.lab7.command.Command;
 public class Cache {
     private static final int POLLER_SIZE = 1;
     private static final int PROXY_POLL = 0;
-    private static final int 
+    private static final int NOTIFY_DURATION_MS = 500;
 
     private String address; // ?????????
     private ZContext context;
