@@ -2,6 +2,7 @@ package ru.bmstu.zmq.lab7.proxy;
 
 import org.zeromq.ZFrame;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ActiveStorage {
@@ -41,8 +42,12 @@ public class ActiveStorage {
 
     private List<StorageInfo> storages;
 
+    public  ActiveStorage() {
+        storages = new ArrayList<>();
+    }
+
     public void insertStorage(ZFrame storageId, int firstIndex, int lastIndex) {
-        
+
     }
 
 }
