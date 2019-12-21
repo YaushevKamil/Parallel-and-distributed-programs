@@ -10,6 +10,6 @@ public class Storage {
     public Storage(int firstInd, int lastInd, int initialValue) {
         this.firstInd = firstInd;
         this.lastInd = lastInd;
-        
+        storage.addAll()
     }
 }
