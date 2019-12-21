@@ -39,7 +39,9 @@ public class Cache {
         }
     }
 
-    private void 
+    private void sendNotifyMessage() {
+
+    }
 
     public void terminate() {
         poller.close();
