@@ -3,8 +3,6 @@ package ru.bmstu.zmq.lab7.proxy;
 import org.zeromq.*;
 import ru.bmstu.zmq.lab7.command.Command;
 
-import java.util.Optional;
-
 public class Proxy {
     private static final int POLLER_SIZE = 2;
     private static final int CLIENT_POLL = 0;
@@ -16,6 +14,7 @@ public class Proxy {
     private ZMQ.Socket clientRouter;
     private ZMQ.Socket cacheRouter;
     private ZMQ.Poller poller;
+    private ActiveStorages activeStorages;
 
     public Proxy(ZContext context, String clientAddress, String cacheAddress) {
         this.clientAddress = clientAddress;
@@ -24,7 +23,7 @@ public class Proxy {
         this.clientRouter = context.createSocket(SocketType.ROUTER);
         this.cacheRouter = context.createSocket(SocketType.ROUTER);
         this.poller = context.createPoller(POLLER_SIZE);
-        // cacheIds
+        this.activeStorages = new ActiveStorages();
     }
 
     public void setupRouter() {

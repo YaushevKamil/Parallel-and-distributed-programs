@@ -8,10 +8,10 @@ import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class ActiveStorage {
+public class ActiveStorages {
     private List<StorageInfo> storages;
 
-    public  ActiveStorage() {
+    public ActiveStorages() {
         storages = new ArrayList<>();
     }
 
