@@ -1,5 +1,7 @@
 package ru.bmstu.zmq.lab7.cache;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Storage {
@@ -10,6 +12,6 @@ public class Storage {
     public Storage(int firstInd, int lastInd, int initialValue) {
         this.firstInd = firstInd;
         this.lastInd = lastInd;
-        storage.addAll()
+        storage = new ArrayList<Integer>(Collections.nCopies(lastInd-firstInd+1, 0));
     }
 }
