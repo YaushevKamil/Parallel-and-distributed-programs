@@ -48,6 +48,7 @@ public class Cache {
                 switch (cmd.getCommandType()) {
                     case GET:
                         ZMsg reply = new ZMsg();
+                        int 
                         reply.add(new Command(Command.Type.RESULT, storage.get(cmd.)))
                 }
             }
