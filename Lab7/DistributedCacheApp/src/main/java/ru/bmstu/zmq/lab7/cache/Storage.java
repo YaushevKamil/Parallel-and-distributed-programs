@@ -22,4 +22,12 @@ public class Storage {
     public int put(int ind, int value) {
         return storage.set(ind - firstInd, value);
     }
+
+    public int getFirstInd() {
+        return this.firstInd;
+    }
+
+    public int getLastInd() {
+        return this.firstInd;
+    }
 }
