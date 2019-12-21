@@ -3,6 +3,7 @@ package ru.bmstu.zmq.lab7.proxy;
 import org.zeromq.*;
 import ru.bmstu.zmq.lab7.command.Command;
 
+import java.util.List;
 import java.util.Optional;
 
 public class Proxy {
