@@ -47,7 +47,7 @@ public class ActiveStorage {
     }
 
     public void insertStorage(ZFrame storageId, int firstIndex, int lastIndex) {
-
+        storages.
     }
 
 }
