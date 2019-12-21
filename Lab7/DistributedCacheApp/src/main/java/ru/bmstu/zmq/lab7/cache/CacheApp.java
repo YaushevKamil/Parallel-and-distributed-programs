@@ -13,10 +13,11 @@ public class CacheApp {
             usage();
             System.exit(-1);
         }
+        String address = args[0];
         Pattern numPattern = Pattern.compile(NUM_PATTERN);
         ZContext context = new ZContext();
 
-        Cache cache = new Cache(context, );
+        Cache cache = new Cache(context, address);
     }
 
     private static void usage() {
