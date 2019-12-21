@@ -22,6 +22,6 @@ public class CacheApp {
     private int strToInt(String numString) {
         return isNumeric(numString) ?
                 Integer.parseInt(numString) :
-                INT_ZERO;
+                0;
     }
 }
