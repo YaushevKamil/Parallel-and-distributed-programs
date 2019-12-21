@@ -20,7 +20,7 @@ public class CacheApp {
     }
 
     private static void usage() {
-        System.out.println("Usage: CacheApp <leftBound> <rightBound> <initialValue>");
+        System.out.println("Usage: CacheApp <address> <leftBound> <rightBound> <initialValue>");
     }
 
     private boolean isNumeric(String numString, Pattern numPattern) {
