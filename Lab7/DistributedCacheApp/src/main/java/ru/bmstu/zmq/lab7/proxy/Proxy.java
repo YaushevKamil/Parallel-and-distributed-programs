@@ -50,7 +50,7 @@ public class Proxy {
                         Optional<ZFrame> storageId = activeStorages.getStorageId(cmd.getIndex());
                         storageId.isPresent() ?
                                 sendMessageToCache(storageId.get(), clientId, cmd) :
-                                sendMessageToClient(clientId, );
+                                sendMessageToClient(clientId, "ERROR");
                         storageId.ifPresent();
                     case PUT:
                         ;
