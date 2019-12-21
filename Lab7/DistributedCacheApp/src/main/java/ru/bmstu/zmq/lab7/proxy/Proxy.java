@@ -29,16 +29,16 @@ public class Proxy {
         this.activeStorages = new ActiveStorages();
     }
 
+    public void start() {
+        setupRouter();
+        handle();
+    }
+
     public void setupRouter() {
         clientRouter.bind(clientAddress);
         poller.register(clientRouter, ZMQ.Poller.POLLIN);
         cacheRouter.bind(cacheAddress);
         poller.register(cacheRouter, ZMQ.Poller.POLLIN);
-    }
-
-    public void start() {
-        setupRouter();
-        handle();
     }
 
     public void handle() {
