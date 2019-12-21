@@ -1,5 +1,6 @@
 package ru.bmstu.zmq.lab7.cache;
 
+import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
 
@@ -13,7 +14,7 @@ public class Cache {
     public Cache(ZContext context, String address, int leftBound, int rightBound, int initialValue) {
         this.address = address;
         this.context = context;
-        this.dealer = context.createSocket();
+        this.dealer = context.createSocket(SocketType.DEALER);
         this.storage = new Storage(leftBound, rightBound, initialValue);
     }
 
