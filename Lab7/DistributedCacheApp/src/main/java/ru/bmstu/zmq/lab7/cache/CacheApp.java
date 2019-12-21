@@ -15,7 +15,7 @@ public class CacheApp {
         }
         String address = args[0];
         Pattern numPattern = Pattern.compile(NUM_PATTERN);
-        int leftBound
+        int leftBound = strToint
         ZContext context = new ZContext();
 
         Cache cache = new Cache(context, address);
@@ -25,12 +25,12 @@ public class CacheApp {
         System.out.println("Usage: CacheApp <address> <leftBound> <rightBound> <initialValue>");
     }
 
-    private boolean isNumeric(String numString, Pattern numPattern) {
+    private static boolean isNumeric(String numString, Pattern numPattern) {
         return numString != null && numPattern.matcher(numString).matches();
     }
 
-    private int strToInt(String numString) {
-        return isNumeric(numString) ?
+    private static int strToInt(String numString, Pattern numPattern) {
+        return isNumeric(numString, numPattern) ?
                 Integer.parseInt(numString) :
                 0;
     }
