@@ -89,6 +89,18 @@ public class Command {
                 null;
     }
 
+    public Integer getFirstIndex() {
+        return this.type == Type.NOTIFY  && args.size() == 2 ?
+                args.get(0) :
+                null;
+    }
+
+    public Integer getLastIndex() {
+        return this.type == Type.NOTIFY  && args.size() == 2 ?
+                args.get(1) :
+                null;
+    }
+
     public Integer getResult() {
         return this.type == Type.RESULT  && args.size() == 1 ?
                 args.get(0) :
