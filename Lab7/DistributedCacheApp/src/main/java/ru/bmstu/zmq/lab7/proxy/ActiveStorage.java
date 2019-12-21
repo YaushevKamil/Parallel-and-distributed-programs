@@ -24,7 +24,9 @@ public class ActiveStorage {
         public void updateNotifyTime() { // f() => f(long newTimeValue)!!!
             lastNotifyTime = System.currentTimeMillis();
         }
+
+        
     }
 
-    
+
 }
