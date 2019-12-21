@@ -52,7 +52,8 @@ public class Cache {
                         reply.add(new Command(Command.Type.RESULT, storage.get(reqInd)).toString());
                         reply.add(clientId);
                         reply.send(dealer);
-                    case     
+                    case PUT:
+                        
                 }
             }
         }
