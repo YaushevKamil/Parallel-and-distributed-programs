@@ -12,7 +12,7 @@ public class Storage {
     public Storage(int firstInd, int lastInd, int initialValue) {
         this.firstInd = firstInd;
         this.lastInd = lastInd;
-        storage = new ArrayList<Integer>(Collections.nCopies(lastInd-firstInd+1, initialValue));
+        storage = new ArrayList<>(Collections.nCopies((lastInd - firstInd) + 1, initialValue));
     }
 
     public int get(int ind) {
