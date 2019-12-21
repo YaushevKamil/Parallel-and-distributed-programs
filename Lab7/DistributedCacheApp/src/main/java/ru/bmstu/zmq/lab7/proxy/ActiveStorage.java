@@ -53,6 +53,11 @@ public class ActiveStorage {
 
     public void insertStorage(ZFrame storageId, int firstIndex, int lastIndex) {
         StorageInfo storageInfo = new StorageInfo(storageId, firstIndex, lastIndex);
+        for (StorageInfo storedStorages : storages) {
+            if (storedStorages.equals(storageInfo)) {
+                return;
+            }
+        }
         storages.remove(storageInfo);
         storages.add(storageInfo);
     }
