@@ -16,6 +16,10 @@ public class Storage {
     }
 
     public int get(int ind) {
-        return get(ind - firstInd);
+        return storage.get(ind - firstInd);
+    }
+
+    public int put(int ind) {
+        return storage.get(ind - firstInd);
     }
 }
