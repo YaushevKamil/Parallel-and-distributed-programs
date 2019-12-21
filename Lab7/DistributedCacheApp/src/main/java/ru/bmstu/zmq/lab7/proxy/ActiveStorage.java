@@ -25,7 +25,9 @@ public class ActiveStorage {
             lastNotifyTime = System.currentTimeMillis();
         }
 
-        
+        public boolean isAlive() {
+            
+        }
     }
 
 
