@@ -13,6 +13,7 @@ public class CacheApp {
             System.exit(-1);
         }
         Pattern numPattern = Pattern.compile(NUM_PATTERN);
+        
     }
 
     private static void usage() {
