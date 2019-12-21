@@ -45,7 +45,7 @@ public class Cache {
             poller.poll(nextNotifyTime - currentTime);
             if (poller.pollin(PROXY_POLL)) {
                 ZMsg msg = ZMsg.recvMsg(dealer);
-                
+                System.out.println("Message from proxy: " + (nextNotifyTime - currentTime));
                 Command cmd = new Command();
             }
         }
