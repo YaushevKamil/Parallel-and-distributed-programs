@@ -40,7 +40,7 @@ public class Cache {
     }
 
     private void sendNotifyMessage() {
-        
+        ZMsg
     }
 
     public void terminate() {
