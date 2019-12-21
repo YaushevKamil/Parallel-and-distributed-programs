@@ -34,8 +34,8 @@ public class Cache {
         connect();
         setupDealer();
         // I'm Alive
-        while () {
-
+        while (!Thread.currentThread().isInterrupted()) {
+            
         }
     }
 
