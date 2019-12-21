@@ -26,6 +26,7 @@ public class ActiveStorage {
         }
 
         public boolean isAlive() {
+            long currentTime = System.currentTimeMillis();
             return 
         }
     }
