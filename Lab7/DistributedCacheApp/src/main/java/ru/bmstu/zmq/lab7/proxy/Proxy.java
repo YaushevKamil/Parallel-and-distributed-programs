@@ -36,7 +36,7 @@ public class Proxy {
 
     public void start() {
         setupRouter();
-        while(!Thread.currentThread().isInterrupted()) {
+        while (!Thread.currentThread().isInterrupted()) {
             poller.poll();
             if (poller.pollin(CLIENT_POLL)) {
                 ZMsg msg = ZMsg.recvMsg(clientRouter);
