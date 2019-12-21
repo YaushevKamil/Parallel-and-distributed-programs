@@ -28,6 +28,6 @@ public class Storage {
     }
 
     public int getLastInd() {
-        return this.firstInd;
+        return this.lastInd;
     }
 }
