@@ -61,5 +61,7 @@ public class ActiveStorage {
         storages.add(storageInfo);
     }
 
-    public getAliveStorage
+    public getAliveStorage(int index) {
+
+    }
 }
