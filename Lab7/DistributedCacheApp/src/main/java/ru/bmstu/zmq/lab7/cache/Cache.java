@@ -53,6 +53,8 @@ public class Cache {
                         reply.add(clientId);
                         reply.send(dealer);
                     case PUT:
+                        int ind = cmd.getIndex();
+                        int val = 
                         storage.put()
                 }
             }
