@@ -15,7 +15,7 @@ public class CacheApp {
         System.out.println("Usage: CacheApp <leftBound> <rightBound> <initialValue>");
     }
 
-    private boolean isNumeric(String numString) {
+    private boolean isNumeric(String numString, ) {
         return numString != null && numPattern.matcher(numString).matches();
     }
 
