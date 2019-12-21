@@ -3,6 +3,9 @@ package ru.bmstu.zmq.lab7.cache;
 import org.zeromq.*;
 import ru.bmstu.zmq.lab7.command.Command;
 
+import static ru.bmstu.zmq.lab7.command.Command.Type.NOTIFY;
+import static ru.bmstu.zmq.lab7.command.Command.Type.RESULT;
+
 public class Cache {
     private static final int POLLER_SIZE = 1;
     private static final int PROXY_POLL = 0;
@@ -49,7 +52,8 @@ public class Cache {
                     case GET:
                         ZMsg reply = new ZMsg();
                         int reqIndex = cmd.getIndex();
-                        reply.add(new Command(Command.Type.RESULT, storage.get(reqIndex)).toString());
+                        int result = storage.get(reqIndex);
+                        reply.add(new Command(RESULT, result).toString());
                         reply.add(clientId);
                         reply.send(dealer);
                     case PUT:
@@ -68,7 +72,7 @@ public class Cache {
     private void sendNotifyMessage() {
         int firstIndex = storage.getFirstInd();
         int lastIndex = storage.getLastInd();
-        ZMsg notify = ZMsg.newStringMsg(new Command(Command.Type.NOTIFY, firstIndex, lastIndex).toString());
+        ZMsg notify = ZMsg.newStringMsg(new Command(NOTIFY, firstIndex, lastIndex).toString());
         notify.send(dealer);
         nextNotifyTime += NOTIFY_DURATION_MS;
     }
