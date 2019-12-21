@@ -74,7 +74,8 @@ public class ActiveStorage {
                 .filter(not(StorageInfo::isAlive))
                 .collect(Collectors.toList())
                 .forEach(s -> storages.remove(s));
-        return storages.stream()
+        return storages
+                .stream()
                 .filter(s -> s.isIndexInside(index))
                 .map(StorageInfo::getStorageId)
                 .collect(Collectors.toList());
