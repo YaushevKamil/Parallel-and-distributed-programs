@@ -44,7 +44,7 @@ public class Cache {
             System.out.println("time: " + (nextNotifyTime - currentTime));
             poller.poll(nextNotifyTime - currentTime);
             if (poller.pollin(PROXY_POLL)) {
-                
+                Command cmd = new Command()
             }
         }
     }
