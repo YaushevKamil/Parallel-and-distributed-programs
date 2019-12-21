@@ -39,6 +39,6 @@ public class ActiveStorage {
         }
     }
 
-    private List<StorageInfo> storages
+    private List<StorageInfo> storages;
 
 }
