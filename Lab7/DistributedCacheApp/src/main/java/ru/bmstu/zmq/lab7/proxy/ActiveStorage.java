@@ -66,7 +66,7 @@ public class ActiveStorage {
         storages
                 .stream()
                 .filter(s -> s.isIndexInside(index))
-                .filter(Predicate.not(StorageInfo::isAlive))
+                .filter(Predicate..not(StorageInfo::isAlive))
                 .
     }
 }
