@@ -19,8 +19,8 @@ public class Storage {
         return storage.get(ind - firstInd);
     }
 
-    public int put(int ind, int value) {
-        return storage.set(ind - firstInd, value);
+    public void put(int ind, int value) {
+        storage.set(ind - firstInd, value);
     }
 
     public int getFirstInd() {
