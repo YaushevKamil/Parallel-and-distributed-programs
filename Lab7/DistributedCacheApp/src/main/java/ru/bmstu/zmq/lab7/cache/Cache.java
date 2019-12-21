@@ -41,7 +41,7 @@ public class Cache {
     }
 
     private void sendNotifyMessage() {
-        ZMsg.
+        ZMsg.newStringMsg()
     }
 
     public void terminate() {
