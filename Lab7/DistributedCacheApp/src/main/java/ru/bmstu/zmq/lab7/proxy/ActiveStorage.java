@@ -9,6 +9,8 @@ public class ActiveStorage {
         int lastIndex;
         long lastNotifyTime;
 
-        public 
+        public StorageInfo() {
+
+        }
     }
 }
