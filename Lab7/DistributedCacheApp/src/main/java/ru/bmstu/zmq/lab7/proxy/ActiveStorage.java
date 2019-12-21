@@ -7,6 +7,6 @@ public class ActiveStorage {
         ZFrame storageId;
         int firstIndex;
         int lastIndex;
-        long 
+        long lastNotifyTime;
     }
 }
