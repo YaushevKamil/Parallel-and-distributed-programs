@@ -76,6 +76,7 @@ public class ActiveStorage {
                 .forEach(s -> storages.remove(s));
         return storages.stream()
                 .filter(s -> s.isIndexInside(index))
+                .map(StorageInfo::getStorageId)
                 .collect(Collectors.toList());
     }
 }
