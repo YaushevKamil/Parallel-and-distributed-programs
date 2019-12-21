@@ -8,6 +8,8 @@ public class Storage {
     private int lastInd;
 
     public Storage(int firstInd, int lastInd, int initialValue) {
+        this.firstInd = firstInd;
+        this.lastInd = lastInd;
         
     }
 }
