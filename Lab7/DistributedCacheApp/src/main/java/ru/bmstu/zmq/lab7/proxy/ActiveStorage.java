@@ -9,10 +9,10 @@ public class ActiveStorage {
         int lastIndex;
         long lastNotifyTime;
 
-        public StorageInfo(ZFrame storageId) {
+        public StorageInfo(ZFrame storageId, int firstIndex, int lastIndex) {
             this.storageId = storageId;
-            this.firstIndex = 0;
-            this.lastIndex = 0;
+            this.firstIndex = firstIndex;
+            this.lastIndex = lastIndex;
             lastNotifyTime = System.currentTimeMillis();
         }
 
