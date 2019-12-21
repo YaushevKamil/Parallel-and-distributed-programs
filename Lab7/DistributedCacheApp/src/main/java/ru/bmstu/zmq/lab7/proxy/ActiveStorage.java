@@ -9,8 +9,9 @@ public class ActiveStorage {
         int lastIndex;
         long lastNotifyTime;
 
-        public StorageInfo() {
-
+        public StorageInfo(ZFrame storageId) {
+            this.storageId = storageId;
+            
         }
     }
 }
