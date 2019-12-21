@@ -16,6 +16,8 @@ public class ActiveStorage {
             lastNotifyTime = System.currentTimeMillis();
         }
 
-        public boolean isIndexInside(int index)
+        public boolean isIndexInside(int index) {
+            
+        }
     }
 }
