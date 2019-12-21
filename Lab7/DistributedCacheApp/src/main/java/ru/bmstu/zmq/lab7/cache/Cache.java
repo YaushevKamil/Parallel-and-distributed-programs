@@ -42,7 +42,7 @@ public class Cache {
     }
 
     private void sendNotifyMessage() {
-        ZMsg.newStringMsg(new Command(Command.Type.NOTIFY, storage))
+        ZMsg.newStringMsg(new Command(Command.Type.NOTIFY, storage.getFirstInd(), storage.getLastInd()))
     }
 
     public void terminate() {
