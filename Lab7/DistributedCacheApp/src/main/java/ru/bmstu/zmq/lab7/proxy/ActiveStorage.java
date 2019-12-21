@@ -19,5 +19,7 @@ public class ActiveStorage {
         public boolean isIndexInside(int index) {
             return firstIndex <= index && index <= lastIndex;
         }
+
+        
     }
 }
