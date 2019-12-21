@@ -47,7 +47,8 @@ public class Cache {
                 Command cmd = new Command(msg.toString());
                 switch (cmd.getCommandType()) {
                     case GET:
-                        ZMsg re
+                        ZMsg reply = new ZMsg();
+                        
                 }
             }
         }
