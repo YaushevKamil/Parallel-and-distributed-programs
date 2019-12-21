@@ -14,7 +14,6 @@ public class StorageInfo {
         this.storageId = storageId;
         this.firstIndex = firstIndex;
         this.lastIndex = lastIndex;
-//            lastNotifyTime = System.currentTimeMillis();
         updateNotifyTime();
     }
 
