@@ -30,7 +30,7 @@ public class ActiveStorage {
 
     public ZFrame getStorage(int index) {
         return getStorages(index)
-                .
+                .get(0)
     }
 
     public List<ZFrame> getStorages(int index) {
