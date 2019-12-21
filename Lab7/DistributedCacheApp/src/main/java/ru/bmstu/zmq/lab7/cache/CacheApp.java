@@ -9,14 +9,15 @@ public class CacheApp {
     private static final String NUM_PATTERN = "\\d+";
 
     public static void main(String[] args) {
-        if (args.length != 3) {
+        if (args.length != 4) {
             usage();
             System.exit(-1);
         }
         String address = args[0];
         Pattern numPattern = Pattern.compile(NUM_PATTERN);
         int leftBound = strToInt(args[1], numPattern);
-
+        int rightBound = strToInt(args[2], numPattern);
+        int initialValue = strToInt(args[3], numPattern);
         ZContext context = new ZContext();
 
         Cache cache = new Cache(context, address);
