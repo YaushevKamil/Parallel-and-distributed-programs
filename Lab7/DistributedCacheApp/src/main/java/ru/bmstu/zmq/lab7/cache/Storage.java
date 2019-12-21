@@ -16,6 +16,6 @@ public class Storage {
     }
 
     public int get(int ind) {
-        
+        return get();
     }
 }
