@@ -24,6 +24,7 @@ public class Cache {
         this.dealer = context.createSocket(SocketType.DEALER);
         this.poller = context.createPoller(POLLER_SIZE);
         this.storage = new Storage(leftBound, rightBound, initialValue);
+        this.nextNotifyTime = System.currentTimeMillis();
     }
 
     private void connect() {
@@ -37,9 +38,9 @@ public class Cache {
     public void start() {
         connect();
         setupDealer();
-        // I'm Alive
+        sendNotifyMessage();
         while (!Thread.currentThread().isInterrupted()) {
-
+            
         }
     }
 
