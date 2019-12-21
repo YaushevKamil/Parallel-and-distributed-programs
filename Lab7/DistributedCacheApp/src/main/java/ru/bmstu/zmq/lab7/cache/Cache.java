@@ -5,6 +5,9 @@ import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
 
 public class Cache {
+    private static final int POLLER_SIZE = 1;
+    private static final int PROXY_POLL = 0;
+
     private String address; // ?????????
     private ZContext context;
     private ZMQ.Socket dealer;
@@ -15,7 +18,7 @@ public class Cache {
         this.address = address;
         this.context = context;
         this.dealer = context.createSocket(SocketType.DEALER);
-        
+        this.poller = 
         this.storage = new Storage(leftBound, rightBound, initialValue);
     }
 
