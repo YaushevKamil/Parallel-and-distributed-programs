@@ -38,6 +38,11 @@ public class ActiveStorage {
         public ZFrame getStorageId() {
             return storageId;
         }
+
+        @Override
+        public boolean equals(Object o) {
+            
+        }
     }
 
     private List<StorageInfo> storages;
