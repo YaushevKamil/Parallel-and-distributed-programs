@@ -38,6 +38,10 @@ public class Cache {
     public void start() {
         connect();
         setupDealer();
+        handle();
+    }
+
+    public void handle() {
         sendNotifyMessage();
         while (!Thread.currentThread().isInterrupted()) {
             long currentTime = System.currentTimeMillis();
