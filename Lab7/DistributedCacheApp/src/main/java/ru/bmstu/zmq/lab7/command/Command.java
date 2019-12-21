@@ -77,14 +77,15 @@ public class Command {
     }
 
     public Integer getIndex() {
-        return this.type == Type.GET  && args.size() == 1 ?
+        return (this.type == Type.GET  && args.size() == 1) ||
+               (this.type == Type.PUT  && args.size() == 2) ?
                 args.get(0) :
                 null;
     }
 
     public Integer getValue() {
-        return this.type == Type.GET  && args.size() == 1 ?
-                args.get(0) :
+        return this.type == Type.PUT  && args.size() == 2 ?
+                args.get(1) :
                 null;
     }
 
