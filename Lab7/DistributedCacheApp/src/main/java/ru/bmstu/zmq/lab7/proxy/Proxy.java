@@ -38,6 +38,10 @@ public class Proxy {
 
     public void start() {
         setupRouter();
+        handle();
+    }
+
+    public void handle() {
         while (!Thread.currentThread().isInterrupted()) {
             poller.poll();
             if (poller.pollin(CLIENT_POLL)) {
