@@ -19,7 +19,7 @@ public class Storage {
         return storage.get(ind - firstInd);
     }
 
-    public int put(int ind) {
+    public int put(int ind, ) {
         return storage.get(ind - firstInd);
     }
 }
