@@ -23,7 +23,7 @@ public class Cache {
     }
 
     public void setupDealer() {
-        
+        poller.register()
     }
 
     public void start() {
