@@ -41,6 +41,6 @@ public class Cache {
 
     public void terminate() {
         poller.close();
-
+        context.destroySocket(dealer);
     }
 }
