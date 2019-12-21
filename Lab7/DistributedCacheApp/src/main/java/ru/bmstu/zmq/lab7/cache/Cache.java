@@ -1,9 +1,6 @@
 package ru.bmstu.zmq.lab7.cache;
 
-import org.zeromq.SocketType;
-import org.zeromq.ZContext;
-import org.zeromq.ZMQ;
-import org.zeromq.ZMsg;
+import org.zeromq.*;
 import ru.bmstu.zmq.lab7.command.Command;
 
 public class Cache {
@@ -46,7 +43,7 @@ public class Cache {
             if (poller.pollin(PROXY_POLL)) {
                 ZMsg msg = ZMsg.recvMsg(dealer);
                 System.out.println("Message from proxy: " + msg);
-                ZFra
+                ZFrame
                 Command cmd = new Command();
             }
         }
