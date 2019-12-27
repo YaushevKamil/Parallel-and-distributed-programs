@@ -61,13 +61,13 @@ public class Client {
 
     private void sendMessage(Command cmd) {
         ZMsg msg = ZMsg.newStringMsg(cmd.toString());
-        System.out.println("Message to proxy: " + msg);
+        System.out.println("\tMessage to proxy: " + msg);
         msg.send(req);
     }
 
     private String receiveMessage() {
         ZMsg msg = ZMsg.recvMsg(req);
-        System.out.println("Message from proxy: " + msg);
+        System.out.println("\tMessage from proxy: " + msg);
         return msg.popString();
     }
 
