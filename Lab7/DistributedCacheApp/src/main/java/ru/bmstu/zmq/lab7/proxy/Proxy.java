@@ -71,9 +71,7 @@ public class Proxy {
                 ZMsg msg = ZMsg.recvMsg(cacheRouter);
                 System.out.println("Message from cache: " +  msg.toString());
                 ZFrame storageId = msg.pop();
-                String tmp = msg.popString();
-                Command cmd = new Command(tmp);
-                System.out.println(cmd);
+                Command cmd = new Command(msg.popString());
                 switch (cmd.getCommandType()) {
                     case RESULT:
                         ZFrame clientId = msg.pop();
@@ -82,7 +80,6 @@ public class Proxy {
                         break;
                     case NOTIFY:
                         activeStorages.insertStorage(storageId, cmd.getFirstIndex(), cmd.getLastIndex());
-                        System.out.println("ALISHER - CHLENOSOS");
                         break;
                 }
             }
