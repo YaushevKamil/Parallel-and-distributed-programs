@@ -71,7 +71,8 @@ public class Proxy {
                 ZMsg msg = ZMsg.recvMsg(cacheRouter);
                 System.out.println("Message from cache: " +  msg.toString());
                 ZFrame storageId = msg.pop();
-                Command cmd = new Command(msg.popString());
+                String
+                Command cmd = new Command(msg.toString());
                 switch (cmd.getCommandType()) {
                     case RESULT:
                         ZFrame clientId = msg.pop();
