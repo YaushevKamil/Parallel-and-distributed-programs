@@ -91,7 +91,7 @@ public class Proxy {
         msg.add(clientId);
         msg.add((String) null); // ""
         msg.add(result);
-        msg.send(clientRouter); // destroy -> false
+        msg.send(clientRouter, false); // destroy -> false
     }
 
     private void sendMessageToCache(ZFrame storageId, ZFrame clientId, Command cmd) {
@@ -99,8 +99,8 @@ public class Proxy {
         msg.add(storageId);
         msg.add(clientId);
         msg.add(cmd.toString());
-        System.out.println("Message to cache: " + msg);
-        msg.send(cacheRouter); // destroy -> false
+        System.out.println("\tMessage to cache: " + msg);
+        msg.send(cacheRouter, false); // destroy -> false
     }
 
     public void terminate() {
