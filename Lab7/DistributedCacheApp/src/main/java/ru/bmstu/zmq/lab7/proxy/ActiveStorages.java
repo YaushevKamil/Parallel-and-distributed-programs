@@ -36,6 +36,10 @@ public class ActiveStorages {
     }
 
     public List<ZFrame> getStorages(int index) {
+        for (StorageInfo storage: storages) {
+            System.out.print(storage.getStorageId() + " ");
+        }
+        System.out.println();
         storages.stream()
                 .filter(s -> s.isIndexInside(index))
                 .filter(not(StorageInfo::isAlive))
