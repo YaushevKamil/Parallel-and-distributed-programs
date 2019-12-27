@@ -16,6 +16,7 @@ public class Storage {
     }
 
     public int get(int ind) {
+        System.out.println(ind + " " + firstInd);
         return storage.get(ind - firstInd);
     }
 
