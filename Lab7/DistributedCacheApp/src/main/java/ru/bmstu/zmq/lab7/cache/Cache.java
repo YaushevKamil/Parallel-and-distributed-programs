@@ -51,7 +51,7 @@ public class Cache {
                 ZMsg msg = ZMsg.recvMsg(dealer);
                 System.out.println("Message from proxy: " + msg);
                 ZFrame clientId = msg.pop();
-                Command cmd = new Command(msg.toString());
+                Command cmd = new Command(msg.popString());
                 switch (cmd.getCommandType()) {
                     case GET:
                         ZMsg reply = new ZMsg();
