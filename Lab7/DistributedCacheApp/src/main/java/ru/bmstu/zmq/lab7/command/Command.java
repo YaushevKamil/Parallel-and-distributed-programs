@@ -74,11 +74,11 @@ public class Command {
                 this.type = Type.ERROR;
                 break;
         }
-        System.out.print(type + " ");
-        for (int arg: args) {
-            System.out.print(arg + " ");
-        }
-        System.out.println();
+//        System.out.print(type + " ");
+//        for (int arg: args) {
+//            System.out.print(arg + " ");
+//        }
+//        System.out.println();
     }
 
     public Type getCommandType() {
