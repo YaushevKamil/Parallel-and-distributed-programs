@@ -37,9 +37,11 @@ public class Client {
                 case GET:
                     Integer result = receiveFromGetMessage(cmd);
                     outputStream.println(result != null ? result.toString() : "ERROR!");
+                    break;
                 case PUT:
                     String res = receiveFromPutMessage(cmd);
                     outputStream.println(res);
+                    break;
             }
         }
     }

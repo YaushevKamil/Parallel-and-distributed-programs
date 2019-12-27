@@ -45,8 +45,8 @@ public class Cache {
         sendNotifyMessage();
         while (!Thread.currentThread().isInterrupted()) {
             long currentTime = System.currentTimeMillis();
-            System.out.println("time: " + (nextNotifyTime - currentTime));
-            poller.poll(nextNotifyTime - currentTime);
+            //System.out.println("time: " + (Math.max(0, nextNotifyTime - currentTime)));
+            poller.poll(Math.max(0, nextNotifyTime - currentTime));
             if (poller.pollin(PROXY_POLL)) {
                 ZMsg msg = ZMsg.recvMsg(dealer);
                 System.out.println("Message from proxy: " + msg);
@@ -60,10 +60,12 @@ public class Cache {
                         reply.add(new Command(RESULT, result).toString());
                         reply.add(clientId);
                         reply.send(dealer);
+                        break;
                     case PUT:
                         int index = cmd.getIndex();
                         int value = cmd.getValue();
                         storage.put(index, value);
+                        break;
                 }
                 currentTime = System.currentTimeMillis();
                 if (nextNotifyTime < currentTime) {

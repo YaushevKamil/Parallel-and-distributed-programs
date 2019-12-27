@@ -58,25 +58,32 @@ public class Proxy {
                         } else {
                             sendMessageToClient(clientId, "ERROR");
                         }
+                        break;
                     case PUT:
                         List<ZFrame> storagesId = activeStorages.getStorages(cmd.getIndex());
                         storagesId.forEach(id -> sendMessageToCache(id, clientId, cmd));
                         if (storagesId.isEmpty()) {
                             sendMessageToClient(clientId, "ERROR");
                         }
+                        break;
                 }
             } else if (poller.pollin(CACHE_POLL)) {
                 ZMsg msg = ZMsg.recvMsg(cacheRouter);
                 System.out.println("Message from cache: " +  msg.toString());
                 ZFrame storageId = msg.pop();
-                Command cmd = new Command(msg.popString());
+                String tmp = msg.popString();
+                Command cmd = new Command(tmp);
+                System.out.println(cmd);
                 switch (cmd.getCommandType()) {
                     case RESULT:
                         ZFrame clientId = msg.pop();
                         Command succeedCmd = new Command(Command.Type.SUCCESSFUL, cmd.getResult());
                         sendMessageToClient(clientId, succeedCmd.toString());
+                        break;
                     case NOTIFY:
                         activeStorages.insertStorage(storageId, cmd.getFirstIndex(), cmd.getLastIndex());
+                        System.out.println("ALISHER - CHLENOSOS");
+                        break;
                 }
             }
         }

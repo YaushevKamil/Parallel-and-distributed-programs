@@ -23,6 +23,11 @@ public class Command {
         this.type = type;
         this.args = new ArrayList<>();
         Collections.addAll(this.args, args);
+//        System.out.print(type + " ");
+//        for (int arg: args) {
+//            System.out.print(arg + " ");
+//        }
+//        System.out.println();
     }
 
     public Command(String raw) {
@@ -33,6 +38,10 @@ public class Command {
     private void parseCommand(String raw) {
         //Pattern.matches("А.+а","");
         String[] sepCmd = raw.trim().split(DELIMITER);
+//        for (String arg: sepCmd) {
+//            System.out.print(arg + "_");
+//        }
+//        System.out.println();
         if (sepCmd.length == 0) return;
         switch (sepCmd[0]) {
             case "GET":
@@ -42,23 +51,34 @@ public class Command {
                 } else {
                     args.add(INT_ZERO);
                 }
+                break;
             case "PUT":
                 this.type = Type.PUT;
                 if (sepCmd.length > 2) {
-                    args.add(strToInt(sepCmd[1]), strToInt(sepCmd[2]));
+                    args.add(strToInt(sepCmd[1]));
+                    args.add(strToInt(sepCmd[2]));
                 } else {
                     args.add(INT_ZERO, INT_ZERO);
                 }
+                break;
             case "NOTIFY":
                 this.type = Type.NOTIFY;
                 if (sepCmd.length > 2) {
-                    args.add(strToInt(sepCmd[1]), strToInt(sepCmd[2]));
+                    args.add(strToInt(sepCmd[1]));
+                    args.add(strToInt(sepCmd[2]));
                 } else {
                     args.add(INT_ZERO, INT_ZERO);
                 }
+                break;
             case "ERROR":
                 this.type = Type.ERROR;
+                break;
         }
+        System.out.print(type + " ");
+        for (int arg: args) {
+            System.out.print(arg + " ");
+        }
+        System.out.println();
     }
 
     public Type getCommandType() {
