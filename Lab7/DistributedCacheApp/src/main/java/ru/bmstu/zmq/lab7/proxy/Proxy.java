@@ -46,7 +46,7 @@ public class Proxy {
             poller.poll();
             if (poller.pollin(CLIENT_POLL)) {
                 ZMsg msg = ZMsg.recvMsg(clientRouter);
-                System.out.println("Message from client: " +  msg.toString());
+                System.out.println("\tMessage from client: " +  msg.toString());
                 ZFrame clientId = msg.pop();
                 msg.pop();
                 Command cmd = new Command(msg.popString());
@@ -61,18 +61,19 @@ public class Proxy {
                         break;
                     case PUT:
                         List<ZFrame> storagesId = activeStorages.getStorages(cmd.getIndex());
-                        storagesId.forEach(id -> sendMessageToCache(id, clientId, cmd));
-                        if (storagesId.isEmpty()) {
+                        if (!storagesId.isEmpty()) {
+                            storagesId.forEach(id -> sendMessageToCache(id, clientId, cmd));
+                            sendMessageToClient(clientId, "SUCCESS");
+                        } else {
                             sendMessageToClient(clientId, "ERROR");
                         }
                         break;
                 }
             } else if (poller.pollin(CACHE_POLL)) {
                 ZMsg msg = ZMsg.recvMsg(cacheRouter);
-                System.out.println("Message from cache: " +  msg.toString());
+                System.out.println("\tMessage from cache: " +  msg.toString());
                 ZFrame storageId = msg.pop();
-                String
-                Command cmd = new Command(msg.toString());
+                Command cmd = new Command(msg.popString());
                 switch (cmd.getCommandType()) {
                     case RESULT:
                         ZFrame clientId = msg.pop();
@@ -90,9 +91,10 @@ public class Proxy {
     private void sendMessageToClient(ZFrame clientId, String result) {
         ZMsg msg = new ZMsg();
         msg.add(clientId);
-        msg.add((String) null); // ""
+        msg.add((String) null);
         msg.add(result);
-        msg.send(clientRouter, false); // destroy -> false
+        System.out.println("\tMessage to client: " + msg);
+        msg.send(clientRouter, false);
     }
 
     private void sendMessageToCache(ZFrame storageId, ZFrame clientId, Command cmd) {
@@ -101,7 +103,7 @@ public class Proxy {
         msg.add(clientId);
         msg.add(cmd.toString());
         System.out.println("\tMessage to cache: " + msg);
-        msg.send(cacheRouter, false); // destroy -> false
+        msg.send(cacheRouter, false);
     }
 
     public void terminate() {

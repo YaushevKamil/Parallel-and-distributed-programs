@@ -23,11 +23,6 @@ public class Command {
         this.type = type;
         this.args = new ArrayList<>();
         Collections.addAll(this.args, args);
-//        System.out.print(type + " ");
-//        for (int arg: args) {
-//            System.out.print(arg + " ");
-//        }
-//        System.out.println();
     }
 
     public Command(String raw) {
@@ -36,12 +31,7 @@ public class Command {
     }
 
     private void parseCommand(String raw) {
-        //Pattern.matches("А.+а","");
         String[] sepCmd = raw.trim().split(DELIMITER);
-//        for (String arg: sepCmd) {
-//            System.out.print(arg + "_");
-//        }
-//        System.out.println();
         if (sepCmd.length == 0) return;
         switch (sepCmd[0]) {
             case "GET":
@@ -68,6 +58,22 @@ public class Command {
                     args.add(strToInt(sepCmd[2]));
                 } else {
                     args.add(INT_ZERO, INT_ZERO);
+                }
+                break;
+            case "RESULT":
+                this.type = Type.RESULT;
+                if (sepCmd.length > 1) {
+                    args.add(strToInt(sepCmd[1]));
+                } else {
+                    args.add(INT_ZERO);
+                }
+                break;
+            case "SUCCESSFUL":
+                this.type = Type.SUCCESSFUL;
+                if (sepCmd.length > 1) {
+                    args.add(strToInt(sepCmd[1]));
+                } else {
+                    args.add(INT_ZERO);
                 }
                 break;
             case "ERROR":
@@ -121,7 +127,7 @@ public class Command {
     }
 
     public Integer getResult() {
-        return this.type == Type.RESULT  && args.size() == 1 ?
+        return (this.type == Type.RESULT || this.type == Type.SUCCESSFUL)  && args.size() == 1 ?
                 args.get(0) :
                 null;
     }
