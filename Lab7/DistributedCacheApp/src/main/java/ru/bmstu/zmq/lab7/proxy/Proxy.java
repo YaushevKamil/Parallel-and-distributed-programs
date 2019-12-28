@@ -63,7 +63,7 @@ public class Proxy {
                         List<ZFrame> storagesId = activeStorages.getStorages(cmd.getIndex());
                         if (!storagesId.isEmpty()) {
                             storagesId.forEach(id -> sendMessageToCache(id, clientId, cmd));
-                            sendMessageToClient(clientId, new Command(Command.Type.SUCCESSFUL)"SUCCESS");
+                            sendMessageToClient(clientId, "SUCCESS");
                         } else {
                             sendMessageToClient(clientId, "ERROR");
                         }
